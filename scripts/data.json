@@ -1,0 +1,25 @@
+{
+  "_note": "Single source of truth for every number on the poster and in the manuscript. Edit here, then re-run make_figures.py and make_map.js.",
+  "total_included": 34,
+  "prisma": {"identified": 516, "duplicates_removed": 155, "screened": 361, "excluded": 327, "included": 34},
+  "outcomes": [
+    ["Depression & anxiety", 26],
+    ["Reduced QoL & body image", 22],
+    ["Coping mechanisms documented", 21],
+    ["Psychosexual & relational challenges", 19],
+    ["Healthcare system gaps", 18],
+    ["Broader psychological distress", 17]
+  ],
+  "designs": [
+    ["Quantitative", 16, "incl. 11 cross-sectional"],
+    ["Qualitative", 11, ""],
+    ["Mixed methods", 7, ""]
+  ],
+  "regions": [
+    ["Europe", 18, "EU"],
+    ["North America", 8, "NA"],
+    ["Asia", 5, "AS"],
+    ["Africa", 2, "AF"],
+    ["South America", 1, "SA"]
+  ]
+}
