@@ -157,12 +157,10 @@ write(tb(dx,4.82,2.45,0.14),[{'runs':[('A study could report more than one outco
 # --- Fig 3 geography ---
 gy=5.07
 write(tb(fx,gy,5.0,0.16),[[('Fig 3. Geographic Setting of the 44 Included Studies',True,False)]],size=5.2,color=NAVY)
-cd=CategoryChartData(); cd.categories=['High-income / other settings','Low- and middle-income countries']; cd.add_series('Studies',[41,3])
-gf=s.shapes.add_chart(XL_CHART_TYPE.BAR_CLUSTERED,Inches(fx),Inches(gy+0.25),Inches(2.9),Inches(1.2),cd); ser=style(gf.chart,5,48)
-p_=ser.points[1]; p_.format.fill.solid(); p_.format.fill.fore_color.rgb=RED
-call=tb(5.7,gy+0.3,1.9,1.1,fill=PALE,line=RED,shape=MSO_SHAPE.ROUNDED_RECTANGLE,anchor=MSO_ANCHOR.MIDDLE,lw=0.6)
-write(call,[{'runs':[('6.8%',True,False,RED)],'size':20,'align':PP_ALIGN.CENTER,'space':0},{'runs':[('of included studies came from LMICs',False,False)],'size':5.5,'align':PP_ALIGN.CENTER,'space':1},{'runs':[('Sub-Saharan Africa: 1 study (Nigeria)',True,False,RED)],'size':5.5,'align':PP_ALIGN.CENTER,'space':0}])
-write(tb(fx,6.55,5.0,0.5),[{'runs':[('41 of 44 studies (93.2%) were conducted in high-income or other non-LMIC settings; 3 (6.8%) came from LMICs, only one of them from sub-Saharan Africa. Evidence on PMDD’s psychosocial burden therefore reflects mainly high-income contexts.',False,True)],'align':PP_ALIGN.CENTER}],size=4.2,color=MUTED)
+s.shapes.add_picture('fig3_map.png',Inches(fx),Inches(gy+0.22),width=Inches(3.4))
+call=tb(6.1,gy+0.35,1.5,1.2,fill=PALE,line=RED,shape=MSO_SHAPE.ROUNDED_RECTANGLE,anchor=MSO_ANCHOR.MIDDLE,lw=0.6)
+write(call,[{'runs':[('6.8%',True,False,RED)],'size':20,'align':PP_ALIGN.CENTER,'space':0},{'runs':[('of included studies (3 of 44) came from LMICs',False,False)],'size':5.2,'align':PP_ALIGN.CENTER,'space':1},{'runs':[('41 of 44 (93.2%) from high-income or other settings',False,False)],'size':5.2,'align':PP_ALIGN.CENTER,'space':1},{'runs':[('Sub-Saharan Africa: 1 study (Nigeria)',True,False,RED)],'size':5.2,'align':PP_ALIGN.CENTER,'space':0}])
+write(tb(fx,6.8,5.0,0.4),[{'runs':[('Nigeria (red) is the only included study from sub-Saharan Africa. Evidence on PMDD’s psychosocial burden reflects mainly high-income contexts.',False,True)],'align':PP_ALIGN.CENTER}],size=4.2,color=MUTED)
 # ---------------- RIGHT COLUMN ----------------
 RX,RW=7.773,2.117
 header(RX,0.794,RW,0.36,'Results, Discussion, Conclusion, and Limitations',size=9.5)
