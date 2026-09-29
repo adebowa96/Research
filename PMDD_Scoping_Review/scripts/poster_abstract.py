@@ -160,7 +160,7 @@ write(tb(fx,gy,5.0,0.16),[[('Fig 3. Geographic Setting of the 44 Included Studie
 s.shapes.add_picture('fig3_map.png',Inches(fx),Inches(gy+0.22),width=Inches(3.4))
 call=tb(6.1,gy+0.35,1.5,1.2,fill=PALE,line=RED,shape=MSO_SHAPE.ROUNDED_RECTANGLE,anchor=MSO_ANCHOR.MIDDLE,lw=0.6)
 write(call,[{'runs':[('6.8%',True,False,RED)],'size':20,'align':PP_ALIGN.CENTER,'space':0},{'runs':[('of included studies (3 of 44) came from LMICs',False,False)],'size':5.2,'align':PP_ALIGN.CENTER,'space':1},{'runs':[('41 of 44 (93.2%) from high-income or other settings',False,False)],'size':5.2,'align':PP_ALIGN.CENTER,'space':1},{'runs':[('Sub-Saharan Africa: 1 study (Nigeria)',True,False,RED)],'size':5.2,'align':PP_ALIGN.CENTER,'space':0}])
-write(tb(fx,6.8,5.0,0.4),[{'runs':[('Nigeria (red) is the only included study from sub-Saharan Africa. Evidence on PMDD’s psychosocial burden reflects mainly high-income contexts.',False,True)],'align':PP_ALIGN.CENTER}],size=4.2,color=MUTED)
+write(tb(fx,6.8,5.0,0.4),[{'runs':[('Navy shading shows World Bank high-income countries (FY2027); 41 of 44 studies came from high-income or other non-LMIC settings, but not every shaded country contributed a study. Nigeria (red) is the only study from sub-Saharan Africa.',False,True)],'align':PP_ALIGN.CENTER}],size=4.2,color=MUTED)
 # ---------------- RIGHT COLUMN ----------------
 RX,RW=7.773,2.117
 header(RX,0.794,RW,0.36,'Results, Discussion, Conclusion, and Limitations',size=9.5)
