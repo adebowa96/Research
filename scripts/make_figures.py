@@ -98,12 +98,12 @@ def prisma():
         ax.text(0.35, y + (0.8 if label != "Included" else 0.5), label, rotation=90,
                 ha="center", va="center", color="white", fontsize=13, fontweight="bold")
 
-    box(1.2, 8.1, 4.6, 1.8, f"Records identified through\ndatabase searching (n = {p['identified']})\nPubMed/MEDLINE · Scopus ·\nPsycINFO · CINAHL")
+    box(1.2, 8.1, 4.6, 1.8, f"Records identified through\ndatabase searching (n = {p['identified']})\nPubMed · Scopus · EBSCOhost\n(MEDLINE, CINAHL, PsycInfo, WSI)")
     box(6.4, 8.3, 3.5, 1.4, f"Duplicates removed\n(n = {p['duplicates_removed']})",
         fill="#f6f6f4", edge="#9a9993")
     box(1.2, 5.9, 4.6, 1.4, f"Records after duplicates\nremoved\n(n = {p['screened']})")
     box(1.2, 3.5, 4.6, 1.4, f"Records screened\n(n = {p['screened']})")
-    box(6.4, 3.3, 3.5, 1.8, f"Records excluded\n(n = {p['excluded']})\nDid not meet\ninclusion criteria",
+    box(6.4, 3.1, 3.5, 2.2, f"Records excluded\n(n = {p['excluded']})\nDid not meet inclusion\ncriteria (incl. published\nbefore 2019)",
         fill="#f6f6f4", edge="#9a9993")
     box(1.2, 0.8, 4.6, 1.6, f"Studies included in\nscoping review\n(n = {p['included']})",
         fill="#dbe8fa", bold=True)

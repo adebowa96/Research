@@ -202,8 +202,10 @@ y = header(LEFT_X, y, LEFT_W, "Methods")
 methods = [
     ("Study Design", "Scoping review following Arksey & O'Malley's five-stage framework^{3}; "
                      "reported per PRISMA-ScR^{4}"),
-    ("Databases", "PubMed/MEDLINE, Scopus, PsycINFO, and CINAHL"),
-    ("Years Searched", "January 2019 – March 2026"),
+    ("Databases", "PubMed; Scopus; EBSCOhost (MEDLINE, CINAHL, APA PsycInfo, Women's "
+                  "Studies International)"),
+    ("Years Included", "January 2019 – March 2026 (earlier records removed at screening); "
+                       "searches run March 29, 2026"),
     ("Inclusion Criteria", "Primary quantitative, qualitative, and mixed-methods studies "
                            "reporting psychological outcomes and/or coping mechanisms in MRKH"),
     ("Exclusion Criteria", "Studies focused solely on anatomical, surgical, or fertility outcomes"),

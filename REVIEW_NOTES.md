@@ -81,18 +81,29 @@ state this explicitly.
   `manuscript/References_AMA.docx`.
 - Appendix A: suggested PubMed search string included for comparison.
 
-**Still needs your records** (highlighted yellow in the manuscript)
-1. Full-text screening numbers and exclusion reasons (PRISMA-ScR item 14).
-2. Screening: how many reviewers, how disagreements were settled, and which software.
-3. Eligibility limits (English only? peer-reviewed only? reviews and case reports excluded?).
-4. Date of the final search, the exact strings, and records per database (must total 516).
-5. Study-design split (16 / 11 / 7) checked against your extraction sheet.
-6. The 34 included studies: Appendix B rows and their citations.
-7. Check that the Table 2–3 descriptions match how you coded the studies.
-8. Corresponding-author email, conflicts of interest, and CRediT author contributions.
-9. **Check whether Güner 2025, Rajesh 2026, and Okunomiya 2026 are among your 34 included
-   studies.** They are primary MRKH mental-health studies published inside your search
-   window. If they are not in your included set, a reviewer may ask why.
+**Fixed from your search export files (September 29)**
+- Databases now listed as actually searched: PubMed; Scopus; EBSCOhost (MEDLINE Ultimate,
+  CINAHL Ultimate, APA PsycInfo, Women's Studies International). Updated in the Methods,
+  the manuscript abstract, the PRISMA figure and the poster Methods table. The APHA abstract
+  on the poster is left exactly as submitted.
+- Search date: March 29, 2026 (the export date).
+- Appendix A table filled in: 207 + 20 + 146 + 143 = 516.
+- Date limits described honestly: they were applied unevenly when searching, so the 100
+  pre-2019 records were removed at screening and count among the 327 exclusions.
+- Mak & Thomas (2022) added as a methods citation (reference 15).
+
+**Cannot be recovered from the export files (still highlighted)**
+1. Screening process (reviewers and software). **Ask Dr. Okojie and Dr. Anderson, and check
+   whether you have a Rayyan, Covidence or Zotero account or library holding this project.**
+   That tool also holds your screening decisions and duplicate count.
+2. Full-text screening numbers and exclusion reasons.
+3. The 34 included studies (Appendix B and their citations) and the 16/11/7 design split.
+   These came from your data-extraction spreadsheet. Search your email, OneDrive/Google
+   Drive and Canvas for a file with "MRKH" or "extraction" in the name.
+4. Whether the PubMed search was also run on March 29, 2026.
+5. Duplicate count: your 155 versus about 192 from automated matching (see SEARCH_AUDIT.md).
+6. Corresponding-author email, conflicts of interest, and CRediT author contributions.
+7. Whether Güner 2025, Rajesh 2026 and Okunomiya 2026 are among your 34 studies.
 
 ## 4. Poster notes
 - Built on the Liberty University sample poster you provided

@@ -233,8 +233,9 @@ abstract = [
     "review mapped the mental health outcomes, coping mechanisms, and healthcare system gaps "
     "reported among individuals with MRKH.",
     "**Methods:** Following Arksey and O'Malley's framework and the PRISMA Extension for Scoping "
-    "Reviews (PRISMA-ScR), we searched PubMed/MEDLINE, Scopus, PsycINFO, and CINAHL for studies "
-    "published between January 2019 and March 2026. Eligible studies were primary quantitative, "
+    "Reviews (PRISMA-ScR), we searched PubMed, Scopus, and (via EBSCOhost) MEDLINE, CINAHL, APA "
+    "PsycInfo, and Women's Studies International for studies published between January 2019 "
+    "and March 2026. Eligible studies were primary quantitative, "
     "qualitative, and mixed-methods research reporting psychological outcomes and/or coping "
     "mechanisms in MRKH populations.",
     f"**Results:** Of {P['identified']} records identified ({P['screened']} after "
@@ -305,7 +306,8 @@ para("This scoping review followed Arksey and O'Malley's five-stage methodologic
      "framework^{13}—(1) identifying the research question; (2) identifying relevant studies; "
      "(3) selecting studies; (4) charting the data; and (5) collating, summarizing, and reporting "
      "the results—and is reported in accordance with the PRISMA Extension for Scoping Reviews "
-     "(PRISMA-ScR; Appendix C).^{14} A review protocol was not registered.")
+     "(PRISMA-ScR; Appendix C),^{14} informed by published guidance on the steps of conducting a "
+     "scoping review.^{15} A review protocol was not registered.")
 heading("Eligibility Criteria", 2)
 para("Eligibility was defined using the Population–Concept–Context approach. The *population* "
      "was individuals diagnosed with MRKH syndrome; the *concepts* were psychological or mental "
@@ -313,18 +315,26 @@ para("Eligibility was defined using the Population–Concept–Context approach.
      "setting in any country. We included primary quantitative, qualitative, and mixed-methods "
      "studies published between January 2019 and March 2026 that reported psychological "
      "outcomes and/or coping mechanisms among individuals with MRKH. Studies focused solely on "
-     "anatomical, surgical, or fertility outcomes were excluded. [[Confirm any additional "
-     "criteria applied, e.g., language (English only?), peer-reviewed publications only, and "
-     "exclusion of reviews, case reports, editorials, and conference abstracts.]]")
+     "anatomical, surgical, or fertility outcomes were excluded, as were records published "
+     "before January 2019. [[Confirm any additional criteria applied, e.g., language (English "
+     "only?), peer-reviewed publications only, and exclusion of reviews, case reports, "
+     "editorials, and conference abstracts.]]")
 heading("Information Sources and Search Strategy", 2)
-para("Four electronic databases were searched: PubMed/MEDLINE, Scopus, PsycINFO, and CINAHL, "
-     "limited to January 2019 through March 2026. Search strategies combined controlled "
+para("Searches were run and exported on March 29, 2026, in PubMed, Scopus, and EBSCOhost "
+     "[[confirm the PubMed search was also run on this date]]. "
+     "The EBSCOhost search covered MEDLINE Ultimate, CINAHL Ultimate, APA PsycInfo, and Women's "
+     "Studies International, and APA PsycInfo was also exported separately (Appendix A). Date "
+     "limits were not applied identically across interfaces: the Scopus search was limited to "
+     "2019–2026, the PubMed export covered 2021–2026 (MEDLINE records from 2019–2020 were "
+     "captured through the EBSCOhost MEDLINE search), and EBSCOhost results were exported "
+     "without a date limit. Records published before January 2019 were therefore removed during "
+     "title and abstract screening. Search strategies combined controlled "
      "vocabulary and free-text terms for MRKH (e.g., “Mayer-Rokitansky-Küster-Hauser,” “MRKH,” "
      "“Müllerian agenesis,” “vaginal agenesis”) with terms for mental health and coping (e.g., "
      "“depression,” “anxiety,” “psychological distress,” “quality of life,” “body image,” "
-     "“coping”). The full search strategy for each database is provided in Appendix A. "
-     "[[Date the final search was run: ____. Verify that the example terms above match the "
-     "search you actually ran.]]")
+     "“coping”). Records retrieved from each source are reported in Appendix A. [[Verify that "
+     "the example terms above match the search you ran; recover exact strings from your "
+     "PubMed, Scopus, and EBSCOhost search histories if saved.]]")
 heading("Study Selection", 2)
 para(f"Records were exported to [[reference manager/screening software, e.g., Zotero, "
      f"Covidence, Rayyan]], and {P['duplicates_removed']} duplicates were removed. The remaining "
@@ -505,7 +515,7 @@ para("The coping strategies identified—peer and community support, psychologic
      "may delay help-seeking and treatment engagement. Evidence that structured psychological "
      "intervention can help is available: a randomized controlled trial of a cognitive-behavioural "
      "group intervention improved psychological outcomes among women with MRKH compared with a "
-     "waiting-list control.^{15} The persistence of self-directed coping in the recent literature "
+     "waiting-list control.^{16} The persistence of self-directed coping in the recent literature "
      "suggests that such evidence-based support has not been consistently translated into "
      "routine care.")
 heading("Healthcare System Gaps and Equity", 2)
@@ -518,7 +528,7 @@ para("Although professional guidance identifies psychosocial counseling as centr
      "expectations regarding fertility, marriage, and womanhood, as well as access to "
      "specialized care, may differ substantially. The scarcity of studies from Africa and South "
      "America represents both a research gap and a likely inequity in diagnosis, support, and "
-     "long-term outcomes. Recent studies from Türkiye and Japan^{9,16} show that such work is "
+     "long-term outcomes. Recent studies from Türkiye and Japan^{9,17} show that such work is "
      "feasible and that cultural context shapes experiences of diagnosis, disclosure, and "
      "infertility.")
 heading("Implications for Practice, Policy, and Research", 2)
@@ -535,15 +545,16 @@ para("Five priorities emerge from this review. First, mental health screening sh
      "delivered within routine care.")
 heading("Strengths and Limitations", 2)
 para("Strengths of this review include the use of an established methodological framework, "
-     "reporting according to PRISMA-ScR, a search of four major biomedical and psychological "
-     "databases, and inclusion of quantitative, qualitative, and mixed-methods evidence. Several "
+     "reporting according to PRISMA-ScR, a search of multiple biomedical, nursing, psychological, "
+     "and women's studies databases, and inclusion of quantitative, qualitative, and mixed-methods evidence. Several "
      "limitations should be noted. The review was limited to studies published from 2019 to "
      "2026 and may therefore exclude earlier foundational research. Heterogeneity in study "
      "designs and outcome measures limits direct comparison across studies. Most studies came "
      "from high-income countries, limiting global generalizability, and some studies relied on "
      "self-reported mental health outcomes. Consistent with scoping review methodology, study "
      "quality was not formally appraised, and the counts reported here reflect how frequently "
-     "outcomes were studied, not their prevalence. [[Add, if applicable: English-language "
+     "outcomes were studied, not their prevalence. Date limits were applied inconsistently across "
+     "database interfaces at the search stage and were enforced during screening. [[Add, if applicable: English-language "
      "restriction; grey literature not searched.]]")
 heading("Conclusions", 2)
 para("MRKH-related psychosocial burden is substantial yet under-integrated into care models. "
@@ -623,6 +634,8 @@ refs = [
     "Methodol*. 2005;8(1):19-32. doi:10.1080/1364557032000119616",
     "Tricco AC, Lillie E, Zarin W, et al. PRISMA Extension for Scoping Reviews (PRISMA-ScR): "
     "checklist and explanation. *Ann Intern Med*. 2018;169(7):467-473. doi:10.7326/M18-0850",
+    "Mak S, Thomas A. Steps for conducting a scoping review. *J Grad Med Educ*. "
+    "2022;14(5):565-567. doi:10.4300/JGME-D-22-00621.1",
     "Heller-Boersma JG, Schmidt UH, Edmonds DK. A randomized controlled trial of a "
     "cognitive-behavioural group intervention versus waiting-list control for women with "
     "uterovaginal agenesis (Mayer-Rokitansky-Küster-Hauser syndrome: MRKH). *Hum Reprod*. "
@@ -642,9 +655,9 @@ para("[[Add citations for the 34 included studies (numbered in order of first ci
 # ====================================================================== APPENDICES
 page_break()
 heading("Appendix A. Search Strategy")
-para("[[Paste the exact search string run in each database, the platform/interface used, the "
-     "limits applied, the date each search was run, and the number of records retrieved per "
-     "database (these should total 516).]]", indent=False)
+para("Searches were exported on March 29, 2026. Record counts below are taken from the export "
+     "files and total 516, matching Figure 1. [[Paste the exact search string for each database "
+     "if it can be recovered from your search history.]]", indent=False)
 para("[[Suggested PubMed/MEDLINE string for comparison. Replace it with the string you actually "
      "ran; do not report a search you did not run:]]", indent=False)
 para("(\"Mayer-Rokitansky-Kuster-Hauser\"[tiab] OR \"Mayer-Rokitansky-Küster-Hauser\"[tiab] OR "
@@ -660,12 +673,15 @@ para("[[Scopus: TITLE-ABS-KEY(...) with the same two concept blocks; PsycINFO an
      "Behavior”; CINAHL Headings “Quality of Life”).]]", indent=False)
 table("**Table A1.** Records retrieved by database",
       ["Database", "Platform", "Date searched", "Records retrieved"],
-      [["PubMed/MEDLINE", "[[ ]]", "[[ ]]", "[[ ]]"],
-       ["Scopus", "[[ ]]", "[[ ]]", "[[ ]]"],
-       ["PsycINFO", "[[ ]]", "[[ ]]", "[[ ]]"],
-       ["CINAHL", "[[ ]]", "[[ ]]", "[[ ]]"],
+      [["MEDLINE Ultimate; CINAHL Ultimate; Women's Studies International; APA PsycInfo "
+        "(combined export: 145; 39; 15; 8)", "EBSCOhost", "Mar 29, 2026", "207"],
+       ["APA PsycInfo (separate export)", "EBSCOhost", "Mar 29, 2026", "20"],
+       ["MEDLINE (publications 2021–2026)", "PubMed", "[[Mar 29, 2026?]]", "146"],
+       ["Scopus (publications 2019–2026)", "Scopus", "Mar 29, 2026", "143"],
        ["**Total**", "", "", f"**{P['identified']}**"]],
-      widths=[1.8, 1.6, 1.4, 1.6])
+      widths=[2.9, 1.1, 1.2, 1.2],
+      note="Records published before 2019 (n = 100, all from the EBSCOhost exports) were excluded "
+           "at title and abstract screening and are counted among the 327 exclusions.")
 
 page_break()
 heading("Appendix B. Characteristics of Included Studies")
