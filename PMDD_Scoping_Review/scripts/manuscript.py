@@ -61,8 +61,9 @@ def note(text):
 # ---------- TITLE PAGE ----------
 para('Psychosocial Outcomes and Coping Mechanisms Among Women with Premenstrual Dysphoric Disorder: A Global Scoping Review',bold=True,align='center',indent=False)
 para('')
-para('Ifeoluwanimi P. Shobayo, BSc, MSPHc',align='center',indent=False)
-note('[AUTHOR NOTE – complete before submission: add all co-authors with credentials, affiliations (department, institution, city, country), corresponding-author contact, ORCID iDs, word count, and target-journal formatting.]')
+para('Ifeoluwanimi P. Shobayo, MSPH, Chelsea R. Mazonde, MPH, Marylyn O. Oduneye, MSPH, Tahirou Diallo, MSPH, Fadzai G. Nyarugwe, MSPH, and Cynthia C. Ilechukwu, MSPH',align='center',indent=False)
+para('Liberty University',align='center',indent=False)
+note('[AUTHOR NOTE – before submission: add department, city and country, corresponding-author contact, ORCID iDs and word count.]')
 para('')
 para('Running head: PMDD PSYCHOSOCIAL OUTCOMES: A SCOPING REVIEW',indent=False)
 para('Keywords: premenstrual dysphoric disorder; psychosocial outcomes; coping; suicidality; quality of life; low- and middle-income countries; sub-Saharan Africa; scoping review',indent=False)
