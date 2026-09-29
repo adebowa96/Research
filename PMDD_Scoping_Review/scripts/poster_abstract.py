@@ -64,7 +64,7 @@ header(LX,0.806,LW,0.199,'Abstract')
 body(LX,1.03,LW,1.52,[
  [('Background: ',True,False),('Premenstrual dysphoric disorder (PMDD) is a DSM-5 depressive disorder affecting an estimated 31 million women and girls worldwide.¹ This scoping review examined psychosocial outcomes and coping mechanisms among women with PMDD and assessed the geographic distribution of the evidence.',False,False)],
  [('Methods: ',True,False),("Following Arksey and O’Malley’s framework and PRISMA-ScR guidance, we searched PubMed/MEDLINE, CINAHL, APA PsycInfo, APA PsycArticles and the Cochrane Library for peer-reviewed studies published 2010–2025. Eligible empirical and qualitative studies had PMDD as the primary population and at least one psychosocial outcome or coping mechanism as a primary aim.",False,False)],
- [('Results: ',True,False),("The search identified 1,943 records; 1,618 remained after deduplication and 44 studies met the inclusion criteria. Depression was most documented (n=39), followed by psychological distress (n=24), interpersonal functioning (n=18), suicidal ideation or self-harm (n=14) and quality of life (n=14). Only three studies examined coping mechanisms. Three studies (6.8%) originated from low- and middle-income countries (LMICs), including one from Nigeria.",False,False)],
+ [('Results: ',True,False),("The search identified 1,943 records; 1,618 remained after deduplication and 44 studies met the inclusion criteria. Depression was most documented (n=39), followed by psychological distress (n=24), interpersonal functioning (n=18), suicidal ideation or self-harm (n=14) and quality of life (n=14). Only three studies examined coping mechanisms. Only three studies (6.8%) originated from low- and lower-middle-income countries, including one from Nigeria.",False,False)],
  [('Conclusions: ',True,False),('Evidence on PMDD’s psychosocial burden is growing but geographically concentrated in high-income countries, revealing a critical LMIC evidence gap.',False,False)],
  [('Keywords: ',True,False),('premenstrual dysphoric disorder; psychosocial outcomes; coping mechanisms; LMICs; scoping review',False,True)]],size=4.35,align=PP_ALIGN.JUSTIFY,space=1.4)
 header(LX,2.62,LW,0.36,'Introduction, Objective, and Research Question',size=9.5)
@@ -78,7 +78,7 @@ rows=[('Study Design','Scoping review guided by Arksey and O’Malley’s framew
 ('Publication Years','2010–2025.'),
 ('Inclusion Criteria','Peer-reviewed empirical or qualitative studies with PMDD as the primary population and at least one psychosocial outcome or coping mechanism as a primary aim.'),
 ('Exclusion Criteria','Animal studies, laboratory research, reviews, interventions and non-peer-reviewed publications.'),
-('Screening Process','1,943 records identified; 325 duplicates removed; 1,618 titles and abstracts screened; 64 full-text articles assessed; 44 studies included.'),
+('Screening Process','1,943 records identified; 325 duplicates removed; 1,618 records screened by title and abstract; 64 assessed for eligibility; 44 studies included.'),
 ('Evidence Mapping','Included studies categorized by psychosocial outcome, coping mechanism and geographic setting (country and income level).')]
 top=4.69; H=7.36-top
 gt=s.shapes.add_table(len(rows)+1,2,Inches(LX),Inches(top),Inches(LW),Inches(H)).table
@@ -97,7 +97,7 @@ tblPr=gt._tbl.tblPr; tblPr.set('bandRow','0')
 CX,CY,CW=2.536,0.794,5.179
 # stat row
 tiles=[('1,943','records identified','across 5 databases',NAVY),('44','studies included','in the scoping review',NAVY),
-       ('3','studies addressing coping','6.8% of 44',RED),('3','studies from LMICs','6.8% of 44',RED)]
+       ('3','studies addressing coping','6.8% of 44',RED),('3','low/lower-middle-income studies','6.8% of 44',RED)]
 tw=(CW-0.2)/4
 for k,(big,lab,sub,col) in enumerate(tiles):
     x=CX+0.1+k*tw
@@ -128,8 +128,8 @@ pbox(bx,2.9,bw,0.4,['Records screened','(title and abstract)','n = 1,618'],size=
 pbox(rx,2.9,rw,0.4,['Excluded (n = 1,554)','Not PMDD-focused or no psychosocial/','coping aim; review, intervention,','animal or laboratory study'],fill=RGBColor(0xFD,0xEC,0xEE),line=RED,size=3.2)
 arrow(bx+bw,3.1,rx,3.1)
 arrow(bx+bw/2,3.3,bx+bw/2,3.38)
-pbox(bx,3.38,bw,0.4,['Full-text articles assessed','for eligibility','n = 64'],size=3.6)
-pbox(rx,3.38,rw,0.4,['Excluded (n = 20)','Did not meet inclusion','criteria at full text'],fill=RGBColor(0xFD,0xEC,0xEE),line=RED,size=3.3)
+pbox(bx,3.38,bw,0.4,['Records assessed for eligibility','(title and abstract)','n = 64'],size=3.6)
+pbox(rx,3.38,rw,0.4,['Excluded (n = 20)','Did not meet','inclusion criteria'],fill=RGBColor(0xFD,0xEC,0xEE),line=RED,size=3.3)
 arrow(bx+bw,3.58,rx,3.58)
 arrow(bx+bw/2,3.78,bx+bw/2,3.86)
 pbox(bx,3.86,bw,0.4,['Studies included in','the scoping review','n = 44'],fill=RGBColor(0xD9,0xE2,0xF3),line=NAVY,size=4.2)
@@ -159,26 +159,26 @@ gy=5.07
 write(tb(fx,gy,5.0,0.16),[[('Fig 3. Geographic Setting of the 44 Included Studies',True,False)]],size=5.2,color=NAVY)
 s.shapes.add_picture('fig3_map.png',Inches(fx),Inches(gy+0.22),width=Inches(3.4))
 call=tb(6.1,gy+0.35,1.5,1.2,fill=PALE,line=RED,shape=MSO_SHAPE.ROUNDED_RECTANGLE,anchor=MSO_ANCHOR.MIDDLE,lw=0.6)
-write(call,[{'runs':[('6.8%',True,False,RED)],'size':20,'align':PP_ALIGN.CENTER,'space':0},{'runs':[('of included studies (3 of 44) came from LMICs',False,False)],'size':5.2,'align':PP_ALIGN.CENTER,'space':1},{'runs':[('41 of 44 (93.2%) from high-income or other settings',False,False)],'size':5.2,'align':PP_ALIGN.CENTER,'space':1},{'runs':[('Sub-Saharan Africa: 1 study (Nigeria)',True,False,RED)],'size':5.2,'align':PP_ALIGN.CENTER,'space':0}])
-write(tb(fx,6.8,5.0,0.4),[{'runs':[('Navy shading shows World Bank high-income countries (FY2027); 41 of 44 studies came from high-income or other non-LMIC settings, but not every shaded country contributed a study. Nigeria (red) is the only study from sub-Saharan Africa.',False,True)],'align':PP_ALIGN.CENTER}],size=4.2,color=MUTED)
+write(call,[{'runs':[('6.8%',True,False,RED)],'size':20,'align':PP_ALIGN.CENTER,'space':0},{'runs':[('of included studies (3 of 44) came from low- and lower-middle-income countries',False,False)],'size':5.2,'align':PP_ALIGN.CENTER,'space':1},{'runs':[('20 high-income · 7 upper-middle-income',False,False)],'size':5.2,'align':PP_ALIGN.CENTER,'space':1},{'runs':[('Sub-Saharan Africa: 1 study (Nigeria)',True,False,RED)],'size':5.2,'align':PP_ALIGN.CENTER,'space':0}])
+write(tb(fx,6.8,5.0,0.4),[{'runs':[('Shaded countries contributed at least one study (World Bank FY2027 income groups). Also included: Hong Kong (1; not visible at this scale), online or multinational samples (4), country not reported (1), and 9 studies whose setting is being verified.',False,True)],'align':PP_ALIGN.CENTER}],size=4.2,color=MUTED)
 # ---------------- RIGHT COLUMN ----------------
 RX,RW=7.773,2.117
 header(RX,0.794,RW,0.36,'Results, Discussion, Conclusion, and Limitations',size=9.5)
 B=lambda t:{'runs':t if isinstance(t,list) else [(t,False,False)],'bullet':True}
 body(RX,1.19,RW,3.25,[
  [('Results',True,False)],
- "The database search identified 1,943 records. After 325 duplicates were removed, 1,618 records were screened by title and abstract; 64 articles underwent full-text assessment, 20 were excluded, and 44 studies were included (Fig. 1).",
+ "The database search identified 1,943 records. After 325 duplicates were removed, 1,618 records were screened by title and abstract; 64 were assessed for eligibility, 20 were excluded, and 44 studies were included (Fig. 1).",
  "Depression was the most documented outcome (n=39), followed by psychological distress (n=24), interpersonal functioning (n=18), suicidal ideation or self-harm (n=14) and quality of life (n=14). Only three studies examined coping mechanisms (Fig. 2).",
- "Geographic representation was critically skewed: three of the 44 studies (6.8%) originated from LMICs, including one from Nigeria, the only study from sub-Saharan Africa (Fig. 3).",
+ "Geographic representation was skewed: 20 studies came from high-income countries and 7 from upper-middle-income countries (Türkiye, Iran); only three (6.8%) came from low- and lower-middle-income countries (Bangladesh, Lebanon, Nigeria), and Nigeria was the only study from sub-Saharan Africa (Fig. 3).",
  [('Discussion',True,False)],
- "PMDD research consistently documents depression, distress, relationship difficulties and suicidality; large studies have linked PMDD with suicidal ideation and attempts.⁵,⁶ Yet coping mechanisms remain largely unexamined, and the near-absence of LMIC and African studies leaves the burden in these settings invisible to health systems.",
+ "PMDD research consistently documents depression, distress, relationship difficulties and suicidality; large studies have linked PMDD with suicidal ideation and attempts.⁵,⁶ Yet coping mechanisms remain largely unexamined, and the scarcity of studies from low- and lower-middle-income countries and Africa leaves the burden in these settings invisible to health systems.",
  [('Conclusion',True,False)],
  "Evidence on PMDD’s psychosocial burden is growing but geographically concentrated in high-income countries. Findings call for culturally responsive screening, integrated mental and reproductive health services, and Africa-centred research investment.",
  [('Limitations',True,False)],
  B([('Search scope: ',True,False),('studies outside the five databases or the 2010–2025 period may have been missed.',False,False)]),
  B([('Study differences: ',True,False),('variation in design and outcome definitions limits direct comparison.',False,False)]),
  B([('Coding overlap: ',True,False),('a study could address more than one outcome, so counts should not be summed.',False,False)]),
- B([('Geographic coverage: ',True,False),('few LMIC studies limit conclusions about those settings.',False,False)])],size=4.6,align=PP_ALIGN.JUSTIFY,space=1.5)
+ B([('Geographic coverage: ',True,False),('few studies from low- and lower-middle-income countries limit conclusions about those settings.',False,False)])],size=4.6,align=PP_ALIGN.JUSTIFY,space=1.5)
 header(RX,4.51,RW,0.36,'Public Health Implications and Future Work',size=9.5)
 body(RX,4.9,RW,1.13,[
  [('Public Health Implications',True,False)],

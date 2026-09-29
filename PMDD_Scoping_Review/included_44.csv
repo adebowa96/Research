@@ -1,0 +1,45 @@
+list_no,record_id,country,income_group,note
+1,1031,Bangladesh,Lower-middle,
+2,1083,United Kingdom,High,
+3,1087,,,"Commentary - check eligibility"
+4,208,Not reported,,
+5,311,Canada,High,
+6,1115,,,"Review - check eligibility"
+7,485,Sweden,High,Premenstrual disorders broadly
+8,424,Poland,High,Premenstrual disorders broadly
+9,336,Saudi Arabia,High,
+10,,,,"Not in exports - verify"
+11,,,,"Not in exports - verify"
+12,1041,Sweden,High,Premenstrual disorders broadly
+13,288,Hong Kong (China),High,
+14,,,,"Not in exports - verify"
+15,,,,"Not in exports - verify"
+16,1116,Online,,
+17,1118,Turkiye,Upper-middle,
+18,1159,Turkiye,Upper-middle,
+19,1173,Taiwan,High,
+20,1175,Spain,High,
+21,,,,"Not in exports - verify"
+22,,,,"Not in exports - verify"
+23,1162,Australia,High,
+24,1186,Online (international),,
+25,1189,Turkiye,Upper-middle,
+26,1200,Online (international),,
+27,1318,Iceland,High,
+28,1137,Lebanon,Lower-middle,
+29,1258,Germany,High,
+30,350,Iran,Upper-middle,
+31,1246,Poland,High,
+32,1267,Iran,Upper-middle,
+33,1274,,,"Healthy participants - check eligibility"
+34,604,United States,High,
+35,1250,France,High,
+36,628,United States,High,
+37,711,Turkiye,Upper-middle,
+38,1421,Nigeria,Lower-middle,
+39,738,Taiwan,High,
+40,695,United States,High,
+41,1378,South Korea,High,
+42,976,Iran,Upper-middle,Premenstrual disorders broadly
+43,1338,United States,High,
+44,1373,Multinational,,Premenstrual disorders broadly
