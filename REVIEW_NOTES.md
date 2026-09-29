@@ -91,10 +91,12 @@ state this explicitly.
 ---
 
 ## 4. Poster notes
-- Size: **48 × 36 in, landscape**. This is the most common APHA print size. If your
-  session asks for a different size, tell me and I'll rebuild it.
-- I could not see the three sample posters you mentioned. They are not in this
-  repository and did not come through in the chat. The layout follows standard APHA
-  poster conventions. If you upload the samples, I can match their style.
-- No university or APHA logos were added. Insert official logo files from Liberty
-  University and APHA if your program allows them.
+- Built on the Liberty University sample poster you provided
+  (`poster/template/liberty_template.pptx`: navy background and Liberty logo only).
+  It uses the same 48 × 36 in size, three-column layout, navy Times New Roman section
+  headers and white centre figure panel.
+- Poster figure numbers (Fig 1 PRISMA, Fig 2 outcomes, Fig 3 map, Fig 4 design) differ
+  from the manuscript's (Figure 1 PRISMA, 2 design, 3 map, 4 outcomes), because each
+  document numbers figures in the order they are first cited. This is expected.
+- The sample posters had a QR code in the References box. This poster lists the
+  references as text instead. Add a QR code if you have a link to point it to.

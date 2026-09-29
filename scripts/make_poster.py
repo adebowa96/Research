@@ -1,7 +1,8 @@
-"""Builds the 48 x 36 in APHA 2026 poster (poster/MRKH_APHA2026_Poster.pptx).
-Run make_figures.py and make_map.js first. Usage: python3 scripts/make_poster.py
+"""Builds the 48 x 36 in APHA 2026 poster on the Liberty University template
+(poster/template/liberty_template.pptx: navy background + Liberty logo).
+Output: poster/MRKH_APHA2026_Poster.pptx. Run make_figures.py and make_map.js first.
 
-Inline markup in poster text: **bold**, ^{sup} for superscript citations."""
+Inline markup in poster text: **bold**, *italic*, ^{sup} superscript."""
 import json
 import re
 from pathlib import Path
@@ -10,7 +11,7 @@ from PIL import Image
 from pptx import Presentation
 from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE
-from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
+from pptx.enum.text import MSO_ANCHOR, MSO_AUTO_SIZE, PP_ALIGN
 from pptx.util import Inches, Pt
 
 HERE = Path(__file__).parent
@@ -18,53 +19,56 @@ ROOT = HERE.parent
 FIG = ROOT / "figures"
 data = json.loads((HERE / "data.json").read_text())
 N = data["total_included"]
+P = data["prisma"]
+OUT = dict(data["outcomes"])
+DES = {name: n for name, n, _ in data["designs"]}
+REG = {name: n for name, n, _ in data["regions"]}
 
-NAVY = RGBColor(0x0D, 0x36, 0x6B)
+NAVY = RGBColor(0x0A, 0x25, 0x4E)  # Liberty template header navy
 BLUE = RGBColor(0x2A, 0x78, 0xD6)
 ORANGE = RGBColor(0xC4, 0x4E, 0x1B)
 PANEL = RGBColor(0xEE, 0xF4, 0xFC)
 PANEL_WARM = RGBColor(0xFD, 0xEE, 0xE7)
-INK = RGBColor(0x0B, 0x0B, 0x0B)
-INK_2 = RGBColor(0x52, 0x51, 0x4E)
+BLACK = RGBColor(0, 0, 0)
+GREY = RGBColor(0x40, 0x40, 0x40)
 WHITE = RGBColor(0xFF, 0xFF, 0xFF)
-FONT = "Arial"
+FONT = "Times New Roman"
 
-W, H = 48.0, 36.0
-MARGIN = 0.75
-GUTTER = 0.6
-COL_W = (W - 2 * MARGIN - 2 * GUTTER) / 3
-COL_X = [MARGIN + i * (COL_W + GUTTER) for i in range(3)]
-TOP = 6.1
-BOTTOM = H - 0.6
+# Column geometry taken from the Liberty sample poster
+LEFT_X, LEFT_W = 0.55, 11.25
+MID_X, MID_W = 12.23, 24.54
+RIGHT_X, RIGHT_W = 37.12, 10.5
+TOP = 6.95
+BOTTOM = 35.75
 
-prs = Presentation()
-prs.slide_width = Inches(W)
-prs.slide_height = Inches(H)
-slide = prs.slides.add_slide(prs.slide_layouts[6])
+prs = Presentation(str(ROOT / "poster" / "template" / "liberty_template.pptx"))
+slide = prs.slides[0]
+logo = slide.shapes[0]
 
-TOKEN = re.compile(r"(\*\*.+?\*\*|\^\{.+?\})")
+TOKEN = re.compile(r"(\*\*.+?\*\*|\*.+?\*|\^\{.+?\})")
 
 
-def add_runs(par, text, size, color=INK, bold=False, italic=False):
+def add_runs(par, text, size, color=BLACK, bold=False):
     for piece in TOKEN.split(text):
         if not piece:
             continue
-        run = par.add_run()
-        is_bold = bold
-        sup = False
+        b, i, sup = bold, False, False
         if piece.startswith("**"):
-            piece, is_bold = piece[2:-2], True
+            piece, b = piece[2:-2], True
         elif piece.startswith("^{"):
             piece, sup = piece[2:-1], True
+        elif piece.startswith("*"):
+            piece, i = piece[1:-1], True
+        run = par.add_run()
         run.text = piece
         f = run.font
-        f.name, f.size, f.bold, f.italic = FONT, Pt(size), is_bold, italic
+        f.name, f.size, f.bold, f.italic = FONT, Pt(size), b, i
         f.color.rgb = color
         if sup:
             f._element.set("baseline", "30000")
 
 
-def rect(x, y, w, h, fill, line=None, shape=MSO_SHAPE.RECTANGLE):
+def box(x, y, w, h, fill=WHITE, line=WHITE, shape=MSO_SHAPE.RECTANGLE, line_w=1.5):
     s = slide.shapes.add_shape(shape, Inches(x), Inches(y), Inches(w), Inches(h))
     s.fill.solid()
     s.fill.fore_color.rgb = fill
@@ -72,256 +76,297 @@ def rect(x, y, w, h, fill, line=None, shape=MSO_SHAPE.RECTANGLE):
         s.line.fill.background()
     else:
         s.line.color.rgb = line
-        s.line.width = Pt(2)
+        s.line.width = Pt(line_w)
     s.shadow.inherit = False
     if shape == MSO_SHAPE.ROUNDED_RECTANGLE:
-        s.adjustments[0] = 0.08
+        s.adjustments[0] = 0.12
     return s
 
 
-def textbox(x, y, w, h, paras, size=24, color=INK, align=PP_ALIGN.LEFT,
-            anchor=MSO_ANCHOR.TOP, bullet=False, space_after=8, line_spacing=1.1):
+def text(x, y, w, h, paras, size=22, color=BLACK, align=PP_ALIGN.JUSTIFY,
+         anchor=MSO_ANCHOR.TOP, space_after=6, fill=None, bullet=False, margin=0.14):
     tb = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
+    if fill is not None:
+        tb.fill.solid()
+        tb.fill.fore_color.rgb = fill
+        tb.line.color.rgb = WHITE
     tf = tb.text_frame
     tf.word_wrap = True
+    tf.auto_size = MSO_AUTO_SIZE.NONE
     tf.vertical_anchor = anchor
-    tf.margin_left = tf.margin_right = Inches(0.1)
-    tf.margin_top = tf.margin_bottom = Inches(0.05)
-    for i, p in enumerate(paras):
-        par = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+    tf.margin_left = tf.margin_right = Inches(margin)
+    tf.margin_top = tf.margin_bottom = Inches(0.08)
+    for k, ptxt in enumerate(paras):
+        par = tf.paragraphs[0] if k == 0 else tf.add_paragraph()
         par.alignment = align
         par.space_after = Pt(space_after)
-        par.line_spacing = line_spacing
-        add_runs(par, ("•  " + p) if bullet else p, size, color)
+        par.line_spacing = 1.0
+        if bullet and not ptxt.startswith("**"):
+            ptxt = "•  " + ptxt
+        add_runs(par, ptxt, size, color)
     return tb
 
 
-def header(col, y, title):
-    x = COL_X[col]
-    rect(x, y, COL_W, 0.85, NAVY)
-    textbox(x + 0.15, y, COL_W - 0.3, 0.85, [title], size=34, color=WHITE,
-            anchor=MSO_ANCHOR.MIDDLE, space_after=0)
-    return y + 1.05
+def header(x, y, w, title, size=48):
+    text(x, y, w, 0.95, [title], size=size, color=WHITE, align=PP_ALIGN.CENTER,
+         anchor=MSO_ANCHOR.MIDDLE, space_after=0, fill=NAVY)
+    return y + 0.95
 
 
-def image(path, x, y, w):
+def image(path, x, y, w=None, h=None):
     with Image.open(path) as im:
         aspect = im.height / im.width
-    slide.shapes.add_picture(str(path), Inches(x), Inches(y), Inches(w), Inches(w * aspect))
-    return y + w * aspect
+    if w is None:
+        w = h / aspect
+    h = w * aspect
+    slide.shapes.add_picture(str(path), Inches(x), Inches(y), Inches(w), Inches(h))
+    return w, h
 
 
-def caption(x, y, w, text, h=0.9):
-    textbox(x, y, w, h, [text], size=18, color=INK_2, space_after=0)
-    return y + h
+def caption(x, y, w, title, sub, size=22):
+    tb = text(x, y, w, 1.0, [f"**{title}**", sub], size=size, align=PP_ALIGN.LEFT,
+              space_after=0, margin=0.05)
+    return tb
 
 
-# ------------------------------------------------------------------ title banner
-rect(0, 0, W, 5.6, NAVY)
-rect(0, 5.6, W, 0.12, BLUE)
-textbox(MARGIN, 0.35, W - 2 * MARGIN, 2.6,
-        ["Mental Health and Psychosocial Outcomes Among Individuals With "
-         "Mayer-Rokitansky-Küster-Hauser (MRKH) Syndrome: A Scoping Review"],
-        size=64, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, space_after=0,
-        line_spacing=1.0)
-textbox(MARGIN, 3.05, W - 2 * MARGIN, 0.9,
-        ["Ifeoluwanimi P. Shobayo, BSc, MSPHc  |  Paul Okojie, PhD  |  Robyn Anderson, PhD"],
-        size=36, color=WHITE, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, space_after=0)
-textbox(MARGIN, 3.95, W - 2 * MARGIN, 1.4,
-        ["Department of Public and Community Health, Liberty University",
-         "APHA 2026 Annual Meeting & Expo  ·  Sexual and Reproductive Health Section"],
-        size=28, color=RGBColor(0xCD, 0xE2, 0xFB), align=PP_ALIGN.CENTER,
-        anchor=MSO_ANCHOR.MIDDLE, space_after=2)
+# ---------------------------------------------------------------- title band
+box(0, 0, 48, 6.9, fill=WHITE, line=None)
+text(6.6, 0.25, 40.8, 6.4, [
+    "**Mental Health and Psychosocial Outcomes Among Individuals With**",
+    "**Mayer-Rokitansky-Küster-Hauser (MRKH) Syndrome: A Scoping Review**",
+], size=64, align=PP_ALIGN.CENTER, space_after=0)
+text(6.6, 2.75, 40.8, 1.0,
+     ["Ifeoluwanimi P. Shobayo, BSc, MSPHc, Paul Okojie, PhD, Robyn Anderson, PhD"],
+     size=45, align=PP_ALIGN.CENTER, space_after=0)
+text(6.6, 3.75, 40.8, 1.8, [
+    "Department of Public and Community Health, Liberty University",
+    "APHA 2026 Annual Meeting & Expo · Sexual and Reproductive Health Section",
+], size=34, color=GREY, align=PP_ALIGN.CENTER, space_after=0)
+# bring the Liberty logo above the white title band
+logo._element.getparent().remove(logo._element)
+slide.shapes._spTree.append(logo._element)
 
-# ------------------------------------------------------------------ column 1
-c, x = 0, COL_X[0]
-y = header(c, TOP, "Background")
-textbox(x, y, COL_W, 4.3, [
-    "MRKH syndrome is a rare Müllerian aplasia: congenital absence of the uterus and upper "
-    "two-thirds of the vagina in individuals with a 46,XX karyotype and functional ovaries. "
-    "It affects approximately 1 in 4,500–5,000 female births^{1,2} and is typically diagnosed "
-    "in adolescence, a critical period for identity formation and social development.",
-    "The diagnosis carries profound implications for fertility, psychosexual development, and "
-    "self-image, yet psychosocial outcomes remain underexplored and insufficiently integrated "
-    "into clinical and public health frameworks.",
-], size=26)
-y += 3.55
-
-# At-a-glance tiles
-tiles = [("~1:5,000", "female births"), ("46,XX", "karyotype;\nfunctional ovaries"),
-         ("Teens", "typical age at\ndiagnosis"), ("No uterus", "uterovaginal\nagenesis")]
-tw = (COL_W - 3 * 0.25) / 4
-textbox(x, y, COL_W, 0.6, ["**MRKH Syndrome at a Glance**"], size=24, color=NAVY, space_after=0)
-y += 0.65
-for i, (big, small) in enumerate(tiles):
-    tx = x + i * (tw + 0.25)
-    rect(tx, y, tw, 2.5, PANEL, line=BLUE, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-    textbox(tx, y + 0.2, tw, 0.9, [f"**{big}**"], size=30, color=NAVY, align=PP_ALIGN.CENTER,
-            anchor=MSO_ANCHOR.MIDDLE, space_after=0)
-    textbox(tx, y + 1.1, tw, 1.3, small.split("\n"), size=19, color=INK_2,
-            align=PP_ALIGN.CENTER, space_after=0, line_spacing=1.0)
-y += 2.8
-
-# Research question
-rect(x, y, COL_W, 2.2, PANEL_WARM, line=ORANGE, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-textbox(x + 0.2, y + 0.1, COL_W - 0.4, 2.0, [
-    "**Research Question:** What mental health outcomes and coping mechanisms are reported "
-    "among individuals with MRKH syndrome, and what healthcare system gaps exist?"],
-    size=24, anchor=MSO_ANCHOR.MIDDLE, space_after=0)
-y += 2.45
-
-y = header(c, y, "Learning Objectives")
-textbox(x, y, COL_W, 3.3, [
-    "**1.** Identify key mental health outcomes, including depression, anxiety, reduced quality "
-    "of life, and psychosexual challenges, reported among individuals with MRKH syndrome.",
-    "**2.** Describe coping mechanisms and psychosocial responses, including adaptive and "
-    "maladaptive strategies, documented in MRKH populations.",
-], size=25)
-y += 2.6
-
-y = header(c, y, "Methods")
-textbox(x, y, COL_W, 4.2, [
-    "**Design:** Scoping review following Arksey & O'Malley's five-stage framework^{3}; "
-    "reported per PRISMA-ScR^{4}.",
-    "**Databases:** PubMed/MEDLINE, Scopus, PsycINFO, CINAHL (January 2019 – March 2026).",
-    "**Included:** Primary quantitative, qualitative, and mixed-methods studies reporting "
+# ---------------------------------------------------------------- left column
+y = header(LEFT_X, TOP, LEFT_W, "Abstract")
+abstract_h = 8.35
+text(LEFT_X, y, LEFT_W, abstract_h, [
+    "**Background:** Mayer-Rokitansky-Küster-Hauser (MRKH) syndrome is a rare congenital "
+    "condition (1 in 4,500–5,000 female births) characterized by uterovaginal agenesis in "
+    "individuals with a 46,XX karyotype and functional ovaries. Diagnosed during adolescence, "
+    "MRKH is associated with significant psychosocial burden. Mental health outcomes and coping "
+    "mechanisms remain insufficiently synthesized, limiting integration into clinical care and "
+    "public health planning.",
+    "**Methods:** Following Arksey and O'Malley's framework and PRISMA-ScR guidelines, we "
+    "searched PubMed/MEDLINE, Scopus, PsycINFO, and CINAHL (January 2019–March 2026). Eligible "
+    "studies included primary quantitative, qualitative, and mixed-methods research on "
     "psychological outcomes and/or coping mechanisms in MRKH populations.",
-    "**Excluded:** Studies focused solely on anatomical, surgical, or fertility outcomes.",
-], size=24, space_after=6)
-y += 3.7
-img_w = 10.8
-y = image(FIG / "prisma_flow.png", x + (COL_W - img_w) / 2, y, img_w)
-caption(x, y + 0.05, COL_W, "PRISMA-ScR flow diagram of study selection.", h=0.5)
-col1_end = y + 0.55
+    f"**Results:** {N} studies met inclusion criteria. Depression and anxiety were most "
+    f"frequently reported (n = {OUT['Depression & anxiety']}), followed by reduced QoL and body "
+    f"image concerns (n = {OUT['Reduced QoL & body image']}), psychosexual challenges "
+    f"(n = {OUT['Psychosexual & relational challenges']}), and psychological distress "
+    f"(n = {OUT['Broader psychological distress']}). Coping mechanisms were documented in "
+    f"{OUT['Coping mechanisms documented']} studies; healthcare gaps in "
+    f"{OUT['Healthcare system gaps']}.",
+    "**Conclusions:** MRKH-related psychosocial burden is substantial yet under-integrated into "
+    "care models. Multidisciplinary, mental health-inclusive care and greater research "
+    "investment are urgently needed.",
+    "**Keywords:** MRKH syndrome; mental health; coping; psychosocial outcomes; quality of "
+    "life; reproductive health",
+], size=23, fill=WHITE, space_after=5)
+y += abstract_h + 0.25
 
-# ------------------------------------------------------------------ column 2
-c, x = 1, COL_X[1]
-y = header(c, TOP, "Results")
-textbox(x, y, COL_W, 1.5, [
-    f"**{N} studies** met inclusion criteria across quantitative, qualitative, and "
-    "mixed-methods designs. Studies could report more than one outcome domain."], size=25)
-y += 1.55
-y = image(FIG / "fig1_outcomes_bar.png", x, y, COL_W)
-y = caption(x, y + 0.05, COL_W,
-            f"**Fig 1.** Frequency of outcome domains across included studies (N = {N}). "
-            "Counts do not sum to 34 because studies could report multiple domains.", h=0.95)
-textbox(x, y, COL_W, 1.5, [
-    "Findings are consistent with pre-2019 evidence of elevated distress, anxiety, and "
-    "depression and poorer mental health–related quality of life in MRKH^{5–7}, and with a "
-    "prior systematic review^{8}."], size=24)
-y += 1.6
+y = header(LEFT_X, y, LEFT_W, "Introduction and Research Question", size=40)
+intro_h = 9.0
+text(LEFT_X, y, LEFT_W, intro_h, [
+    "MRKH syndrome is a rare Müllerian aplasia resulting in congenital absence of the uterus and "
+    "upper two-thirds of the vagina in chromosomally female individuals (46,XX) with functional "
+    "ovaries. It affects approximately 1 in 4,500–5,000 female births^{1,2} and is typically "
+    "diagnosed during adolescence, often during evaluation for primary amenorrhea^{1}—a critical "
+    "period for identity formation and social development.",
+    "The diagnosis carries profound implications for fertility, psychosexual development, and "
+    "self-image. Professional guidance identifies psychosocial counseling as a key component of "
+    "care,^{1} yet psychosocial outcomes remain underexplored and insufficiently integrated into "
+    "clinical and public health frameworks.",
+    "**Research Question**",
+    "What mental health outcomes and coping mechanisms are reported among individuals with MRKH "
+    "syndrome, and what healthcare system gaps exist?",
+    "**Learning Objectives**",
+    "1. Identify key mental health outcomes—including depression, anxiety, reduced quality of "
+    "life, and psychosexual challenges—reported among individuals with MRKH syndrome.",
+    "2. Describe coping mechanisms and psychosocial responses, including adaptive and "
+    "maladaptive strategies, documented in MRKH populations.",
+], size=23, fill=WHITE, space_after=6)
+y += intro_h + 0.25
 
-dw = COL_W * 0.78
-y = image(FIG / "fig2_design_donut.png", x + (COL_W - dw) / 2, y, dw)
-y = caption(x, y + 0.05, COL_W,
-            f"**Fig 2.** Study design distribution (N = {N}). Cross-sectional studies are a "
-            "subset of quantitative designs.", h=0.95)
+y = header(LEFT_X, y, LEFT_W, "Methods")
+methods = [
+    ("Study Design", "Scoping review following Arksey & O'Malley's five-stage framework;^{3} "
+                     "reported per PRISMA-ScR^{4}"),
+    ("Databases", "PubMed/MEDLINE, Scopus, PsycINFO, and CINAHL"),
+    ("Years Searched", "January 2019 – March 2026"),
+    ("Inclusion Criteria", "Primary quantitative, qualitative, and mixed-methods studies "
+                           "reporting psychological outcomes and/or coping mechanisms in MRKH"),
+    ("Exclusion Criteria", "Studies focused solely on anatomical, surgical, or fertility outcomes"),
+    ("Screening", f"{P['identified']} records identified; {P['duplicates_removed']} duplicates "
+                  f"removed; {P['screened']} screened; {P['excluded']} excluded; "
+                  f"{P['included']} included"),
+    ("Synthesis", "Descriptive frequency counts by outcome domain and thematic grouping of "
+                  "coping mechanisms and healthcare gaps"),
+]
+tbl_h = BOTTOM - y
+gt = slide.shapes.add_table(len(methods) + 1, 2, Inches(LEFT_X), Inches(y), Inches(LEFT_W),
+                            Inches(tbl_h))
+tbl = gt.table
+tbl.columns[0].width = Inches(3.4)
+tbl.columns[1].width = Inches(LEFT_W - 3.4)
+tbl.first_row = True
+for r, (a, b) in enumerate([("Category", "Description")] + methods):
+    for c, val in enumerate((a, b)):
+        cell = tbl.cell(r, c)
+        cell.fill.solid()
+        cell.fill.fore_color.rgb = NAVY if r == 0 else (WHITE if r % 2 else PANEL)
+        cell.vertical_anchor = MSO_ANCHOR.MIDDLE
+        cell.margin_left = cell.margin_right = Inches(0.1)
+        tf = cell.text_frame
+        tf.word_wrap = True
+        par = tf.paragraphs[0]
+        add_runs(par, val, 20, WHITE if r == 0 else BLACK, bold=(r == 0 or c == 0))
+for r in range(len(methods) + 1):
+    tbl.rows[r].height = Inches(tbl_h / (len(methods) + 1))
 
-y = header(c, y + 0.1, f"Coping Mechanisms (n = 21 studies, 62%)")
+# ---------------------------------------------------------------- centre panel (figures)
+box(MID_X, TOP, MID_W, BOTTOM - TOP, fill=WHITE, line=WHITE)
+cx = MID_X + 0.4
+cw = MID_W - 0.8
+y = TOP + 0.3
+
+# MRKH at a glance strip
+text(cx, y, cw, 0.75, ["**MRKH Syndrome at a Glance**"], size=32, color=NAVY,
+     align=PP_ALIGN.CENTER, space_after=0)
+y += 0.85
+tiles = [("~1 in 5,000", "female births"), ("46,XX", "karyotype; functional ovaries"),
+         ("Adolescence", "typical age at diagnosis"), ("No uterus", "uterovaginal agenesis")]
+gap = 0.35
+tw = (cw - 3 * gap) / 4
+for k, (big, small) in enumerate(tiles):
+    tx = cx + k * (tw + gap)
+    box(tx, y, tw, 1.95, fill=PANEL, line=BLUE, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+    text(tx, y + 0.12, tw, 0.9, [f"**{big}**"], size=38, color=NAVY, align=PP_ALIGN.CENTER,
+         anchor=MSO_ANCHOR.MIDDLE, space_after=0)
+    text(tx, y + 1.0, tw, 0.8, [small], size=22, color=GREY, align=PP_ALIGN.CENTER,
+         space_after=0)
+y += 2.35
+
+# Row: PRISMA (left) | outcomes bar chart + coping (right)
+row_top = y
+pw, ph = image(FIG / "prisma_flow.png", cx, y, w=10.4)
+caption(cx, y + ph + 0.1, pw, "Fig 1: PRISMA-ScR Flow Diagram",
+        "(Adapted from Tricco et al., 2018)")
+rx = cx + pw + 0.5
+rw = cx + cw - rx
+text(rx, y, rw, 0.7, ["**Key Findings From Included Studies (2019–2026)**"], size=28,
+     color=NAVY, align=PP_ALIGN.CENTER, space_after=0)
+bw, bh = image(FIG / "fig1_outcomes_bar.png", rx, y + 0.8, w=rw)
+caption(rx, y + 0.8 + bh + 0.05, rw, "Fig 2: Frequency of Outcome Domains (N = 34)",
+        "Studies could report more than one domain")
+y2 = y + 0.8 + bh + 1.2
+text(rx, y2, rw, 0.6, [f"**Coping Mechanisms Documented (n = "
+                       f"{OUT['Coping mechanisms documented']} studies)**"],
+     size=26, color=NAVY, align=PP_ALIGN.CENTER, space_after=0)
+y2 += 0.7
 chips = [("Peer & community support", False), ("Psychological counseling", False),
          ("Identity reconstruction", False), ("Spiritual coping", False),
          ("Adaptive acceptance", False), ("Avoidance (maladaptive)", True)]
-cw = (COL_W - 0.3) / 2
-for i, (label, maladaptive) in enumerate(chips):
-    cx = x + (i % 2) * (cw + 0.3)
-    cy = y + (i // 2) * 1.05
-    rect(cx, cy, cw, 0.85, PANEL_WARM if maladaptive else PANEL,
-         line=ORANGE if maladaptive else BLUE, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-    textbox(cx, cy, cw, 0.85, [label], size=22, color=ORANGE if maladaptive else NAVY,
-            align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, space_after=0)
-y += 3 * 1.05 + 0.1
-textbox(x, y, COL_W, 0.6, ["Blue = adaptive strategies; orange = maladaptive strategy."],
-        size=18, color=INK_2, space_after=0)
-col2_end = y + 0.6
+chw = (rw - 2 * 0.25) / 3
+for k, (label, bad) in enumerate(chips):
+    chx = rx + (k % 3) * (chw + 0.25)
+    chy = y2 + (k // 3) * 0.95
+    box(chx, chy, chw, 0.78, fill=PANEL_WARM if bad else PANEL, line=ORANGE if bad else BLUE,
+        shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+    text(chx, chy, chw, 0.78, [label], size=21, color=ORANGE if bad else NAVY,
+         align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, space_after=0, margin=0.05)
+right_end = y2 + 2 * 0.95
+y = max(row_top + ph + 1.2, right_end) + 1.3
 
-# ------------------------------------------------------------------ column 3
-c, x = 2, COL_X[2]
-y = header(c, TOP, "Geographic Distribution of Studies")
-y = image(FIG / "fig3_geographic_map.png", x, y, COL_W)
-y = caption(x, y + 0.05, COL_W,
-            f"**Fig 3.** Included studies by region (N = {N}). 26 of 34 (76%) originated in "
-            "Europe or North America; only 3 (9%) came from Africa or South America.", h=0.95)
+# Row: map (left) | design donut (right)
+mw, mh = image(FIG / "fig3_geographic_map.png", cx, y + 0.3, w=15.6)
+caption(cx, y + 0.3 + mh + 0.1, mw, "Fig 3: Geographic Distribution of Included Studies",
+        f"{REG['Europe'] + REG['North America']} of {N} studies (76%) from Europe or North "
+        f"America; {REG['Africa'] + REG['South America']} from Africa or South America")
+dx = cx + mw + 0.4
+dw_, dh = image(FIG / "fig2_design_donut.png", dx, y + 1.3, w=cx + cw - dx)
+caption(dx, y + 1.3 + dh + 0.1, dw_, "Fig 4: Study Design Distribution",
+        "Cross-sectional studies (n = 11) are a subset of quantitative designs")
+centre_end = y + 0.3 + mh + 1.2
 
-y = header(c, y + 0.1, "Healthcare System Gaps (n = 18 studies, 53%)")
-textbox(x, y, COL_W, 3.6, [
-    "Delayed diagnosis in adolescence without concurrent psychosocial support",
-    "Limited access to multidisciplinary care teams (psychology, social work, gynecology)",
-    "Mental health insufficiently integrated into MRKH care models",
-    "Lack of standardized mental health screening protocols at diagnosis",
-], size=27, bullet=True, space_after=6)
-y += 3.2
-
-y = header(c, y, "Public Health Implications")
-textbox(x, y, COL_W, 4.3, [
-    "Integrate mental health screening into standard MRKH diagnostic pathways",
-    "Develop multidisciplinary care protocols including psychology and social work",
-    "Expand research investment in low- and middle-income and underrepresented settings",
-    "Advocate for peer support infrastructure within reproductive health services",
-    "Train providers in psychosocially informed MRKH care",
-], size=27, bullet=True, space_after=6)
-y += 4.0
-
-y = header(c, y, "Limitations")
-textbox(x, y, COL_W, 3.4, [
-    "Review limited to 2019–2026; earlier foundational research not synthesized",
-    "Heterogeneous designs and outcome measures limit direct comparison",
-    "Most studies from high-income countries, limiting global generalizability",
-    "Several studies relied on self-reported mental health outcomes",
-], size=26, bullet=True, space_after=5)
-y += 2.9
-
-# Key takeaways callout (all figures derived from data.json)
-kt_h = 3.6
-rect(x, y, COL_W, kt_h, PANEL_WARM, line=ORANGE, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-top = dict(data["outcomes"])["Depression & anxiety"]
-low_region = sum(n for _, n, code in data["regions"] if code in ("AF", "SA"))
-textbox(x + 0.2, y + 0.1, COL_W - 0.4, kt_h - 0.2, [
-    "**Key Takeaways**",
-    f"•  About 3 in 4 studies ({top}/{N}) reported depression or anxiety",
-    f"•  Coping strategies were documented in 21/{N} studies, yet remain unsupported by systematic clinical pathways",
-    f"•  Only {low_region} of {N} studies came from Africa or South America",
-], size=25, anchor=MSO_ANCHOR.MIDDLE, space_after=6)
-col3_end = y + kt_h
-
-# ------------------------------------------------------------------ conclusions (col 2 bottom)
-x = COL_X[1]
-y = col2_end + 0.15
-y = header(1, y, "Conclusions")
-concl_h = BOTTOM - y
-rect(x, y, COL_W, concl_h, PANEL, line=NAVY, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-textbox(x + 0.2, y + 0.1, COL_W - 0.4, concl_h - 0.2, [
+# ---------------------------------------------------------------- right column
+y = header(RIGHT_X, TOP, RIGHT_W, "Results, Discussion and Conclusion", size=38)
+rdc_h = 11.3
+text(RIGHT_X, y, RIGHT_W, rdc_h, [
+    "**Results**",
+    f"Of {P['identified']} records identified, {P['screened']} remained after deduplication and "
+    f"{N} studies met inclusion criteria: {DES['Quantitative']} quantitative (11 "
+    f"cross-sectional), {DES['Qualitative']} qualitative, and {DES['Mixed methods']} "
+    f"mixed-methods. Depression and anxiety were reported in {OUT['Depression & anxiety']} "
+    f"studies (76%), reduced QoL and body image in {OUT['Reduced QoL & body image']} (65%), "
+    f"psychosexual and relational challenges in {OUT['Psychosexual & relational challenges']} "
+    f"(56%), and broader distress in {OUT['Broader psychological distress']} (50%). "
+    f"Healthcare system gaps were identified in {OUT['Healthcare system gaps']} studies (53%): "
+    "delayed diagnosis without psychosocial support, limited multidisciplinary care, mental "
+    "health insufficiently integrated into care models, and no standardized screening at "
+    "diagnosis.",
+    "**Discussion**",
+    "These findings are consistent with earlier evidence of elevated distress, anxiety, and "
+    "poorer mental health-related quality of life in MRKH^{5–7} and with a prior systematic "
+    "review.^{8} Coping strategies were documented in most studies but remain unsupported by "
+    "systematic clinical pathways, and 76% of studies came from Europe or North America, "
+    "leaving low-resource settings underrepresented.",
+    "**Conclusion**",
     "MRKH-related psychosocial burden is substantial yet under-integrated into care models. "
-    "Depression, anxiety, reduced quality of life, and psychosexual challenges are frequently "
-    "reported and co-occurring, while documented coping mechanisms remain unsupported by "
-    "systematic clinical pathways.",
-    "**Multidisciplinary, mental health–inclusive care and greater research investment are "
-    "urgently needed**, particularly in underrepresented and low-resource settings.",
-], size=25, anchor=MSO_ANCHOR.MIDDLE, space_after=10)
+    "Multidisciplinary, mental health-inclusive care and greater research investment are "
+    "urgently needed, particularly in underrepresented and low-resource settings.",
+], size=25, fill=WHITE, space_after=6)
+y += rdc_h + 0.25
 
-# ------------------------------------------------------------------ references + acknowledgements (col 3 bottom)
-x = COL_X[2]
-y = col3_end + 0.1
-textbox(x, y, COL_W, BOTTOM - y, [
-    "**References:** ^{1}Herlin M, et al. Hum Reprod. 2016;31(10):2384–2390. "
-    "^{2}ACOG Committee Opinion No. 728. Obstet Gynecol. 2018;131(1):e35–e42. "
-    "^{3}Arksey H, O'Malley L. Int J Soc Res Methodol. 2005;8(1):19–32. "
-    "^{4}Tricco AC, et al. Ann Intern Med. 2018;169(7):467–473. "
-    "^{5}Heller-Boersma JG, et al. Psychosomatics. 2009;50(3):277–281. "
-    "^{6}Laggari V, et al. J Psychosom Obstet Gynaecol. 2009;30(2):83–88. "
-    "^{7}Liao LM, et al. Am J Obstet Gynecol. 2011;205(2):117.e1–6. "
-    "^{8}Facchin F, et al. J Health Psychol. 2021;26(1):26–39.",
-    "**Acknowledgements:** Conducted under the mentorship of Dr. Paul Okojie and "
-    "Dr. Robyn Anderson, Department of Public and Community Health, Liberty University. "
-    "No external funding was received.",
-], size=17, color=INK_2, space_after=4, line_spacing=1.0, anchor=MSO_ANCHOR.BOTTOM)
+y = header(RIGHT_X, y, RIGHT_W, "Limitations")
+lim_h = 3.6
+text(RIGHT_X, y, RIGHT_W, lim_h, [
+    "Review limited to 2019–2026, potentially excluding earlier foundational research",
+    "Heterogeneous designs and outcome measures limit direct comparisons",
+    "Most studies from high-income countries, limiting global generalizability",
+    "Some studies relied on self-reported mental health outcomes",
+], size=24, fill=WHITE, bullet=True, space_after=4, align=PP_ALIGN.LEFT)
+y += lim_h + 0.25
 
-for name, end in (("col1", col1_end), ("col2", col2_end), ("col3", col3_end)):
-    if end > BOTTOM:
-        print(f"WARNING: {name} content ends at {end:.2f} in, past bottom {BOTTOM:.2f} in")
-    else:
-        print(f"{name}: ends at {end:.2f} in (bottom {BOTTOM:.2f})")
+y = header(RIGHT_X, y, RIGHT_W, "Public Health Implications", size=40)
+imp_h = 4.5
+text(RIGHT_X, y, RIGHT_W, imp_h, [
+    "Integrate mental health screening into MRKH diagnostic pathways",
+    "Develop multidisciplinary care protocols including psychology and social work",
+    "Expand research investment in LMIC and underrepresented settings",
+    "Build peer support infrastructure within reproductive health services",
+    "Train providers in psychosocially informed MRKH care",
+], size=24, fill=WHITE, bullet=True, space_after=4, align=PP_ALIGN.LEFT)
+y += imp_h + 0.25
+
+y = header(RIGHT_X, y, RIGHT_W, "References")
+text(RIGHT_X, y, RIGHT_W, BOTTOM - y, [
+    "1. ACOG Committee Opinion No. 728. *Obstet Gynecol*. 2018;131(1):e35–e42.",
+    "2. Herlin M, et al. *Hum Reprod*. 2016;31(10):2384–2390.",
+    "3. Arksey H, O'Malley L. *Int J Soc Res Methodol*. 2005;8(1):19–32.",
+    "4. Tricco AC, et al. *Ann Intern Med*. 2018;169(7):467–473.",
+    "5. Heller-Boersma JG, et al. *Psychosomatics*. 2009;50(3):277–281.",
+    "6. Laggari V, et al. *J Psychosom Obstet Gynaecol*. 2009;30(2):83–88.",
+    "7. Liao LM, et al. *Am J Obstet Gynecol*. 2011;205(2):117.e1–6.",
+    "8. Facchin F, et al. *J Health Psychol*. 2021;26(1):26–39.",
+    "**Acknowledgements:** Mentorship by Dr. Paul Okojie and Dr. Robyn Anderson. "
+    "No external funding.",
+], size=18, fill=WHITE, space_after=2, align=PP_ALIGN.LEFT)
+
+for name, end in (("centre", centre_end), ("right", y)):
+    flag = "WARNING past bottom" if end > BOTTOM else "ok"
+    print(f"{name}: {end:.2f} in ({flag})")
 
 out = ROOT / "poster" / "MRKH_APHA2026_Poster.pptx"
-out.parent.mkdir(exist_ok=True)
 prs.save(out)
 print("wrote", out)
