@@ -6,7 +6,7 @@ def build(ctx):
     para, heading, table, figure = ctx["para"], ctx["heading"], ctx["table"], ctx["figure"]
     P, N, OUT, DES, REG, FIG, pct = (ctx[k] for k in ("P", "N", "OUT", "DES", "REG", "FIG", "pct"))
     COPE = dict(ctx["data"]["coping"])
-    assert COPE["Psychological counseling/intervention"] == 3
+    assert COPE["Psychological counseling/intervention"] == 2
     ext = ctx["extraction"]
 
     heading("Study Selection", 2)
@@ -70,19 +70,19 @@ def build(ctx):
          f"sizes, where reported, ranged from 5 to 616 participants. Two Chinese "
          f"reports appear to draw on the same sample of 141 patients.^{{@R084,@R104}} "
          f"Characteristics of each study are listed in Appendix B.")
-    table("**Table 1.** Study design and geographic distribution of included studies (N = 34)",
+    table("**Table 1.** Study design and geographic distribution of included studies (N = {N_INCLUDED})",
           ["Characteristic", "n", "%"],
           [["**Study design**", "", ""]]
           + [[name, n, pct(n)] for name, (n, _) in DES.items()]
           + [["**Region**", "", ""]]
           + [[name, n, pct(n)] for name, n, _ in ctx["data"]["regions"]],
           widths=[3.6, 0.8, 1.0],
-          note="Percentages are of all included studies (N = 34) and may not total 100% because "
+          note="Percentages are of all included studies (N = {N_INCLUDED}) and may not total 100% because "
                "of rounding. Classifications are provisional (abstract-level).")
     figure(FIG / "fig2_design_donut.png",
-           "**Figure 2.** Distribution of included studies by design (N = 34).", width=4.8)
+           "**Figure 2.** Distribution of included studies by design (N = {N_INCLUDED}).", width=4.8)
     figure(FIG / "fig3_geographic_map.png",
-           "**Figure 3.** Geographic distribution of included studies by region (N = 34). Darker "
+           "**Figure 3.** Geographic distribution of included studies by region (N = {N_INCLUDED}). Darker "
            "shading indicates more studies; 2 multinational studies are not mapped.", width=6.3)
 
     heading("Mental Health and Psychosocial Outcomes", 2)
@@ -99,10 +99,10 @@ def build(ctx):
          "insecurity about the neovagina, low sexual confidence, and anxiety about disclosing "
          "the diagnosis to partners.^{@R040,@R063,@R094,@R017} One randomized trial found that "
          "e-learning psychosexual education improved genital self-image and reduced sexual "
-         "distress.^{@R131} A French psychodynamic study described how the neovagina shaped "
-         "sexual identity and body image.^{@R164}")
-    para("*Quality of life, body image, and self-esteem.* Several studies found impaired "
-         "psychological or mental health–related quality of life,^{@R007,@R021,@R065} and an "
+         "distress.^{@R131} Adults with differences of sex development, including MRKH, "
+         "described balancing concealment and disclosure of their condition.^{@R255}")
+    para("*Quality of life, body image, and self-esteem.* A prospective study found impaired "
+         "mental health–related quality of life despite normal body image,^{@R021} and an "
          "international survey of 263 patients reported higher distress and lower self-esteem "
          "than the general population.^{@R105} Low self-esteem was also reported in a further "
          "study.^{@R227} Others found similar quality of life across treatment "
@@ -112,9 +112,8 @@ def build(ctx):
          "sadness, shame, and secrecy around the diagnosis, and portrayed diagnosis as a turning "
          "point that disrupted imagined futures and female identity.^{@R011,@R013,@R014} The "
          "diagnostic process itself was experienced as upsetting and potentially "
-         "traumatizing.^{@R267} A French study of 40 women described binge eating with weight gain "
-         "after diagnosis in about 10%,^{@R173} and uterus transplant recipients described "
-         "changes in self-perception, body, and sexuality.^{@R234}")
+         "traumatizing.^{@R267} Uterus transplant recipients described changes in "
+         "self-perception, body, and sexuality.^{@R234}")
     para("*Depression and anxiety.* Where measured with validated scales, findings were mixed. "
          "Depressive symptoms were reported in 75.2% of 141 Chinese patients (34.0% moderate to "
          "severe),^{@R104} moderate-to-severe anxiety in 24.1%,^{@R084} and depression and anxiety "
@@ -127,7 +126,7 @@ def build(ctx):
          "and women with congenital uterine absence more often reported severe depression and "
          "anxiety symptoms than women with acquired uterine absence.^{@R001}")
     table("**Table 2.** Mental health and psychosocial outcome domains reported in included studies "
-          "(N = 34)",
+          "(N = {N_INCLUDED})",
           ["Outcome domain", "Description", "Studies, n (%)"],
           [["Psychosexual and relational challenges", "Sexual esteem, sexual distress and "
             "wellbeing, intimacy, partner relationships, disclosure", f"{s_} ({pct(s_)})"],
@@ -141,7 +140,7 @@ def build(ctx):
           note="Studies could report more than one domain; counts are not mutually exclusive.")
     figure(FIG / "fig1_outcomes_bar.png",
            "**Figure 4.** Number of included studies reporting each outcome domain, coping "
-           "mechanisms, and healthcare system gaps (N = 34). Studies could contribute to more "
+           "mechanisms, and healthcare system gaps (N = {N_INCLUDED}). Studies could contribute to more "
            "than one category.", width=6.3)
 
     heading("Coping Mechanisms", 2)
@@ -150,12 +149,12 @@ def build(ctx):
          f"and social support was most common,^{{@R014,@R021,@R032,@R094,@R105,@R149}} including "
          f"MRKH support groups and online communities. Avoidance and concealment—such as "
          f"pretending to menstruate or hiding the diagnosis—were the most frequently documented "
-         f"maladaptive strategies.^{{@R013,@R032,@R057,@R094}} One qualitative study traced a "
+         f"maladaptive strategies.^{{@R013,@R032,@R057,@R094,@R255}} One qualitative study traced a "
          f"shift from avoidance to empowerment through positive reappraisal and spiritual "
          f"coping,^{{@R032}} and illness coherence and positive affect appeared protective for "
          f"psychological adjustment.^{{@R105}} Structured psychological or psychosexual "
          f"interventions were evaluated in only {COPE['Psychological counseling/intervention']} "
-         f"studies.^{{@R038,@R065,@R131}}")
+         f"studies.^{{@R038,@R131}}")
     table("**Table 3.** Coping mechanisms documented in included studies",
           ["Coping mechanism", "Type", "Studies, n"],
           [[name, "Maladaptive" if "Avoidance" in name else "Adaptive", n]
@@ -220,7 +219,7 @@ def build(ctx):
          "insensitive communication, and scarce psychological and fertility counseling, indicating "
          "a gap between recommendations and practice. The evidence base is more geographically "
          "diverse than earlier literature—Asia contributed nearly as many studies as Europe—yet "
-         "only 2 studies came from Africa and none from South America, where expectations regarding "
+         "only 1 study came from Africa and none from South America, where expectations regarding "
          "fertility, marriage, and womanhood and access to specialized care may differ "
          "substantially. Studies from Türkiye, Vietnam, and Japan illustrate how cultural context "
          "shapes experiences of diagnosis, disclosure, and infertility.^{@R011,@R057,@okunomiya}")

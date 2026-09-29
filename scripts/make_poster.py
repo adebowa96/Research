@@ -165,9 +165,9 @@ methods = [
                "PRISMA-ScR^{4}"),
     ("Search", "PubMed; Scopus; EBSCOhost (MEDLINE, CINAHL, APA PsycInfo, Women's Studies "
                "International). Jan 2019–Mar 2026; run Mar 29, 2026"),
-    ("Eligibility", "Primary quantitative, qualitative, or mixed-methods studies reporting "
-                    "psychological outcomes or coping in MRKH; surgical/fertility-only studies "
-                    "excluded"),
+    ("Eligibility", "English-language primary quantitative, qualitative, or mixed-methods "
+                    "studies reporting psychological outcomes or coping in MRKH; "
+                    "surgical/fertility-only studies excluded"),
     ("Screening & Analysis", f"{P['identified']} records; {P['screened']} screened; "
                              f"{P['fulltext']} assessed; {N} included. AI-assisted screening "
                              "and abstract-level charting (verification in progress); "

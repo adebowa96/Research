@@ -16,6 +16,7 @@ Eligibility criteria applied
     E3 case report, small surgical case series, or surgical video
     E4 wrong population (not MRKH, or MRKH results not reported separately) or unrelated topic
     E5 anatomical, surgical, functional, or fertility outcomes only (no psychological outcome)
+    E6 not published in English (English-only criterion documented in the March 2026 tracker)
   Eligibility step: records not decidable from the exported title/abstract were assessed using
   the published abstract; mixed samples were included only if MRKH results were reported
   separately or at least 80% of participants had MRKH.
@@ -36,6 +37,7 @@ REASONS = {
     "E3": "E3 Case report / small surgical case series / surgical video",
     "E4": "E4 Wrong population or unrelated topic",
     "E5": "E5 Anatomical, surgical, functional or fertility outcomes only",
+    "E6": "E6 Not published in English",
 }
 
 # Stage 2: decisions from reading titles/abstracts (record_id -> (decision, note))
@@ -43,7 +45,6 @@ INCLUDE = {
     "R002": "Case series with standardized self-esteem, depression, anxiety measures",
     "R003": "Case-control: sexual esteem, genital self-image, psychological functioning",
     "R004": "Prevalence of anxiety and depression (Malaysia)",
-    "R007": "Quality of life and sexuality after surgery (French-language article)",
     "R010": "Qualitative: illness experience and unmet needs (online forum)",
     "R011": "Qualitative phenomenological study of disease-related experiences",
     "R012": "Cross-sectional: quality of life and sexual function",
@@ -60,7 +61,6 @@ INCLUDE = {
     "R057": "Qualitative: perceptions of surrogacy (psychosocial experience)",
     "R060": "Body image before and after vaginoplasty",
     "R063": "Qualitative: sexual well-being, genital self-image, coping",
-    "R065": "Pre-post: distress, depression, QoL; support intervention (German-language)",
     "R073": "Pilot survey: healthcare experiences",
     "R084": "Cross-sectional: anxiety symptoms",
     "R086": "Case-control: sexual and psychosocial outcomes (Scopus labels it a note)",
@@ -71,19 +71,20 @@ INCLUDE = {
     "R112": "Mixed methods: experiences of vaginal lengthening (n = 616)",
     "R131": "RCT: psychosexual education, sexual distress, genital self-image",
     "R149": "Qualitative with quantitative component: effect of diagnosis (Malaysia)",
-    "R164": "Qualitative/quantitative: sexual identity (French-language article)",
     "R227": "Low self-esteem in MRKH (no abstract in export; confirm at full text)",
     "R267": "Qualitative: diagnostic odyssey (Denmark)",
     "R001": "Eligibility step: results reported separately for congenital (MRKH) uterine factor infertility",
-    "R173": "Eligibility step: 40 women with MRKH; psychodynamic interviews (French-language)",
     "R223": "Eligibility step: qualitative study of 5 women with MRKH in Africa (published abstract)",
     "R234": "Eligibility step: uterus transplant recipients, 6 of 7 with MRKH (published abstract)",
     "R244": "Eligibility step: uterus transplant candidates, 18 of 19 with MRKH (published abstract)",
+    "R255": "Eligibility step: DSD sample; March 30 check recorded MRKH findings reported separately",
 }
 UNCERTAIN = {}
 MANUAL_EXCLUDE = {
     # eligibility step (records retained from title/abstract screening)
-    "R005": "E4", "R025": "E4", "R028": "E4", "R175": "E4", "R255": "E4", "R093": "E5",
+    "R005": "E4", "R025": "E4", "R028": "E4", "R175": "E4", "R093": "E5",
+    # not in English (March 2026 English-only criterion)
+    "R007": "E6", "R065": "E6", "R164": "E6", "R173": "E6",
     "R242": "E5",
     "R009": "E5", "R015": "E5", "R024": "E3", "R026": "E4", "R029": "E3", "R033": "E5",
     "R035": "E5", "R037": "E5", "R039": "E3", "R044": "E5", "R049": "E3", "R056": "E4",
@@ -138,7 +139,7 @@ for x in unique:
     x["non_english"] = "yes" if lang and not lang.startswith("eng") else ""
 
 ELIGIBILITY = {"R005", "R025", "R028", "R175", "R255", "R093", "R242",
-               "R001", "R173", "R223", "R234", "R244"}
+               "R001", "R223", "R234", "R244"}
 for x in unique:
     if x["record_id"] in ELIGIBILITY:
         x["stage"] = "3 (eligibility, published abstract)"

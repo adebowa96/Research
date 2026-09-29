@@ -27,7 +27,6 @@ STUDIES = {
     "R002": ("Lei", 2024, "China", "Asia", "Quantitative", "Longitudinal case series (2 survey rounds)", "53", "DQS", "", ""),
     "R003": ("Weijenborg", 2019, "Netherlands", "Europe", "Quantitative", "Case-control", "54 (+79 controls)", "QSP", "", "Country from author affiliations; verify"),
     "R004": ("Khairudin", 2026, "Malaysia", "Asia", "Quantitative", "Cross-sectional", "77", "D", "", ""),
-    "R007": ("Magdoud", 2024, "Tunisia", "Africa", "Quantitative", "Retrospective comparative (with controls)", "30", "QS", "", "French-language article"),
     "R010": ("Di Mattei", 2026, "Italy", "Europe", "Qualitative", "Thematic analysis of online forum", "NR", "SPH", "", "Online 2024; country from affiliations"),
     "R011": ("Güner", 2025, "Türkiye", "Asia", "Qualitative", "Phenomenological interviews", "10", "SP", "", ""),
     "R012": ("Kang", 2020, "China", "Asia", "Quantitative", "Cross-sectional", "133", "QS", "", ""),
@@ -44,7 +43,6 @@ STUDIES = {
     "R057": ("Le", 2024, "Vietnam", "Asia", "Qualitative", "In-depth interviews", "20", "CH", "avoid,spiritual", ""),
     "R060": ("Mao", 2024, "China", "Asia", "Quantitative", "Retrospective (with controls)", "42 (+30 controls)", "QS", "", ""),
     "R063": ("Stepanow", 2023, "Austria", "Europe", "Qualitative", "Semi-structured interviews", "10 (+20 controls)", "QSC", "accept", "Country from affiliations; verify"),
-    "R065": ("Schäffeler", 2022, "Germany", "Europe", "Quantitative", "Quasi-experimental pre/post", "53", "DQSPC", "counsel", "German-language article"),
     "R073": ("Marshall", 2025, "United States/Canada", "North America", "Qualitative", "Semi-structured interviews", "NR", "CH", "advocate", ""),
     "R084": ("Song", 2020, "China", "Asia", "Quantitative", "Cross-sectional (with controls)", "141 (+178 controls)", "D", "", ""),
     "R086": ("Jha", 2022, "India", "Asia", "Quantitative", "Case-control", "NR", "DQS", "", "Country from affiliations; verify"),
@@ -55,14 +53,13 @@ STUDIES = {
     "R112": ("Pennesi", 2023, "Multinational (40 countries)", "Multinational", "Mixed methods", "Cross-sectional mixed-methods survey", "616", "SPH", "", ""),
     "R131": ("Vosoughi", 2022, "Iran", "Asia", "Quantitative", "Randomized controlled trial", "38", "QSC", "counsel", ""),
     "R149": ("Hatim", 2021, "Malaysia", "Asia", "Mixed methods", "Qualitative with quantitative component", "12", "SPCH", "peer", ""),
-    "R164": ("Blanc", 2019, "France", "Europe", "Mixed methods", "Qualitative and quantitative (clinical interviews)", "17", "QSP", "", "French-language article"),
     "R227": ("Arsy", 2019, "Indonesia", "Asia", "Not reported", "Not reported in export (no abstract)", "NR", "Q", "", "No abstract available; design and country need full-text verification"),
     "R267": ("Lou", 2024, "Denmark", "Europe", "Qualitative", "Interview study", "NR", "PH", "", "No abstract in export; coded from published summary"),
     "R001": ("Pittman", 2025, "Australia", "Oceania", "Quantitative", "Cross-sectional survey (congenital vs acquired uterine factor infertility)", "39", "DQ", "", "Mixed sample; results reported for congenital (MRKH) group; country from affiliations; verify"),
-    "R173": ("Gueniche", 2020, "France", "Europe", "Qualitative", "Clinical interviews and projective tests", "40", "P", "", "French-language article"),
     "R223": ("Ngoumou", 2022, "Cameroon, Côte d'Ivoire, Senegal", "Africa", "Qualitative", "In-depth interviews", "5", "PH", "", "Coded from published abstract"),
     "R234": ("Järvholm", 2020, "Sweden", "Europe", "Qualitative", "Interviews after uterus transplantation", "7 (6 MRKH)", "QSP", "", "Coded from published summary; country from trial site; verify"),
     "R244": ("Scollo", 2020, "Italy", "Europe", "Quantitative", "Cross-sectional (MMPI-2; uterus transplant candidates)", "19 (18 MRKH)", "DP", "", "Coded from published abstract"),
+    "R255": ("Mediå", 2022, "Norway", "Europe", "Qualitative", "Semi-structured interviews (adults with 5 DSD conditions)", "15 (DSD; MRKH subgroup)", "SPC", "avoid", "Mixed DSD sample; March tracker recorded MRKH findings reported separately; verify"),
 }
 
 DOMAINS = [("D", "Depression & anxiety"), ("Q", "Reduced QoL, body image & self-esteem"),
@@ -73,7 +70,7 @@ COPING = [("peer", "Peer, family & social support"), ("counsel", "Psychological 
           ("accept", "Acceptance"), ("avoid", "Avoidance / concealment (maladaptive)"),
           ("advocate", "Self-advocacy")]
 
-assert len(STUDIES) == 39
+assert len(STUDIES) == 36
 records = {r["record_id"]: r for r in csv.DictReader(open(HERE / "records_unique.csv", encoding="utf-8"))}
 
 rows = []

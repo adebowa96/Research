@@ -1,11 +1,11 @@
 {
   "_note": "Single source of truth. PROVISIONAL (Sept 2026 re-screen): AI-assisted title/abstract screening and abstract-level extraction from the March 29, 2026 search exports; pending verification by two reviewers and full-text review.",
-  "total_included": 39,
+  "total_included": 36,
   "prisma": {
     "identified": 516,
     "duplicates_removed": 192,
     "screened": 324,
-    "excluded": 278,
+    "excluded": 282,
     "reasons": [
       [
         "Published before 2019",
@@ -26,34 +26,38 @@
       [
         "Wrong population / topic",
         28
+      ],
+      [
+        "Not in English",
+        4
       ]
     ],
-    "fulltext": 46,
-    "excluded_eligibility": 7,
+    "fulltext": 42,
+    "excluded_eligibility": 6,
     "eligibility_reasons": [
       [
         "Mixed sample, MRKH not separate",
-        5
+        4
       ],
       [
         "No psychological outcome",
         2
       ]
     ],
-    "included": 39
+    "included": 36
   },
   "outcomes": [
     [
       "Psychosexual & relational challenges",
-      25
+      23
     ],
     [
       "Broader psychological distress",
-      22
+      20
     ],
     [
       "QoL, body image & self-esteem",
-      20
+      17
     ],
     [
       "Coping mechanisms documented",
@@ -61,7 +65,7 @@
     ],
     [
       "Depression & anxiety",
-      12
+      11
     ],
     [
       "Healthcare system gaps",
@@ -71,7 +75,7 @@
   "designs": [
     [
       "Quantitative",
-      20,
+      18,
       ""
     ],
     [
@@ -81,7 +85,7 @@
     ],
     [
       "Mixed methods",
-      3,
+      2,
       ""
     ],
     [
@@ -93,7 +97,7 @@
   "regions": [
     [
       "Europe",
-      17,
+      15,
       "EU"
     ],
     [
@@ -107,14 +111,14 @@
       "NA"
     ],
     [
-      "Africa",
-      2,
-      "AF"
-    ],
-    [
       "Multinational",
       2,
       "INT"
+    ],
+    [
+      "Africa",
+      1,
+      "AF"
     ],
     [
       "Oceania",
@@ -134,7 +138,7 @@
     ],
     [
       "Psychological counseling/intervention",
-      3
+      2
     ],
     [
       "Identity reconstruction / positive reappraisal",
@@ -150,7 +154,7 @@
     ],
     [
       "Avoidance / concealment (maladaptive)",
-      4
+      5
     ],
     [
       "Self-advocacy",

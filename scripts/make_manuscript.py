@@ -82,7 +82,7 @@ CITER = Citer()
 
 
 def add_runs(par, text, size=None, bold=False):
-    text = CITER.resolve(text)
+    text = CITER.resolve(text).replace("{N_INCLUDED}", str(N))
     for piece in TOKEN.split(text):
         if not piece:
             continue
@@ -325,9 +325,9 @@ para("Eligibility was defined using the Population–Concept–Context approach.
      "studies published between January 2019 and March 2026 that reported psychological "
      "outcomes and/or coping mechanisms among individuals with MRKH. Studies focused solely on "
      "anatomical, surgical, or fertility outcomes were excluded, as were records published "
-     "before January 2019. [[Confirm any additional criteria applied, e.g., language (English "
-     "only?), peer-reviewed publications only, and exclusion of reviews, case reports, "
-     "editorials, and conference abstracts.]]")
+     "before January 2019 and records not published in English (the English-only criterion "
+     "recorded in the review's March 2026 screening tracker). Reviews, commentaries, "
+     "editorials, and case reports were excluded as not primary research.")
 heading("Information Sources and Search Strategy", 2)
 para("Searches were run and exported on March 29, 2026, in PubMed, Scopus, and EBSCOhost "
      "[[confirm the PubMed search was also run on this date]]. "
@@ -424,7 +424,7 @@ para("Provisional, abstract-level data charting; every entry requires full-text 
 dom_cols = [("Depression & anxiety", "D"), ("Reduced QoL, body image & self-esteem", "Q"),
             ("Psychosexual & relational challenges", "S"), ("Broader psychological distress", "P"),
             ("Coping mechanisms documented", "C"), ("Healthcare system gaps", "H")]
-table("**Table B1.** Characteristics of included studies (N = 34)",
+table("**Table B1.** Characteristics of included studies (N = {N_INCLUDED})",
       ["Study", "Country", "Design", "n", "Domains", "Coping"],
       [[CITER.resolve(f"{e['study']}^{{@{e['record_id']}}}"), e["country"],
         e["design_detail"], e["sample_n"],

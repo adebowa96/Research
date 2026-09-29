@@ -2,19 +2,19 @@
   "domains": [
     [
       "Depression & anxiety",
-      12
+      11
     ],
     [
       "Reduced QoL, body image & self-esteem",
-      20
+      17
     ],
     [
       "Psychosexual & relational challenges",
-      25
+      23
     ],
     [
       "Broader psychological distress",
-      22
+      20
     ],
     [
       "Coping mechanisms documented",
@@ -32,7 +32,7 @@
     ],
     [
       "Psychological counseling/intervention",
-      3
+      2
     ],
     [
       "Identity reconstruction / positive reappraisal",
@@ -48,7 +48,7 @@
     ],
     [
       "Avoidance / concealment (maladaptive)",
-      4
+      5
     ],
     [
       "Self-advocacy",
@@ -56,18 +56,18 @@
     ]
   ],
   "designs": {
-    "Quantitative": 20,
+    "Quantitative": 18,
     "Qualitative": 15,
-    "Mixed methods": 3,
+    "Mixed methods": 2,
     "Not reported": 1
   },
   "regions": {
     "Asia": 14,
-    "Europe": 17,
-    "Africa": 2,
+    "Europe": 15,
     "North America": 3,
     "Multinational": 2,
-    "Oceania": 1
+    "Oceania": 1,
+    "Africa": 1
   },
-  "n": 39
+  "n": 36
 }
