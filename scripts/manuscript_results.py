@@ -19,8 +19,10 @@ def build(ctx):
          f"(Claude, Anthropic) proposed a decision and reason for every record; "
          f"[[the first author and a second reviewer independently verified each decision, and "
          f"disagreements were resolved by discussion — complete once verification is done]]. "
-         f"Records that could not be classified from the title and abstract were retained for "
-         f"full-text review. The screening workbook, with a decision and reason for every record, "
+         f"Records that could not be classified from the exported title and abstract were assessed "
+         f"for eligibility using the published abstract; studies with mixed samples were included "
+         f"only if results were reported separately for participants with MRKH or at least 80% of "
+         f"participants had MRKH. [[Full-text verification of all included studies is pending.]] The screening workbook, with a decision and reason for every record, "
          f"is available as supplementary material.")
     heading("Data Charting", 2)
     para("For each included study, data were charted on author, year, country, study design, "
@@ -45,12 +47,13 @@ def build(ctx):
     reasons = "; ".join(f"{r.lower()} (n = {n})" for r, n in P["reasons"])
     para(f"The searches identified {P['identified']} records. After removal of "
          f"{P['duplicates_removed']} duplicates, {P['screened']} records were screened and "
-         f"{P['excluded']} were excluded: {reasons}. Of the {P['fulltext']} records retained, "
-         f"{P['included']} were provisionally included and {P['fulltext_pending']} require full "
-         f"text to decide eligibility (Figure 1).")
+         f"{P['excluded']} were excluded: {reasons}. Of the {P['fulltext']} records assessed for "
+         f"eligibility, {P['excluded_eligibility']} were excluded ("
+         + "; ".join(f"{r.lower()}, n = {n}" for r, n in P["eligibility_reasons"])
+         + f"), and {P['included']} studies were provisionally included (Figure 1).")
     figure(FIG / "prisma_flow.png",
            "**Figure 1.** PRISMA-ScR flow diagram of study selection. Counts are provisional "
-           "pending reviewer verification and full-text assessment.", width=5.4)
+           "pending reviewer verification and full-text confirmation.", width=5.4)
 
     heading("Characteristics of Included Studies", 2)
     para(f"The {N} included studies were published between 2019 and 2026 and comprised "
@@ -59,12 +62,12 @@ def build(ctx):
          f"{DES['Mixed methods'][0]} mixed-methods studies ({pct(DES['Mixed methods'][0])}); the "
          f"design of 1 study could not be determined from its abstract (Table 1; Figure 2). "
          f"Quantitative designs included cross-sectional surveys, case-control comparisons, "
-         f"cohort and pre–post studies, and 1 randomized controlled trial.^{{@R131}} Studies came "
-         f"from Europe (n = {REG['Europe']}) and Asia (n = {REG['Asia']}) in equal numbers, "
-         f"followed by North America (n = {REG['North America']}) and Africa (n = "
-         f"{REG['Africa']}); {REG['Multinational']} studies recruited internationally, and none "
-         f"came from South America or Oceania (Figure 3). China contributed the most studies "
-         f"(n = 6). Sample sizes, where reported, ranged from 7 to 616 participants. Two Chinese "
+         f"cohort and pre–post studies, and 1 randomized controlled trial.^{{@R131}} Most studies "
+         f"came from Europe (n = {REG['Europe']}) and Asia (n = {REG['Asia']}), followed by North "
+         f"America (n = {REG['North America']}), Africa (n = {REG['Africa']}), and Oceania (n = "
+         f"{REG['Oceania']}); {REG['Multinational']} studies recruited internationally, and none "
+         f"came from South America (Figure 3). China contributed the most studies (n = 6). Sample "
+         f"sizes, where reported, ranged from 5 to 616 participants. Two Chinese "
          f"reports appear to draw on the same sample of 141 patients.^{{@R084,@R104}} "
          f"Characteristics of each study are listed in Appendix B.")
     table("**Table 1.** Study design and geographic distribution of included studies (N = 34)",
@@ -109,7 +112,9 @@ def build(ctx):
          "sadness, shame, and secrecy around the diagnosis, and portrayed diagnosis as a turning "
          "point that disrupted imagined futures and female identity.^{@R011,@R013,@R014} The "
          "diagnostic process itself was experienced as upsetting and potentially "
-         "traumatizing.^{@R267}")
+         "traumatizing.^{@R267} A French study of 40 women described binge eating with weight gain "
+         "after diagnosis in about 10%,^{@R173} and uterus transplant recipients described "
+         "changes in self-perception, body, and sexuality.^{@R234}")
     para("*Depression and anxiety.* Where measured with validated scales, findings were mixed. "
          "Depressive symptoms were reported in 75.2% of 141 Chinese patients (34.0% moderate to "
          "severe),^{@R104} moderate-to-severe anxiety in 24.1%,^{@R084} and depression and anxiety "
@@ -117,7 +122,10 @@ def build(ctx):
          "women reported mild-to-moderate depression and 34.0% mild anxiety.^{@R002} A US cohort found anxiety and "
          "depressive disorders about twice as common as in male, but not female, "
          "referents.^{@R052} In contrast, some samples after neovagina creation or awaiting "
-         "uterus transplantation showed few depressive symptoms.^{@R020,@R086}")
+         "uterus transplantation showed few depressive symptoms.^{@R020,@R086} Among other uterus "
+         "transplant candidates, however, MMPI-2 profiles showed elevated depression scales,^{@R244} "
+         "and women with congenital uterine absence more often reported severe depression and "
+         "anxiety symptoms than women with acquired uterine absence.^{@R001}")
     table("**Table 2.** Mental health and psychosocial outcome domains reported in included studies "
           "(N = 34)",
           ["Outcome domain", "Description", "Studies, n (%)"],
@@ -160,7 +168,8 @@ def build(ctx):
     para(f"Healthcare system gaps were reported in {h_} studies ({pct(h_)}; Table 4). Participants "
          f"described providers with limited knowledge of MRKH and the need to advocate for "
          f"themselves,^{{@R013,@R073}} delayed diagnosis and insensitive communication at "
-         f"diagnosis, including stigmatizing language,^{{@R149,@R267,@R094}} scarce information, "
+         f"diagnosis, including stigmatizing language,^{{@R149,@R267,@R094}} confusion after "
+         f"medical encounters in several African countries,^{{@R223}} scarce information, "
          f"psychological support, and fertility counseling,^{{@R057,@R149,@R010}} and variable "
          f"counseling around vaginal lengthening treatment.^{{@R112}}")
     table("**Table 4.** Healthcare system gaps identified and corresponding public health implications",
@@ -184,10 +193,10 @@ def build(ctx):
     para(f"This scoping review mapped {N} studies published between 2019 and 2026 on the mental "
          f"health and psychosocial outcomes of individuals with MRKH syndrome. Psychosexual and "
          f"relational challenges were the most frequently reported outcome, reported in about "
-         f"seven of every ten studies, while quality of life, body image, self-esteem, and broader "
-         f"psychological distress were each reported in about half. Depression and anxiety were "
-         f"measured less often, and results were mixed. Coping was documented in about four in ten "
-         f"studies and relied largely on peer support and self-management, and about one in four "
+         f"two of every three studies, while broader psychological distress and quality of life, "
+         f"body image, and self-esteem were each reported in about half. Depression and anxiety "
+         f"were measured less often, and results were mixed. Coping was documented in more than "
+         f"one in three studies and relied largely on peer support and self-management, and about one in four "
          f"studies described healthcare system gaps.")
     para("These findings are consistent with earlier evidence that women with MRKH experience "
          "greater psychological distress and lower self-esteem than controls,^{@hb09} higher "
@@ -210,8 +219,8 @@ def build(ctx):
          "management,^{@acog} participants described providers unfamiliar with the condition, "
          "insensitive communication, and scarce psychological and fertility counseling, indicating "
          "a gap between recommendations and practice. The evidence base is more geographically "
-         "diverse than earlier literature—Asia contributed as many studies as Europe—yet only 1 "
-         "study came from Africa and none from South America, where expectations regarding "
+         "diverse than earlier literature—Asia contributed nearly as many studies as Europe—yet "
+         "only 2 studies came from Africa and none from South America, where expectations regarding "
          "fertility, marriage, and womanhood and access to specialized care may differ "
          "substantially. Studies from Türkiye, Vietnam, and Japan illustrate how cultural context "
          "shapes experiences of diagnosis, disclosure, and infertility.^{@R011,@R057,@okunomiya}")
@@ -231,8 +240,8 @@ def build(ctx):
          "inclusion of quantitative, qualitative, and mixed-methods evidence. The most important "
          "limitation is that the original screening records were lost and selection was repeated "
          "from the original exports with AI-assisted screening and abstract-level data charting; "
-         "results are therefore provisional until reviewer verification and full-text assessment "
-         f"of the {P['fulltext']} eligible records are complete. In addition, the review was "
+         "results are therefore provisional until reviewer verification and full-text confirmation "
+         f"of the {P['included']} included studies are complete. In addition, the review was "
          "limited to 2019–2026, date limits were applied inconsistently across database "
          "interfaces and enforced at screening, designs and measures were heterogeneous, and "
          "some studies may share samples. Consistent with scoping methodology, study quality was "

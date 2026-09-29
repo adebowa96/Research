@@ -58,7 +58,7 @@ for (const f of features) {
 }
 
 // Label anchors [lon, lat] placed over each continent's landmass
-const anchors = { EU: [-32, 44], NA: [-102, 45], AS: [95, 40], AF: [20, 5], SA: [-60, -16] };
+const anchors = { EU: [-32, 44], NA: [-102, 45], AS: [95, 40], AF: [20, 5], SA: [-60, -16], OC: [134, -25] };
 let labels = "";
 for (const [name, n, code] of data.regions) {
   if (!anchors[code] || n === 0) continue;
@@ -80,7 +80,7 @@ for (const [name, n, code] of data.regions) {
 
 const zero = data.regions.filter((r) => r[1] === 0).map((r) => r[0]);
 const intl = data.regions.find((r) => r[2] === "INT");
-const legendNote = [`No included studies${zero.length ? " (" + zero.join(", ") + ", Oceania)" : " (Oceania)"}`,
+const legendNote = [zero.length ? `No included studies (${zero.join(", ")})` : "",
   intl && intl[1] ? `${intl[1]} multinational studies not mapped` : "", "Darker = more studies"]
   .filter(Boolean).join(". ") + ".";
 

@@ -16,7 +16,9 @@ Eligibility criteria applied
     E3 case report, small surgical case series, or surgical video
     E4 wrong population (not MRKH, or MRKH results not reported separately) or unrelated topic
     E5 anatomical, surgical, functional, or fertility outcomes only (no psychological outcome)
-  Uncertain: cannot be decided from title/abstract; needs full text.
+  Eligibility step: records not decidable from the exported title/abstract were assessed using
+  the published abstract; mixed samples were included only if MRKH results were reported
+  separately or at least 80% of participants had MRKH.
 """
 import csv
 import re
@@ -72,22 +74,17 @@ INCLUDE = {
     "R164": "Qualitative/quantitative: sexual identity (French-language article)",
     "R227": "Low self-esteem in MRKH (no abstract in export; confirm at full text)",
     "R267": "Qualitative: diagnostic odyssey (Denmark)",
+    "R001": "Eligibility step: results reported separately for congenital (MRKH) uterine factor infertility",
+    "R173": "Eligibility step: 40 women with MRKH; psychodynamic interviews (French-language)",
+    "R223": "Eligibility step: qualitative study of 5 women with MRKH in Africa (published abstract)",
+    "R234": "Eligibility step: uterus transplant recipients, 6 of 7 with MRKH (published abstract)",
+    "R244": "Eligibility step: uterus transplant candidates, 18 of 19 with MRKH (published abstract)",
 }
-UNCERTAIN = {
-    "R001": "Uterine factor infertility sample (MRKH + hysterectomy): check MRKH results reported",
-    "R005": "Uterus transplant candidates with uterine factor infertility: check MRKH subgroup",
-    "R025": "DSD sample with 5 conditions: check whether MRKH participants are reported",
-    "R028": "Vaginal aplasia/hypoplasia sample: check MRKH proportion and psychosocial outcomes",
-    "R093": "Survey of attitudes to uterus transplantation: psychological outcome unclear",
-    "R173": "Psychodynamic analysis (French); partly case-based: check design",
-    "R175": "Sexual experience before treatment (MRKH + CAIS): check psychosexual outcomes",
-    "R223": "Experience of medical encounter in Africa: no abstract in export",
-    "R234": "Uterus transplant recipients' self-image: no abstract; check population",
-    "R242": "Dilation vs surgery: no abstract; check for QoL/psychological outcomes",
-    "R244": "Psychological assessment of uterus transplant candidates: no abstract",
-    "R255": "Disclosure and stigma in adults with DSD: check MRKH subgroup",
-}
+UNCERTAIN = {}
 MANUAL_EXCLUDE = {
+    # eligibility step (records retained from title/abstract screening)
+    "R005": "E4", "R025": "E4", "R028": "E4", "R175": "E4", "R255": "E4", "R093": "E5",
+    "R242": "E5",
     "R009": "E5", "R015": "E5", "R024": "E3", "R026": "E4", "R029": "E3", "R033": "E5",
     "R035": "E5", "R037": "E5", "R039": "E3", "R044": "E5", "R049": "E3", "R056": "E4",
     "R074": "E4", "R075": "E5", "R078": "E2", "R081": "E5", "R082": "E3", "R085": "E5",
@@ -140,16 +137,26 @@ for x in unique:
     lang = x["language"].lower()
     x["non_english"] = "yes" if lang and not lang.startswith("eng") else ""
 
+ELIGIBILITY = {"R005", "R025", "R028", "R175", "R255", "R093", "R242",
+               "R001", "R173", "R223", "R234", "R244"}
+for x in unique:
+    if x["record_id"] in ELIGIBILITY:
+        x["stage"] = "3 (eligibility, published abstract)"
 counts = Counter(x["decision"] for x in unique)
-reasons = Counter(x["reason"] for x in unique if x["decision"] == "Exclude")
+ta_ex = [x for x in unique if x["decision"] == "Exclude" and x["record_id"] not in ELIGIBILITY]
+el_ex = [x for x in unique if x["decision"] == "Exclude" and x["record_id"] in ELIGIBILITY]
+reasons = Counter(x["reason"] for x in ta_ex)
+el_reasons = Counter(x["reason"] for x in el_ex)
 all_rows = list(csv.DictReader(open(HERE / "records_all.csv", encoding="utf-8")))
 summary = [
     ("Records identified (4 export files)", len(all_rows)),
     ("Duplicates removed (DOI or title match)", len(all_rows) - len(unique)),
     ("Unique records screened (title/abstract)", len(unique)),
-    ("Excluded at title/abstract", counts["Exclude"]),
+    ("Excluded at title/abstract", len(ta_ex)),
 ] + [(f"   {r}", n) for r, n in sorted(reasons.items())] + [
-    ("Uncertain: need full text", counts["Uncertain"]),
+    ("Assessed for eligibility", len(unique) - len(ta_ex)),
+    ("Excluded at eligibility", len(el_ex)),
+] + [(f"   {r}", n) for r, n in sorted(el_reasons.items())] + [
     ("Proposed include (full text to confirm)", counts["Include"]),
 ]
 for label, n in summary:

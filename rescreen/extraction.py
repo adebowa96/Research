@@ -58,6 +58,11 @@ STUDIES = {
     "R164": ("Blanc", 2019, "France", "Europe", "Mixed methods", "Qualitative and quantitative (clinical interviews)", "17", "QSP", "", "French-language article"),
     "R227": ("Arsy", 2019, "Indonesia", "Asia", "Not reported", "Not reported in export (no abstract)", "NR", "Q", "", "No abstract available; design and country need full-text verification"),
     "R267": ("Lou", 2024, "Denmark", "Europe", "Qualitative", "Interview study", "NR", "PH", "", "No abstract in export; coded from published summary"),
+    "R001": ("Pittman", 2025, "Australia", "Oceania", "Quantitative", "Cross-sectional survey (congenital vs acquired uterine factor infertility)", "39", "DQ", "", "Mixed sample; results reported for congenital (MRKH) group; country from affiliations; verify"),
+    "R173": ("Gueniche", 2020, "France", "Europe", "Qualitative", "Clinical interviews and projective tests", "40", "P", "", "French-language article"),
+    "R223": ("Ngoumou", 2022, "Cameroon, Côte d'Ivoire, Senegal", "Africa", "Qualitative", "In-depth interviews", "5", "PH", "", "Coded from published abstract"),
+    "R234": ("Järvholm", 2020, "Sweden", "Europe", "Qualitative", "Interviews after uterus transplantation", "7 (6 MRKH)", "QSP", "", "Coded from published summary; country from trial site; verify"),
+    "R244": ("Scollo", 2020, "Italy", "Europe", "Quantitative", "Cross-sectional (MMPI-2; uterus transplant candidates)", "19 (18 MRKH)", "DP", "", "Coded from published abstract"),
 }
 
 DOMAINS = [("D", "Depression & anxiety"), ("Q", "Reduced QoL, body image & self-esteem"),
@@ -68,7 +73,7 @@ COPING = [("peer", "Peer, family & social support"), ("counsel", "Psychological 
           ("accept", "Acceptance"), ("avoid", "Avoidance / concealment (maladaptive)"),
           ("advocate", "Self-advocacy")]
 
-assert len(STUDIES) == 34
+assert len(STUDIES) == 39
 records = {r["record_id"]: r for r in csv.DictReader(open(HERE / "records_unique.csv", encoding="utf-8"))}
 
 rows = []

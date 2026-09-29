@@ -73,6 +73,28 @@ def design_donut():
     save(fig, "fig2_design_donut")
 
 
+def coping_bar():
+    rows = sorted(data["coping"], key=lambda r: r[1])
+    labels = [r[0] for r in rows]
+    vals = [r[1] for r in rows]
+    colors = [SERIES[1] if "Avoidance" in lab else BLUE for lab in labels]
+    fig, ax = plt.subplots(figsize=(10, 6.2))
+    bars = ax.barh(labels, vals, color=colors, height=0.62, edgecolor="white", linewidth=2)
+    for b_, v in zip(bars, vals):
+        ax.text(v + 0.1, b_.get_y() + b_.get_height() / 2, str(v), va="center", ha="left",
+                fontsize=16, color=INK, fontweight="bold")
+    ax.set_xlim(0, max(vals) + 1.5)
+    ax.set_xlabel("Number of included studies", color=INK_2)
+    ax.xaxis.grid(True, color=GRID, linewidth=1)
+    ax.set_axisbelow(True)
+    for s_ in ("top", "right", "left"):
+        ax.spines[s_].set_visible(False)
+    ax.spines["bottom"].set_color(GRID)
+    ax.tick_params(axis="y", length=0, labelsize=16)
+    ax.tick_params(axis="x", colors=INK_2)
+    save(fig, "fig5_coping_bar")
+
+
 def prisma():
     p = data["prisma"]
     fig, ax = plt.subplots(figsize=(10, 9))
@@ -109,8 +131,13 @@ def prisma():
     ax.text(8.02, 6.95, f"Records excluded (n = {p['excluded']})", ha="center", va="center",
             fontsize=13.5, color=INK)
     ax.text(8.02, 5.7, reasons, ha="center", va="center", fontsize=11, color=INK, linespacing=1.45)
-    box(1.2, 2.8, 4.6, 1.3, f"Records eligible for\nfull-text review\n(n = {p['fulltext']})")
-    box(6.4, 2.85, 3.5, 1.2, f"Awaiting full-text\ndecision (n = {p['fulltext_pending']})", **grey)
+    box(1.2, 2.8, 4.6, 1.3, f"Records assessed\nfor eligibility\n(n = {p['fulltext']})")
+    el = "\n".join(f"{r}: {n}" for r, n in p["eligibility_reasons"])
+    ax.add_patch(FancyBboxPatch((6.1, 2.55), 3.85, 1.8, boxstyle="round,pad=0.02,rounding_size=0.15",
+                                facecolor="#f6f6f4", edgecolor="#9a9993", linewidth=2))
+    ax.text(8.02, 3.85, f"Excluded (n = {p['excluded_eligibility']})", ha="center", va="center",
+            fontsize=13.5, color=INK)
+    ax.text(8.02, 3.1, el, ha="center", va="center", fontsize=11, color=INK, linespacing=1.45)
     box(1.2, 0.4, 4.6, 1.5, f"Studies included\n(provisional)\n(n = {p['included']})",
         fill="#dbe8fa", bold=True)
 
@@ -119,12 +146,13 @@ def prisma():
     arrow(3.5, 5.9, 3.5, 4.1)
     arrow(5.8, 6.55, 6.1, 6.55)
     arrow(3.5, 2.8, 3.5, 1.9)
-    arrow(5.8, 3.45, 6.4, 3.45)
+    arrow(5.8, 3.45, 6.1, 3.45)
     save(fig, "prisma_flow")
 
 
 if __name__ == "__main__":
     outcomes_bar()
     design_donut()
+    coping_bar()
     prisma()
     print("wrote figures to", OUT)

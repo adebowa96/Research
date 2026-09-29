@@ -2,19 +2,19 @@
   "domains": [
     [
       "Depression & anxiety",
-      10
+      12
     ],
     [
       "Reduced QoL, body image & self-esteem",
-      18
+      20
     ],
     [
       "Psychosexual & relational challenges",
-      24
+      25
     ],
     [
       "Broader psychological distress",
-      18
+      22
     ],
     [
       "Coping mechanisms documented",
@@ -22,7 +22,7 @@
     ],
     [
       "Healthcare system gaps",
-      9
+      10
     ]
   ],
   "coping": [
@@ -56,17 +56,18 @@
     ]
   ],
   "designs": {
-    "Quantitative": 18,
-    "Qualitative": 12,
+    "Quantitative": 20,
+    "Qualitative": 15,
     "Mixed methods": 3,
     "Not reported": 1
   },
   "regions": {
     "Asia": 14,
-    "Europe": 14,
-    "Africa": 1,
+    "Europe": 17,
+    "Africa": 2,
     "North America": 3,
-    "Multinational": 2
+    "Multinational": 2,
+    "Oceania": 1
   },
-  "n": 34
+  "n": 39
 }

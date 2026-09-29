@@ -1,13 +1,11 @@
 {
   "_note": "Single source of truth. PROVISIONAL (Sept 2026 re-screen): AI-assisted title/abstract screening and abstract-level extraction from the March 29, 2026 search exports; pending verification by two reviewers and full-text review.",
-  "total_included": 34,
+  "total_included": 39,
   "prisma": {
     "identified": 516,
     "duplicates_removed": 192,
     "screened": 324,
     "excluded": 278,
-    "fulltext_pending": 12,
-    "included": 34,
     "reasons": [
       [
         "Published before 2019",
@@ -30,20 +28,32 @@
         28
       ]
     ],
-    "fulltext": 46
+    "fulltext": 46,
+    "excluded_eligibility": 7,
+    "eligibility_reasons": [
+      [
+        "Mixed sample, MRKH not separate",
+        5
+      ],
+      [
+        "No psychological outcome",
+        2
+      ]
+    ],
+    "included": 39
   },
   "outcomes": [
     [
       "Psychosexual & relational challenges",
-      24
-    ],
-    [
-      "QoL, body image & self-esteem",
-      18
+      25
     ],
     [
       "Broader psychological distress",
-      18
+      22
+    ],
+    [
+      "QoL, body image & self-esteem",
+      20
     ],
     [
       "Coping mechanisms documented",
@@ -51,22 +61,22 @@
     ],
     [
       "Depression & anxiety",
-      10
+      12
     ],
     [
       "Healthcare system gaps",
-      9
+      10
     ]
   ],
   "designs": [
     [
       "Quantitative",
-      18,
+      20,
       ""
     ],
     [
       "Qualitative",
-      12,
+      15,
       ""
     ],
     [
@@ -83,7 +93,7 @@
   "regions": [
     [
       "Europe",
-      14,
+      17,
       "EU"
     ],
     [
@@ -97,14 +107,19 @@
       "NA"
     ],
     [
+      "Africa",
+      2,
+      "AF"
+    ],
+    [
       "Multinational",
       2,
       "INT"
     ],
     [
-      "Africa",
+      "Oceania",
       1,
-      "AF"
+      "OC"
     ],
     [
       "South America",
