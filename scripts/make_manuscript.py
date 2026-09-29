@@ -215,7 +215,7 @@ para("**Word count (main text):** {WORDCOUNT}   **Tables:** 4   **Figures:** 4  
      "**Supplementary material:** Appendices A–C", indent=False)
 para("**Prior presentation:** An abstract of this work was submitted to the American Public "
      "Health Association (APHA) 2026 Annual Meeting & Expo, Sexual and Reproductive Health "
-     "Section. [[Update to “accepted for poster presentation” / “presented” as applicable.]]",
+     "Section, and accepted for poster presentation.",
      indent=False)
 para("**Keywords:** Mayer-Rokitansky-Küster-Hauser syndrome; Müllerian agenesis; mental health; "
      "coping; psychosocial outcomes; quality of life; reproductive health", indent=False)
@@ -265,7 +265,7 @@ para("Mayer-Rokitansky-Küster-Hauser (MRKH) syndrome, also termed Müllerian ag
      "Müllerian aplasia, is a congenital condition characterized by absence of the uterus and "
      "upper two-thirds of the vagina in individuals with a 46,XX karyotype, functional ovaries, "
      "and typical secondary sexual development. It affects approximately 1 in 4,500–5,000 "
-     "female births;^{1} a nationwide Danish registry study estimated a prevalence of 1 in 4,982 "
+     "female births^{1}; a nationwide Danish registry study estimated a prevalence of 1 in 4,982 "
      "live female births.^{2} MRKH is classified as type I (isolated uterovaginal aplasia) or "
      "type II (accompanied by extragenital anomalies, most often renal, skeletal, auditory, or "
      "cardiac).^{3} Diagnosis is usually made in adolescence during evaluation for primary "
@@ -284,27 +284,28 @@ para("The diagnosis carries profound implications for fertility, psychosexual de
      "neovagina alone does not ensure a good psychological outcome and that psychological "
      "support at critical times can be helpful,^{7} while qualitative work described how young "
      "women manage intimacy, a sensitivity to difference, and threats to identity after "
-     "diagnosis.^{8}")
+     "diagnosis.^{8} More recent qualitative studies describe emotional turmoil at diagnosis, "
+     "challenges to sexual identity and intimate relationships, the profound impact of "
+     "infertility,^{9} and reduced self-esteem and sexual wellbeing.^{10}")
 para("Two systematic reviews have since synthesized the psychological, quality-of-life, and "
-     "sexual outcomes of MRKH.^{9,10} However, to our knowledge, the more recent literature has "
+     "sexual outcomes of MRKH.^{11,12} However, to our knowledge, the more recent literature has "
      "not been mapped with a public health lens that jointly considers mental health outcomes, "
      "the coping mechanisms individuals use, and the healthcare system gaps that shape access to "
      "psychosocial support. As a result, psychosocial outcomes remain insufficiently integrated "
      "into clinical and public health frameworks for this population.")
 para("A scoping review is well suited to mapping a heterogeneous body of quantitative, "
      "qualitative, and mixed-methods evidence and identifying gaps for future research and "
-     "practice.^{11,12} This scoping review therefore addressed the following research question: "
+     "practice.^{13,14} This scoping review therefore addressed the following research question: "
      "*What mental health outcomes and coping mechanisms are reported among individuals with MRKH "
      "syndrome, and what healthcare system gaps exist?*")
 
 heading("Methods")
 heading("Study Design", 2)
 para("This scoping review followed Arksey and O'Malley's five-stage methodological "
-     "framework^{11}—(1) identifying the research question; (2) identifying relevant studies; "
+     "framework^{13}—(1) identifying the research question; (2) identifying relevant studies; "
      "(3) selecting studies; (4) charting the data; and (5) collating, summarizing, and reporting "
      "the results—and is reported in accordance with the PRISMA Extension for Scoping Reviews "
-     "(PRISMA-ScR; Appendix C).^{12} [[Protocol registration: state the registry and ID (e.g., "
-     "OSF) or “A review protocol was not registered.”]]")
+     "(PRISMA-ScR; Appendix C).^{14} A review protocol was not registered.")
 heading("Eligibility Criteria", 2)
 para("Eligibility was defined using the Population–Concept–Context approach. The *population* "
      "was individuals diagnosed with MRKH syndrome; the *concepts* were psychological or mental "
@@ -343,8 +344,7 @@ para("Findings were collated using a descriptive numerical summary—the number 
      "grouped findings into mental health outcome domains, coping mechanisms, and healthcare "
      "system gaps. Because a single study could report multiple domains, domain counts are not "
      "mutually exclusive. Consistent with scoping review methodology, a formal critical appraisal "
-     "of study quality was not performed.^{11,12} [[Confirm; if you did appraise quality, "
-     "describe the tool used.]] Ethical approval was not required because this review analyzed "
+     "of study quality was not performed.^{13,14} Ethical approval was not required because this review analyzed "
      "published data.")
 
 heading("Results")
@@ -493,7 +493,7 @@ para("These findings are consistent with earlier evidence. Before 2019, women wi
      "reported poorer mental health–related quality of life and sexual wellness than normative "
      "samples.^{6} Prior systematic reviews similarly concluded that MRKH may be associated with "
      "psychological symptoms and impaired quality of life, particularly poor sexual esteem and "
-     "genital image.^{9,10} The present review indicates that these concerns remain prominent in "
+     "genital image.^{11,12} The present review indicates that these concerns remain prominent in "
      "the recent literature and extends earlier syntheses by mapping coping mechanisms and "
      "healthcare system gaps alongside outcomes.")
 heading("Coping and Psychosocial Support", 2)
@@ -505,7 +505,7 @@ para("The coping strategies identified—peer and community support, psychologic
      "may delay help-seeking and treatment engagement. Evidence that structured psychological "
      "intervention can help is available: a randomized controlled trial of a cognitive-behavioural "
      "group intervention improved psychological outcomes among women with MRKH compared with a "
-     "waiting-list control.^{13} The persistence of self-directed coping in the recent literature "
+     "waiting-list control.^{15} The persistence of self-directed coping in the recent literature "
      "suggests that such evidence-based support has not been consistently translated into "
      "routine care.")
 heading("Healthcare System Gaps and Equity", 2)
@@ -518,7 +518,9 @@ para("Although professional guidance identifies psychosocial counseling as centr
      "expectations regarding fertility, marriage, and womanhood, as well as access to "
      "specialized care, may differ substantially. The scarcity of studies from Africa and South "
      "America represents both a research gap and a likely inequity in diagnosis, support, and "
-     "long-term outcomes.")
+     "long-term outcomes. Recent studies from Türkiye and Japan^{9,16} show that such work is "
+     "feasible and that cultural context shapes experiences of diagnosis, disclosure, and "
+     "infertility.")
 heading("Implications for Practice, Policy, and Research", 2)
 para("Five priorities emerge from this review. First, mental health screening should be "
      "integrated into standard MRKH diagnostic pathways, beginning at the time of diagnosis. "
@@ -567,8 +569,10 @@ decl = [
     "**Ethics approval:** Not applicable; this review analyzed published studies.",
     "**Data availability:** The data charting form and extracted data are available from the "
     "corresponding author on reasonable request.",
-    "**Use of AI tools:** [[Disclose any AI-assisted writing or editing per the target journal's "
-    "policy.]]",
+    "**Use of AI tools:** Generative AI (Claude, Anthropic) was used to assist with drafting and "
+    "editing the manuscript, verifying reference details, and preparing figures. The authors "
+    "reviewed and verified all content and take full responsibility for the work. [[Confirm "
+    "wording against the target journal's AI policy.]]",
 ]
 for dtext in decl:
     para(dtext, indent=False)
@@ -581,24 +585,32 @@ refs = [
     "*Obstet Gynecol*. 2018;131(1):e35-e42. doi:10.1097/AOG.0000000000002458",
     "Herlin M, Bjørn AMB, Rasmussen M, Trolle B, Petersen MB. Prevalence and patient "
     "characteristics of Mayer-Rokitansky-Küster-Hauser syndrome: a nationwide registry-based "
-    "study. *Hum Reprod*. 2016;31(10):2384-2390.",
+    "study. *Hum Reprod*. 2016;31(10):2384-2390. doi:10.1093/humrep/dew220",
     "Herlin MK, Petersen MB, Brännström M. Mayer-Rokitansky-Küster-Hauser (MRKH) syndrome: a "
     "comprehensive update. *Orphanet J Rare Dis*. 2020;15(1):214. "
     "doi:10.1186/s13023-020-01491-9",
     "Heller-Boersma JG, Schmidt UH, Edmonds DK. Psychological distress in women with "
     "uterovaginal agenesis (Mayer-Rokitansky-Kuster-Hauser syndrome, MRKH). *Psychosomatics*. "
-    "2009;50(3):277-281.",
+    "2009;50(3):277-281. doi:10.1176/appi.psy.50.3.277",
     "Laggari V, Diareme S, Christogiorgos S, et al. Anxiety and depression in adolescents with "
     "polycystic ovary syndrome and Mayer-Rokitansky-Küster-Hauser syndrome. *J Psychosom Obstet "
     "Gynaecol*. 2009;30(2):83-88. doi:10.1080/01674820802546204",
-    "Liao LM, Conway GS, Ismail-Pratt I, et al. Emotional and sexual wellness and quality of "
-    "life in women with Rokitansky syndrome. *Am J Obstet Gynecol*. 2011;205(2):117.e1-117.e6.",
+    "Liao LM, Conway GS, Ismail-Pratt I, Bikoo M, Creighton SM. Emotional and sexual wellness "
+    "and quality of life in women with Rokitansky syndrome. *Am J Obstet Gynecol*. "
+    "2011;205(2):117.e1-117.e6. doi:10.1016/j.ajog.2011.03.013",
     "Bean EJ, Mazur T, Robinson AD. Mayer-Rokitansky-Küster-Hauser syndrome: sexuality, "
     "psychological effects, and quality of life. *J Pediatr Adolesc Gynecol*. "
-    "2009;22(6):339-346.",
+    "2009;22(6):339-346. doi:10.1016/j.jpag.2008.11.006",
     "Patterson CJ, Crawford R, Jahoda A. Exploring the psychological impact of "
     "Mayer-Rokitansky-Küster-Hauser syndrome on young women: an interpretative phenomenological "
     "analysis. *J Health Psychol*. 2016;21(7):1228-1240. doi:10.1177/1359105314551077",
+    "Güner P, Ulukaya T, Pehlivan Sarıbudak T. \u201cI felt like a woman\u201d: a phenomenological "
+    "qualitative study of disease-related experiences in Mayer-Rokitansky-Küster-Hauser syndrome "
+    "(MRKH syndrome). *J Health Psychol*. Published online 2025. "
+    "doi:10.1177/13591053241305941 [[add volume/issue/pages from the journal page]]",
+    "Rajesh Z, Marshall N, Hunker KE, et al. Understanding the impact of "
+    "Mayer-Rokitansky-Küster-Hauser syndrome on sexual wellbeing—a qualitative study. *J Sex "
+    "Med*. 2026;23(1):qdaf309. doi:10.1093/jsxmed/qdaf309",
     "Facchin F, Francini F, Ravani S, et al. Psychological impact and health-related "
     "quality-of-life outcomes of Mayer-Rokitansky-Küster-Hauser syndrome: a systematic review "
     "and narrative synthesis. *J Health Psychol*. 2021;26(1):26-39. "
@@ -608,13 +620,16 @@ refs = [
     "sexual life of patients: a systematic review. *Children (Basel)*. 2022;9(4):484. "
     "doi:10.3390/children9040484",
     "Arksey H, O'Malley L. Scoping studies: towards a methodological framework. *Int J Soc Res "
-    "Methodol*. 2005;8(1):19-32.",
+    "Methodol*. 2005;8(1):19-32. doi:10.1080/1364557032000119616",
     "Tricco AC, Lillie E, Zarin W, et al. PRISMA Extension for Scoping Reviews (PRISMA-ScR): "
-    "checklist and explanation. *Ann Intern Med*. 2018;169(7):467-473.",
+    "checklist and explanation. *Ann Intern Med*. 2018;169(7):467-473. doi:10.7326/M18-0850",
     "Heller-Boersma JG, Schmidt UH, Edmonds DK. A randomized controlled trial of a "
     "cognitive-behavioural group intervention versus waiting-list control for women with "
     "uterovaginal agenesis (Mayer-Rokitansky-Küster-Hauser syndrome: MRKH). *Hum Reprod*. "
-    "2007;22(8):2296-2301.",
+    "2007;22(8):2296-2301. doi:10.1093/humrep/dem167",
+    "Okunomiya A, Tsuyuki K, Ohsuga T, et al. Long-term psychosocial outcomes in Japanese "
+    "Mayer-Rokitansky-Küster-Hauser syndrome: a single-center study. *J Obstet Gynaecol Res*. "
+    "2026;52(5). doi:10.1111/jog.70291 [[add article number/pages]]",
 ]
 for i, r in enumerate(refs, 1):
     p = doc.add_paragraph()
@@ -630,6 +645,19 @@ heading("Appendix A. Search Strategy")
 para("[[Paste the exact search string run in each database, the platform/interface used, the "
      "limits applied, the date each search was run, and the number of records retrieved per "
      "database (these should total 516).]]", indent=False)
+para("[[Suggested PubMed/MEDLINE string for comparison. Replace it with the string you actually "
+     "ran; do not report a search you did not run:]]", indent=False)
+para("(\"Mayer-Rokitansky-Kuster-Hauser\"[tiab] OR \"Mayer-Rokitansky-Küster-Hauser\"[tiab] OR "
+     "MRKH[tiab] OR Rokitansky[tiab] OR \"Mullerian agenesis\"[tiab] OR \"Mullerian aplasia\"[tiab] "
+     "OR \"vaginal agenesis\"[tiab] OR \"uterovaginal agenesis\"[tiab] OR "
+     "\"Mullerian Ducts/abnormalities\"[Mesh]) AND (depress*[tiab] OR anxiety[tiab] OR "
+     "\"mental health\"[tiab] OR psycholog*[tiab] OR distress[tiab] OR \"quality of life\"[tiab] "
+     "OR \"body image\"[tiab] OR \"self-esteem\"[tiab] OR coping[tiab] OR psychosocial[tiab] OR "
+     "\"Mental Health\"[Mesh] OR \"Adaptation, Psychological\"[Mesh] OR \"Quality of Life\"[Mesh]) "
+     "AND (\"2019/01/01\"[dp] : \"2026/03/31\"[dp])", indent=False, size=10)
+para("[[Scopus: TITLE-ABS-KEY(...) with the same two concept blocks; PsycINFO and CINAHL: the "
+     "same keywords plus each database's own subject headings (e.g., APA Thesaurus “Coping "
+     "Behavior”; CINAHL Headings “Quality of Life”).]]", indent=False)
 table("**Table A1.** Records retrieved by database",
       ["Database", "Platform", "Date searched", "Records retrieved"],
       [["PubMed/MEDLINE", "[[ ]]", "[[ ]]", "[[ ]]"],
@@ -691,3 +719,40 @@ out = ROOT / "manuscript" / "MRKH_Scoping_Review_Manuscript.docx"
 out.parent.mkdir(exist_ok=True)
 doc.save(out)
 print(f"wrote {out} (main text ≈ {wc} words)")
+
+# ====================================================================== SEPARATE REFERENCE LIST
+ref_doc = Document()
+for sec in ref_doc.sections:
+    sec.left_margin = sec.right_margin = sec.top_margin = sec.bottom_margin = Inches(1)
+st = ref_doc.styles["Normal"]
+st.font.name = "Times New Roman"
+st.font.size = Pt(12)
+st.element.rPr.rFonts.set(qn("w:eastAsia"), "Times New Roman")
+doc_backup, doc = doc, ref_doc  # reuse para()/add_runs() helpers on the reference document
+counting["on"] = False
+para("**References (AMA 11th edition)**", align=WD_ALIGN_PARAGRAPH.CENTER, size=14,
+     spacing=WD_LINE_SPACING.SINGLE)
+para("*Mental Health and Psychosocial Outcomes Among Individuals With "
+     "Mayer-Rokitansky-Küster-Hauser (MRKH) Syndrome: A Scoping Review*",
+     align=WD_ALIGN_PARAGRAPH.CENTER, spacing=WD_LINE_SPACING.SINGLE)
+para("Numbered in order of first citation in the manuscript. In-text citations are superscript "
+     "numerals, placed after periods and commas and before colons and semicolons.",
+     indent=False, size=10, spacing=WD_LINE_SPACING.SINGLE)
+for i, r in enumerate(refs, 1):
+    p = doc.add_paragraph()
+    p.paragraph_format.left_indent = Inches(0.35)
+    p.paragraph_format.first_line_indent = Inches(-0.35)
+    p.paragraph_format.space_after = Pt(6)
+    add_runs(p, f"{i}.\t{r}")
+para("**Poster reference list** (poster numbering; shortened AMA format)", indent=False,
+     spacing=WD_LINE_SPACING.SINGLE)
+poster_map = [1, 2, 13, 14, 4, 5, 6, 11]  # poster ref n -> manuscript ref number
+for i, m in enumerate(poster_map, 1):
+    p = doc.add_paragraph()
+    p.paragraph_format.left_indent = Inches(0.35)
+    p.paragraph_format.first_line_indent = Inches(-0.35)
+    add_runs(p, f"{i}.\t{refs[m - 1]}")
+doc = doc_backup
+ref_out = ROOT / "manuscript" / "References_AMA.docx"
+ref_doc.save(ref_out)
+print("wrote", ref_out)

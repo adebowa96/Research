@@ -200,7 +200,7 @@ y += intro_h + 0.25
 
 y = header(LEFT_X, y, LEFT_W, "Methods")
 methods = [
-    ("Study Design", "Scoping review following Arksey & O'Malley's five-stage framework;^{3} "
+    ("Study Design", "Scoping review following Arksey & O'Malley's five-stage framework^{3}; "
                      "reported per PRISMA-ScR^{4}"),
     ("Databases", "PubMed/MEDLINE, Scopus, PsycINFO, and CINAHL"),
     ("Years Searched", "January 2019 – March 2026"),

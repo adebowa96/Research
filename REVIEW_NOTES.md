@@ -67,28 +67,32 @@ state this explicitly.
 
 ---
 
-## 3. Only you can confirm these (highlighted **yellow** in the manuscript)
-1. **PRISMA full-text stage.** Your flow goes straight from 361 screened to 34 included.
-   PRISMA-ScR (item 14) expects the number of full-text articles assessed and the
-   reasons they were excluded. Add these if you have them. Reviewers often ask.
-2. **Study-design split** (16 / 11 / 7; see 1b).
-3. **Date the final search was run** and the **exact search strings** for each database
-   (Appendix A). The per-database counts must add up to 516.
-4. **Screening process**: how many reviewers screened, how disagreements were resolved,
-   and which software you used.
-5. **Other eligibility limits**, e.g., English only, or whether reviews and case reports
-   were excluded.
-6. **Protocol registration** (for example OSF), or a statement that there was none.
-7. **Critical appraisal**: the manuscript says none was done, which is standard for
-   scoping reviews. Change this if you did one.
-8. **Appendix B**: one row per included study. Also add the 34 study citations to the
-   reference list.
-9. **Descriptions of the domains and coping mechanisms** in Tables 2–3. These are
-   general definitions. Check that they match how you coded the studies.
-10. **Corresponding-author email, conflicts of interest, CRediT author contributions,
-    AI-use disclosure, and presentation status** (accepted or presented at APHA).
+## 3. Status of the open items
 
----
+**Done**
+- Protocol: "A review protocol was not registered." (you confirmed)
+- Critical appraisal: none, which is standard for scoping reviews (you confirmed)
+- APHA status: "accepted for poster presentation" (you confirmed)
+- AI-use disclosure: statement drafted. Check it against your target journal's policy.
+- AMA in-text citations: superscript numerals, numbered in order of first citation, placed
+  after periods and commas and before colons and semicolons. Two misplaced citations fixed.
+- References: DOIs added, full author lists where AMA requires them (up to 6 authors,
+  otherwise 3 + et al.), and 3 recent sources added (2025–2026). The full list is in
+  `manuscript/References_AMA.docx`.
+- Appendix A: suggested PubMed search string included for comparison.
+
+**Still needs your records** (highlighted yellow in the manuscript)
+1. Full-text screening numbers and exclusion reasons (PRISMA-ScR item 14).
+2. Screening: how many reviewers, how disagreements were settled, and which software.
+3. Eligibility limits (English only? peer-reviewed only? reviews and case reports excluded?).
+4. Date of the final search, the exact strings, and records per database (must total 516).
+5. Study-design split (16 / 11 / 7) checked against your extraction sheet.
+6. The 34 included studies: Appendix B rows and their citations.
+7. Check that the Table 2–3 descriptions match how you coded the studies.
+8. Corresponding-author email, conflicts of interest, and CRediT author contributions.
+9. **Check whether Güner 2025, Rajesh 2026, and Okunomiya 2026 are among your 34 included
+   studies.** They are primary MRKH mental-health studies published inside your search
+   window. If they are not in your included set, a reviewer may ask why.
 
 ## 4. Poster notes
 - Built on the Liberty University sample poster you provided
