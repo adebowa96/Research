@@ -15,7 +15,10 @@ const world = JSON.parse(
 const features = topojson.feature(world, world.objects.countries).features;
 
 // Sequential single-hue ramp (light = few studies, dark = many)
-const ramp = { 18: "#104281", 8: "#2a78d6", 5: "#6da7ec", 2: "#9ec5f4", 1: "#cde2fb" };
+const steps = ["#cde2fb", "#9ec5f4", "#6da7ec", "#2a78d6", "#104281"];
+const maxN = Math.max(...data.regions.map((r) => r[1]));
+// Map a count onto the ramp; 0 falls back to the no-data grey
+const shade = (n) => (n > 0 ? steps[Math.min(steps.length - 1, Math.ceil((n / maxN) * steps.length) - 1)] : null);
 const noData = "#e4e3df";
 const countByContinent = {};
 for (const [name, n, code] of data.regions) countByContinent[code] = { name, n };
@@ -40,13 +43,13 @@ for (const f of features) {
   if (f.properties.name === "Antarctica") continue;
   const c = continentOf(f);
   const entry = c && countByContinent[c];
-  const fill = entry ? ramp[entry.n] : noData;
+  const fill = (entry && shade(entry.n)) || noData;
   // France's feature includes French Guiana; shade that polygon with South America
   if (f.properties.name === "France" && f.geometry.type === "MultiPolygon") {
     for (const poly of f.geometry.coordinates) {
       const part = { type: "Polygon", coordinates: poly };
       const lon = d3.geoCentroid(part)[0];
-      const partFill = lon < -30 ? ramp[countByContinent.SA.n] : fill;
+      const partFill = lon < -30 ? (shade(countByContinent.SA.n) || noData) : fill;
       paths += `<path d="${geoPath(part)}" fill="${partFill}" stroke="#ffffff" stroke-width="0.6"/>`;
     }
     continue;
@@ -58,9 +61,10 @@ for (const f of features) {
 const anchors = { EU: [-32, 44], NA: [-102, 45], AS: [95, 40], AF: [20, 5], SA: [-60, -16] };
 let labels = "";
 for (const [name, n, code] of data.regions) {
+  if (!anchors[code] || n === 0) continue;
   const [x, y] = projection(anchors[code]);
   const pct = Math.round((n / total) * 100);
-  const dark = n >= 8;
+  const dark = n / maxN >= 0.5;
   const ink = dark ? "#ffffff" : "#0b0b0b";
   if (code === "EU") {
     const [tx, ty] = projection([8, 49]);
@@ -74,13 +78,19 @@ for (const [name, n, code] of data.regions) {
     </g>`;
 }
 
+const zero = data.regions.filter((r) => r[1] === 0).map((r) => r[0]);
+const intl = data.regions.find((r) => r[2] === "INT");
+const legendNote = [`No included studies${zero.length ? " (" + zero.join(", ") + ", Oceania)" : " (Oceania)"}`,
+  intl && intl[1] ? `${intl[1]} multinational studies not mapped` : "", "Darker = more studies"]
+  .filter(Boolean).join(". ") + ".";
+
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="Arial, Helvetica, sans-serif">
   <rect width="${W}" height="${H}" fill="#ffffff"/>
   ${paths}
   ${labels}
   <g transform="translate(40,${H - 60})">
     <rect y="-4" width="30" height="30" fill="${noData}" stroke="#9a9993"/>
-    <text x="36" y="20" font-size="26" fill="#52514e">No included studies (Oceania). Darker shading = more studies. Antarctica omitted.</text>
+    <text x="36" y="20" font-size="26" fill="#52514e">${legendNote}</text>
   </g>
 </svg>`;
 

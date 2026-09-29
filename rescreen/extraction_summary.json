@@ -1,0 +1,72 @@
+{
+  "domains": [
+    [
+      "Depression & anxiety",
+      10
+    ],
+    [
+      "Reduced QoL, body image & self-esteem",
+      18
+    ],
+    [
+      "Psychosexual & relational challenges",
+      24
+    ],
+    [
+      "Broader psychological distress",
+      18
+    ],
+    [
+      "Coping mechanisms documented",
+      14
+    ],
+    [
+      "Healthcare system gaps",
+      9
+    ]
+  ],
+  "coping": [
+    [
+      "Peer, family & social support",
+      6
+    ],
+    [
+      "Psychological counseling/intervention",
+      3
+    ],
+    [
+      "Identity reconstruction / positive reappraisal",
+      3
+    ],
+    [
+      "Spiritual coping",
+      2
+    ],
+    [
+      "Acceptance",
+      2
+    ],
+    [
+      "Avoidance / concealment (maladaptive)",
+      4
+    ],
+    [
+      "Self-advocacy",
+      1
+    ]
+  ],
+  "designs": {
+    "Quantitative": 18,
+    "Qualitative": 12,
+    "Mixed methods": 3,
+    "Not reported": 1
+  },
+  "regions": {
+    "Asia": 14,
+    "Europe": 14,
+    "Africa": 1,
+    "North America": 3,
+    "Multinational": 2
+  },
+  "n": 34
+}

@@ -20,7 +20,7 @@ INK_2 = "#52514e"
 GRID = "#e4e3df"
 NAVY = "#0d366b"
 BLUE = "#2a78d6"
-SERIES = ["#2a78d6", "#eb6834", "#1baf7a"]  # categorical slots 1-3
+SERIES = ["#2a78d6", "#eb6834", "#1baf7a", "#b4b2a9"]  # slots 1-3 + neutral grey for "not reported"
 
 plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 16, "text.color": INK})
 
@@ -90,29 +90,36 @@ def prisma():
         ax.annotate("", xy=(x2, y2), xytext=(x1, y1),
                     arrowprops=dict(arrowstyle="-|>", color=NAVY, lw=2, mutation_scale=20))
 
-    stages = [("Identification", 8.1), ("Screening", 4.9), ("Included", 1.0)]
-    for label, y in stages:
-        ax.add_patch(FancyBboxPatch((0.0, y - 0.2), 0.7, 2.0 if label != "Included" else 1.4,
-                                    boxstyle="round,pad=0.02,rounding_size=0.1",
+    stages = [("Identification", 8.1, 1.9), ("Screening", 4.5, 2.9), ("Eligibility", 2.6, 1.5),
+              ("Included", 0.4, 1.5)]
+    for label, y, h in stages:
+        ax.add_patch(FancyBboxPatch((0.0, y), 0.7, h, boxstyle="round,pad=0.02,rounding_size=0.1",
                                     facecolor=NAVY, edgecolor=NAVY))
-        ax.text(0.35, y + (0.8 if label != "Included" else 0.5), label, rotation=90,
-                ha="center", va="center", color="white", fontsize=13, fontweight="bold")
+        ax.text(0.35, y + h / 2, label, rotation=90, ha="center", va="center", color="white",
+                fontsize=12, fontweight="bold")
 
-    box(1.2, 8.1, 4.6, 1.8, f"Records identified through\ndatabase searching (n = {p['identified']})\nPubMed · Scopus · EBSCOhost\n(MEDLINE, CINAHL, PsycInfo, WSI)")
-    box(6.4, 8.3, 3.5, 1.4, f"Duplicates removed\n(n = {p['duplicates_removed']})",
-        fill="#f6f6f4", edge="#9a9993")
-    box(1.2, 5.9, 4.6, 1.4, f"Records after duplicates\nremoved\n(n = {p['screened']})")
-    box(1.2, 3.5, 4.6, 1.4, f"Records screened\n(n = {p['screened']})")
-    box(6.4, 3.1, 3.5, 2.2, f"Records excluded\n(n = {p['excluded']})\nDid not meet inclusion\ncriteria (incl. published\nbefore 2019)",
-        fill="#f6f6f4", edge="#9a9993")
-    box(1.2, 0.8, 4.6, 1.6, f"Studies included in\nscoping review\n(n = {p['included']})",
+    grey = dict(fill="#f6f6f4", edge="#9a9993")
+    box(1.2, 8.1, 4.6, 1.9, f"Records identified through\ndatabase searching (n = {p['identified']})\n"
+        "PubMed · Scopus · EBSCOhost\n(MEDLINE, CINAHL, PsycInfo, WSI)")
+    box(6.4, 8.45, 3.5, 1.2, f"Duplicates removed\n(n = {p['duplicates_removed']})", **grey)
+    box(1.2, 5.9, 4.6, 1.3, f"Records screened\n(title/abstract)\n(n = {p['screened']})")
+    reasons = "\n".join(f"{r}: {n}" for r, n in p["reasons"])
+    ax.add_patch(FancyBboxPatch((6.1, 4.5), 3.85, 2.9, boxstyle="round,pad=0.02,rounding_size=0.15",
+                                facecolor="#f6f6f4", edgecolor="#9a9993", linewidth=2))
+    ax.text(8.02, 6.95, f"Records excluded (n = {p['excluded']})", ha="center", va="center",
+            fontsize=13.5, color=INK)
+    ax.text(8.02, 5.7, reasons, ha="center", va="center", fontsize=11, color=INK, linespacing=1.45)
+    box(1.2, 2.8, 4.6, 1.3, f"Records eligible for\nfull-text review\n(n = {p['fulltext']})")
+    box(6.4, 2.85, 3.5, 1.2, f"Awaiting full-text\ndecision (n = {p['fulltext_pending']})", **grey)
+    box(1.2, 0.4, 4.6, 1.5, f"Studies included\n(provisional)\n(n = {p['included']})",
         fill="#dbe8fa", bold=True)
 
-    arrow(3.5, 8.1, 3.5, 7.3)
-    arrow(5.8, 9.0, 6.4, 9.0)
-    arrow(3.5, 5.9, 3.5, 4.9)
-    arrow(5.8, 4.2, 6.4, 4.2)
-    arrow(3.5, 3.5, 3.5, 2.4)
+    arrow(3.5, 8.1, 3.5, 7.2)
+    arrow(5.8, 9.05, 6.4, 9.05)
+    arrow(3.5, 5.9, 3.5, 4.1)
+    arrow(5.8, 6.55, 6.1, 6.55)
+    arrow(3.5, 2.8, 3.5, 1.9)
+    arrow(5.8, 3.45, 6.4, 3.45)
     save(fig, "prisma_flow")
 
 

@@ -1,25 +1,145 @@
 {
-  "_note": "Single source of truth for every number on the poster and in the manuscript. Edit here, then re-run make_figures.py and make_map.js.",
+  "_note": "Single source of truth. PROVISIONAL (Sept 2026 re-screen): AI-assisted title/abstract screening and abstract-level extraction from the March 29, 2026 search exports; pending verification by two reviewers and full-text review.",
   "total_included": 34,
-  "prisma": {"identified": 516, "duplicates_removed": 155, "screened": 361, "excluded": 327, "included": 34},
+  "prisma": {
+    "identified": 516,
+    "duplicates_removed": 192,
+    "screened": 324,
+    "excluded": 278,
+    "fulltext_pending": 12,
+    "included": 34,
+    "reasons": [
+      [
+        "Published before 2019",
+        89
+      ],
+      [
+        "Case report / surgical case series",
+        75
+      ],
+      [
+        "Not primary research",
+        48
+      ],
+      [
+        "Surgical/functional outcomes only",
+        38
+      ],
+      [
+        "Wrong population / topic",
+        28
+      ]
+    ],
+    "fulltext": 46
+  },
   "outcomes": [
-    ["Depression & anxiety", 26],
-    ["Reduced QoL & body image", 22],
-    ["Coping mechanisms documented", 21],
-    ["Psychosexual & relational challenges", 19],
-    ["Healthcare system gaps", 18],
-    ["Broader psychological distress", 17]
+    [
+      "Psychosexual & relational challenges",
+      24
+    ],
+    [
+      "QoL, body image & self-esteem",
+      18
+    ],
+    [
+      "Broader psychological distress",
+      18
+    ],
+    [
+      "Coping mechanisms documented",
+      14
+    ],
+    [
+      "Depression & anxiety",
+      10
+    ],
+    [
+      "Healthcare system gaps",
+      9
+    ]
   ],
   "designs": [
-    ["Quantitative", 16, "incl. 11 cross-sectional"],
-    ["Qualitative", 11, ""],
-    ["Mixed methods", 7, ""]
+    [
+      "Quantitative",
+      18,
+      ""
+    ],
+    [
+      "Qualitative",
+      12,
+      ""
+    ],
+    [
+      "Mixed methods",
+      3,
+      ""
+    ],
+    [
+      "Not reported",
+      1,
+      ""
+    ]
   ],
   "regions": [
-    ["Europe", 18, "EU"],
-    ["North America", 8, "NA"],
-    ["Asia", 5, "AS"],
-    ["Africa", 2, "AF"],
-    ["South America", 1, "SA"]
+    [
+      "Europe",
+      14,
+      "EU"
+    ],
+    [
+      "Asia",
+      14,
+      "AS"
+    ],
+    [
+      "North America",
+      3,
+      "NA"
+    ],
+    [
+      "Multinational",
+      2,
+      "INT"
+    ],
+    [
+      "Africa",
+      1,
+      "AF"
+    ],
+    [
+      "South America",
+      0,
+      "SA"
+    ]
+  ],
+  "coping": [
+    [
+      "Peer, family & social support",
+      6
+    ],
+    [
+      "Psychological counseling/intervention",
+      3
+    ],
+    [
+      "Identity reconstruction / positive reappraisal",
+      3
+    ],
+    [
+      "Spiritual coping",
+      2
+    ],
+    [
+      "Acceptance",
+      2
+    ],
+    [
+      "Avoidance / concealment (maladaptive)",
+      4
+    ],
+    [
+      "Self-advocacy",
+      1
+    ]
   ]
 }

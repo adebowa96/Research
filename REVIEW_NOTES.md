@@ -1,3 +1,28 @@
+# ⚠️ STATUS (September 29, 2026): RESULTS ARE PROVISIONAL
+
+The original Rayyan screening records could not be recovered. Screening and data extraction
+were redone from the original search exports (see `rescreen/`):
+- 516 records → 192 duplicates removed → 324 screened → 278 excluded → 46 eligible for full
+  text (12 still undecided) → **34 studies provisionally included**
+- Screening decisions were proposed with AI assistance, and data were charted from **abstracts
+  only**.
+
+**Before submission or presentation, the review team must:**
+1. Have two reviewers independently verify every decision in
+   `rescreen/MRKH_rescreening_workbook.xlsx`.
+2. Obtain full texts of the 46 eligible records, decide the 12 undecided ones, and record reasons
+   for any full-text exclusion.
+3. Verify every row of `rescreen/extraction_provisional.csv` (Appendix B) against the full text.
+4. Update `scripts/data.json` if any count changes, then rebuild.
+
+The results now differ from the submitted APHA abstract. Psychosexual and relational challenges
+are the most frequent domain (24 of 34), and depression and anxiety the least measured (10). The
+poster's abstract box says the results were updated after final screening.
+
+The notes below predate the re-screening and are kept for the record.
+
+---
+
 # MRKH Scoping Review: Accuracy Check and Corrections
 
 Read this before you submit the manuscript or print the poster. It lists every factual

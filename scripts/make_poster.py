@@ -24,6 +24,10 @@ OUT = dict(data["outcomes"])
 DES = {name: n for name, n, _ in data["designs"]}
 REG = {name: n for name, n, _ in data["regions"]}
 
+def pct(n):
+    return f"{n / N:.0%}"
+
+
 NAVY = RGBColor(0x0A, 0x25, 0x4E)  # Liberty template header navy
 BLUE = RGBColor(0x2A, 0x78, 0xD6)
 ORANGE = RGBColor(0xC4, 0x4E, 0x1B)
@@ -148,7 +152,7 @@ slide.shapes._spTree.append(logo._element)
 
 # ---------------------------------------------------------------- left column
 y = header(LEFT_X, TOP, LEFT_W, "Abstract")
-abstract_h = 8.35
+abstract_h = 9.1
 text(LEFT_X, y, LEFT_W, abstract_h, [
     "**Background:** Mayer-Rokitansky-Küster-Hauser (MRKH) syndrome is a rare congenital "
     "condition (1 in 4,500–5,000 female births) characterized by uterovaginal agenesis in "
@@ -157,16 +161,18 @@ text(LEFT_X, y, LEFT_W, abstract_h, [
     "mechanisms remain insufficiently synthesized, limiting integration into clinical care and "
     "public health planning.",
     "**Methods:** Following Arksey and O'Malley's framework and PRISMA-ScR guidelines, we "
-    "searched PubMed/MEDLINE, Scopus, PsycINFO, and CINAHL (January 2019–March 2026). Eligible "
+    "searched PubMed, Scopus, and EBSCOhost databases (January 2019–March 2026). Eligible "
     "studies included primary quantitative, qualitative, and mixed-methods research on "
     "psychological outcomes and/or coping mechanisms in MRKH populations.",
-    f"**Results:** {N} studies met inclusion criteria. Depression and anxiety were most "
-    f"frequently reported (n = {OUT['Depression & anxiety']}), followed by reduced QoL and body "
-    f"image concerns (n = {OUT['Reduced QoL & body image']}), psychosexual challenges "
-    f"(n = {OUT['Psychosexual & relational challenges']}), and psychological distress "
-    f"(n = {OUT['Broader psychological distress']}). Coping mechanisms were documented in "
+    f"**Results:** {N} studies met inclusion criteria (provisional). Psychosexual and relational "
+    f"challenges were most frequently reported (n = {OUT['Psychosexual & relational challenges']}), "
+    f"followed by reduced QoL, body image and self-esteem (n = "
+    f"{OUT['QoL, body image & self-esteem']}), broader psychological distress (n = "
+    f"{OUT['Broader psychological distress']}), and depression and anxiety (n = "
+    f"{OUT['Depression & anxiety']}). Coping mechanisms were documented in "
     f"{OUT['Coping mechanisms documented']} studies; healthcare gaps in "
-    f"{OUT['Healthcare system gaps']}.",
+    f"{OUT['Healthcare system gaps']}. *Results updated from the submitted abstract after "
+    "final screening.*",
     "**Conclusions:** MRKH-related psychosocial burden is substantial yet under-integrated into "
     "care models. Multidisciplinary, mental health-inclusive care and greater research "
     "investment are urgently needed.",
@@ -176,7 +182,7 @@ text(LEFT_X, y, LEFT_W, abstract_h, [
 y += abstract_h + 0.25
 
 y = header(LEFT_X, y, LEFT_W, "Introduction and Research Question", size=40)
-intro_h = 9.0
+intro_h = 8.25
 text(LEFT_X, y, LEFT_W, intro_h, [
     "MRKH syndrome is a rare Müllerian aplasia resulting in congenital absence of the uterus and "
     "upper two-thirds of the vagina in chromosomally female individuals (46,XX) with functional "
@@ -209,11 +215,12 @@ methods = [
     ("Inclusion Criteria", "Primary quantitative, qualitative, and mixed-methods studies "
                            "reporting psychological outcomes and/or coping mechanisms in MRKH"),
     ("Exclusion Criteria", "Studies focused solely on anatomical, surgical, or fertility outcomes"),
-    ("Screening", f"{P['identified']} records identified; {P['duplicates_removed']} duplicates "
-                  f"removed; {P['screened']} screened; {P['excluded']} excluded; "
-                  f"{P['included']} included"),
-    ("Synthesis", "Descriptive frequency counts by outcome domain and thematic grouping of "
-                  "coping mechanisms and healthcare gaps"),
+    ("Screening", f"{P['identified']} identified; {P['duplicates_removed']} duplicates removed; "
+                  f"{P['screened']} screened; {P['excluded']} excluded; {P['fulltext']} to full "
+                  f"text ({P['fulltext_pending']} pending); {P['included']} included (provisional). "
+                  "AI-assisted screening; human verification in progress"),
+    ("Synthesis", "Abstract-level data charting; frequency counts by outcome domain and "
+                  "thematic grouping of coping mechanisms and healthcare gaps"),
 ]
 tbl_h = BOTTOM - y
 gt = slide.shapes.add_table(len(methods) + 1, 2, Inches(LEFT_X), Inches(y), Inches(LEFT_W),
@@ -276,9 +283,14 @@ text(rx, y2, rw, 0.6, [f"**Coping Mechanisms Documented (n = "
                        f"{OUT['Coping mechanisms documented']} studies)**"],
      size=26, color=NAVY, align=PP_ALIGN.CENTER, space_after=0)
 y2 += 0.7
-chips = [("Peer & community support", False), ("Psychological counseling", False),
-         ("Identity reconstruction", False), ("Spiritual coping", False),
-         ("Adaptive acceptance", False), ("Avoidance (maladaptive)", True)]
+short_cope = {"Peer, family & social support": "Peer & social support",
+              "Psychological counseling/intervention": "Counseling / intervention",
+              "Identity reconstruction / positive reappraisal": "Identity reconstruction",
+              "Spiritual coping": "Spiritual coping", "Acceptance": "Acceptance",
+              "Avoidance / concealment (maladaptive)": "Avoidance / concealment",
+              "Self-advocacy": "Self-advocacy"}
+chips = [(f"{short_cope[name]} ({n})", "Avoidance" in name)
+         for name, n in sorted(data["coping"], key=lambda c: -c[1])]
 chw = (rw - 2 * 0.25) / 3
 for k, (label, bad) in enumerate(chips):
     chx = rx + (k % 3) * (chw + 0.25)
@@ -287,18 +299,18 @@ for k, (label, bad) in enumerate(chips):
         shape=MSO_SHAPE.ROUNDED_RECTANGLE)
     text(chx, chy, chw, 0.78, [label], size=21, color=ORANGE if bad else NAVY,
          align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, space_after=0, margin=0.05)
-right_end = y2 + 2 * 0.95
+right_end = y2 + ((len(chips) + 2) // 3) * 0.95
 y = max(row_top + ph + 1.2, right_end) + 1.3
 
 # Row: map (left) | design donut (right)
 mw, mh = image(FIG / "fig3_geographic_map.png", cx, y + 0.3, w=15.6)
 caption(cx, y + 0.3 + mh + 0.1, mw, "Fig 3: Geographic Distribution of Included Studies",
-        f"{REG['Europe'] + REG['North America']} of {N} studies (76%) from Europe or North "
-        f"America; {REG['Africa'] + REG['South America']} from Africa or South America")
+        f"Europe {REG['Europe']}, Asia {REG['Asia']}, North America {REG['North America']}, "
+        f"Africa {REG['Africa']}, multinational {REG['Multinational']}; none from South America")
 dx = cx + mw + 0.4
 dw_, dh = image(FIG / "fig2_design_donut.png", dx, y + 1.3, w=cx + cw - dx)
 caption(dx, y + 1.3 + dh + 0.1, dw_, "Fig 4: Study Design Distribution",
-        "Cross-sectional studies (n = 11) are a subset of quantitative designs")
+        "Design of one study could not be determined from its abstract")
 centre_end = y + 0.3 + mh + 1.2
 
 # ---------------------------------------------------------------- right column
@@ -306,23 +318,20 @@ y = header(RIGHT_X, TOP, RIGHT_W, "Results, Discussion and Conclusion", size=38)
 rdc_h = 11.3
 text(RIGHT_X, y, RIGHT_W, rdc_h, [
     "**Results**",
-    f"Of {P['identified']} records identified, {P['screened']} remained after deduplication and "
-    f"{N} studies met inclusion criteria: {DES['Quantitative']} quantitative (11 "
-    f"cross-sectional), {DES['Qualitative']} qualitative, and {DES['Mixed methods']} "
-    f"mixed-methods. Depression and anxiety were reported in {OUT['Depression & anxiety']} "
-    f"studies (76%), reduced QoL and body image in {OUT['Reduced QoL & body image']} (65%), "
-    f"psychosexual and relational challenges in {OUT['Psychosexual & relational challenges']} "
-    f"(56%), and broader distress in {OUT['Broader psychological distress']} (50%). "
-    f"Healthcare system gaps were identified in {OUT['Healthcare system gaps']} studies (53%): "
-    "delayed diagnosis without psychosocial support, limited multidisciplinary care, mental "
-    "health insufficiently integrated into care models, and no standardized screening at "
-    "diagnosis.",
+    f"Of {P['identified']} records, {P['screened']} remained after deduplication and {N} studies "
+    f"were provisionally included: {DES['Quantitative']} quantitative, {DES['Qualitative']} "
+    f"qualitative, {DES['Mixed methods']} mixed-methods, and 1 not reported. Psychosexual and "
+    f"relational challenges were most common ({pct(OUT['Psychosexual & relational challenges'])}), "
+    f"followed by QoL, body image and self-esteem ({pct(OUT['QoL, body image & self-esteem'])}), "
+    f"broader distress ({pct(OUT['Broader psychological distress'])}), and depression and anxiety "
+    f"({pct(OUT['Depression & anxiety'])}). Healthcare gaps ({OUT['Healthcare system gaps']} "
+    "studies) included providers' limited knowledge of MRKH, insensitive communication at "
+    "diagnosis, and scarce information, psychological and fertility counseling.",
     "**Discussion**",
-    "These findings are consistent with earlier evidence of elevated distress, anxiety, and "
-    "poorer mental health-related quality of life in MRKH^{5–7} and with a prior systematic "
-    "review.^{8} Coping strategies were documented in most studies but remain unsupported by "
-    "systematic clinical pathways, and 76% of studies came from Europe or North America, "
-    "leaving low-resource settings underrepresented.",
+    "Findings on depression and anxiety were mixed: several studies reported elevated symptoms, "
+    "while others found levels similar to controls. This aligns with earlier evidence^{5–7} and a "
+    "prior systematic review highlighting sexual esteem and genital image.^{8} Coping relied "
+    "largely on peer support and self-management rather than systematic clinical pathways.",
     "**Conclusion**",
     "MRKH-related psychosocial burden is substantial yet under-integrated into care models. "
     "Multidisciplinary, mental health-inclusive care and greater research investment are "
@@ -333,10 +342,10 @@ y += rdc_h + 0.25
 y = header(RIGHT_X, y, RIGHT_W, "Limitations")
 lim_h = 3.6
 text(RIGHT_X, y, RIGHT_W, lim_h, [
-    "Review limited to 2019–2026, potentially excluding earlier foundational research",
-    "Heterogeneous designs and outcome measures limit direct comparisons",
-    "Most studies from high-income countries, limiting global generalizability",
-    "Some studies relied on self-reported mental health outcomes",
+    "Provisional: AI-assisted screening and abstract-level extraction pending full-text verification",
+    "Review limited to 2019–2026",
+    "Heterogeneous designs and measures limit comparison",
+    "Few studies from Africa; none from South America",
 ], size=24, fill=WHITE, bullet=True, space_after=4, align=PP_ALIGN.LEFT)
 y += lim_h + 0.25
 
