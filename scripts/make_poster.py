@@ -280,29 +280,31 @@ place(find("TextBox 325"), X, 4.62, W, 1.79)
 place(find("TextBox 324"), X, 6.41, W, 16.29)
 place(find("Rectangle 326"), X + 0.12, 6.46, W - 0.24, 16.19)
 fill(find("Rectangle 326"), [
-    f"**Key Findings:** {N} studies from 2019–2026 were included ({DES['Quantitative']} quantitative, "
-    f"{DES['Qualitative']} qualitative, {DES['Mixed methods']} mixed-methods), with samples of "
-    f"5 to 616 participants (Figures 1–5).",
-    f"• **Psychosexual and relational ({pct(S)}):** lower sexual esteem and more negative genital "
-    "self-image than controls, even after neovagina creation.^{@R003,@R091}",
-    f"• **Psychological distress ({pct(G)}):** shock, grief, shame, and secrecy at diagnosis; "
-    "the diagnostic process itself was described as upsetting and potentially "
-    "traumatizing.^{@R267}",
-    f"• **QoL, body image, and self-esteem ({pct(Q)}):** impaired mental health–related quality "
-    "of life,^{@R021} and higher distress with lower self-esteem than population norms.^{@R105}",
-    f"• **Depression and anxiety ({pct(D)}):** depressive symptoms in 75.2% of 141 Chinese "
-    "patients;^{@R104} anxiety in 37.7% and depression in 32.5% of 77 Malaysian women.^{@R004} "
-    "Findings were mixed: uterus transplant candidates in France showed few symptoms.^{@R020}",
-    f"• **Coping ({pct(C)}):** peer and online support most common; avoidance and concealment "
-    f"also frequent, and one study traced a shift from avoidance to empowerment.^{{@R032}} Only {COPE['Psychological counseling/intervention']} "
-    "intervention studies were found, both reporting benefit.^{@R038,@R131}",
-    f"• **Healthcare gaps ({pct(H)}):** delayed diagnosis, providers unfamiliar with MRKH, and "
-    "patients forced to self-advocate.",
+    "**Results**",
+    f"Of {P['identified']} records, {N} studies (2019–2026; 5 to 616 participants) met inclusion "
+    f"criteria: {DES['Quantitative']} quantitative, {DES['Qualitative']} qualitative, and "
+    f"{DES['Mixed methods']} mixed-methods (Figures 1–2).",
+    "Psychosexual and relational challenges "
+    f"were the most frequently reported outcome ({S} of {N} studies), including lower sexual "
+    "esteem and more negative genital self-image than controls.^{@R003,@R091} Psychological "
+    f"distress was reported in {G} studies, with shock, shame, and secrecy at diagnosis and a "
+    "diagnostic process described as potentially traumatizing.^{@R267} Quality of life, body "
+    f"image, and self-esteem were reported in {Q}, including lower self-esteem than population "
+    f"norms.^{{@R105}} Depression and anxiety were assessed least often ({D} studies), with "
+    "mixed results: moderate-to-severe depressive symptoms in 34.0% of 141 Chinese "
+    "patients^{@R104} and anxiety in 37.7% of 77 Malaysian women,^{@R004} but few symptoms "
+    "among French uterus transplant candidates.^{@R020}",
+    "Coping was documented in "
+    f"{C} studies, most often peer and online support ({COPE['Peer, family & social support']}) "
+    f"and avoidance or concealment ({COPE['Avoidance / concealment (maladaptive)']}) (Figure 4). "
+    f"Healthcare system gaps, reported in {H} studies, included delayed diagnosis, providers "
+    "unfamiliar with MRKH, and patients having to advocate for themselves (Figure 3).",
     "**Discussion**",
     "Findings echo earlier evidence of distress and reduced quality of life in MRKH^{@hb09,@liao} "
     "and extend prior reviews by mapping coping and health-system gaps. Psychosexual concerns "
     "dominate the recent literature, whereas depression and anxiety were measured in fewer than "
-    f"half of studies. Evidence is concentrated in Europe ({REG['Europe']}) and Asia "
+    "half of studies. Only 2 studies tested psychosocial interventions, and both reported "
+    f"benefit.^{{@R038,@R131}} Evidence is concentrated in Europe ({REG['Europe']}) and Asia "
     f"({REG['Asia']}); {REG['Africa']} study came from Africa and none from South America, "
     "where expectations about fertility and marriage may shape experiences differently.",
     "**Conclusion**",
@@ -312,7 +314,8 @@ fill(find("Rectangle 326"), [
     "rather than structured care. Mental health screening, psychosexual counseling, and peer "
     "support should become standard in multidisciplinary MRKH care, not an afterthought, and "
     "research must reach underrepresented regions.",
-    "**Limitations:** English-language database literature from 2019–2026 only, without grey "
+    "**Limitations**",
+    "English-language database literature from 2019–2026 only, without grey "
     "literature; many small, single-center samples; heterogeneous designs and measures; "
     f"possible overlapping samples; {N - FT} studies assessed from abstracts only; no quality "
     "appraisal, and counts show how often outcomes were studied, not their prevalence.",
