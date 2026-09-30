@@ -63,3 +63,15 @@ How the co-author comments (Roberts) were handled:
 - "Where are our names": still needed from you.
 - "Remove the references": a short References panel is kept so the citation numbers in the text point somewhere, matching the MRKH and PMDD posters. To drop it, you can replace it with a QR code linked to the paper's reference list, as the PMDD poster does.
 - The new file is built from the template, so the old comments are not carried over.
+
+## Poster: fuller centre panel (latest)
+
+- New **Figure 4**: fructose content of HFCS-42 (42%), sucrose (50%) and HFCS-55 (55%), cited to White 2008.
+- New **Figure 5**: USDA ERS per capita availability, 1999 vs 2023. All caloric sweeteners fell from 153.6 to 123.5 lb (−20%) and corn sweeteners from 85.7 to 53.0 lb (−38%).
+- New **Public Health Context** tiles:
+  - 57.9% of U.S. energy intake comes from ultra-processed foods (Martínez Steele 2016; NHANES 2009–2010).
+  - 89.7% of energy from added sugars comes from ultra-processed foods (same source).
+  - ≤10 g added sugars per meal (2025–2030 Dietary Guidelines).
+  - −38% per capita corn sweetener availability, 1999–2023 (USDA ERS).
+- Fuller Discussion, and two more bullets each under Implications and Future Work.
+- Poster reference 10 is now the 2024 ERS chart. The 2013 ERS chart moved to the "additional references" section of the reference document.
