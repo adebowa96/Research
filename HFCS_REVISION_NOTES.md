@@ -83,3 +83,14 @@ How the co-author comments (Roberts) were handled:
 - Figures renumbered: Figure 3 is fructose content and Figure 4 is the ERS 1999 vs 2023 availability chart. The Discussion text references match.
 - The Public Health Context tiles now sit in one row. The duplicate "−38%" tile was replaced with "21.1% of calories in ultra-processed foods come from added sugars, vs 2.4% in processed foods" (Martínez Steele 2016, ref 11).
 - Reference numbering (1–14) and the QR reference document are unchanged.
+
+## Poster: 24 cited references (latest)
+
+- All 24 sources used in the paper are now cited on the poster, numbered 1–24 in reading order (left column, then centre, then right). The QR reference document lists all 24 in that order.
+- New citations were added to the text:
+  - **Introduction:** fructose metabolic effects (Rizkalla), HFCS inflammation and tumor growth (Aoyagi), and the <10% guidance in the 2020–2025 Dietary Guidelines.
+  - **Methods table:** GBFPD user guide and the FDC branded foods search.
+  - **Discussion:** the 1999 HFCS peak (ERS 2013) and HFCS vs sucrose (Rippe).
+  - **Limitations:** nutrient database data quality (Li Z).
+  - **Implications:** FDA Nutrition Facts rule (2016), plus a new bullet on disparities in fructose-rich food intake and metabolic syndrome (Lancaster).
+- The Methods table rows were made shorter to give the longer Introduction room.
