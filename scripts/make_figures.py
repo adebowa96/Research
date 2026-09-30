@@ -98,8 +98,8 @@ def coping_bar():
 def prisma():
     p = data["prisma"]
     fig, ax = plt.subplots(figsize=(10, 9))
-    ax.set_xlim(0, 10)
-    ax.set_ylim(0, 10)
+    ax.set_xlim(-0.12, 10.1)  # margins so the stage bars and top box are not clipped
+    ax.set_ylim(0.2, 10.18)
     ax.axis("off")
 
     def box(x, y, w, h, text, fill="#eef4fc", edge=NAVY, bold=False):
@@ -121,9 +121,9 @@ def prisma():
                 fontsize=12, fontweight="bold")
 
     grey = dict(fill="#f6f6f4", edge="#9a9993")
-    box(1.2, 8.1, 4.6, 1.9, f"Records identified through\ndatabase searching (n = {p['identified']})\n"
+    box(1.2, 8.1, 4.6, 1.9, f"Records identified from\ndatabases (n = {p['identified']})\n"
         "PubMed · Scopus · EBSCOhost\n(MEDLINE, CINAHL, PsycInfo, WSI)")
-    box(6.4, 8.45, 3.5, 1.2, f"Duplicates removed\n(n = {p['duplicates_removed']})", **grey)
+    box(6.4, 8.45, 3.5, 1.2, f"Duplicate records\nremoved (n = {p['duplicates_removed']})", **grey)
     box(1.2, 5.9, 4.6, 1.3, f"Records screened\n(title/abstract)\n(n = {p['screened']})")
     reasons = "\n".join(f"{r}: {n}" for r, n in p["reasons"])
     ax.add_patch(FancyBboxPatch((6.1, 4.5), 3.85, 2.9, boxstyle="round,pad=0.02,rounding_size=0.15",
@@ -131,14 +131,14 @@ def prisma():
     ax.text(8.02, 6.95, f"Records excluded (n = {p['excluded']})", ha="center", va="center",
             fontsize=13.5, color=INK)
     ax.text(8.02, 5.7, reasons, ha="center", va="center", fontsize=11, color=INK, linespacing=1.45)
-    box(1.2, 2.8, 4.6, 1.3, f"Records assessed\nfor eligibility\n(n = {p['fulltext']})")
+    box(1.2, 2.8, 4.6, 1.3, f"Reports assessed\nfor eligibility\n(n = {p['fulltext']})")
     el = "\n".join(f"{r}: {n}" for r, n in p["eligibility_reasons"])
     ax.add_patch(FancyBboxPatch((6.1, 2.55), 3.85, 1.8, boxstyle="round,pad=0.02,rounding_size=0.15",
                                 facecolor="#f6f6f4", edgecolor="#9a9993", linewidth=2))
-    ax.text(8.02, 3.85, f"Excluded (n = {p['excluded_eligibility']})", ha="center", va="center",
+    ax.text(8.02, 3.85, f"Reports excluded (n = {p['excluded_eligibility']})", ha="center", va="center",
             fontsize=13.5, color=INK)
     ax.text(8.02, 3.1, el, ha="center", va="center", fontsize=11, color=INK, linespacing=1.45)
-    box(1.2, 0.4, 4.6, 1.5, f"Studies included\n(n = {p['included']})",
+    box(1.2, 0.4, 4.6, 1.5, f"Studies included\nin review (n = {p['included']})",
         fill="#dbe8fa", bold=True)
 
     arrow(3.5, 8.1, 3.5, 7.2)
