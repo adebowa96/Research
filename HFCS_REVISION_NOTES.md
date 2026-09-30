@@ -94,3 +94,21 @@ How the co-author comments (Roberts) were handled:
   - **Limitations:** nutrient database data quality (Li Z).
   - **Implications:** FDA Nutrition Facts rule (2016), plus a new bullet on disparities in fructose-rich food intake and metabolic syndrome (Lancaster).
 - The Methods table rows were made shorter to give the longer Introduction room.
+
+## Poster back to 14 citations; reference document expanded to 34 (latest)
+
+- The poster again cites only 14 references (the lighter 4-figure version); the extra in-text citations were removed.
+- The QR reference document now has three sections:
+  - **A.** The 14 references cited on the poster, numbered 1–14 in poster order.
+  - **B.** 10 additional references cited in the full paper, alphabetical.
+  - **C.** Further reading: 10 key studies, checked against published records and listed alphabetically.
+    - Bray 2004 (*Am J Clin Nutr*)
+    - Goncalves 2019 (*Science*)
+    - Goran 2013 (*Glob Public Health*)
+    - Malik & Hu 2022 (*Nat Rev Endocrinol*)
+    - Ng 2012 (*J Acad Nutr Diet*)
+    - Popkin & Hawkes 2016 (*Lancet Diabetes Endocrinol*)
+    - Ricciuto 2021 (*Front Nutr*)
+    - Stanhope 2009 (*J Clin Invest*)
+    - Te Morenga 2013 (*BMJ*)
+    - WHO 2015 sugars guideline
