@@ -306,10 +306,10 @@ fill(find("Rectangle 326"), [
     f"half of studies. Evidence is concentrated in Europe ({REG['Europe']}) and Asia "
     f"({REG['Asia']}); {REG['Africa']} study came from Africa and none from South America, "
     "where expectations about fertility and marriage may shape experiences differently.",
-    "**Limitations:** AI-assisted screening and charting (full text checked for "
-    f"{FT} of {N} studies); English-language studies from 2019–2026 only; heterogeneous designs "
-    "and measures; some reports may share samples; counts show how often outcomes were studied, "
-    "not their prevalence.",
+    "**Limitations:** English-language database literature from 2019–2026 only, without grey "
+    "literature; many small, single-center samples; heterogeneous designs and measures; "
+    f"possible overlapping samples; {N - FT} studies assessed from abstracts only; no quality "
+    "appraisal, and counts show how often outcomes were studied, not their prevalence.",
 ])
 
 TextBox13 = find("TextBox 13")

@@ -249,7 +249,7 @@ def build(ctx):
          "interfaces and enforced at screening, designs and measures were heterogeneous, and "
          "other studies may also share samples. Consistent with scoping methodology, study quality was "
          "not appraised, and counts reflect how often outcomes were studied, not their "
-         "prevalence. [[Add, if applicable: grey literature not searched.]]")
+         "prevalence. Grey literature was not searched, and many included studies had small, single-center samples, which limits generalizability.")
     heading("Conclusions", 2)
     para("MRKH-related psychosocial burden is substantial yet under-integrated into care models. "
          "Psychosexual and relational challenges, reduced quality of life and self-esteem, and "
