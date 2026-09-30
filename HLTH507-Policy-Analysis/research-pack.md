@@ -2,9 +2,10 @@
 
 **Course:** HLTH 507, Policy Analysis & Recommendations
 **Compiled:** September 30, 2026
-**Status:** Policy chosen: **Candidate A, the Into the Light Act.** Discussion draft: https://claude.ai/code/artifact/ea8f2c03-9bd1-4fe5-a66d-de6407f9a142. Other policies that also fit are in §15.
+**Status:** Comparison in progress. The Into the Light Act is the **working choice** for the Discussion draft (https://claude.ai/code/artifact/ea8f2c03-9bd1-4fe5-a66d-de6407f9a142), not a settled pick for all three parts. §14 says what could change it. Other policies that also fit are in §15.
+**Revised:** September 30, 2026, after review. Corrected California's legal wording, resolved New York's chapter number, separated real reasoning flaws from evidence gaps, and made the ranking provisional.
 
-Items marked **†** still need a final check (a DOI, page range, chapter number or author list) before they go into a submitted reference list.
+Items marked **†** still need a final check (a DOI, page range or author list) before they go into a submitted reference list.
 
 ## Contents
 
@@ -14,7 +15,7 @@ Items marked **†** still need a final check (a DOI, page range, chapter number
 4. [Candidate B: California screening laws (2018 and 2024)](#4-candidate-b-california-screening-laws-2018-and-2024)
 5. [Candidate C: New York screening law (2024) and state report (2025)](#5-candidate-c-new-york-screening-law-2024-and-state-report-2025)
 6. [Shared evidence base](#6-shared-evidence-base)
-7. [Evidence misuse and logical fallacies](#7-evidence-misuse-and-logical-fallacies)
+7. [Evidence critiques and reasoning flaws](#7-evidence-critiques-and-reasoning-flaws)
 8. [Ethics and biblical integration](#8-ethics-and-biblical-integration)
 9. [Frameworks for the policy-making process](#9-frameworks-for-the-policy-making-process)
 10. [Lived-experience sources for the Evaluation part](#10-lived-experience-sources-for-the-evaluation-part)
@@ -30,11 +31,20 @@ Items marked **†** still need a final check (a DOI, page range, chapter number
 
 | Part | What the instructions ask | What we need from research |
 |---|---|---|
-| **Discussion** (graded by the uploaded rubric) | History of the policy and how it was made; how evidence was used, including logical fallacies and poor data interpretation; ethical effects on the intended population and unintended consequences for others | Timeline and key actors (§3–5), core statistics (§6), fallacy examples (§7), ethics points and Bible passages (§8), a policy-process framework (§9) |
+| **Discussion** | History of the policy and how it was made; how evidence was used, including logical fallacies and poor data interpretation; ethical effects on the intended population and unintended consequences for others | Timeline and key actors (§3–5), core statistics (§6), documented claims to analyze (§7), ethics points and Bible passages (§8), a policy-process framework (§9) |
 | **Evaluation** | Impact on public health and equity; experiences of the intended population and of others in the same area; op-eds and interviews; whether the policy went too far or not far enough; recommendations | Lived-experience sources (§10), outcome data such as the GAO hotline report and the New Jersey screening study (§6) |
 | **Policy Design** | A population-based program that fixes a weakness in the policy or serves a specific subpopulation, rooted in the literature and in lived experience | Program models with evidence and subpopulation options (§11) |
 
-**Discussion rubric weights:** Policy Analysis 40 pts · Ethical Considerations 30 pts (biblical integration needed for "Advanced") · AMA Formatting 15 pts · Writing, Clarity & Organization 15 pts. Each part is about 1,000 words.
+**Where each requirement comes from**
+
+| Requirement | Source | Applies to |
+|---|---|---|
+| Three parts; about 1,000 words each; Turnitin check | Assignment instructions (Word file, "Analysis & Recommendations Assignment Instructions") | All three parts |
+| Rubric weights: Policy Analysis 40 · Ethical Considerations 30 · AMA Formatting 15 · Writing, Clarity & Organization 15 | Separate rubric PDF uploaded at the start ("Policy Analysis & Recommendations: Discussion Assignment Rubric," HLTH507_001_202640) | **Discussion only** |
+| Biblical integration (needed for "Advanced" on Ethical Considerations) | Same Discussion rubric PDF; not in the instructions | **Discussion only** |
+| AMA formatting | Same Discussion rubric PDF; not in the instructions | **Discussion only** |
+
+The Evaluation and Policy Design rubrics haven't been seen. Don't assume they use the same weights, AMA or biblical criteria until you have them.
 
 ---
 
@@ -43,10 +53,10 @@ Items marked **†** still need a final check (a DOI, page range, chapter number
 | | **A. Into the Light Act** | **B. California AB 2193 & AB 1936** | **C. New York S2039-B & 2025 report** |
 |---|---|---|---|
 | **Level** | Federal | State | State |
-| **Enacted** | Dec 2022, inside the Consolidated Appropriations Act, 2023 | AB 2193 signed Sept 26, 2018 (in effect July 1, 2019); AB 1936 signed Sept 28, 2024 (in effect Jan 1, 2025) | Signed Dec 2024; first state maternal mental health report released Nov 6, 2025 |
-| **What it does** | Puts the National Maternal Mental Health Hotline into law; renews and expands federal grants to states for maternal mental health and substance use screening and treatment; led to a federal Task Force and a 2024 national strategy | Obstetric providers must make sure patients are screened; health plans must run maternal mental health programs; AB 1936 requires coverage of a screening in pregnancy, one in the first 6 weeks postpartum, and more if medically necessary | State health department must publish guidance on when and how often to screen during pregnancy and after birth, how to refer, and how to screen for social needs (housing, food, diapers, partner violence) |
-| **Best for** | A long, well-documented story that runs to 2026 (2025 staff cuts, 2026 GAO report); clear subpopulations | A "policy revised after 6 years" story; strong California journalism with mothers' stories | Most recent; local news for "constituents of this district"; state report with New York data |
-| **Watch-outs** | Federal scale makes constituent op-eds harder to find | State insurance mandates don't reach self-funded employer plans (governed by federal ERISA law), so coverage is uneven | Chapter number and a 2025 follow-up bill still to confirm |
+| **Enacted** | Dec 2022, inside the Consolidated Appropriations Act, 2023 | AB 2193 signed Sept 26, 2018 (in effect July 1, 2019); AB 1936 signed Sept 28, 2024 as Chapter 815, Statutes of 2024 (in effect Jan 1, 2025) | Signed Dec 21, 2024 as Chapter 644 of the Laws of 2024; first state maternal mental health report released Nov 6, 2025 |
+| **What it does** | Puts the National Maternal Mental Health Hotline into law; renews and expands federal grants to states for maternal mental health and substance use screening and treatment; led to a federal Task Force and a 2024 national strategy | AB 2193: practitioners providing prenatal or postpartum care must ensure the mother is offered screening or is appropriately screened for maternal mental health conditions; health plans must run maternal mental health programs. AB 1936: specifies at least one screening during pregnancy, at least one in the first 6 weeks postpartum, and more when medically necessary | State health department must publish guidance on when and how often to screen during pregnancy and after birth, how to refer, and how to screen for social needs (housing, food, diapers, partner violence) |
+| **Strongest evidence so far** | Documented legislative history to 2026; the Aug 13, 2026 GAO report on hotline operations, staffing, contact volume and stakeholder feedback | Six-plus years in force; California journalism with mothers' stories; implementation, patient-experience and equity studies to add (§4) | Recent local coverage; New York's 2025 state report with state data |
+| **Main gap** | No evidence yet that the law improved depression, treatment completion or mortality. GAO covers operations, not health outcomes | State mandates don't reach self-funded employer plans (ERISA), so coverage is uneven | Newest law, so the least implementation evidence; it mainly directs guidance, so effects will be hard to isolate; status of the 2025 follow-up bill unknown |
 
 ---
 
@@ -81,7 +91,7 @@ Items marked **†** still need a final check (a DOI, page range, chapter number
 
 ### Angles for the assignment
 - **Process:** A bipartisan bill that became law inside a huge end-of-year spending package rather than on its own. The hotline was launched by the agency (May 2022) *before* Congress put it into law. Implementation was then shaped by a new administration's workforce cuts.
-- **Evaluation:** GAO measured operations (answer rates, volume), not whether mothers got better. That gap is a ready-made "has it worked as intended?" question.
+- **Evaluation:** The Aug 13, 2026 GAO report is recent, independent evidence on hotline operations, staffing, contact volume and stakeholder feedback. It does **not** show that the law improved maternal depression, treatment completion or mortality. An Evaluation built on this candidate would need outcome or lived-experience evidence from elsewhere.
 - **Subpopulations:** military families (Congress's own directive), rural mothers, Black mothers, mothers with substance use disorders, Spanish speakers.
 
 ### Links
@@ -105,11 +115,12 @@ Items marked **†** still need a final check (a DOI, page range, chapter number
 ## 4. Candidate B: California screening laws (2018 and 2024)
 
 ### What the laws do
-- **AB 2193** (Asm. Brian Maienschein), signed Sept 26, 2018; in effect July 1, 2019. Obstetric providers must confirm a patient was screened for maternal mental health conditions at least once during pregnancy or postpartum, or screen her themselves. Health plans and insurers must create maternal mental health programs with case management.
-- **AB 1936** (Asm. Cervantes), signed Sept 28, 2024; in effect Jan 1, 2025. Plans must cover at least one screening during pregnancy, one in the first 6 weeks postpartum, and more when medically necessary.
+- **AB 2193** (Asm. Brian Maienschein), signed Sept 26, 2018; in effect July 1, 2019. A licensed practitioner who provides prenatal or postpartum care must ensure the mother is **offered screening or is appropriately screened** for maternal mental health conditions. Health plans and insurers must create maternal mental health programs.
+- **AB 1936** (Asm. Cervantes), signed Sept 28, 2024 as Chapter 815, Statutes of 2024; in effect Jan 1, 2025. Specifies that maternal mental health programs include at least one screening during pregnancy, at least one in the first 6 weeks postpartum, and more when medically necessary and clinically appropriate.
 
 ### Angles for the assignment
-- **Process:** Advocates (2020 Mom) called AB 2193 a "unique approach" because it paired screening with plan-run case management. AB 1936 revised the rules six years later by spelling out how many screenings plans must cover. That's a clean example of the "policy modification" stage.
+- **Process:** Advocates (2020 Mom) called AB 2193 a "unique approach" because it paired screening with plan-run case management. AB 1936 later made the timing of screening specific. That shows the policy being amended. **The amendment alone does not show that AB 2193 failed.** Any claim about why it was amended needs the legislative analyses or implementation studies behind it.
+- **Implementation, patient experience and equity studies: not yet in this pack.** The 2025 interview study and the two 2026 studies from your review belong here. Add their citations and findings before comparing California with the other candidates.
 - **Evidence debate:** NPR (2018) on the pros and cons of mandatory screening; KFF Health News on doctors with "nowhere to send" mothers who screen positive.
 - **Equity:** State mandates don't reach self-funded employer plans (ERISA), so some Californians aren't covered. Medi-Cal and commercial plans can also differ.
 - **Lived experience:** CalMatters (2019) covered Wendy Root Askew, who had postpartum depression and backed AB 2193, and a family affected by postpartum psychosis.
@@ -129,7 +140,7 @@ Items marked **†** still need a final check (a DOI, page range, chapter number
 ## 5. Candidate C: New York screening law (2024) and state report (2025)
 
 ### What the law does
-**S2039-B / A2870-B** (Sen. Samra Brouk), signed by Gov. Kathy Hochul in December 2024. The Department of Health, working with the state's mental health and addiction agencies, must publish guidance for depression screening during pregnancy and after birth: when to start, how often to screen, and how to refer. The guidance must cover screening for social needs linked to maternal depression: social support, intimate partner violence, food and housing insecurity, diaper insecurity, and barriers to care. The department must also post links to training on equity, bias, cultural competency, screening, treatment, patients' rights, and trauma-informed care. **† Chapter number to confirm.**
+**S2039-B / A2870-B** (Sen. Samra Brouk), signed by Gov. Kathy Hochul on December 21, 2024 as **Chapter 644 of the Laws of 2024**. Being new does not make it easier to evaluate: there is little implementation evidence yet. The Department of Health, working with the state's mental health and addiction agencies, must publish guidance for depression screening during pregnancy and after birth: when to start, how often to screen, and how to refer. The guidance must cover screening for social needs linked to maternal depression: social support, intimate partner violence, food and housing insecurity, diaper insecurity, and barriers to care. The department must also post links to training on equity, bias, cultural competency, screening, treatment, patients' rights, and trauma-informed care.
 
 ### Related New York developments
 - **Nov 6, 2025:** Gov. Hochul announced New York's first-ever maternal mental health report (128 pages), from a workgroup created by the FY2024 state budget. Recommendations include expanding Project TEACH consultation for OB-GYNs and pediatricians, integrating behavioral health into OB care through Collaborative Care, universal screening with validated tools, and Medicaid doula benefits. The report says mental health contributed to **19.5%** of pregnancy-related deaths in New York.
@@ -176,17 +187,30 @@ These work for any of the three candidates. Numbers in brackets point to §12.
 
 ---
 
-## 7. Evidence misuse and logical fallacies
+## 7. Evidence critiques and reasoning flaws
 
-The rubric's "Advanced" level asks you to identify "logical fallacies and poor data interpretations." Each example below is documented in the sources or follows directly from them.
+A logical fallacy is a flaw in a specific argument someone actually made. A gap in the evidence is a valid criticism, but it is not a fallacy by itself. This section keeps the two apart.
 
-1. **"Screening is the solution" (false cause).** Screening mandates assume that finding depression leads to treatment. New Jersey's 2006 mandate didn't change treatment for Medicaid mothers [6], and its evaluators said the policy was "predicated on an inadequate base of evidence." The treatment cascade shows most identified women never get adequate treatment [5]. Doctors have reported having "nowhere to send" mothers who screen positive (KFF Health News). This applies to all three candidates.
-2. **Counting outputs as outcomes.** Hotline answer rates and contact counts show the service is running, not that mothers are healthier. The 2026 GAO report measures operations only [10]. Watch for officials citing contact volume as proof of impact.
-3. **Cherry-picking and one-sided evidence.** At the FDA's July 21, 2025 roundtable on SSRIs in pregnancy, panelists stressed possible medication risks. ACOG's president called it "alarmingly unbalanced" because it "did not adequately acknowledge the harms of untreated perinatal mood disorders." The Society for Maternal-Fetal Medicine warned that misinformation creates "unnecessary barriers to care." NPR reported the panel "spread misinformation."
-4. **Appeal to fear / slippery slope.** Opponents of the earlier federal MOTHERS Act argued it would push psychotropic drugs on new mothers.
-5. **Anecdote as evidence (hasty generalization).** Personal stories, like Mary Jo Codey's in New Jersey and Melanie Blocker Stokes's in Illinois, rightly put the issue on the agenda. But a moving story doesn't show which intervention works. New Jersey acted on the story before the evidence.
-6. **Misreading the numbers.** "22.7% of pregnancy-related deaths" does not mean "22.7% of mothers." The CDC data cover 36 states, not the whole country.
-7. **Budget framing that leaves out costs.** Staff and funding cuts can be described as savings, while untreated perinatal mood and anxiety disorders cost an estimated $14.2 billion for one year's births [4]. Present this as a question to test, not an accusation.
+### 7a. Documented claims that may contain reasoning flaws
+
+Before labeling any of these in the paper, quote the claim from a primary source and explain exactly why its reasoning is weak.
+
+| Claim and who made it | What is documented so far | Possible flaw | What's still needed |
+|---|---|---|---|
+| Panelists at the FDA's July 21, 2025 roundtable on SSRIs in pregnancy | ACOG's president called the panel "alarmingly unbalanced" and said panelists made "outlandish and unfounded claims"; SMFM and APA raised similar concerns | Selective use of evidence, if a specific claim weighed medication risks while leaving out the risks of untreated depression | One panelist's claim, quoted from the FDA video or transcript, and the evidence it left out |
+| Opponents of the federal MOTHERS Act (2007–2010) | Opposition centered on fears that the law would promote psychotropic medication for new mothers | Appeal to fear or slippery slope, *only* if an opponent argued that screening would inevitably lead to overmedication | An opponent's actual statement (hearing testimony or a published letter) |
+| Officials describing the hotline's success | No such claim found yet | Treating outputs (contacts, answer rates) as proof of outcomes (recovery) would be a real reasoning flaw | A documented statement that makes that leap. Without one, this is a caution, not a finding |
+
+### 7b. Valid criticisms that are not fallacies
+
+- **The screening–treatment gap.** Only 30.8% of women with postpartum depression are identified, 15.8% are treated and 3.2% reach remission [5]. New Jersey's 2006 screening mandate did not improve treatment for Medicaid mothers, and its evaluators said the policy rested on an inadequate evidence base [6]. KFF Health News reported doctors with "nowhere to send" mothers who screen positive. These criticize the evidence behind screening policies. They point to a reasoning flaw only if someone claims that screening alone will improve outcomes or cut deaths.
+- **Operations evidence, not outcome evidence.** GAO's 2026 report shows how the hotline runs [10]. It says nothing about health outcomes. That is a limit of the evidence, not anyone's mistake.
+
+### 7c. Data cautions for our own writing
+
+- "22.7% of pregnancy-related deaths" does not mean "22.7% of mothers." The CDC data cover 36 states, not the whole country [1].
+- New York's 19.5% and the national 22.7% come from different datasets and years. Don't compare them directly.
+- The New Jersey study covers one state, one period and Medicaid claims. Don't generalize it to every screening law.
 
 ---
 
@@ -304,10 +328,13 @@ Web sources use the access date September 30, 2026; update it to the day you che
 
 ## 13. Still to collect
 
-- [ ] Constituent op-eds, once the policy is chosen (see §10)
-- [ ] New York chapter number for S2039-B, and the status of A1025/S802
+- [ ] Citations and findings for the 2025 California interview study and the two 2026 California studies from your review (§4)
+- [ ] The Evaluation and Policy Design rubrics (§1)
+- [ ] Primary-source quotes for the claims in §7a (FDA roundtable video or transcript; MOTHERS Act opposition statements)
+- [ ] Status of New York's 2025 follow-up bill (A1025/S802)
 - [ ] DOIs, page ranges and author lists marked †
 - [ ] Latest hotline contact totals from HRSA
+- [ ] Constituent op-eds, once the policy is settled (§10)
 - [ ] The course textbook's policy-process model, to cite with Kingdon
 - [ ] Your state, if you want local sources for the Evaluation part
 
@@ -315,11 +342,15 @@ Web sources use the access date September 30, 2026; update it to the day you che
 
 ## 14. How to choose
 
-- **Richest national story, with an outside evaluation (GAO) already done** → **A. Into the Light Act**
-- **Most recent policy, with local voices for "constituents of this district"** → **C. New York** (best if you live in or near New York)
-- **Clearest example of a policy revised after it fell short** → **B. California**
+No candidate has yet been shown to be the strongest for all three parts. The same policy has to carry the Discussion, the Evaluation and the Policy Design, so the choice should rest on the part where the evidence is thinnest: the Evaluation.
 
-**Current ranking:** A, then C, then B. Candidate A covers the most ground across all three parts; C is close behind if local sources matter most to you.
+| Part | A. Into the Light | B. California | C. New York |
+|---|---|---|---|
+| **Discussion** (history, process, use of evidence) | Strongest documented history so far: 2016 grants → 2022 law → 2024 strategy → 2025 staff cuts → 2026 GAO report | Good: 2018 law, 2024 amendment, advocacy record | Adequate: 2024 law plus the 2025 state report; short history |
+| **Evaluation** (impact, equity, lived experience) | Operations evidence (GAO) but no outcome evidence; national scale makes constituents' voices harder to find | Possibly the strongest once the 2025 interview study and the 2026 studies are added: implementation, patient experience and equity in one state | Weakest so far: newest law, little implementation evidence |
+| **Policy Design** (subpopulation, literature) | Workable: military families, rural mothers, Black mothers | Workable: e.g., people in self-funded employer plans, Medi-Cal enrollees | Workable: social-needs screening points to low-income mothers |
+
+**Current position:** Into the Light is a reasonable working choice for the Discussion, but this pack doesn't establish that it's the strongest overall. California may be stronger for the Evaluation. Decide after (1) adding the California studies to §4 and (2) seeing the Evaluation and Policy Design rubrics. Switching later would mean rewriting the Discussion draft.
 
 ---
 
@@ -334,7 +365,7 @@ Checked September 30, 2026, against the same test: recent, clearly about women's
 | **Deborah Sampson Act** (in Pub L 116-315) | Federal | Jan 5, 2021 | Created an Office of Women's Health in the VA, required a women's health primary care provider at every VA facility, expanded military sexual trauma (MST) counseling | Women veterans with MST or PTSD are a clear subpopulation | Older and broad; mental health is only part of it |
 | **New York ban on diet pill sales to minors** | State | In effect Apr 22, 2024 | First-in-the-nation ban on selling over-the-counter weight-loss and muscle-building supplements to anyone under 18 | Eating-disorder prevention; strong debate over supplement regulation | Protects minors (boys too), not specifically women; little outcome data |
 
-**Verdict:** None of these beats the Into the Light Act for this assignment. **Arizona HB 2332** is the best alternative if you'd rather analyze a state law.
+**Verdict:** None of these clearly outperforms the three main candidates on the criteria above. **Arizona HB 2332** is the most promising state alternative, but it has little evaluation evidence yet.
 
 **Links**
 - Arizona HB 2332 text: https://www.azleg.gov/legtext/57leg/1R/bills/HB2332S.htm
