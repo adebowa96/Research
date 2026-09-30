@@ -220,7 +220,7 @@ fill(find("TextBox 311"), [
     "primary amenorrhea, a sensitive period for identity, sexuality, and relationships. "
     "Earlier studies linked MRKH with psychological distress, anxiety, and reduced quality of "
     "life,^{@hb09,@laggari,@liao} and guidelines recommend psychosocial counseling as part of "
-    "care.^{@acog} Prior reviews focused on psychological and sexual outcomes;^{@facchin,@tsarna} "
+    "care.^{@acog} Prior reviews focused on psychological and sexual outcomes^{@facchin,@tsarna}; "
     "coping and healthcare system gaps have not been mapped across the growing recent literature. "
     "Mapping this evidence can guide psychosocial care, provider training, and research priorities.",
     "**Objective**",
@@ -423,7 +423,8 @@ for k, ref in enumerate(poster_refs, 1):
 
 cited = set(CITER.order)
 included = [(k, v) for k, v in CITER.lib.items() if re.fullmatch(r"R\d{3}", k)]
-included.sort(key=lambda kv: kv[1].lower())
+import unicodedata  # noqa: E402
+included.sort(key=lambda kv: unicodedata.normalize("NFKD", kv[1]).encode("ascii", "ignore").decode().lower())
 doc.add_heading(f"B. All {N} studies included in the scoping review", 2)
 doc.add_paragraph("Listed alphabetically by first author. Studies also cited on the poster "
                   "show their poster reference number in brackets.")
