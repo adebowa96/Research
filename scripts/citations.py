@@ -59,7 +59,7 @@ BACKGROUND = {
             "2007;22(8):2296-2301. doi:10.1093/humrep/dem167",
     "okunomiya": "Okunomiya A, Tsuyuki K, Ohsuga T, et al. Long-term psychosocial outcomes in "
                  "Japanese Mayer-Rokitansky-Küster-Hauser syndrome: a single-center study. *J "
-                 "Obstet Gynaecol Res*. 2026;52(5). doi:10.1111/jog.70291 [[add article number]]",
+                 "Obstet Gynaecol Res*. 2026;52(5):e70291. doi:10.1111/jog.70291",
 }
 
 JOURNAL_ABBREV = {
@@ -67,7 +67,22 @@ JOURNAL_ABBREV = {
     "R063": "J Sex Med", "R073": "J Pediatr Adolesc Gynecol", "R084": "Chin Med J (Engl)",
     "R104": "Orphanet J Rare Dis", "R105": "J Pediatr Adolesc Gynecol",
     "R149": "J Pediatr Adolesc Gynecol", "R164": "Evol Psychiatr",
-    "R227": "Indian J Public Health Res Dev",
+    "R227": "Indian J Public Health Res Dev", "R223": "Pan Afr Med J", "R234": "Hum Reprod",
+    "R244": "Ital J Gynaecol Obstet",
+}
+# corrections checked against the full-text PDFs (export metadata was wrong or incomplete)
+AUTHOR_FIX = {
+    "R223": "Ngoumou RD",
+    "R003": "Weijenborg PTM, Kluivers KB, Dessens AB, ten Kate-Booij MJ, Both S",
+}
+TITLE_FIX = {
+    "R004": ("Kϋster", "Küster"),
+    "R017": ("wellbeing-a", "wellbeing—a"),
+    "R234": ("'complete' woman-a", '"complete" woman—a'),
+    "R244": ("Uterus Transplantation", "uterus transplantation"),
+    "R052": ("Aplasia/Agenesis", "aplasia/agenesis"),
+    "R010": ("Hauser Syndrome (MRKH)", "Hauser syndrome (MRKH)"),
+    "R223": ("(MRKH) Syndrome", "(MRKH) syndrome"),
 }
 PAGE_FIX = {"R021": "1269"}  # article number (export listed page range 1-33)
 
@@ -123,17 +138,32 @@ def sentence_case(title):
     return " ".join(out)
 
 
+def lower_after_colon(title):
+    """AMA: in article titles the first word after a colon is lowercase unless it is a proper
+    noun or abbreviation."""
+    def repl(m):
+        word = m.group(2)
+        if word in KEEP_CAPS or re.search(r"[A-Z].*[A-Z]", word):
+            return m.group(0)
+        return m.group(1) + word[0].lower() + word[1:]
+    return re.sub(r"(:\s+)([A-Z][\w'-]*)", repl, title)
+
+
 def included_reference(rec):
     rid = rec["record_id"]
     title = html.unescape(re.sub(r"<[^>]+>", "", rec["title"])).strip().rstrip(".")
-    title = sentence_case(title)
+    if rid in TITLE_FIX:
+        title = title.replace(*TITLE_FIX[rid])
+    title = lower_after_colon(sentence_case(title))
+    end = "" if title.endswith(("?", "!")) else "."
     journal = JOURNAL_ABBREV.get(rid) or rec["journal_abbrev"] or rec["journal"]
     vol, iss = rec["volume"], rec["issue"]
     pages = PAGE_FIX.get(rid, rec["pages"])
     vi = f"{vol}({iss})" if vol and iss else vol
     loc = f"{rec['year']};{vi}:{pages}" if vi and pages else f"{rec['year']};{vi}" if vi else rec["year"]
     doi = f" doi:{rec['doi']}" if rec["doi"] else ""
-    return f"{ama_authors(rec['authors'])}. {title}. *{journal}*. {loc}.{doi}"
+    authors = AUTHOR_FIX.get(rid) or ama_authors(rec["authors"])
+    return f"{authors}. {title}{end} *{journal}*. {loc}.{doi}"
 
 
 def load_included():
