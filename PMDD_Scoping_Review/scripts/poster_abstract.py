@@ -134,11 +134,6 @@ arrow(bx+bw/2,3.66,bx+bw/2,3.74)
 pbox(bx,3.74,bw,0.4,['Studies included in','the scoping review','n = 44'],fill=RGBColor(0xD9,0xE2,0xF3),line=NAVY,size=4.2)
 # inclusion criteria box (as in the earlier poster)
 write(tb(fx,4.16,2.47,0.18),[{'runs':[('Figure 1. ',True,False,NAVY),('Study Selection Flow Diagram.',True,False,NAVY),(' Adapted from PRISMA-ScR.¹¹',False,False,INK)]}],size=4.2)
-ib=tb(fx,4.36,2.47,0.6,fill=PALE,line=NAVY,shape=MSO_SHAPE.ROUNDED_RECTANGLE,anchor=MSO_ANCHOR.MIDDLE,lw=0.5)
-write(ib,[{'runs':[('Inclusion Criteria (Arksey & O’Malley, 2005 — scoping review framework)',True,False)],'align':PP_ALIGN.CENTER,'size':3.8,'space':1},
-          {'runs':[('✓  Peer-reviewed empirical or qualitative studies, 2010–2025',False,False)],'align':PP_ALIGN.CENTER,'space':0.5},
-          {'runs':[('✓  PMDD as the primary population',False,False)],'align':PP_ALIGN.CENTER,'space':0.5},
-          {'runs':[('✓  At least one psychosocial outcome or coping mechanism as a primary aim',False,False)],'align':PP_ALIGN.CENTER,'space':0}],size=3.6,color=INK)
 # --- Fig 2 domains ---
 dx=5.2
 D=[('Coping mechanisms',3),('Quality of life',14),('Suicidal ideation or self-harm',14),('Interpersonal functioning',18),('Psychological distress',24),('Depression',39)]
@@ -152,22 +147,22 @@ def style(ch,size,maxv):
     return ser
 gf=s.shapes.add_chart(XL_CHART_TYPE.BAR_CLUSTERED,Inches(dx),Inches(1.84),Inches(2.45),Inches(2.84),cd); ser=style(gf.chart,4.6,44)
 pt=ser.points[0]; pt.format.fill.solid(); pt.format.fill.fore_color.rgb=RED
-write(tb(dx,4.7,2.45,0.26),[{'runs':[('Figure 2. ',True,False,NAVY),('Psychosocial Outcomes Reported in the 44 Included Studies.',True,False,NAVY),(' A study could report more than one outcome, so counts should not be summed.',False,False,INK)]}],size=4.2)
+write(tb(dx,4.8,2.45,0.26),[{'runs':[('Figure 2. ',True,False,NAVY),('Psychosocial Outcomes Reported in the 44 Included Studies.',True,False,NAVY),(' A study could report more than one outcome, so counts should not be summed.',False,False,INK)]}],size=4.2)
 # --- Fig 3 geography ---
 gy=4.9
 s.shapes.add_picture('fig3_map.png',Inches(fx),Inches(gy+0.22),width=Inches(3.4))
 call=tb(6.1,gy+0.35,1.5,1.2,fill=PALE,line=RED,shape=MSO_SHAPE.ROUNDED_RECTANGLE,anchor=MSO_ANCHOR.MIDDLE,lw=0.6)
 write(call,[{'runs':[('6.8%',True,False,RED)],'size':20,'align':PP_ALIGN.CENTER,'space':0},{'runs':[('of included studies (3 of 44) came from low- and lower-middle-income countries',False,False)],'size':5.2,'align':PP_ALIGN.CENTER,'space':1},{'runs':[('20 high-income · 7 upper-middle-income',False,False)],'size':5.2,'align':PP_ALIGN.CENTER,'space':1},{'runs':[('Sub-Saharan Africa: 1 study (Nigeria)',True,False,RED)],'size':5.2,'align':PP_ALIGN.CENTER,'space':0}])
-write(tb(fx,6.7,5.0,0.32),[{'runs':[('Figure 3. ',True,False,NAVY),('Country Setting and World Bank Income Group of Included Studies.',True,False,NAVY),(' Map shows the 30 studies with an identifiable country setting; income groups follow the World Bank FY2027 classification.¹² The other 14 used online or multinational samples or had no single mappable setting in the available records. *Includes Hong Kong (1).',False,False,INK)]}],size=4.2)
+write(tb(fx,6.7,5.0,0.32),[{'runs':[('Figure 4. ',True,False,NAVY),('Country Setting and World Bank Income Group of Included Studies.',True,False,NAVY),(' Map shows the 30 studies with an identifiable country setting; income groups follow the World Bank FY2027 classification.¹² The other 14 used online or multinational samples or had no single mappable setting in the available records. *Includes Hong Kong (1).',False,False,INK)]}],size=4.2)
 # ---------------- RIGHT COLUMN ----------------
 RX,RW=7.773,2.117
 header(RX,0.794,RW,0.36,'Results, Discussion, Conclusion, and Limitations',size=9.5)
 B=lambda t:{'runs':t if isinstance(t,list) else [(t,False,False)],'bullet':True}
 body(RX,1.19,RW,3.25,[
  [('Results',True,False)],
- "The database search identified 1,943 records. After 325 duplicates were removed, 1,618 records were screened by title and abstract; 64 were assessed for eligibility, 20 were excluded, and 44 studies were included (Figure 1). Most (61%) were published in 2022–2025 (Figure 4).",
- "Depression was the most documented outcome (n=39); one nationwide cohort found a 2.6-fold higher risk of later depression after a PMDD diagnosis.¹³ Psychological distress (n=24), interpersonal functioning (n=18), suicidal ideation or self-harm (n=14) and quality of life (n=14) followed. Only three studies examined coping mechanisms, such as peer support shared in online PMDD communities¹⁴ (Figure 2).",
- "Twenty studies came from high-income countries and seven from upper-middle-income countries (Türkiye, Iran); only three (6.8%) came from low- and lower-middle-income countries—Bangladesh,¹⁵ Lebanon¹⁶ and Nigeria,¹⁷ the only study from sub-Saharan Africa (Figure 3).",
+ "The database search identified 1,943 records. After 325 duplicates were removed, 1,618 records were screened by title and abstract; 64 were assessed for eligibility, 20 were excluded, and 44 studies were included (Figure 1).",
+ "Depression was the most documented outcome (n=39); one nationwide cohort found a 2.6-fold higher risk of later depression after a PMDD diagnosis.¹³ Psychological distress (n=24), interpersonal functioning (n=18), suicidal ideation or self-harm (n=14) and quality of life (n=14) followed. Only three studies examined coping mechanisms, such as peer support shared in online PMDD communities¹⁴ (Figure 2). Most studies (61%) were published in 2022–2025 (Figure 3).",
+ "Twenty studies came from high-income countries and seven from upper-middle-income countries (Türkiye, Iran); only three (6.8%) came from low- and lower-middle-income countries—Bangladesh,¹⁵ Lebanon¹⁶ and Nigeria,¹⁷ the only study from sub-Saharan Africa (Figure 4).",
  [('Discussion',True,False)],
  "PMDD research consistently documents depression, distress, relationship difficulties and suicidality.⁴⁻⁷ Patients describe misdiagnosis and uneven provider knowledge,¹⁸˒¹⁹ yet coping remains largely unexamined.",
  [('Conclusion',True,False)],
@@ -176,7 +171,7 @@ body(RX,1.19,RW,3.25,[
  B([('Search scope: ',True,False),('studies outside the five databases or the 2010–2025 period may have been missed.',False,False)]),
  B([('Study differences: ',True,False),('variation in design and outcome definitions limits direct comparison.',False,False)]),
  B([('Coding overlap: ',True,False),('a study could address more than one outcome, so counts should not be summed.',False,False)]),
- B([('Geographic coverage: ',True,False),('few studies from low- and lower-middle-income countries limit conclusions about those settings.',False,False)])],size=4.1,align=PP_ALIGN.JUSTIFY,space=1.0)
+ B([('Geographic coverage: ',True,False),('few studies from low- and lower-middle-income countries limit conclusions about those settings.',False,False)])],size=4.45,align=PP_ALIGN.JUSTIFY,space=1.6)
 header(RX,4.51,RW,0.36,'Public Health Implications and Future Work',size=9.5)
 body(RX,4.9,RW,1.13,[
  [('Public Health Implications',True,False)],
@@ -196,7 +191,7 @@ for sh in s.shapes:
 kb=tb(CX+0.12,7.06,CW-0.24,0.26,fill=NAVY,anchor=MSO_ANCHOR.MIDDLE,shape=MSO_SHAPE.ROUNDED_RECTANGLE,margin=0.08)
 write(kb,[{'runs':[('KEY TAKEAWAY  ',True,False,RGBColor(0xF2,0xC1,0x4E)),('PMDD’s psychosocial burden is well documented in high-income countries, yet nearly invisible in low-income settings and sub-Saharan Africa.',False,False,WHITE)],'align':PP_ALIGN.CENTER}],size=5.6)
 cd=CategoryChartData(); cd.categories=['2010–13','2014–17','2018–21','2022–25']; cd.add_series('Studies',[6,6,5,27])
-gf=s.shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED,Inches(RX+0.1),Inches(3.74),Inches(RW-0.2),Inches(0.5),cd); ser=style(gf.chart,4.2,32)
+gf=s.shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED,Inches(fx+0.1),Inches(4.34),Inches(2.3),Inches(0.46),cd); ser=style(gf.chart,4.2,32)
 p_=ser.points[3]; p_.format.fill.solid(); p_.format.fill.fore_color.rgb=RED
-write(tb(RX+0.06,4.24,RW-0.12,0.18),[{'runs':[('Figure 4. ',True,False,NAVY),('Included Studies by Publication Period.',True,False,NAVY),(' 27 of 44 studies (61%) were published in 2022–2025.',False,False,INK)]}],size=3.8)
+write(tb(fx,4.8,2.47,0.18),[{'runs':[('Figure 3. ',True,False,NAVY),('Included Studies by Publication Period.',True,False,NAVY),(' 27 of 44 studies (61%) were published in 2022–2025.',False,False,INK)]}],size=4.2)
 prs.save('PMDD_APHA_Poster_FINAL.pptx'); print('saved')
