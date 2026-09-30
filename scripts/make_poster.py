@@ -330,10 +330,13 @@ fill(find("TextBox 320"), [
     "• Trials of psychosocial interventions delivered in routine care",
     "• Studies in Africa, South America, and other low-resource settings",
     "**Conclusion**",
-    "MRKH carries a substantial psychosocial burden that remains under-integrated into care. "
-    "Mental health–inclusive, multidisciplinary care is needed to close this gap.",
-    "*Acknowledgements: mentorship by Dr. Paul Okojie and Dr. Robyn Anderson; no external "
-    "funding.*",
+    "MRKH affects far more than reproductive anatomy. Psychosexual difficulties, emotional "
+    "distress, and low self-esteem were widely reported, yet depression and anxiety were "
+    "measured in fewer than half of studies, and coping relied mostly on peers or concealment "
+    "rather than structured care. Embedding mental health screening, psychosexual counseling, "
+    "and peer support in multidisciplinary MRKH care, and extending research to "
+    "underrepresented regions, should be public health priorities.",
+    "*Mentored by Dr. Paul Okojie and Dr. Robyn Anderson; no external funding.*",
 ], space_after=3)
 
 set_header(find("TextBox 322"), "References")
