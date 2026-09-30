@@ -70,7 +70,7 @@ body(LX,1.03,LW,1.52,[
  [('Keywords: ',True,False),('premenstrual dysphoric disorder; psychosocial outcomes; coping mechanisms; LMICs; scoping review',False,True)]],size=4.3,align=PP_ALIGN.JUSTIFY,space=1.2)
 header(LX,2.62,LW,0.36,'Introduction, Objective, and Research Question',size=9.5)
 body(LX,3.03,LW,1.36,[
- [('Introduction: ',True,False),('PMDD is a recurring, hormone-linked mood disorder in which irritability, mood swings, depressed mood and anxiety emerge in the late luteal phase and remit after menses begin. It is classified as a depressive disorder in DSM-5² and recognized in ICD-11.³ Using prospectively confirmed diagnoses, community prevalence is about 1.6%, roughly 31 million women and girls worldwide.¹ PMDD has been linked with suicidal ideation and attempts,⁴˒⁵ strained romantic relationships⁶ and reduced quality of life.⁷ Premenstrual symptoms are also common across Africa, where pooled premenstrual syndrome prevalence reaches 47%,⁸ yet it remains unclear how women with PMDD cope or where the evidence has been generated.',False,False)],
+ [('Introduction: ',True,False),('PMDD is a recurring, hormone-linked mood disorder in which irritability, mood swings, depressed mood and anxiety emerge in the late luteal phase and remit after menses begin. It is classified as a depressive disorder in DSM-5² and recognized in ICD-11.³ Based on prospectively confirmed diagnoses, community prevalence is about 1.6%, roughly 31 million women and girls worldwide.¹ PMDD has been linked with suicidal ideation and attempts,⁴˒⁵ strained romantic relationships⁶ and reduced quality of life.⁷ Premenstrual symptoms are also common across Africa, where pooled premenstrual syndrome prevalence reaches 47%,⁸ yet it remains unclear how women with PMDD cope or where the evidence has been generated.',False,False)],
  [('Objective: ',True,False),('To map psychosocial outcomes and coping mechanisms reported among women with PMDD and identify geographic gaps in the published literature.',False,False)],
  [('Research Question: ',True,False),('What psychosocial outcomes and coping mechanisms have been reported in studies of women with PMDD published between 2010 and 2025, and how are these studies distributed across geographic settings?',False,False)]],size=4.45,align=PP_ALIGN.JUSTIFY,space=1.6)
 header(LX,4.46,LW,0.199,'Methods')
@@ -163,17 +163,16 @@ body(RX,1.19,RW,3.25,[
  [('Results',True,False)],
  "The database search identified 1,943 records. After 325 duplicates were removed, 1,618 records were screened by title and abstract; 64 were assessed for eligibility, 20 were excluded, and 44 studies were included (Figure 1).",
  "Depression was the most documented outcome (n=39); one nationwide cohort found a 2.6-fold higher risk of later depression after a PMDD diagnosis.¹³ Psychological distress (n=24), interpersonal functioning (n=18), suicidal ideation or self-harm (n=14) and quality of life (n=14) followed. Only three studies examined coping mechanisms, such as peer support shared in online PMDD communities¹⁴ (Figure 2). Most studies (61%) were published in 2022–2025 (Figure 3).",
- "Twenty studies came from high-income countries and seven from upper-middle-income countries (Türkiye, Iran); only three (6.8%) came from low- and lower-middle-income countries—Bangladesh,¹⁵ Lebanon¹⁶ and Nigeria,¹⁷ the only study from sub-Saharan Africa (Figure 4).",
+ "Twenty studies came from high-income countries and seven from upper-middle-income countries (Türkiye, Iran); only three (6.8%) came from low- and lower-middle-income countries: Bangladesh,¹⁵ Lebanon¹⁶ and Nigeria,¹⁷ the only study from sub-Saharan Africa (Figure 4).",
  [('Discussion',True,False)],
- "The focus on depression and distress mirrors population studies linking PMDD to depression, suicidal ideation and suicide attempts.⁴⁻⁷ Coping, by contrast, appeared in only three studies, so little is known about how women manage symptoms day to day or which supports help.",
- "Evidence is also concentrated in high-income countries. Premenstrual symptoms are common across Africa,⁸ so a single sub-Saharan study likely reflects under-study rather than low burden. Stigma, limited mental health services and local explanations of menstrual distress may shape both burden and coping in these settings.",
+ "The focus on depression and distress is consistent with population studies linking PMDD to depression, suicidal ideation and suicide attempts.⁴⁻⁷ However, only three studies examined coping, so little is known about how women manage symptoms day to day or which supports help.",
+ "Evidence is also concentrated in high-income countries. Premenstrual symptoms are common across Africa,⁸ so having only one study from sub-Saharan Africa likely reflects limited research rather than low burden. Stigma, limited mental health services and local explanations of menstrual distress may shape both burden and coping in these settings.",
  "Patients describe misdiagnosis and uneven provider knowledge,¹⁸˒¹⁹ and many turn to online peer communities for support.¹⁴ Because much PMDD research relies on provisional rather than prospectively confirmed diagnosis,¹ future studies should pair confirmed diagnosis with measures of coping and help-seeking.",
  [('Conclusion',True,False)],
- "PMDD carries a well-documented psychosocial burden, especially depression, distress and suicidality, yet how women cope has received little attention, and evidence from low-income settings and Africa is nearly absent. Culturally responsive screening, integrated mental and reproductive health services, and Africa-centered research investment are needed to make this burden visible to health systems.",
+ "PMDD carries a well-documented psychosocial burden, especially depression, distress and suicidality, yet how women cope has received little attention, and evidence from low-income settings and Africa is nearly absent. Culturally responsive screening, integrated mental and reproductive health services, and more research in African settings are needed so health systems can respond.",
  [('Limitations',True,False)],
  B([('Search scope: ',True,False),('studies outside the five databases or the 2010–2025 period may have been missed.',False,False)]),
  B([('Study differences: ',True,False),('variation in design and outcome definitions limits direct comparison.',False,False)]),
- B([('Coding overlap: ',True,False),('a study could address more than one outcome, so counts should not be summed.',False,False)]),
  B([('Geographic coverage: ',True,False),('few studies from low- and lower-middle-income countries limit conclusions about those settings.',False,False)])],size=4.2,align=PP_ALIGN.JUSTIFY,space=1.2)
 header(RX,4.51,RW,0.36,'Public Health Implications and Future Work',size=9.5)
 body(RX,4.9,RW,1.13,[
@@ -192,7 +191,7 @@ for sh in s.shapes:
     if sh.name=='Picture 18': sh.left=Inches(8.272); sh.top=Inches(6.327); sh.width=sh.height=Inches(1.129)
 # key takeaway banner (center)
 kb=tb(CX+0.12,7.06,CW-0.24,0.26,fill=NAVY,anchor=MSO_ANCHOR.MIDDLE,shape=MSO_SHAPE.ROUNDED_RECTANGLE,margin=0.08)
-write(kb,[{'runs':[('KEY TAKEAWAY  ',True,False,RGBColor(0xF2,0xC1,0x4E)),('PMDD’s psychosocial burden is well documented in high-income countries, yet nearly invisible in low-income settings and sub-Saharan Africa.',False,False,WHITE)],'align':PP_ALIGN.CENTER}],size=5.6)
+write(kb,[{'runs':[('KEY TAKEAWAY  ',True,False,RGBColor(0xF2,0xC1,0x4E)),('PMDD’s psychosocial burden is well documented in high-income countries, but rarely studied in low-income settings and sub-Saharan Africa.',False,False,WHITE)],'align':PP_ALIGN.CENTER}],size=5.6)
 cd=CategoryChartData(); cd.categories=['2010–13','2014–17','2018–21','2022–25']; cd.add_series('Studies',[6,6,5,27])
 gf=s.shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED,Inches(fx+0.1),Inches(4.28),Inches(2.3),Inches(0.54),cd); ser=style(gf.chart,4.2,30)
 gf.chart.plots[0].gap_width=70
