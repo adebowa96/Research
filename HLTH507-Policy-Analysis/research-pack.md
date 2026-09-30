@@ -2,7 +2,7 @@
 
 **Course:** HLTH 507, Policy Analysis & Recommendations
 **Compiled:** September 30, 2026
-**Status:** Research stage. No policy chosen yet. This pack compares three recent candidates and collects the evidence they share, so the choice can be made with everything in hand.
+**Status:** Policy chosen: **Candidate A, the Into the Light Act.** Discussion draft: https://claude.ai/code/artifact/ea8f2c03-9bd1-4fe5-a66d-de6407f9a142. Other policies that also fit are in §15.
 
 Items marked **†** still need a final check (a DOI, page range, chapter number or author list) before they go into a submitted reference list.
 
@@ -22,6 +22,7 @@ Items marked **†** still need a final check (a DOI, page range, chapter number
 12. [AMA reference list](#12-ama-reference-list)
 13. [Still to collect](#13-still-to-collect)
 14. [How to choose](#14-how-to-choose)
+15. [Other policies that fit](#15-other-policies-that-fit)
 
 ---
 
@@ -319,3 +320,26 @@ Web sources use the access date September 30, 2026; update it to the day you che
 - **Clearest example of a policy revised after it fell short** → **B. California**
 
 **Current ranking:** A, then C, then B. Candidate A covers the most ground across all three parts; C is close behind if local sources matter most to you.
+
+---
+
+## 15. Other policies that fit
+
+Checked September 30, 2026, against the same test: recent, clearly about women's mental health, a real history to analyze, lived-experience sources, and a subpopulation for the Policy Design part.
+
+| Policy | Level | Enacted | What it does | Fit | Watch-outs |
+|---|---|---|---|---|---|
+| **Arizona HB 2332** (Rep. Julie Willoughby, R) | State | Signed May 13, 2025 | Requires private insurers and Arizona Medicaid (AHCCCS) to cover postpartum depression screening; bans "step therapy" for FDA-approved postpartum depression drugs such as zuranolone (approved 2023); state health department must produce education materials; creates a rural OB-GYN advisory committee | Most recent option; explicitly postpartum depression; bipartisan (Republican sponsor, Democratic governor); rural mothers are a built-in subpopulation; the step-therapy ban raises a good evidence question, because real-world data on zuranolone are still emerging | Little evaluation yet; mostly Arizona news coverage |
+| **Pregnant Workers Fairness Act** + EEOC rule | Federal | Law Dec 2022 (in effect June 27, 2023); rule Apr 15, 2024 (in effect June 18, 2024) | Employers with 15+ workers must accommodate pregnancy-related limitations. The rule lists antenatal and postpartum depression, anxiety and psychosis as covered conditions | Rich process story: law, rulemaking, then a May 21, 2025 federal court ruling (Louisiana v. EEOC) that vacated the rule's abortion-accommodation part | Mental health is one piece of a broader workplace law; the abortion litigation makes the ethics section harder to handle evenhandedly |
+| **Deborah Sampson Act** (in Pub L 116-315) | Federal | Jan 5, 2021 | Created an Office of Women's Health in the VA, required a women's health primary care provider at every VA facility, expanded military sexual trauma (MST) counseling | Women veterans with MST or PTSD are a clear subpopulation | Older and broad; mental health is only part of it |
+| **New York ban on diet pill sales to minors** | State | In effect Apr 22, 2024 | First-in-the-nation ban on selling over-the-counter weight-loss and muscle-building supplements to anyone under 18 | Eating-disorder prevention; strong debate over supplement regulation | Protects minors (boys too), not specifically women; little outcome data |
+
+**Verdict:** None of these beats the Into the Light Act for this assignment. **Arizona HB 2332** is the best alternative if you'd rather analyze a state law.
+
+**Links**
+- Arizona HB 2332 text: https://www.azleg.gov/legtext/57leg/1R/bills/HB2332S.htm
+- Arizona HB 2332 coverage (Copper Courier): https://coppercourier.com/2025/05/09/arizona-hb2332
+- PWFA final rule summary (Armstrong Teasdale): https://www.armstrongteasdale.com/thought-leadership/eeoc-issues-final-rule-on-pregnant-workers-fairness-act/
+- Louisiana v. EEOC ruling (CalChamber HR Watchdog): https://hrwatchdog.calchamber.com/2025/05/federal-court-vacates-eeocs-abortion-accommodation-requirement/
+- Deborah Sampson Act signing (American Legion): https://www.legion.org/information-center/news/legislative/2021/january/bill-aimed-to-help-veterans-facing-variety-of-challenges-signed-into-law
+- NY diet pill law (Fortune): https://www.fortune.com/2024/04/25/new-york-outlaws-sales-of-diet-pills-muscle-mass-builders-children
