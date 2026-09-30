@@ -9,11 +9,13 @@ from docx.oxml import OxmlElement
 
 # ---------- reference pool (poster numbering 1-51 from the AMA reference document) ----------
 REFDOC = '/home/user/Research/PMDD_Scoping_Review/PMDD_Poster_References_AMA.docx'
-POOL = {}
+POOL = {}  # number -> list of (text, italic) runs
 for p in Document(REFDOC).paragraphs:
-    m = re.match(r'^(\d+)\.\t(.*)$', p.text)
-    if m: POOL[int(m.group(1))] = m.group(2).strip()
+    m = re.match(r'^(\d+)\.\t', p.text)
+    if m: POOL[int(m.group(1))] = [(r.text, bool(r.italic)) for r in p.runs[1:]]
 assert len(POOL) == 51
+# text below uses the earlier poster numbering (1 Reilly, 2 DSM-5, 3 ICD-11); the reference document now lists DSM-5, ICD-11, Reilly
+POOL = {k: POOL[{1: 3, 2: 1, 3: 2}.get(k, k)] for k in POOL}
 
 order = []  # poster numbers in order of first citation
 def num(k):
@@ -188,7 +190,8 @@ page_break()
 H1('References')
 for i, k in enumerate(order, 1):
     p = doc.add_paragraph(); p.paragraph_format.left_indent = Inches(0.35); p.paragraph_format.first_line_indent = Inches(-0.35)
-    p.add_run(f'{i}.\t{POOL[k]}')
+    p.add_run(f'{i}.\t')
+    for txt, it in POOL[k]: p.add_run(txt).italic = it
 unused = sorted(set(POOL) - set(order))
 assert not unused, unused
 
