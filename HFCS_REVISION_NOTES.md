@@ -128,3 +128,9 @@ AMA corrections:
 - **Federal Register rule:** now in AMA legal format ("*Fed Regist*. 2016;81(103):33742-33999. To be codified at 21 CFR §101.").
 - **Web pages** (FoodData Central search, market report): now use AMA website order, which is title, then website name, then dates, then URL.
 - **Market report:** the impossible "accessed August 30, 2025" date (before its December 1, 2025 publication) is now a highlighted placeholder in the paper too.
+
+## Highlights removed (latest)
+
+- **Market report (ref 2):** now uses your original access date, "Accessed August 30, 2025". The later "Published December 1, 2025" date was dropped; it was the page's later update and caused the date conflict.
+- **2025–2030 Dietary Guidelines:** "Accessed September 30, 2026", the date the reference was added and its content checked.
+- **Author names and department:** plain placeholders with no highlighting, in the poster title, the poster reference list, and the paper's title page. They are waiting for the final author line.
