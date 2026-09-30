@@ -203,11 +203,13 @@ fill(find("TextBox 308"), [
     f"followed by psychological distress (n = {OUT['Broader psychological distress']}), reduced "
     f"QoL, body image, and self-esteem (n = {OUT['QoL, body image & self-esteem']}), and "
     f"depression and anxiety (n = {OUT['Depression & anxiety']}). Coping was documented in "
-    f"{OUT['Coping mechanisms documented']} studies, mostly peer support; healthcare gaps in "
+    f"{OUT['Coping mechanisms documented']} studies, most often peer support "
+    f"({COPE['Peer, family & social support']}) and avoidance or concealment "
+    f"({COPE['Avoidance / concealment (maladaptive)']}); healthcare gaps in "
     f"{OUT['Healthcare system gaps']}.",
-    "**Conclusion:** MRKH-related psychosocial burden is substantial yet under-integrated into "
-    "care. Psychosocial screening, psychosexual counseling, and peer support belong in MRKH "
-    "care pathways.",
+    "**Conclusion:** MRKH affects far more than reproductive anatomy. Mental health screening, "
+    "psychosexual counseling, and peer support should become standard in multidisciplinary MRKH "
+    "care, and research must reach underrepresented regions.",
 ])
 
 fill(find("TextBox 311"), [

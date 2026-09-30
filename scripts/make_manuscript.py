@@ -257,12 +257,14 @@ abstract = [
     f"(n = {OUT['Broader psychological distress']}; "
     f"{pct(OUT['Broader psychological distress'], digits=0)}), and depression and anxiety "
     f"(n = {OUT['Depression & anxiety']}; {pct(OUT['Depression & anxiety'], digits=0)}). Coping "
-    f"mechanisms were documented in {OUT['Coping mechanisms documented']} studies, mostly peer "
-    f"support and self-management, and healthcare system gaps in {OUT['Healthcare system gaps']}. "
+    f"mechanisms were documented in {OUT['Coping mechanisms documented']} studies, most often peer "
+    f"support ({dict(data['coping'])['Peer, family & social support']}) and avoidance or concealment "
+    f"({dict(data['coping'])['Avoidance / concealment (maladaptive)']}), and healthcare system gaps in {OUT['Healthcare system gaps']}. "
     f"Studies came mainly from Europe (n = {REG['Europe']}) and Asia (n = {REG['Asia']}).",
-    "**Conclusions:** MRKH-related psychosocial burden is substantial yet under-integrated into "
-    "care models. Multidisciplinary, mental health–inclusive care and greater research "
-    "investment, particularly in underrepresented and low-resource settings, are urgently needed.",
+    "**Conclusions:** MRKH affects far more than reproductive anatomy, yet its psychosocial "
+    "burden remains under-integrated into care. Mental health screening, psychosexual "
+    "counseling, and peer support should become standard in multidisciplinary MRKH care, and "
+    "research must reach underrepresented and low-resource settings.",
 ]
 for a in abstract:
     para(a, indent=False)
