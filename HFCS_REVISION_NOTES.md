@@ -48,23 +48,18 @@ All of these check out arithmetically (29,503 + 418,104 = 447,607; 29,503 / 447,
 - Fixed "its a relevant", "these finding", "U.S food" and informal contractions.
 - Added subheadings to Methods and Discussion. The references are in AMA 11th-edition style with hanging indents, and pages are numbered.
 
-## Poster: co-author comments (Roberts)
+## Poster: rebuilt in the MRKH / PMDD layout
 
-| Comment | What was done |
-|---|---|
-| "make the words larger nobody can read these" | Body text raised from 18–20 pt to 28 pt (Introduction, Methods), 36 pt (Future Work) and 40 pt (Results). The Abstract stays word for word at 20 pt. |
-| "where are our names" | **Still needed from you**, see item 1 above |
-| "remove the references … enlarge the other text" | References panel removed and the space given to larger text |
-| "remove this image, it's the same as the one beside it" | Donut chart removed. The bar chart is now centered and larger. |
+The poster now uses the same Liberty University template and structure as the MRKH and PMDD posters:
+- Title in capitals, followed by author and department lines. **These are placeholders until you send the names.**
+- Left column: Abstract (as submitted, plus keywords); "Introduction, Objective, and Research Question" with numbered citations; Methods as a METHOD/DESCRIPTION table.
+- Centre: four stat numbers (454,324 identified; 447,607 eligible; 29,503 list HFCS; 6.6%, about 1 in 15); Figure 1 (selection flow), Figure 2 (bar chart) and Figure 3 (where HFCS is used), each with a caption; key-takeaway banner.
+- Right column: "Results, Discussion, Conclusion, and Limitations"; "Public Health Implications and Future Work"; a numbered References list (14 short citations).
+- Body text is Times New Roman, justified: 24–26 pt in the Introduction, Methods, Results and Implications panels, 21 pt in the abstract and 16 pt in the references.
 
-## Other poster fixes
-
-- Deleted leftover template items hidden behind the figures, including the "MG1655 ∆qseC … CFU" bacteria text, an empty "MG1655 µ on 0.02% Lactose" chart, stray letters (A, B, s, 7, 4) and an axis strip numbered 1–14.
-- The flowchart no longer has the footnote "*Derived…; not reported directly in the paper"; the paper now reports the 6,717.
-- Methods now match the paper: correct search description and exclusions stated clearly.
-- The Results bullet for "418,104 products" had lost its bullet point; restored.
-- Added a conclusion bullet about term-based search accuracy.
-- Section headers renamed from template wording ("Abstract and/or Background", etc.).
-- Body text in the rewritten panels is now Arial. The theme font (Calisto MT) could not be checked for fit here.
-
-The co-author's comments are still in the .pptx. Resolve them in PowerPoint once you are happy with the changes.
+How the co-author comments (Roberts) were handled:
+- "Make the words larger": body text is 24–26 pt, compared with 18–20 pt in the original.
+- "Remove this image, it's the same thing as the one beside it": the donut chart and the duplicate stat-card image are gone. The numbers are now in the stat row.
+- "Where are our names": still needed from you.
+- "Remove the references": a short References panel is kept so the citation numbers in the text point somewhere, matching the MRKH and PMDD posters. To drop it, you can replace it with a QR code linked to the paper's reference list, as the PMDD poster does.
+- The new file is built from the template, so the old comments are not carried over.
