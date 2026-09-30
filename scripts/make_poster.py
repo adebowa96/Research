@@ -315,10 +315,10 @@ fill(find("Rectangle 326"), [
     "support should become standard in multidisciplinary MRKH care, not an afterthought, and "
     "research must reach underrepresented regions.",
     "**Limitations**",
-    "English-language database literature from 2019–2026 only, without grey "
-    "literature; many small, single-center samples; heterogeneous designs and measures; "
-    f"possible overlapping samples; {N - FT} studies assessed from abstracts only; no quality "
-    "appraisal, and counts show how often outcomes were studied, not their prevalence.",
+    "• English-language database literature from 2019–2026 only; no grey literature",
+    "• Many small, single-center samples; heterogeneous designs and measures",
+    f"• Possible overlapping samples; {N - FT} studies assessed from abstracts only",
+    "• No quality appraisal; counts show how often outcomes were studied, not prevalence",
 ])
 
 TextBox13 = find("TextBox 13")
