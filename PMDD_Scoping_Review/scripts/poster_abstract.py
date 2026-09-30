@@ -66,20 +66,20 @@ body(LX,1.03,LW,1.52,[
  [('Methods: ',True,False),("Following Arksey and O’Malley’s framework and PRISMA-ScR guidance, we searched PubMed/MEDLINE, CINAHL, APA PsycInfo, APA PsycArticles and the Cochrane Library for peer-reviewed studies published 2010–2025. Eligible empirical and qualitative studies had PMDD as the primary population and at least one psychosocial outcome or coping mechanism as a primary aim.",False,False)],
  [('Results: ',True,False),("The search identified 1,943 records; 1,618 remained after deduplication and 44 studies met the inclusion criteria. Depression was most documented (n=39), followed by psychological distress (n=24), interpersonal functioning (n=18), suicidal ideation or self-harm (n=14) and quality of life (n=14). Only three studies examined coping mechanisms. Only three studies (6.8%) originated from low- and lower-middle-income countries, including one from Nigeria.",False,False)],
  [('Conclusions: ',True,False),('Evidence on PMDD’s psychosocial burden is growing but geographically concentrated in high-income countries, revealing a critical LMIC evidence gap.',False,False)],
- [('Keywords: ',True,False),('premenstrual dysphoric disorder; psychosocial outcomes; coping mechanisms; LMICs; scoping review',False,True)]],size=4.35,align=PP_ALIGN.JUSTIFY,space=1.4)
+ [('Keywords: ',True,False),('premenstrual dysphoric disorder; psychosocial outcomes; coping mechanisms; LMICs; scoping review',False,True)]],size=4.3,align=PP_ALIGN.JUSTIFY,space=1.2)
 header(LX,2.62,LW,0.36,'Introduction, Objective, and Research Question',size=9.5)
 body(LX,3.03,LW,1.36,[
- [('Introduction: ',True,False),('PMDD is a recurring, hormone-linked mood disorder in which irritability, mood swings, depressed mood and anxiety emerge in the late luteal phase and remit after menses begin; DSM-5 classifies it as a depressive disorder.² Using prospectively confirmed diagnoses, community prevalence is about 1.6%, roughly 31 million women and girls worldwide.¹ PMDD has been linked with suicidal thoughts, strained relationships and reduced quality of life, but this evidence is scattered across disciplines, and it is unclear how women cope or where the research has been conducted.',False,False)],
+ [('Introduction: ',True,False),('PMDD is a recurring, hormone-linked mood disorder in which irritability, mood swings, depressed mood and anxiety emerge in the late luteal phase and remit after menses begin. It is classified as a depressive disorder in DSM-5² and recognized in ICD-11.³ Using prospectively confirmed diagnoses, community prevalence is about 1.6%, roughly 31 million women and girls worldwide.¹ PMDD has been linked with suicidal ideation and attempts,⁴˒⁵ strained romantic relationships⁶ and reduced quality of life.⁷ Premenstrual symptoms are also common across Africa, where pooled premenstrual syndrome prevalence reaches 47%,⁸ yet it remains unclear how women with PMDD cope or where the evidence has been generated.',False,False)],
  [('Objective: ',True,False),('To map psychosocial outcomes and coping mechanisms reported among women with PMDD and identify geographic gaps in the published literature.',False,False)],
- [('Research Question: ',True,False),('What psychosocial outcomes and coping mechanisms have been reported in studies of women with PMDD published between 2010 and 2025, and how are these studies distributed across geographic settings?',False,False)]],size=4.6,align=PP_ALIGN.JUSTIFY,space=1.8)
+ [('Research Question: ',True,False),('What psychosocial outcomes and coping mechanisms have been reported in studies of women with PMDD published between 2010 and 2025, and how are these studies distributed across geographic settings?',False,False)]],size=4.45,align=PP_ALIGN.JUSTIFY,space=1.6)
 header(LX,4.46,LW,0.199,'Methods')
-rows=[('Study Design','Scoping review guided by Arksey and O’Malley’s framework³ and reported using PRISMA-ScR.⁴'),
+rows=[('Study Design','Scoping review guided by Arksey and O’Malley’s framework⁹ with Levac et al.’s refinements,¹⁰ reported using PRISMA-ScR.¹¹'),
 ('Databases','PubMed/MEDLINE, CINAHL, APA PsycInfo, APA PsycArticles and Cochrane Library.'),
 ('Publication Years','2010–2025.'),
 ('Inclusion Criteria','Peer-reviewed empirical or qualitative studies with PMDD as the primary population and at least one psychosocial outcome or coping mechanism as a primary aim.'),
 ('Exclusion Criteria','Animal studies, laboratory research, reviews, interventions and non-peer-reviewed publications.'),
 ('Screening Process','1,943 records identified; 325 duplicates removed; 1,618 records screened by title and abstract; 64 assessed for eligibility; 44 studies included.'),
-('Evidence Mapping','Included studies categorized by psychosocial outcome, coping mechanism and geographic setting (country and income level).')]
+('Evidence Mapping','Included studies categorized by psychosocial outcome, coping mechanism, publication year and geographic setting (country and World Bank income group¹²).')]
 top=4.69; H=7.36-top
 gt=s.shapes.add_table(len(rows)+1,2,Inches(LX),Inches(top),Inches(LW),Inches(H)).table
 gt.columns[0].width=Inches(0.62); gt.columns[1].width=Inches(LW-0.62)
@@ -160,20 +160,20 @@ write(tb(fx,gy,5.0,0.16),[[('Fig 3. Geographic Setting of the 44 Included Studie
 s.shapes.add_picture('fig3_map.png',Inches(fx),Inches(gy+0.22),width=Inches(3.4))
 call=tb(6.1,gy+0.35,1.5,1.2,fill=PALE,line=RED,shape=MSO_SHAPE.ROUNDED_RECTANGLE,anchor=MSO_ANCHOR.MIDDLE,lw=0.6)
 write(call,[{'runs':[('6.8%',True,False,RED)],'size':20,'align':PP_ALIGN.CENTER,'space':0},{'runs':[('of included studies (3 of 44) came from low- and lower-middle-income countries',False,False)],'size':5.2,'align':PP_ALIGN.CENTER,'space':1},{'runs':[('20 high-income · 7 upper-middle-income',False,False)],'size':5.2,'align':PP_ALIGN.CENTER,'space':1},{'runs':[('Sub-Saharan Africa: 1 study (Nigeria)',True,False,RED)],'size':5.2,'align':PP_ALIGN.CENTER,'space':0}])
-write(tb(fx,6.8,5.0,0.4),[{'runs':[('Map shows the 30 studies with an identifiable country setting (World Bank income groups). The other 14 used online or multinational samples or had no single mappable setting in the available records. *Includes Hong Kong (1).',False,True)],'align':PP_ALIGN.CENTER}],size=4.2,color=MUTED)
+write(tb(fx,6.82,5.0,0.22),[{'runs':[('Map shows the 30 studies with an identifiable country setting (World Bank income groups). The other 14 used online or multinational samples or had no single mappable setting in the available records. *Includes Hong Kong (1).',False,True)],'align':PP_ALIGN.CENTER}],size=4.2,color=MUTED)
 # ---------------- RIGHT COLUMN ----------------
 RX,RW=7.773,2.117
 header(RX,0.794,RW,0.36,'Results, Discussion, Conclusion, and Limitations',size=9.5)
 B=lambda t:{'runs':t if isinstance(t,list) else [(t,False,False)],'bullet':True}
 body(RX,1.19,RW,3.25,[
  [('Results',True,False)],
- "The database search identified 1,943 records. After 325 duplicates were removed, 1,618 records were screened by title and abstract; 64 were assessed for eligibility, 20 were excluded, and 44 studies were included (Fig. 1).",
- "Depression was the most documented outcome (n=39), followed by psychological distress (n=24), interpersonal functioning (n=18), suicidal ideation or self-harm (n=14) and quality of life (n=14). Only three studies examined coping mechanisms (Fig. 2).",
- "Geographic representation was skewed: 20 studies came from high-income countries and 7 from upper-middle-income countries (Türkiye, Iran); only three (6.8%) came from low- and lower-middle-income countries (Bangladesh, Lebanon, Nigeria), and Nigeria was the only study from sub-Saharan Africa (Fig. 3).",
+ "The database search identified 1,943 records. After 325 duplicates were removed, 1,618 records were screened by title and abstract; 64 were assessed for eligibility, 20 were excluded, and 44 studies were included (Fig. 1). Most (61%) were published in 2022–2025 (Fig. 4).",
+ "Depression was the most documented outcome (n=39); one nationwide cohort found a 2.6-fold higher risk of later depression after a PMDD diagnosis.¹³ Psychological distress (n=24), interpersonal functioning (n=18), suicidal ideation or self-harm (n=14) and quality of life (n=14) followed. Only three studies examined coping mechanisms, such as peer support shared in online PMDD communities¹⁴ (Fig. 2).",
+ "Twenty studies came from high-income countries and seven from upper-middle-income countries (Türkiye, Iran); only three (6.8%) came from low- and lower-middle-income countries—Bangladesh,¹⁵ Lebanon¹⁶ and Nigeria,¹⁷ the only study from sub-Saharan Africa (Fig. 3).",
  [('Discussion',True,False)],
- "PMDD research consistently documents depression, distress, relationship difficulties and suicidality; large studies have linked PMDD with suicidal ideation and attempts.⁵,⁶ Yet coping mechanisms remain largely unexamined, and the scarcity of studies from low- and lower-middle-income countries and Africa leaves the burden in these settings invisible to health systems.",
+ "PMDD research consistently documents depression, distress, relationship difficulties and suicidality.⁴⁻⁷ Patients describe misdiagnosis and uneven provider knowledge,¹⁸˒¹⁹ yet coping remains largely unexamined, and the scarcity of studies from low-income settings and Africa leaves the burden there invisible to health systems.",
  [('Conclusion',True,False)],
- "Evidence on PMDD’s psychosocial burden is growing but geographically concentrated in high-income countries. Findings call for culturally responsive screening, integrated mental and reproductive health services, and Africa-centred research investment.",
+ "Evidence on PMDD’s psychosocial burden is growing but geographically concentrated in high-income countries, calling for culturally responsive screening, integrated mental and reproductive health services, and Africa-centred research investment.",
  [('Limitations',True,False)],
  B([('Search scope: ',True,False),('studies outside the five databases or the 2010–2025 period may have been missed.',False,False)]),
  B([('Study differences: ',True,False),('variation in design and outcome definitions limits direct comparison.',False,False)]),
@@ -182,23 +182,25 @@ body(RX,1.19,RW,3.25,[
 header(RX,4.51,RW,0.36,'Public Health Implications and Future Work',size=9.5)
 body(RX,4.9,RW,1.13,[
  [('Public Health Implications',True,False)],
- B([('Screen for suicide risk: ',True,False),('ask about suicidal thoughts when women present with severe premenstrual mood symptoms.',False,False)]),
- B([('Integrate care: ',True,False),('include PMDD screening in sexual and reproductive, school and university health services.',False,False)]),
- B([('Address coping needs: ',True,False),('ask how women manage symptoms and what support they need.',False,False)]),
+ B([('Screen for suicide risk: ',True,False),('ask about suicidal thoughts when women present with severe premenstrual mood symptoms.⁴˒⁵',False,False)]),
+ B([('Integrate care: ',True,False),('embed PMDD screening in sexual and reproductive, school and university health services.',False,False)]),
+ B([('Train providers: ',True,False),('improve recognition to reduce misdiagnosis and delayed care.¹⁸',False,False)]),
+ B([('Address coping needs: ',True,False),('ask how women manage symptoms and connect them with peer and professional support.¹⁴',False,False)]),
  [('Future Work',True,False)],
- B([('Confirm PMDD prospectively ',True,False),('in studies from low- and middle-income countries.',False,False)]),
- B([('Study lived experience: ',True,False),('stigma, coping and help-seeking in African settings.',False,False)]),
- B([('Validate screening tools ',True,False),('in African languages.',False,False)])],size=4.2,space=0.9)
+ B([('Confirm PMDD prospectively ',True,False),('using validated daily ratings.¹˒²⁰',False,False)]),
+ B([('Prioritize low-income and African settings, ',True,False),('including qualitative studies of stigma and coping.',False,False)]),
+ B([('Validate screening tools ',True,False),('in African languages and test coping-focused interventions.',False,False)])],size=4.05,space=0.7)
 header(RX,6.095,RW,0.199,'References')
-refs=["1. Reilly TJ et al. J Affect Disord. 2024;349:534-540.","2. American Psychiatric Association. DSM-5. 2013.","3. Arksey H, O’Malley L. Int J Soc Res Methodol. 2005;8:19-32.","4. Tricco AC et al. Ann Intern Med. 2018;169:467-473.","5. Pilver CE et al. Soc Psychiatry Psychiatr Epidemiol. 2013;48:437-446.","6. Eisenlohr-Moul T et al. BMC Psychiatry. 2022;22. doi:10.1186/s12888-022-03851-0","Scan the QR code for the full reference list."]
-# move QR left, refs to right
+refs=["1. Reilly TJ, et al. J Affect Disord. 2024;349:534-540.","2. American Psychiatric Association. DSM-5. 2013.","3. World Health Organization. ICD-11. 2022.","4. Pilver CE, et al. Soc Psychiatry Psychiatr Epidemiol. 2013;48:437-446.","5. Eisenlohr-Moul T, et al. BMC Psychiatry. 2022;22:199.","6. Westermark V, et al. J Affect Disord. 2024;364:132-138.","7. Wang Q, et al. JAMA Netw Open. 2025;8:e2533823.","8. Andualem F, et al. Front Psychiatry. 2024;15:1338304.","9. Arksey H, O’Malley L. Int J Soc Res Methodol. 2005;8:19-32.","10. Levac D, et al. Implement Sci. 2010;5:69.","11. Tricco AC, et al. Ann Intern Med. 2018;169:467-473.","12. World Bank. Country income classifications, FY2027. 2026.","13. Li DJ, et al. Asian J Psychiatr. 2023;79:103355.","14. Winslow A, et al. Womens Reprod Health. 2023;10:420-435.","15. Roy N, et al. PLoS One. 2025;20:e0321097.","16. Younes Y, et al. BMC Psychiatry. 2021;21:548.","17. Adegoke AA, et al. Gend Behav. 2014;12:6087-6094.","18. Hantsoo L, et al. J Womens Health. 2022;31:100-109.","19. Habib S, et al. Womens Reprod Health. 2025;12:310-329.","20. Naik SS, et al. Front Glob Womens Health. 2023;4:1181583."]
 for sh in s.shapes:
-    if sh.name=='Picture 18': sh.left=Inches(RX+0.02); sh.top=Inches(6.33); sh.width=sh.height=Inches(1.0)
-body(RX+1.05,6.33,RW-1.05,1.0,[{'runs':[(r,False,r.startswith('Scan'))]} for r in refs],size=3.0,space=0.6)
-# --- Fig 4 publication period (right column, under results) ---
-write(tb(RX+0.06,3.6,RW-0.12,0.13),[[('Fig 4. Included Studies by Publication Period',True,False)]],size=4.6,color=NAVY)
+    if sh.name=='Picture 18': sh.left=Inches(RX+0.03); sh.top=Inches(6.36); sh.width=sh.height=Inches(0.86)
+body(RX+0.93,6.31,RW-0.93,1.05,[{'runs':[(r,False,False)]} for r in refs]+[{'runs':[('Scan the QR code for the full reference list.',True,True)]}],size=2.55,space=0.15)
+# key takeaway banner (center)
+kb=tb(CX+0.12,7.06,CW-0.24,0.26,fill=NAVY,anchor=MSO_ANCHOR.MIDDLE,shape=MSO_SHAPE.ROUNDED_RECTANGLE,margin=0.08)
+write(kb,[{'runs':[('KEY TAKEAWAY  ',True,False,RGBColor(0xF2,0xC1,0x4E)),('PMDD’s psychosocial burden is well documented in high-income countries, yet nearly invisible in low-income settings and sub-Saharan Africa.',False,False,WHITE)],'align':PP_ALIGN.CENTER}],size=5.6)
+write(tb(RX+0.06,3.62,RW-0.12,0.13),[[('Fig 4. Included Studies by Publication Period',True,False)]],size=4.6,color=NAVY)
 cd=CategoryChartData(); cd.categories=['2010–13','2014–17','2018–21','2022–25']; cd.add_series('Studies',[6,6,5,27])
-gf=s.shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED,Inches(RX+0.1),Inches(3.72),Inches(RW-0.2),Inches(0.6),cd); ser=style(gf.chart,4.2,32)
+gf=s.shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED,Inches(RX+0.1),Inches(3.74),Inches(RW-0.2),Inches(0.58),cd); ser=style(gf.chart,4.2,32)
 p_=ser.points[3]; p_.format.fill.solid(); p_.format.fill.fore_color.rgb=RED
 write(tb(RX+0.06,4.32,RW-0.12,0.1),[{'runs':[('27 of 44 studies (61%) were published in 2022–2025.',False,True)],'align':PP_ALIGN.CENTER}],size=3.5,color=MUTED)
 prs.save('PMDD_APHA_Poster_FINAL.pptx'); print('saved')
