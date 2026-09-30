@@ -178,7 +178,7 @@ body(RX,1.19,RW,3.25,[
  B([('Search scope: ',True,False),('studies outside the five databases or the 2010–2025 period may have been missed.',False,False)]),
  B([('Study differences: ',True,False),('variation in design and outcome definitions limits direct comparison.',False,False)]),
  B([('Coding overlap: ',True,False),('a study could address more than one outcome, so counts should not be summed.',False,False)]),
- B([('Geographic coverage: ',True,False),('few studies from low- and lower-middle-income countries limit conclusions about those settings.',False,False)])],size=4.6,align=PP_ALIGN.JUSTIFY,space=1.5)
+ B([('Geographic coverage: ',True,False),('few studies from low- and lower-middle-income countries limit conclusions about those settings.',False,False)])],size=4.1,align=PP_ALIGN.JUSTIFY,space=1.0)
 header(RX,4.51,RW,0.36,'Public Health Implications and Future Work',size=9.5)
 body(RX,4.9,RW,1.13,[
  [('Public Health Implications',True,False)],
@@ -195,4 +195,10 @@ refs=["1. Reilly TJ et al. J Affect Disord. 2024;349:534-540.","2. American Psyc
 for sh in s.shapes:
     if sh.name=='Picture 18': sh.left=Inches(RX+0.02); sh.top=Inches(6.33); sh.width=sh.height=Inches(1.0)
 body(RX+1.05,6.33,RW-1.05,1.0,[{'runs':[(r,False,r.startswith('Scan'))]} for r in refs],size=3.0,space=0.6)
+# --- Fig 4 publication period (right column, under results) ---
+write(tb(RX+0.06,3.6,RW-0.12,0.13),[[('Fig 4. Included Studies by Publication Period',True,False)]],size=4.6,color=NAVY)
+cd=CategoryChartData(); cd.categories=['2010–13','2014–17','2018–21','2022–25']; cd.add_series('Studies',[6,6,5,27])
+gf=s.shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED,Inches(RX+0.1),Inches(3.72),Inches(RW-0.2),Inches(0.6),cd); ser=style(gf.chart,4.2,32)
+p_=ser.points[3]; p_.format.fill.solid(); p_.format.fill.fore_color.rgb=RED
+write(tb(RX+0.06,4.32,RW-0.12,0.1),[{'runs':[('27 of 44 studies (61%) were published in 2022–2025.',False,True)],'align':PP_ALIGN.CENTER}],size=3.5,color=MUTED)
 prs.save('PMDD_APHA_Poster_FINAL.pptx'); print('saved')
