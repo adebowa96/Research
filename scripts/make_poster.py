@@ -246,11 +246,11 @@ methods = [
                     "fertility outcomes only."),
     ("Screening & Analysis", f"{P['identified']} records; {P['duplicates_removed']} duplicates "
                              f"removed; {P['screened']} titles and abstracts screened; "
-                             f"{P['fulltext']} assessed; {N} included (Figure 2). AI-assisted "
+                             f"{P['fulltext']} assessed; {N} included (Figure 1). AI-assisted "
                              f"screening and charting, checked against full text for {FT} of "
                              f"{N} studies. Charted design, country, sample, outcomes, coping, "
                              "and healthcare gaps; synthesized with frequency counts and "
-                             "thematic grouping into 6 domains (Figure 1)."),
+                             "thematic grouping into 6 domains (Figure 3)."),
 ]
 table = find("Table 9").table
 table.columns[0].width = Inches(2.55)
@@ -355,29 +355,28 @@ for k, (text, size) in enumerate([("Paste QR code here", 28),
     add_runs(qp, text, size, color=RGBColor(0x59, 0x59, 0x59))
 
 # ------------------------------------------------------------------ centre figures
-# slot geometry follows the sample poster's figure positions; captions state the takeaway
-image_in(FIG / "fig1_outcomes_bar.png", 12.3, 4.9, 23.9, 9.45)
-caption(12.41, 14.4, 23.8, 1.15,
-        f"**Figure 1.** Psychosexual and relational challenges were the most frequently reported "
-        f"outcome ({S} of {N} studies); depression and anxiety were the least often assessed of "
-        f"the four outcome domains ({D} of {N}). Studies could report more than one domain.")
+# reading order: selection and design (top), outcomes (centre, full width), coping and geography
 slots = [  # image box, caption box, figure file, caption
-    ((12.22, 15.75, 11.2, 7.75), (12.22, 23.6, 11.2, 1.6), "prisma_flow.png",
-     f"**Figure 2.** PRISMA-ScR flow diagram: {P['identified']} records identified, "
+    ((12.22, 5.0, 11.2, 8.2), (12.22, 13.3, 11.2, 1.2), "prisma_flow.png",
+     f"**Figure 1.** PRISMA-ScR flow diagram: {P['identified']} records identified, "
      f"{P['screened']} screened, {P['fulltext']} assessed for eligibility, and {N} included."),
-    ((24.15, 16.0, 11.9, 7.4), (24.15, 23.6, 11.9, 1.6), "fig3_geographic_map.png",
-     f"**Figure 3.** Europe and Asia contributed {REG['Europe']} studies each, Africa and "
-     f"Oceania {REG['Africa']} each, and South America none ({REG['Multinational']} "
-     "multinational studies not mapped)."),
-    ((12.22, 25.5, 11.2, 7.7), (12.22, 33.35, 11.2, 1.6), "fig2_design_donut.png",
-     f"**Figure 4.** Study designs: {DES['Quantitative']} quantitative "
+    ((24.15, 5.0, 11.9, 8.2), (24.15, 13.3, 11.9, 1.2), "fig2_design_donut.png",
+     f"**Figure 2.** Study designs: {DES['Quantitative']} quantitative "
      f"({pct(DES['Quantitative'])}), {DES['Qualitative']} qualitative "
      f"({pct(DES['Qualitative'])}), {DES['Mixed methods']} mixed-methods, and "
      f"{DES['Not reported']} not reported."),
-    ((24.15, 25.5, 11.9, 7.7), (24.15, 33.35, 11.9, 1.6), "fig5_coping_bar.png",
-     f"**Figure 5.** Coping mechanisms in {C} studies: peer, family, and social support was most "
+    ((12.3, 14.75, 23.9, 8.55), (12.41, 23.35, 23.8, 1.2), "fig1_outcomes_bar.png",
+     f"**Figure 3.** Psychosexual and relational challenges were the most frequently reported "
+     f"outcome ({S} of {N} studies); depression and anxiety were the least often assessed of "
+     f"the four outcome domains ({D} of {N}). Studies could report more than one domain."),
+    ((12.22, 25.0, 11.2, 8.2), (12.22, 33.35, 11.2, 1.6), "fig5_coping_bar.png",
+     f"**Figure 4.** Coping mechanisms in {C} studies: peer, family, and social support was most "
      f"common ({COPE['Peer, family & social support']}), followed by avoidance and concealment "
      f"({COPE['Avoidance / concealment (maladaptive)']})."),
+    ((24.15, 25.0, 11.9, 8.2), (24.15, 33.35, 11.9, 1.6), "fig3_geographic_map.png",
+     f"**Figure 5.** Europe and Asia contributed {REG['Europe']} studies each, Africa and "
+     f"Oceania {REG['Africa']} each, and South America none ({REG['Multinational']} "
+     "multinational studies not mapped)."),
 ]
 for (ix, iy, iw, ih), (cx, cy, cw, ch), fname, text in slots:
     image_in(FIG / fname, ix, iy, iw, ih)
