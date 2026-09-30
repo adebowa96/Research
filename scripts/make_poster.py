@@ -215,7 +215,7 @@ fill(find("TextBox 311"), [
     "MRKH syndrome is the congenital absence of the uterus and upper vagina in individuals with "
     "a 46,XX karyotype and functioning ovaries, affecting about 1 in 4,500–5,000 female "
     "births.^{@acog,@herlin16} It is usually diagnosed in adolescence during evaluation of "
-    "primary amenorrhea,^{@acog} a sensitive period for identity, sexuality, and relationships. "
+    "primary amenorrhea, a sensitive period for identity, sexuality, and relationships. "
     "Earlier studies linked MRKH with psychological distress, anxiety, and reduced quality of "
     "life,^{@hb09,@laggari,@liao} and guidelines recommend psychosocial counseling as part of "
     "care.^{@acog} Prior reviews focused on psychological and sexual outcomes;^{@facchin,@tsarna} "
@@ -285,7 +285,7 @@ fill(find("Rectangle 326"), [
     "self-image than controls, even after neovagina creation.^{@R003,@R091}",
     f"• **Psychological distress ({pct(G)}):** shock, grief, shame, and secrecy at diagnosis; "
     "the diagnostic process itself was described as upsetting and potentially "
-    "traumatizing.^{@R011,@R267}",
+    "traumatizing.^{@R267}",
     f"• **QoL, body image, and self-esteem ({pct(Q)}):** impaired mental health–related quality "
     "of life,^{@R021} and higher distress with lower self-esteem than population norms.^{@R105}",
     f"• **Depression and anxiety ({pct(D)}):** depressive symptoms in 75.2% of 141 Chinese "
@@ -295,7 +295,7 @@ fill(find("Rectangle 326"), [
     f"also frequent, and one study traced a shift from avoidance to empowerment.^{{@R032}} Only {COPE['Psychological counseling/intervention']} "
     "intervention studies were found, both reporting benefit.^{@R038,@R131}",
     f"• **Healthcare gaps ({pct(H)}):** delayed diagnosis, providers unfamiliar with MRKH, and "
-    "patients forced to self-advocate.^{@R073,@R149}",
+    "patients forced to self-advocate.",
     "**Discussion**",
     "Findings echo earlier evidence of distress and reduced quality of life in MRKH^{@hb09,@liao} "
     "and extend prior reviews by mapping coping and health-system gaps. Psychosexual concerns "
@@ -324,7 +324,7 @@ place(find("TextBox 321"), X, 22.8, W, 1.63)
 place(find("TextBox 320"), X, 24.43, W, 4.67)
 fill(find("TextBox 320"), [
     "**Public Health Implications**",
-    "• Integrate psychosocial screening and support into MRKH diagnostic pathways^{@acog}",
+    "• Integrate psychosocial screening and support into MRKH diagnostic pathways",
     "• Build multidisciplinary teams that include psychology and social work",
     "• Pair vaginal lengthening treatment with psychosexual counseling",
     "• Train providers in sensitive, non-stigmatizing communication",
