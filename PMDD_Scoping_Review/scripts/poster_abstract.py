@@ -1,3 +1,4 @@
+from pptx.enum.chart import XL_TICK_MARK
 import json
 from pptx import Presentation
 from pptx.util import Inches, Pt
@@ -143,7 +144,7 @@ def style(ch,size,maxv):
     pl=ch.plots[0]; pl.gap_width=45; pl.has_data_labels=True; dl=pl.data_labels; dl.font.size=Pt(size); dl.font.bold=True; dl.font.name=FONT; dl.position=XL_LABEL_POSITION.OUTSIDE_END
     ser=pl.series[0]; ser.format.fill.solid(); ser.format.fill.fore_color.rgb=NAVY
     va=ch.value_axis; va.visible=False; va.has_major_gridlines=False; va.maximum_scale=maxv; va.minimum_scale=0
-    ca=ch.category_axis; ca.tick_labels.font.size=Pt(size); ca.format.line.color.rgb=GRAY
+    ca=ch.category_axis; ca.major_tick_mark=XL_TICK_MARK.NONE; ca.tick_labels.font.size=Pt(size); ca.format.line.color.rgb=GRAY
     return ser
 gf=s.shapes.add_chart(XL_CHART_TYPE.BAR_CLUSTERED,Inches(dx),Inches(1.84),Inches(2.45),Inches(2.84),cd); ser=style(gf.chart,4.6,44)
 pt=ser.points[0]; pt.format.fill.solid(); pt.format.fill.fore_color.rgb=RED
@@ -193,7 +194,8 @@ for sh in s.shapes:
 kb=tb(CX+0.12,7.06,CW-0.24,0.26,fill=NAVY,anchor=MSO_ANCHOR.MIDDLE,shape=MSO_SHAPE.ROUNDED_RECTANGLE,margin=0.08)
 write(kb,[{'runs':[('KEY TAKEAWAY  ',True,False,RGBColor(0xF2,0xC1,0x4E)),('PMDD’s psychosocial burden is well documented in high-income countries, yet nearly invisible in low-income settings and sub-Saharan Africa.',False,False,WHITE)],'align':PP_ALIGN.CENTER}],size=5.6)
 cd=CategoryChartData(); cd.categories=['2010–13','2014–17','2018–21','2022–25']; cd.add_series('Studies',[6,6,5,27])
-gf=s.shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED,Inches(fx+0.1),Inches(4.34),Inches(2.3),Inches(0.46),cd); ser=style(gf.chart,4.2,32)
+gf=s.shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED,Inches(fx+0.1),Inches(4.28),Inches(2.3),Inches(0.54),cd); ser=style(gf.chart,4.2,30)
+gf.chart.plots[0].gap_width=70
 p_=ser.points[3]; p_.format.fill.solid(); p_.format.fill.fore_color.rgb=RED
-write(tb(fx,4.8,2.47,0.18),[{'runs':[('Figure 3. ',True,False,NAVY),('Included Studies by Publication Period.',True,False,NAVY),(' 27 of 44 studies (61%) were published in 2022–2025.',False,False,INK)]}],size=4.2)
+write(tb(fx,4.8,2.47,0.18),[{'runs':[('Figure 3. ',True,False,NAVY),('Included Studies by Publication Period.',True,False,NAVY),(' 61% (27 of 44) were published in 2022–2025.',False,False,INK)]}],size=4.2)
 prs.save('PMDD_APHA_Poster_FINAL.pptx'); print('saved')
