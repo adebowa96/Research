@@ -1,46 +1,29 @@
 # PMDD Psychosocial Outcomes & Coping: Global Scoping Review
 
-Deliverables for the APHA poster and the full manuscript.
+Deliverables for the APHA poster and the AJPH manuscript. The poster and the manuscript both use the numbers in the approved APHA abstract (44 included studies).
 
 | File | What it is |
 |---|---|
-| `PMDD_APHA_Poster_FINAL.pptx` / `.pdf` | **Final poster**, built on your earlier PMDD poster layout with the co-author list. Charts are native and editable. |
-| `PMDD_Poster_References_for_QR_Doc.docx` | Updated reference list to paste into the Google Doc linked by the poster's QR code. |
-| `PMDD_APHA_Poster.pptx` / `.pdf` | Earlier draft on the air-quality template (superseded). |
-| `PMDD_Scoping_Review_Manuscript.docx` / `.pdf` | Full manuscript: abstract, introduction, methods, results, discussion, APA references and Supplementary Table S1 (all 85 studies). |
-| `PMDD_Scoping_Review_Screening_and_Charting.xlsx` | Every one of the 1,801 exported records, with its decision and exclusion reason. Also holds the 85-study charting table and the PRISMA counts. |
-| `figures/` | PRISMA-ScR flow, domain chart and geography chart (300 dpi PNG). |
-| `scripts/` | Code that produced every number. `decisions.txt` holds the title/abstract decision for each of the 307 PMDD-related records. |
+| `PMDD_APHA_Poster_FINAL.pptx` / `.pdf` | **Final poster**, built on the earlier PMDD poster layout. Charts are native and editable. Print the PDF scaled to 48 × 36 in. |
+| `PMDD_Poster_References_AMA.docx` | **Reference list for the QR-code Google Doc** (51 AMA references: 1–20 cited on the poster, 21–51 other included studies). |
+| `PMDD_Scoping_Review_Manuscript.docx` / `.pdf` | **AJPH-format manuscript** on the 44 included studies: structured abstract, main text, AMA references, Table 1 and Figures 1–4. |
+| `figures/` | Manuscript figures (300 dpi PNG): PRISMA-ScR flow, outcome domains, publication period, country map. |
+| `included_44.csv` | Country and World Bank income group for each of the 44 included studies. |
+| `PMDD_Scoping_Review_Screening_and_Charting.xlsx` | Separate re-analysis of the raw exports (85 studies). **Not** the basis of the poster or manuscript; keep for reference only. |
+| `PMDD_APHA_Poster.pptx` / `.pdf`, `PMDD_Poster_References_for_QR_Doc.docx` | Superseded drafts. |
+| `scripts/` | Code that builds the poster (`poster_abstract.py`), manuscript (`ms_build.py`) and figures (`ms_figs.py`). |
 
-The raw database exports are not committed. The scripts expect them in the working directory.
+## Key numbers (approved abstract, poster and manuscript)
 
-## Key numbers (from the uploaded exports)
+- **Selection:** 1,943 records; 325 duplicates removed; 1,618 screened by title and abstract; 64 assessed for eligibility (title and abstract); 20 excluded; **44 included**.
+- **Outcome domains (not mutually exclusive):** depression 39; psychological distress 24; interpersonal functioning 18; suicidal ideation or self-harm 14; quality of life 14; coping mechanisms 3.
+- **Publication period:** 2010–2013, 6; 2014–2017, 6; 2018–2021, 5; 2022–2025, 27 (61%).
+- **Setting (World Bank FY2027):** 20 high income; 7 upper-middle income (Türkiye 4, Iran 3); 3 (6.8%) low or lower-middle income (Bangladesh, Lebanon, Nigeria); 14 online, multinational or not assigned. Nigeria is the only sub-Saharan African setting.
 
-- **Screening:** 1,801 records identified; 342 duplicates removed; 1,459 screened; 1,374 excluded; **85 studies included**.
-- **Outcome domains:** depression 28; mood/emotion regulation 18; psychiatric comorbidity 18; distress/stress 16; anxiety 13; suicidality 13; academic/occupational functioning 13; interpersonal 12; quality of life 8; coping/resilience 7; trauma/adversity 7; personality 7; lived experience/help-seeking 5.
-- **Income group:** 57 (67.1%) high-income. 21 (24.7%) LMIC by the World Bank definition (includes upper-middle income). Only 5 (5.9%) are low or lower-middle income.
-- **Sub-Saharan Africa:** 3 studies (3.5%): Nigeria (Adegoke et al., 2014) and Ethiopia (Alemu et al., 2017; Kibralew et al., 2024).
-- **Diagnosis:** only 20 (23.5%) confirmed PMDD with prospective daily ratings.
+## Before AJPH submission
 
-## Differences from the submitted APHA abstract
-
-The abstract was written before screening was complete. The poster and manuscript use the verified numbers below.
-
-| Item | APHA abstract | Verified from exports |
-|---|---|---|
-| Records identified | 1,943 | 1,801 (the PubMed export had only 6 records; add the full PubMed export if the search returned more) |
-| After deduplication | 1,618 | 1,459 |
-| Included studies | 44 | 85 |
-| Mood & emotional regulation | n = 45 (impossible: exceeds 44) | n = 18 |
-| LMIC studies | 3 (6.8%) | 21 (24.7%) World Bank LMIC; 5 (5.9%) low/lower-middle income |
-| Nigeria / sub-Saharan Africa | "1 from Nigeria and zero from SSA" (contradictory: Nigeria is in SSA) | 3 from SSA (Nigeria 1, Ethiopia 2) |
-| "31 million" | stated | Correct: Reilly et al., 2024 (1.6% confirmed community prevalence) |
-
-## Before submission: please verify
-
-1. Co-authors were taken from your earlier poster. Confirm the credentials and add department, city and contact details to the manuscript.
-2. Title/abstract screening and charting were AI-assisted and single-reviewer. Two human reviewers should check the decisions and complete the full-text review, then update the PRISMA counts.
-3. Add the exact search strings and search dates (Appendix A) and the protocol registration, if any.
-4. Record 208 (Torabi et al., 2025) does not state a country in its abstract. Some other countries were taken from the study setting; confirm these at full text.
-5. Remove the bracketed orange author notes in the manuscript.
-6. Confirm the full author list of Reilly et al. (2024) and check the reference list against your reference manager.
+1. Replace the orange bracketed notes in the manuscript: affiliations and contact details, protocol registration, search dates and full search strings (supplemental appendix), reviewer process and any AI-assistance disclosure, and author contributions.
+2. Eligibility was assessed from titles and abstracts only. Complete full-text review before journal submission. It may remove records such as the Gordon et al commentary, the Jacobs and Ehman review and studies of premenstrual disorders broadly; if counts change, update the manuscript (a journal article may differ from a conference abstract if the change is explained).
+3. Brown et al (2024) and Mahmood et al (2023) are included but their full citations were not located. Add them to the reference list or remove them after full-text review.
+4. Confirm country settings marked "Not assigned" in Table 1 (for example, Shahzad et al may be set in Pakistan, which would make the low/lower-middle-income count 4).
+5. Confirm author credentials and the conflict-of-interest statement with all co-authors.
