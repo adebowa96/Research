@@ -333,9 +333,9 @@ fill(find("TextBox 320"), [
     "MRKH affects far more than reproductive anatomy. Psychosexual difficulties, emotional "
     "distress, and low self-esteem were widely reported, yet depression and anxiety were "
     "measured in fewer than half of studies, and coping relied mostly on peers or concealment "
-    "rather than structured care. Embedding mental health screening, psychosexual counseling, "
-    "and peer support in multidisciplinary MRKH care, and extending research to "
-    "underrepresented regions, should be public health priorities.",
+    "rather than structured care. Mental health screening, psychosexual counseling, and peer "
+    "support should become standard in multidisciplinary MRKH care, not an afterthought, and "
+    "research must reach underrepresented regions.",
 ], space_after=3)
 
 set_header(find("TextBox 322"), "References")
