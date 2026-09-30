@@ -134,3 +134,7 @@ AMA corrections:
 - **Market report (ref 2):** now uses your original access date, "Accessed August 30, 2025". The later "Published December 1, 2025" date was dropped; it was the page's later update and caused the date conflict.
 - **2025–2030 Dietary Guidelines:** "Accessed September 30, 2026", the date the reference was added and its content checked.
 - **Author names and department:** plain placeholders with no highlighting, in the poster title, the poster reference list, and the paper's title page. They are waiting for the final author line.
+
+## Authors added (latest)
+
+The author line is now "Miebaka F. Roberts; Chelsea R. Mazonde, MPH; Ifeoluwanimi P. Shobayo, MSPH", with "Department of Public and Community Health, Liberty University". It appears on the poster title, the poster full reference list, and the paper title page. Miebaka Roberts' credentials are not known yet, so the name is listed without them.
