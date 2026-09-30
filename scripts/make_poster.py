@@ -246,9 +246,9 @@ methods = [
                     "fertility outcomes only."),
     ("Screening & Analysis", f"{P['identified']} records; {P['duplicates_removed']} duplicates "
                              f"removed; {P['screened']} titles and abstracts screened; "
-                             f"{P['fulltext']} assessed; {N} included (Figure 1). AI-assisted "
-                             f"screening and charting, checked against full text for {FT} of "
-                             f"{N} studies. Charted design, country, sample, outcomes, coping, "
+                             f"{P['fulltext']} assessed; {N} included (Figure 1). Data were "
+                             f"charted from full texts ({FT} of {N} studies; abstracts for the "
+                             "rest): design, country, sample, outcomes, coping, "
                              "and healthcare gaps; synthesized with frequency counts and "
                              "thematic grouping into 6 domains (Figure 3)."),
 ]
