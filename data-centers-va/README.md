@@ -33,5 +33,5 @@ A failed source is reported and the others still run; re-run just the failed one
 
 ## Caveats
 
-- URLs and dataset IDs were current as of September 2026; agencies occasionally move files.
+- URLs and dataset IDs have not been test-run yet (the build environment could not reach these hosts). If one fails, check the link on the agency page above; agencies occasionally move files.
 - PLACES values are model-based estimates, suited to cross-sectional analysis only.
