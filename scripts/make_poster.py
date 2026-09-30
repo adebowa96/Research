@@ -140,7 +140,7 @@ fill(find("TextBox 308"), [
     f"{OUT['Coping mechanisms documented']} studies; healthcare gaps in "
     f"{OUT['Healthcare system gaps']}.",
     "**Conclusion:** MRKH-related psychosocial burden is substantial yet under-integrated into "
-    "care. *Results updated from the submitted abstract after final screening.*",
+    "care. *Results updated from the submitted abstract after final screening and full-text review.*",
 ], size=24, space_after=4)
 
 fill(find("TextBox 311"), [
