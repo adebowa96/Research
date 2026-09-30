@@ -164,14 +164,16 @@ body(RX,1.19,RW,3.25,[
  "Depression was the most documented outcome (n=39); one nationwide cohort found a 2.6-fold higher risk of later depression after a PMDD diagnosis.¹³ Psychological distress (n=24), interpersonal functioning (n=18), suicidal ideation or self-harm (n=14) and quality of life (n=14) followed. Only three studies examined coping mechanisms, such as peer support shared in online PMDD communities¹⁴ (Figure 2). Most studies (61%) were published in 2022–2025 (Figure 3).",
  "Twenty studies came from high-income countries and seven from upper-middle-income countries (Türkiye, Iran); only three (6.8%) came from low- and lower-middle-income countries—Bangladesh,¹⁵ Lebanon¹⁶ and Nigeria,¹⁷ the only study from sub-Saharan Africa (Figure 4).",
  [('Discussion',True,False)],
- "PMDD research consistently documents depression, distress, relationship difficulties and suicidality.⁴⁻⁷ Patients describe misdiagnosis and uneven provider knowledge,¹⁸˒¹⁹ yet coping remains largely unexamined.",
+ "The focus on depression and distress mirrors population studies linking PMDD to depression, suicidal ideation and suicide attempts.⁴⁻⁷ Coping, by contrast, appeared in only three studies, so little is known about how women manage symptoms day to day or which supports help.",
+ "Evidence is also concentrated in high-income countries. Premenstrual symptoms are common across Africa,⁸ so a single sub-Saharan study likely reflects under-study rather than low burden. Stigma, limited mental health services and local explanations of menstrual distress may shape both burden and coping in these settings.",
+ "Patients describe misdiagnosis and uneven provider knowledge,¹⁸˒¹⁹ and many turn to online peer communities for support.¹⁴ Because much PMDD research relies on provisional rather than prospectively confirmed diagnosis,¹ future studies should pair confirmed diagnosis with measures of coping and help-seeking.",
  [('Conclusion',True,False)],
  "PMDD carries a well-documented psychosocial burden, especially depression, distress and suicidality, yet how women cope has received little attention, and evidence from low-income settings and Africa is nearly absent. Culturally responsive screening, integrated mental and reproductive health services, and Africa-centered research investment are needed to make this burden visible to health systems.",
  [('Limitations',True,False)],
  B([('Search scope: ',True,False),('studies outside the five databases or the 2010–2025 period may have been missed.',False,False)]),
  B([('Study differences: ',True,False),('variation in design and outcome definitions limits direct comparison.',False,False)]),
  B([('Coding overlap: ',True,False),('a study could address more than one outcome, so counts should not be summed.',False,False)]),
- B([('Geographic coverage: ',True,False),('few studies from low- and lower-middle-income countries limit conclusions about those settings.',False,False)])],size=4.45,align=PP_ALIGN.JUSTIFY,space=1.6)
+ B([('Geographic coverage: ',True,False),('few studies from low- and lower-middle-income countries limit conclusions about those settings.',False,False)])],size=4.2,align=PP_ALIGN.JUSTIFY,space=1.2)
 header(RX,4.51,RW,0.36,'Public Health Implications and Future Work',size=9.5)
 body(RX,4.9,RW,1.13,[
  [('Public Health Implications',True,False)],
