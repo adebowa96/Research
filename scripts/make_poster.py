@@ -413,33 +413,19 @@ def ama_par(text, prefix=""):
 
 doc.add_heading("Mental Health and Psychosocial Outcomes Among Individuals With "
                 "Mayer-Rokitansky-Küster-Hauser (MRKH) Syndrome: A Scoping Review", 1)
-doc.add_paragraph("Ifeoluwanimi P. Shobayo, BSc, MSPHc; Paul Okojie, PhD; Robyn Anderson, PhD. "
-                  "Department of Public and Community Health, Liberty University. "
-                  "APHA 2026 Annual Meeting poster — full reference list (AMA style).")
-doc.add_heading("A. References cited on the poster", 2)
-doc.add_paragraph("Numbered as they appear on the poster.")
-for k, ref in enumerate(poster_refs, 1):
-    ama_par(ref, f"{k}. ")
-
+# one numbered AMA list: 1..k exactly as cited on the poster, then the remaining included
+# studies (alphabetical), then the remaining background references
+import unicodedata  # noqa: E402
 cited = set(CITER.order)
 included = [(k, v) for k, v in CITER.lib.items() if re.fullmatch(r"R\d{3}", k)]
-import unicodedata  # noqa: E402
-included.sort(key=lambda kv: unicodedata.normalize("NFKD", kv[1]).encode("ascii", "ignore").decode().lower())
-doc.add_heading(f"B. All {N} studies included in the scoping review", 2)
-doc.add_paragraph("Listed alphabetically by first author. Studies also cited on the poster "
-                  "show their poster reference number in brackets.")
 assert len(included) == N
-for k, ref in included:
-    tag = f" [poster ref {CITER.order.index(k) + 1}]" if k in cited else ""
-    ama_par(ref + tag, "• ")
-
+rest = sorted((kv for kv in included if kv[0] not in cited),
+              key=lambda kv: unicodedata.normalize("NFKD", kv[1]).encode("ascii", "ignore").decode().lower())
 extra = [k for k in ("herlin20", "bean", "patterson", "tsarna", "mak", "hb07", "okunomiya",
-                     "laggari", "facchin")
-         if k not in cited]
-if extra:
-    doc.add_heading("C. Additional background references (manuscript)", 2)
-    for k in extra:
-        ama_par(CITER.lib[k], "• ")
+                     "laggari", "facchin") if k not in cited]
+full = poster_refs + [v for _, v in rest] + [CITER.lib[k] for k in extra]
+for k, ref in enumerate(full, 1):
+    ama_par(ref, f"{k}. ")
 ref_out = ROOT / "poster" / "Poster_Full_Reference_List.docx"
 doc.save(ref_out)
 print("wrote", ref_out)
