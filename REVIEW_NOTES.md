@@ -1,25 +1,23 @@
-# ⚠️ STATUS (September 29, 2026): RESULTS ARE PROVISIONAL
+# STATUS (September 30, 2026): FULL-TEXT CHECK DONE FOR 30 OF 35 STUDIES
 
 The original Rayyan screening records could not be recovered. Screening and data extraction
 were redone from the original search exports (see `rescreen/`):
-- 516 records → 192 duplicates removed → 324 screened → 278 excluded → 46 assessed for
-  eligibility → 7 excluded → **39 studies provisionally included**
+- 516 records → 192 duplicates removed → 324 screened → 282 excluded (4 not in English) →
+  42 assessed for eligibility → 7 excluded → **35 studies included**
 - Mixed samples were included only if MRKH results were reported separately or at least 80% of
   participants had MRKH
-- Screening decisions were proposed with AI assistance, and data were charted from **abstracts
-  only**.
+- Screening decisions were proposed with AI assistance. Extraction was then **checked against the
+  full-text PDF for 30 of the 35 included studies** (see `rescreen/FULLTEXT_VERIFICATION.md`)
 
-**Before submission or presentation, the review team must:**
-1. Have two reviewers independently verify every decision in
-   `rescreen/MRKH_rescreening_workbook.xlsx`.
-2. Obtain full texts of the 39 included studies (and the 7 eligibility exclusions) and confirm
-   each decision.
-3. Verify every row of `rescreen/extraction_provisional.csv` (Appendix B) against the full text.
-4. Update `scripts/data.json` if any count changes, then rebuild.
+**Still to do before submission:**
+1. Two reviewers verify every decision in `rescreen/MRKH_rescreening_workbook.xlsx`.
+2. Obtain the 5 missing full texts (Arsy 2019 R227, Di Mattei 2026 R010, Jensen 2024 life-course
+   R014, Jha 2022 R086, Mao 2024 R060) and check their rows (marked † in Appendix B).
+3. Update `rescreen/extraction.py` if anything changes, rerun it, update `scripts/data.json`, then rebuild.
 
-The results now differ from the submitted APHA abstract. Psychosexual and relational challenges
-are the most frequent domain (25 of 39), and depression and anxiety one of the least measured (12). The
-poster's abstract box says the results were updated after final screening.
+The results differ from the submitted APHA abstract. Psychosexual and relational challenges
+are the most frequent domain (24 of 35), and depression and anxiety the least measured of the four
+outcome domains (14). The poster's abstract box says the results were updated after final screening.
 
 The notes below predate the re-screening and are kept for the record.
 

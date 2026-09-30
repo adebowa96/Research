@@ -248,7 +248,7 @@ abstract = [
     "qualitative, and mixed-methods research reporting psychological outcomes and/or coping "
     "mechanisms in MRKH populations.",
     f"**Results:** Of {P['identified']} records identified ({P['screened']} after "
-    f"deduplication), {N} studies were provisionally included. Psychosexual and relational "
+    f"deduplication), {N} studies were included. Psychosexual and relational "
     f"challenges were the most frequently reported outcomes (n = "
     f"{OUT['Psychosexual & relational challenges']}; "
     f"{pct(OUT['Psychosexual & relational challenges'], digits=0)}), followed by reduced quality "
@@ -416,7 +416,8 @@ table("**Table A1.** Records retrieved by database",
 
 page_break()
 heading("Appendix B. Characteristics of Included Studies")
-para("Provisional, abstract-level data charting; every entry requires full-text verification. "
+para(f"Data charting was checked against the full text for {data['full_text_checked']} of {N} studies; "
+     "entries marked † were charted from the abstract or title only. "
      "Domains: D, depression/anxiety; Q, quality of life, body image, self-esteem; S, "
      "psychosexual and relational; P, broader psychological distress; C, coping documented; "
      "H, healthcare system gaps. Reference numbers refer to the main reference list.",
@@ -426,7 +427,7 @@ dom_cols = [("Depression & anxiety", "D"), ("Reduced QoL, body image & self-este
             ("Coping mechanisms documented", "C"), ("Healthcare system gaps", "H")]
 table("**Table B1.** Characteristics of included studies (N = {N_INCLUDED})",
       ["Study", "Country", "Design", "n", "Domains", "Coping"],
-      [[CITER.resolve(f"{e['study']}^{{@{e['record_id']}}}"), e["country"],
+      [[CITER.resolve(f"{e['study']}^{{@{e['record_id']}}}") + ("†" if e["full_text_checked"] == "no" else ""), e["country"],
         e["design_detail"], e["sample_n"],
         " ".join(code for col, code in dom_cols if e[col] == "yes"), e["coping_types"] or "—"]
        for e in sorted(EXTRACTION, key=lambda e: e["study"])],
@@ -449,7 +450,7 @@ prisma_items = [
     ("Critical appraisal of individual sources of evidence (optional)", "12",
      "Methods: Synthesis (not performed)"),
     ("Synthesis of results", "13", "Methods: Synthesis"),
-    ("Selection of sources of evidence", "14", "Results; Figure 1 [[full-text stage pending]]"),
+    ("Selection of sources of evidence", "14", "Results; Figure 1"),
     ("Characteristics of sources of evidence", "15", "Results; Table 1; Appendix B"),
     ("Critical appraisal within sources of evidence (optional)", "16", "Not applicable"),
     ("Results of individual sources of evidence", "17", "Appendix B"),

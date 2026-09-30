@@ -75,14 +75,15 @@ INCLUDE = {
     "R267": "Qualitative: diagnostic odyssey (Denmark)",
     "R001": "Eligibility step: results reported separately for congenital (MRKH) uterine factor infertility",
     "R223": "Eligibility step: qualitative study of 5 women with MRKH in Africa (published abstract)",
-    "R234": "Eligibility step: uterus transplant recipients, 6 of 7 with MRKH (published abstract)",
+    "R234": "Eligibility step: uterus transplant recipients, 8 of 9 with MRKH (full text)",
     "R244": "Eligibility step: uterus transplant candidates, 18 of 19 with MRKH (published abstract)",
-    "R255": "Eligibility step: DSD sample; March 30 check recorded MRKH findings reported separately",
 }
 UNCERTAIN = {}
 MANUAL_EXCLUDE = {
     # eligibility step (records retained from title/abstract screening)
     "R005": "E4", "R025": "E4", "R028": "E4", "R175": "E4", "R093": "E5",
+    # full text: 2 of 15 DSD participants had MRKH; MRKH findings not analysed separately
+    "R255": "E4",
     # not in English (March 2026 English-only criterion)
     "R007": "E6", "R065": "E6", "R164": "E6", "R173": "E6",
     "R242": "E5",
@@ -142,7 +143,7 @@ ELIGIBILITY = {"R005", "R025", "R028", "R175", "R255", "R093", "R242",
                "R001", "R223", "R234", "R244"}
 for x in unique:
     if x["record_id"] in ELIGIBILITY:
-        x["stage"] = "3 (eligibility, published abstract)"
+        x["stage"] = "3 (eligibility)"
 counts = Counter(x["decision"] for x in unique)
 ta_ex = [x for x in unique if x["decision"] == "Exclude" and x["record_id"] not in ELIGIBILITY]
 el_ex = [x for x in unique if x["decision"] == "Exclude" and x["record_id"] in ELIGIBILITY]
@@ -158,7 +159,7 @@ summary = [
     ("Assessed for eligibility", len(unique) - len(ta_ex)),
     ("Excluded at eligibility", len(el_ex)),
 ] + [(f"   {r}", n) for r, n in sorted(el_reasons.items())] + [
-    ("Proposed include (full text to confirm)", counts["Include"]),
+    ("Included", counts["Include"]),
 ]
 for label, n in summary:
     print(f"{label:<75}{n}")

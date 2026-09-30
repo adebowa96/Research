@@ -16,7 +16,7 @@ screening).
 | R065 | Schäffeler 2022 (German) | Include → Exclude | Not in English |
 | R164 | Blanc 2019 (French) | Include → Exclude | Not in English (also removed in March) |
 | R173 | Gueniche 2020 (French) | Include → Exclude | Not in English (also removed in March) |
-| R255 | Mediå 2022 (DSD, Norway) | Exclude → Include | March check recorded MRKH findings reported separately |
+| R255 | Mediå 2022 (DSD, Norway) | Exclude → Include → **Exclude (full text)** | March check said MRKH findings were reported separately, but the full text shows only 2 of 15 participants had MRKH and findings were not analyzed separately |
 
 ## Remaining disagreements (current decision kept; the reviewer should confirm)
 | Record | Study | March | Now | Why kept |

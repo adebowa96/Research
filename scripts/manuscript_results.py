@@ -8,6 +8,8 @@ def build(ctx):
     COPE = dict(ctx["data"]["coping"])
     assert COPE["Psychological counseling/intervention"] == 2
     ext = ctx["extraction"]
+    FT = ctx["data"]["full_text_checked"]
+    NFT = P["included"] - FT
 
     heading("Study Selection", 2)
     para(f"The original screening records could not be recovered, so study selection was repeated "
@@ -22,13 +24,14 @@ def build(ctx):
          f"Records that could not be classified from the exported title and abstract were assessed "
          f"for eligibility using the published abstract; studies with mixed samples were included "
          f"only if results were reported separately for participants with MRKH or at least 80% of "
-         f"participants had MRKH. [[Full-text verification of all included studies is pending.]] The screening workbook, with a decision and reason for every record, "
+         f"participants had MRKH. Full texts were then obtained for {FT} of the {P['included']} included studies and checked against the same criteria; at this stage one study of adults with differences of sex development was excluded because only 2 of its 15 participants had MRKH and their findings were not analyzed separately. [[The full texts of the remaining {NFT} studies could not be obtained; their inclusion rests on the published abstract or title.]] The screening workbook, with a decision and reason for every record, "
          f"is available as supplementary material.")
     heading("Data Charting", 2)
     para("For each included study, data were charted on author, year, country, study design, "
          "sample size, reported mental health and psychosocial outcomes, coping mechanisms, and "
-         "healthcare system gaps. In this version, charting was based on titles and abstracts; "
-         "[[full-text verification of every charted item is pending]]. Outcomes were coded into "
+         "healthcare system gaps. Charted items were checked against the full text for "
+         f"{FT} of {P['included']} studies; the remaining {NFT} were charted from the title and "
+         "abstract [[and should be checked when their full texts are obtained]]. Outcomes were coded into "
          "four domains—depression and anxiety; quality of life, body image, and self-esteem; "
          "psychosexual and relational challenges; and broader psychological distress—and coping "
          "mechanisms into seven categories.")
@@ -50,17 +53,17 @@ def build(ctx):
          f"{P['excluded']} were excluded: {reasons}. Of the {P['fulltext']} records assessed for "
          f"eligibility, {P['excluded_eligibility']} were excluded ("
          + "; ".join(f"{r.lower()}, n = {n}" for r, n in P["eligibility_reasons"])
-         + f"), and {P['included']} studies were provisionally included (Figure 1).")
+         + f"), and {P['included']} studies were included (Figure 1).")
     figure(FIG / "prisma_flow.png",
-           "**Figure 1.** PRISMA-ScR flow diagram of study selection. Counts are provisional "
-           "pending reviewer verification and full-text confirmation.", width=5.4)
+           "**Figure 1.** PRISMA-ScR flow diagram of study selection. Counts are pending "
+           "confirmation by the review team.", width=5.4)
 
     heading("Characteristics of Included Studies", 2)
     para(f"The {N} included studies were published between 2019 and 2026 and comprised "
          f"{DES['Quantitative'][0]} quantitative studies ({pct(DES['Quantitative'][0])}), "
          f"{DES['Qualitative'][0]} qualitative studies ({pct(DES['Qualitative'][0])}), and "
          f"{DES['Mixed methods'][0]} mixed-methods studies ({pct(DES['Mixed methods'][0])}); the "
-         f"design of 1 study could not be determined from its abstract (Table 1; Figure 2). "
+         f"design of 1 study could not be determined because only its title was available (Table 1; Figure 2). "
          f"Quantitative designs included cross-sectional surveys, case-control comparisons, "
          f"cohort and pre–post studies, and 1 randomized controlled trial.^{{@R131}} Most studies "
          f"came from Europe (n = {REG['Europe']}) and Asia (n = {REG['Asia']}), followed by North "
@@ -78,7 +81,7 @@ def build(ctx):
           + [[name, n, pct(n)] for name, n, _ in ctx["data"]["regions"]],
           widths=[3.6, 0.8, 1.0],
           note="Percentages are of all included studies (N = {N_INCLUDED}) and may not total 100% because "
-               "of rounding. Classifications are provisional (abstract-level).")
+               "of rounding. Five studies were charted from the abstract or title only.")
     figure(FIG / "fig2_design_donut.png",
            "**Figure 2.** Distribution of included studies by design (N = {N_INCLUDED}).", width=4.8)
     figure(FIG / "fig3_geographic_map.png",
@@ -99,8 +102,8 @@ def build(ctx):
          "insecurity about the neovagina, low sexual confidence, and anxiety about disclosing "
          "the diagnosis to partners.^{@R040,@R063,@R094,@R017} One randomized trial found that "
          "e-learning psychosexual education improved genital self-image and reduced sexual "
-         "distress.^{@R131} Adults with differences of sex development, including MRKH, "
-         "described balancing concealment and disclosure of their condition.^{@R255}")
+         "distress.^{@R131} In an African qualitative study, cultural and religious expectations about "
+         "virginity discouraged vaginal dilation.^{@R223}")
     para("*Quality of life, body image, and self-esteem.* A prospective study found impaired "
          "mental health–related quality of life despite normal body image,^{@R021} and an "
          "international survey of 263 patients reported higher distress and lower self-esteem "
@@ -146,10 +149,10 @@ def build(ctx):
     heading("Coping Mechanisms", 2)
     c_ = OUT["Coping mechanisms documented"]
     para(f"Coping mechanisms were documented in {c_} studies ({pct(c_)}; Table 3). Peer, family, "
-         f"and social support was most common,^{{@R014,@R021,@R032,@R094,@R105,@R149}} including "
+         f"and social support was most common,^{{@R014,@R021,@R032,@R094,@R105,@R149,@R267}} including "
          f"MRKH support groups and online communities. Avoidance and concealment—such as "
          f"pretending to menstruate or hiding the diagnosis—were the most frequently documented "
-         f"maladaptive strategies.^{{@R013,@R032,@R057,@R094,@R255}} One qualitative study traced a "
+         f"maladaptive strategies.^{{@R013,@R032,@R057,@R094,@R149,@R223}} One qualitative study traced a "
          f"shift from avoidance to empowerment through positive reappraisal and spiritual "
          f"coping,^{{@R032}} and illness coherence and positive affect appeared protective for "
          f"psychological adjustment.^{{@R105}} Structured psychological or psychosexual "
@@ -195,7 +198,7 @@ def build(ctx):
          f"two of every three studies, while broader psychological distress and quality of life, "
          f"body image, and self-esteem were each reported in about half. Depression and anxiety "
          f"were measured less often, and results were mixed. Coping was documented in more than "
-         f"one in three studies and relied largely on peer support and self-management, and about one in four "
+         f"one in three studies and relied largely on peer support and self-management, and more than one in four "
          f"studies described healthcare system gaps.")
     para("These findings are consistent with earlier evidence that women with MRKH experience "
          "greater psychological distress and lower self-esteem than controls,^{@hb09} higher "
@@ -238,12 +241,13 @@ def build(ctx):
          "search of biomedical, nursing, psychological, and women's studies databases, and "
          "inclusion of quantitative, qualitative, and mixed-methods evidence. The most important "
          "limitation is that the original screening records were lost and selection was repeated "
-         "from the original exports with AI-assisted screening and abstract-level data charting; "
-         "results are therefore provisional until reviewer verification and full-text confirmation "
-         f"of the {P['included']} included studies are complete. In addition, the review was "
+         "from the original exports with AI-assisted screening and charting. Charting was checked "
+         f"against the full text for {FT} of the {P['included']} included studies, but the "
+         f"remaining {NFT} rest on abstracts or titles, and [[reviewer verification of all "
+         "decisions is still required]]. Two Danish reports and two Chinese reports appear to share samples. In addition, the review was "
          "limited to 2019–2026, date limits were applied inconsistently across database "
          "interfaces and enforced at screening, designs and measures were heterogeneous, and "
-         "some studies may share samples. Consistent with scoping methodology, study quality was "
+         "other studies may also share samples. Consistent with scoping methodology, study quality was "
          "not appraised, and counts reflect how often outcomes were studied, not their "
          "prevalence. [[Add, if applicable: grey literature not searched.]]")
     heading("Conclusions", 2)

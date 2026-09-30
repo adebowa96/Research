@@ -1,6 +1,6 @@
 {
-  "_note": "Single source of truth. PROVISIONAL (Sept 2026 re-screen): AI-assisted title/abstract screening and abstract-level extraction from the March 29, 2026 search exports; pending verification by two reviewers and full-text review.",
-  "total_included": 36,
+  "_note": "Single source of truth (Sept 2026 re-screen): AI-assisted screening of the March 29, 2026 search exports; extraction checked against full text for 30 of 35 included studies (5 abstract/title only). Pending confirmation by the review team.",
+  "total_included": 35,
   "prisma": {
     "identified": 516,
     "duplicates_removed": 192,
@@ -33,23 +33,23 @@
       ]
     ],
     "fulltext": 42,
-    "excluded_eligibility": 6,
+    "excluded_eligibility": 7,
     "eligibility_reasons": [
       [
         "Mixed sample, MRKH not separate",
-        4
+        5
       ],
       [
         "No psychological outcome",
         2
       ]
     ],
-    "included": 36
+    "included": 35
   },
   "outcomes": [
     [
       "Psychosexual & relational challenges",
-      23
+      24
     ],
     [
       "Broader psychological distress",
@@ -57,15 +57,15 @@
     ],
     [
       "QoL, body image & self-esteem",
-      17
+      19
     ],
     [
       "Coping mechanisms documented",
-      14
+      15
     ],
     [
       "Depression & anxiety",
-      11
+      14
     ],
     [
       "Healthcare system gaps",
@@ -80,7 +80,7 @@
     ],
     [
       "Qualitative",
-      15,
+      14,
       ""
     ],
     [
@@ -97,7 +97,7 @@
   "regions": [
     [
       "Europe",
-      15,
+      14,
       "EU"
     ],
     [
@@ -134,7 +134,7 @@
   "coping": [
     [
       "Peer, family & social support",
-      6
+      7
     ],
     [
       "Psychological counseling/intervention",
@@ -146,7 +146,7 @@
     ],
     [
       "Spiritual coping",
-      2
+      1
     ],
     [
       "Acceptance",
@@ -154,11 +154,12 @@
     ],
     [
       "Avoidance / concealment (maladaptive)",
-      5
+      6
     ],
     [
       "Self-advocacy",
       1
     ]
-  ]
+  ],
+  "full_text_checked": 30
 }

@@ -138,7 +138,7 @@ def prisma():
     ax.text(8.02, 3.85, f"Excluded (n = {p['excluded_eligibility']})", ha="center", va="center",
             fontsize=13.5, color=INK)
     ax.text(8.02, 3.1, el, ha="center", va="center", fontsize=11, color=INK, linespacing=1.45)
-    box(1.2, 0.4, 4.6, 1.5, f"Studies included\n(provisional)\n(n = {p['included']})",
+    box(1.2, 0.4, 4.6, 1.5, f"Studies included\n(n = {p['included']})",
         fill="#dbe8fa", bold=True)
 
     arrow(3.5, 8.1, 3.5, 7.2)

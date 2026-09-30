@@ -132,7 +132,7 @@ fill(find("TextBox 308"), [
     "psychosocial burden that remains insufficiently synthesized.",
     "**Methods:** Scoping review (Arksey & O'Malley; PRISMA-ScR) of PubMed, Scopus, and "
     "EBSCOhost databases, January 2019–March 2026.",
-    f"**Results:** {N} studies were provisionally included. Psychosexual and relational "
+    f"**Results:** {N} studies were included. Psychosexual and relational "
     f"challenges were most frequent (n = {OUT['Psychosexual & relational challenges']}), "
     f"followed by psychological distress (n = {OUT['Broader psychological distress']}), reduced "
     f"QoL, body image and self-esteem (n = {OUT['QoL, body image & self-esteem']}), and "
@@ -170,7 +170,7 @@ methods = [
                     "surgical/fertility-only studies excluded"),
     ("Screening & Analysis", f"{P['identified']} records; {P['screened']} screened; "
                              f"{P['fulltext']} assessed; {N} included. AI-assisted screening "
-                             "and abstract-level charting (verification in progress); "
+                             f"with full-text charting ({data['full_text_checked']} of {N} studies); "
                              "frequency counts and thematic grouping"),
 ]
 table = find("Table 9").table
@@ -206,8 +206,8 @@ fill(find("Rectangle 326"), [
 
 fill(find("TextBox 13"), [
     "**Limitations**",
-    "• Provisional: AI-assisted screening and abstract-level charting pending full-text "
-    "verification",
+    f"• AI-assisted screening; {N - data['full_text_checked']} of {N} studies charted from "
+    "abstracts only (full text unavailable)",
     "• Review limited to 2019–2026; heterogeneous designs and measures",
     "• Few studies from Africa or Oceania; none from South America",
 ], size=23, space_after=3)
@@ -257,7 +257,7 @@ caption(12.41, 15.0, 23.8, 0.7,
         "could report more than one domain")
 slots = [  # image box, caption box, figure file, caption
     ((12.22, 16.0, 11.2, 8.3), (12.22, 24.4, 11.2, 1.2), "prisma_flow.png",
-     "Figure 2. PRISMA-ScR Flow Diagram of Study Selection (provisional)"),
+     "Figure 2. PRISMA-ScR Flow Diagram of Study Selection"),
     ((24.15, 16.3, 11.9, 7.9), (24.15, 24.4, 11.9, 1.2), "fig3_geographic_map.png",
      f"Figure 3. Geographic Distribution of Included Studies (N = {N})"),
     ((12.22, 26.0, 11.2, 8.0), (12.22, 34.1, 11.2, 1.2), "fig2_design_donut.png",

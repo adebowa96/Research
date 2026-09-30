@@ -2,15 +2,15 @@
   "domains": [
     [
       "Depression & anxiety",
-      11
+      14
     ],
     [
       "Reduced QoL, body image & self-esteem",
-      17
+      19
     ],
     [
       "Psychosexual & relational challenges",
-      23
+      24
     ],
     [
       "Broader psychological distress",
@@ -18,7 +18,7 @@
     ],
     [
       "Coping mechanisms documented",
-      14
+      15
     ],
     [
       "Healthcare system gaps",
@@ -28,7 +28,7 @@
   "coping": [
     [
       "Peer, family & social support",
-      6
+      7
     ],
     [
       "Psychological counseling/intervention",
@@ -40,7 +40,7 @@
     ],
     [
       "Spiritual coping",
-      2
+      1
     ],
     [
       "Acceptance",
@@ -48,7 +48,7 @@
     ],
     [
       "Avoidance / concealment (maladaptive)",
-      5
+      6
     ],
     [
       "Self-advocacy",
@@ -57,17 +57,25 @@
   ],
   "designs": {
     "Quantitative": 18,
-    "Qualitative": 15,
+    "Qualitative": 14,
     "Mixed methods": 2,
     "Not reported": 1
   },
   "regions": {
     "Asia": 14,
-    "Europe": 15,
+    "Europe": 14,
     "North America": 3,
     "Multinational": 2,
     "Oceania": 1,
     "Africa": 1
   },
-  "n": 36
+  "n": 35,
+  "full_text_checked": 30,
+  "missing_full_text": [
+    "R010",
+    "R014",
+    "R060",
+    "R086",
+    "R227"
+  ]
 }
