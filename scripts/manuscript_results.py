@@ -24,14 +24,14 @@ def build(ctx):
          f"Records that could not be classified from the exported title and abstract were assessed "
          f"for eligibility using the published abstract; studies with mixed samples were included "
          f"only if results were reported separately for participants with MRKH or at least 80% of "
-         f"participants had MRKH. Full texts were then obtained for {FT} of the {P['included']} included studies and checked against the same criteria; at this stage one study of adults with differences of sex development was excluded because only 2 of its 15 participants had MRKH and their findings were not analyzed separately. [[The full texts of the remaining {NFT} studies could not be obtained; their inclusion rests on the published abstract or title.]] The screening workbook, with a decision and reason for every record, "
+         f"participants had MRKH. Full texts were then obtained for {FT} of the {P['included']} included studies and checked against the same criteria; at this stage one study of adults with differences of sex development was excluded because only 2 of its 15 participants had MRKH and their findings were not analyzed separately. The full texts of the remaining {NFT} studies could not be obtained; their inclusion rests on the published abstract or title. The screening workbook, with a decision and reason for every record, "
          f"is available as supplementary material.")
     heading("Data Charting", 2)
     para("For each included study, data were charted on author, year, country, study design, "
          "sample size, reported mental health and psychosocial outcomes, coping mechanisms, and "
          "healthcare system gaps. Charted items were checked against the full text for "
          f"{FT} of {P['included']} studies; the remaining {NFT} were charted from the title and "
-         "abstract [[and should be checked when their full texts are obtained]]. Outcomes were coded into "
+         "abstract. Outcomes were coded into "
          "four domains—depression and anxiety; quality of life, body image, and self-esteem; "
          "psychosexual and relational challenges; and broader psychological distress—and coping "
          "mechanisms into seven categories.")
@@ -243,8 +243,7 @@ def build(ctx):
          "limitation is that the original screening records were lost and selection was repeated "
          "from the original exports with AI-assisted screening and charting. Charting was checked "
          f"against the full text for {FT} of the {P['included']} included studies, but the "
-         f"remaining {NFT} rest on abstracts or titles, and [[reviewer verification of all "
-         "decisions is still required]]. Two Danish reports and two Chinese reports appear to share samples. In addition, the review was "
+         f"remaining {NFT} rest on abstracts or titles. Two Danish reports and two Chinese reports appear to share samples. In addition, the review was "
          "limited to 2019–2026, date limits were applied inconsistently across database "
          "interfaces and enforced at screening, designs and measures were heterogeneous, and "
          "other studies may also share samples. Consistent with scoping methodology, study quality was "

@@ -282,8 +282,8 @@ place(find("Rectangle 326"), X + 0.12, 6.46, W - 0.24, 16.19)
 fill(find("Rectangle 326"), [
     "**Results**",
     f"Of {P['identified']} records, {N} studies (2019–2026; 5 to 616 participants) met inclusion "
-    f"criteria: {DES['Quantitative']} quantitative, {DES['Qualitative']} qualitative, and "
-    f"{DES['Mixed methods']} mixed-methods (Figures 1–2).",
+    f"criteria: {DES['Quantitative']} quantitative, {DES['Qualitative']} qualitative, "
+    f"{DES['Mixed methods']} mixed-methods, and {DES['Not reported']} not reported (Figures 1–2).",
     "Psychosexual and relational challenges "
     f"were the most frequently reported outcome ({S} of {N} studies), including lower sexual "
     "esteem and more negative genital self-image than controls.^{@R003,@R091} Psychological "
