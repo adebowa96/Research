@@ -336,7 +336,6 @@ fill(find("TextBox 320"), [
     "rather than structured care. Embedding mental health screening, psychosexual counseling, "
     "and peer support in multidisciplinary MRKH care, and extending research to "
     "underrepresented regions, should be public health priorities.",
-    "*Mentored by Dr. Paul Okojie and Dr. Robyn Anderson; no external funding.*",
 ], space_after=3)
 
 set_header(find("TextBox 322"), "References")
