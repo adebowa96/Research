@@ -396,12 +396,13 @@ from docx.shared import Pt as DPt  # noqa: E402
 
 doc = Document()
 st = doc.styles["Normal"]
-st.font.name, st.font.size = FONT, DPt(11)
+st.font.name, st.font.size = FONT, DPt(12)
+st.paragraph_format.line_spacing = 2.0  # AMA: double-spaced throughout
 
 
 def ama_par(text, prefix=""):
     par = doc.add_paragraph()
-    par.paragraph_format.space_after = DPt(4)
+    par.paragraph_format.space_after = DPt(0)
     if prefix:
         par.add_run(prefix)
     for piece in re.split(r"(\*.+?\*)", text):
