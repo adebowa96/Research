@@ -283,9 +283,12 @@ fill(find("Rectangle 326"), [
     "**Results**",
     f"Of {P['identified']} records, {N} studies (2019–2026; 5 to 616 participants) met inclusion "
     f"criteria: {DES['Quantitative']} quantitative, {DES['Qualitative']} qualitative, "
-    f"{DES['Mixed methods']} mixed-methods, and {DES['Not reported']} not reported (Figures 1–2).",
+    f"{DES['Mixed methods']} mixed-methods, and {DES['Not reported']} not reported (Figures 1–2). Studies came from Europe "
+    f"({REG['Europe']}), Asia ({REG['Asia']}), North America ({REG['North America']}), Africa "
+    f"({REG['Africa']}), and Oceania ({REG['Oceania']}); {REG['Multinational']} were multinational "
+    "and none came from South America (Figure 5).",
     "Psychosexual and relational challenges "
-    f"were the most frequently reported outcome ({S} of {N} studies), including lower sexual "
+    f"were the most frequently reported outcome ({S} of {N} studies; Figure 3), including lower sexual "
     "esteem and more negative genital self-image than controls.^{@R003,@R091} Psychological "
     f"distress was reported in {G} studies, with shock, shame, and secrecy at diagnosis and a "
     "diagnostic process described as potentially traumatizing.^{@R267} Quality of life, body "
@@ -294,19 +297,18 @@ fill(find("Rectangle 326"), [
     "mixed results: moderate-to-severe depressive symptoms in 34.0% of 141 Chinese "
     "patients^{@R104} and anxiety in 37.7% of 77 Malaysian women,^{@R004} but few symptoms "
     "among French uterus transplant candidates.^{@R020}",
-    "Coping was documented in "
-    f"{C} studies, most often peer and online support ({COPE['Peer, family & social support']}) "
-    f"and avoidance or concealment ({COPE['Avoidance / concealment (maladaptive)']}) (Figure 4). "
-    f"Healthcare system gaps, reported in {H} studies, included delayed diagnosis, providers "
-    "unfamiliar with MRKH, and patients having to advocate for themselves (Figure 3).",
+    f"Coping was documented in {C} studies (Figure 4), most often peer and online support "
+    f"({COPE['Peer, family & social support']}) and avoidance or concealment "
+    f"({COPE['Avoidance / concealment (maladaptive)']}). Healthcare system gaps, reported in {H} "
+    "studies, included delayed diagnosis, providers unfamiliar with MRKH, and patients having "
+    "to advocate for themselves.",
     "**Discussion**",
     "Findings echo earlier evidence of distress and reduced quality of life in MRKH^{@hb09,@liao} "
     "and extend prior reviews by mapping coping and health-system gaps. Psychosexual concerns "
     "dominate the recent literature, whereas depression and anxiety were measured in fewer than "
-    "half of studies. Only 2 studies tested psychosocial interventions, and both reported "
-    f"benefit.^{{@R038,@R131}} Evidence is concentrated in Europe ({REG['Europe']}) and Asia "
-    f"({REG['Asia']}); {REG['Africa']} study came from Africa and none from South America, "
-    "where expectations about fertility and marriage may shape experiences differently.",
+    "half of studies. Only 2 studies tested interventions, both reporting "
+    f"benefit.^{{@R038,@R131}} Evidence is concentrated in Europe and Asia, with little "
+    "from Africa and none from South America, where expectations about fertility and marriage may shape experiences differently.",
     "**Conclusion**",
     "MRKH affects far more than reproductive anatomy. Psychosexual difficulties, emotional "
     "distress, and low self-esteem were widely reported, yet depression and anxiety were "
@@ -318,7 +320,7 @@ fill(find("Rectangle 326"), [
     "• English-language database literature from 2019–2026 only; no grey literature",
     "• Many small, single-center samples; heterogeneous designs and measures",
     f"• Possible overlapping samples; {N - FT} studies assessed from abstracts only",
-    "• No quality appraisal; counts show how often outcomes were studied, not prevalence",
+    "• No quality appraisal; counts reflect how often outcomes were studied",
 ])
 
 TextBox13 = find("TextBox 13")
