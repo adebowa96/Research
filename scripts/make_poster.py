@@ -273,13 +273,12 @@ S, Q, G, D = (OUT["Psychosexual & relational challenges"], OUT["QoL, body image 
               OUT["Broader psychological distress"], OUT["Depression & anxiety"])
 C, H = OUT["Coping mechanisms documented"], OUT["Healthcare system gaps"]
 
-set_header(find("TextBox 325"), "Results and Discussion")
-place(find("TextBox 325"), X, 4.62, W, 0.95)
-place(find("TextBox 324"), X, 5.57, W, 14.33)
-place(find("Rectangle 326"), X + 0.12, 5.62, W - 0.24, 14.23)
+set_header(find("TextBox 325"), "Results, Discussion, Conclusion, and Limitations")
+place(find("TextBox 325"), X, 4.62, W, 1.79)
+place(find("TextBox 324"), X, 6.41, W, 16.29)
+place(find("Rectangle 326"), X + 0.12, 6.46, W - 0.24, 16.19)
 fill(find("Rectangle 326"), [
-    "**Key Findings**",
-    f"{N} studies from 2019–2026 were included ({DES['Quantitative']} quantitative, "
+    f"**Key Findings:** {N} studies from 2019–2026 were included ({DES['Quantitative']} quantitative, "
     f"{DES['Qualitative']} qualitative, {DES['Mixed methods']} mixed-methods), with samples of "
     f"5 to 616 participants (Figures 1–5).",
     f"• **Psychosexual and relational ({pct(S)}):** lower sexual esteem and more negative genital "
@@ -299,13 +298,18 @@ fill(find("Rectangle 326"), [
     "patients forced to self-advocate.^{@R073,@R149}",
     "**Discussion**",
     "Findings echo earlier evidence of distress and reduced quality of life in MRKH^{@hb09,@liao} "
-    "and extend prior reviews by mapping coping and health-system gaps. Structured support can "
-    "help (group cognitive-behavioral therapy improved psychological outcomes in an earlier "
-    "trial^{@hb07}), yet few recent studies tested interventions. Psychosexual concerns "
+    "and extend prior reviews by mapping coping and health-system gaps. Psychosexual concerns "
     "dominate the recent literature, whereas depression and anxiety were measured in fewer than "
     f"half of studies. Evidence is concentrated in Europe ({REG['Europe']}) and Asia "
     f"({REG['Asia']}); {REG['Africa']} study came from Africa and none from South America, "
     "where expectations about fertility and marriage may shape experiences differently.",
+    "**Conclusion**",
+    "MRKH affects far more than reproductive anatomy. Psychosexual difficulties, emotional "
+    "distress, and low self-esteem were widely reported, yet depression and anxiety were "
+    "measured in fewer than half of studies, and coping relied mostly on peers or concealment "
+    "rather than structured care. Mental health screening, psychosexual counseling, and peer "
+    "support should become standard in multidisciplinary MRKH care, not an afterthought, and "
+    "research must reach underrepresented regions.",
     "**Limitations:** English-language database literature from 2019–2026 only, without grey "
     "literature; many small, single-center samples; heterogeneous designs and measures; "
     f"possible overlapping samples; {N - FT} studies assessed from abstracts only; no quality "
@@ -315,9 +319,9 @@ fill(find("Rectangle 326"), [
 TextBox13 = find("TextBox 13")
 TextBox13._element.getparent().remove(TextBox13._element)
 
-set_header(find("TextBox 321"), "Implications and Conclusion")
-place(find("TextBox 321"), X, 20.0, W, 0.95)
-place(find("TextBox 320"), X, 20.95, W, 8.1)
+set_header(find("TextBox 321"), "Public Health Implications and Future Work")
+place(find("TextBox 321"), X, 22.8, W, 1.63)
+place(find("TextBox 320"), X, 24.43, W, 4.67)
 fill(find("TextBox 320"), [
     "**Public Health Implications**",
     "• Integrate psychosocial screening and support into MRKH diagnostic pathways^{@acog}",
@@ -329,13 +333,6 @@ fill(find("TextBox 320"), [
     "• Longitudinal studies using validated mental health measures",
     "• Trials of psychosocial interventions delivered in routine care",
     "• Studies in Africa, South America, and other low-resource settings",
-    "**Conclusion**",
-    "MRKH affects far more than reproductive anatomy. Psychosexual difficulties, emotional "
-    "distress, and low self-esteem were widely reported, yet depression and anxiety were "
-    "measured in fewer than half of studies, and coping relied mostly on peers or concealment "
-    "rather than structured care. Mental health screening, psychosexual counseling, and peer "
-    "support should become standard in multidisciplinary MRKH care, not an afterthought, and "
-    "research must reach underrepresented regions.",
 ], space_after=3)
 
 set_header(find("TextBox 322"), "References")
