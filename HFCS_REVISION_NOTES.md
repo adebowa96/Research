@@ -112,3 +112,19 @@ How the co-author comments (Roberts) were handled:
     - Stanhope 2009 (*J Clin Invest*)
     - Te Morenga 2013 (*BMJ*)
     - WHO 2015 sugars guideline
+
+## Reference documents in the MRKH format (latest)
+
+The references are now in two documents, formatted like the MRKH final reference documents:
+- **`HFCS_Poster_Full_Reference_List.docx`** is for the QR code and replaces `HFCS_Poster_References_AMA`. It has the same layout as MRKH `Poster_Full_Reference_List.docx`: title heading, author/APHA line, then three sections.
+  - **A.** References cited on the poster (1–14).
+  - **B.** Additional references cited in the full paper (10).
+  - **C.** Further reading (10).
+- **`HFCS_References_AMA.docx`** has the same layout as MRKH `References_AMA.docx`: "References (AMA 11th edition)", the paper's 24 references in citation order, then the poster reference list (1–14).
+
+All references now come from one shared list, so the paper, the poster list and the manuscript list use identical wording.
+
+AMA corrections:
+- **Federal Register rule:** now in AMA legal format ("*Fed Regist*. 2016;81(103):33742-33999. To be codified at 21 CFR §101.").
+- **Web pages** (FoodData Central search, market report): now use AMA website order, which is title, then website name, then dates, then URL.
+- **Market report:** the impossible "accessed August 30, 2025" date (before its December 1, 2025 publication) is now a highlighted placeholder in the paper too.
