@@ -154,7 +154,7 @@ gy=4.9
 s.shapes.add_picture('fig3_map.png',Inches(fx),Inches(gy+0.22),width=Inches(3.4))
 call=tb(6.1,gy+0.35,1.5,1.2,fill=PALE,line=RED,shape=MSO_SHAPE.ROUNDED_RECTANGLE,anchor=MSO_ANCHOR.MIDDLE,lw=0.6)
 write(call,[{'runs':[('6.8%',True,False,RED)],'size':20,'align':PP_ALIGN.CENTER,'space':0},{'runs':[('of included studies (3 of 44) came from low- and lower-middle-income countries',False,False)],'size':5.2,'align':PP_ALIGN.CENTER,'space':1},{'runs':[('20 high-income · 7 upper-middle-income',False,False)],'size':5.2,'align':PP_ALIGN.CENTER,'space':1},{'runs':[('Sub-Saharan Africa: 1 study (Nigeria)',True,False,RED)],'size':5.2,'align':PP_ALIGN.CENTER,'space':0}])
-write(tb(fx,6.7,5.0,0.32),[{'runs':[('Figure 4. ',True,False,NAVY),('Country Setting and World Bank Income Group of Included Studies.',True,False,NAVY),(' Map shows the 30 studies with an identifiable country setting; income groups follow the World Bank FY2027 classification.¹² The other 14 used online or multinational samples or had no single mappable setting in the available records. *Includes Hong Kong (1).',False,False,INK)]}],size=4.2)
+write(tb(fx,6.7,5.0,0.32),[{'runs':[('Figure 4. ',True,False,NAVY),('Where the Included Studies Were Conducted, by Country Income Group.',True,False,NAVY),(' Shows the 30 studies with a known country; the other 14 used online or multinational samples or did not report a location. Colors show each country’s World Bank income group, a standard ranking of countries by average income.¹² *Includes 1 study from Hong Kong.',False,False,INK)]}],size=4.2)
 # ---------------- RIGHT COLUMN ----------------
 RX,RW=7.773,2.117
 header(RX,0.794,RW,0.36,'Results, Discussion, Conclusion, and Limitations',size=9.5)

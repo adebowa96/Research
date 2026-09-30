@@ -202,7 +202,7 @@ LEG = [
  ('Figure 1.', 'Study Selection Flow Diagram', ' Adapted from PRISMA-ScR.{11}'),
  ('Figure 2.', 'Psychosocial Outcomes Reported in the 44 Included Studies', ' A study could report more than 1 outcome, so counts should not be summed.'),
  ('Figure 3.', 'Included Studies by Publication Period', ' Twenty-seven of 44 studies (61%) were published in 2022–2025.'),
- ('Figure 4.', 'Country Setting and World Bank Income Group of Included Studies', ' The map shows the 30 studies with an identifiable country setting; income groups follow the World Bank FY2027 classification.{12} The other 14 studies used online or multinational samples or had no single setting in the available records. The high-income count includes 1 study from Hong Kong, China.'),
+ ('Figure 4.', 'Where the Included Studies Were Conducted, by Country Income Group', ' The map shows the 30 studies with a known country; the other 14 used online or multinational samples or did not report a location. Colors show each country’s World Bank FY2027 income group, a standard ranking of countries by average income.{12} The high-income count includes 1 study from Hong Kong, China.'),
 ]
 for a, b, c in LEG: P(f'**{a} {b}.**{c}', indent=False)
 
