@@ -138,3 +138,10 @@ AMA corrections:
 ## Authors added (latest)
 
 The author line is now "Miebaka F. Roberts; Chelsea R. Mazonde, MPH; Ifeoluwanimi P. Shobayo, MSPH", with "Department of Public and Community Health, Liberty University". It appears on the poster title, the poster full reference list, and the paper title page. Miebaka Roberts' credentials are not known yet, so the name is listed without them.
+
+## Poster reference list merged into one list (latest)
+
+`HFCS_Poster_Full_Reference_List` is now a single numbered list, 1–34, under one "References" heading:
+- **1–14:** cited on the poster, in poster order, so the poster's superscripts still match.
+- **15–24:** additional references from the full paper.
+- **25–34:** further reading.
