@@ -75,3 +75,11 @@ How the co-author comments (Roberts) were handled:
   - −38% per capita corn sweetener availability, 1999–2023 (USDA ERS).
 - Fuller Discussion, and two more bullets each under Implications and Future Work.
 - Poster reference 10 is now the 2024 ERS chart. The 2013 ERS chart moved to the "additional references" section of the reference document.
+
+## Poster: trimmed to 4 figures (latest)
+
+- Removed the "Where is HFCS commonly used?" illustration. It was stylized and not study data, and the Introduction already names those foods.
+- Figures 1 and 2, the study's own results, are now larger.
+- Figures renumbered: Figure 3 is fructose content and Figure 4 is the ERS 1999 vs 2023 availability chart. The Discussion text references match.
+- The Public Health Context tiles now sit in one row. The duplicate "−38%" tile was replaced with "21.1% of calories in ultra-processed foods come from added sugars, vs 2.4% in processed foods" (Martínez Steele 2016, ref 11).
+- Reference numbering (1–14) and the QR reference document are unchanged.
