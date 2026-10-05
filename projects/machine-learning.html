@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Machine Learning in Python | Ifeoluwanimi Shobayo</title>
+  <meta name="description" content="Customer segmentation and classification in Python: SQL exploration, K-Means clustering, four classifiers with cross-validation, imbalance handling, and leakage control.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="../index.html">Ifeoluwanimi Shobayo</a>
+      <ul>
+        <li><a href="../index.html#projects">← All projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="case">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow">Machine Learning · Python &amp; SQL</p>
+        <h1>Segmenting and Predicting Responders to an Outreach Campaign</h1>
+        <p class="lede">
+          An end-to-end machine-learning project on 11,162 customer records from a bank's
+          phone campaign: SQL exploration, clustering, and classification, with a
+          deliberate choice to keep data leakage out of the model.
+        </p>
+        <dl class="facts">
+          <div><dt>Program</dt><dd>Data science course (group project, 13 members)</dd></div>
+          <div><dt>Data</dt><dd>Bank Marketing dataset (Kaggle)</dd></div>
+          <div><dt>Tools</dt><dd>Python, pandas, SQLite, scikit-learn, imbalanced-learn</dd></div>
+          <div><dt>Environment</dt><dd>Google Colab, fixed random seed</dd></div>
+        </dl>
+      </header>
+
+      <section>
+        <h2>Why it's relevant to public health</h2>
+        <p>
+          The data comes from banking, but the question is a common one in public health
+          outreach: <em>with limited staff time, whom should we contact, and when should
+          we stop calling?</em> The same workflow applies to vaccination reminders,
+          screening outreach, and program enrollment.
+        </p>
+      </section>
+
+      <section>
+        <h2>1. Exploring with SQL</h2>
+        <p>
+          We loaded the data into SQLite and used SQL aggregation to profile response
+          rates. Customers who had said yes in a previous campaign said yes again 91% of
+          the time, versus 41% of those with no prior contact.
+        </p>
+<pre class="code">SELECT poutcome,
+       COUNT(*) AS n_customers,
+       ROUND(100.0 * SUM(CASE WHEN deposit = 'yes' THEN 1 ELSE 0 END) / COUNT(*), 1) AS pct_subscribed
+FROM customers
+GROUP BY poutcome
+ORDER BY pct_subscribed DESC;</pre>
+      </section>
+
+      <section>
+        <h2>2. The leakage decision</h2>
+        <p class="callout">
+          Call duration was the strongest predictor: 85% of calls over 10 minutes ended in
+          a "yes", versus 9% of calls under 2 minutes. But duration is only known
+          <em>after</em> the call, so we kept it for exploration and excluded it from
+          every model.
+        </p>
+        <p>
+          Using it would have produced impressive scores that are useless for deciding
+          whom to call. We chose the honest, deployable model.
+        </p>
+      </section>
+
+      <section>
+        <h2>3. Feature engineering</h2>
+        <ul>
+          <li><strong>Age groups</strong> from continuous age.</li>
+          <li><strong>Contacted before</strong> (0/1), derived from the "days since last contact" code.</li>
+          <li><strong>Campaign intensity</strong>: current-campaign calls relative to previous contacts.</li>
+          <li>Binary and ordinal encoding where order exists, one-hot encoding otherwise, and "unknown" kept as its own category instead of being dropped or imputed.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4. Customer segments (K-Means)</h2>
+        <p>
+          We clustered customers <em>without</em> using the outcome and chose three
+          clusters based on the silhouette score (0.245, the highest tested). Then we
+          checked how each segment actually responded:
+        </p>
+        <p class="chart-title">Response rate by segment</p>
+        <p class="chart-sub">Overall average: 47.4%</p>
+        <div class="chart" id="cluster-chart"></div>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Segment</th><th>Customers</th><th>Profile</th><th>Response rate</th></tr></thead>
+            <tbody>
+              <tr><td>Warm returning</td><td>2,644</td><td>Previously contacted, about 3.4 prior contacts</td><td>66.8%</td></tr>
+              <tr><td>Cold prospects</td><td>7,985</td><td>Never contacted before</td><td>42.5%</td></tr>
+              <tr><td>Over-contacted</td><td>533</td><td>About 11.5 calls this campaign</td><td>24.2%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Segments built without the outcome still separated high and low responders.
+          The over-contacted group points to call fatigue and suggests a "stop after
+          N attempts" policy.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Classification</h2>
+        <p>
+          We compared logistic regression, a decision tree, a random forest, and gradient
+          boosting against a stratified dummy baseline, using 5-fold stratified
+          cross-validation.
+        </p>
+        <p class="chart-title">Cross-validated ROC AUC</p>
+        <p class="chart-sub">Mean of 5 folds. 0.5 = no better than chance.</p>
+        <div class="chart" id="auc-chart"></div>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Model (5-fold CV)</th><th>ROC AUC</th><th>F1</th></tr></thead>
+            <tbody>
+              <tr><td>Gradient boosting</td><td>0.791 ± 0.014</td><td>0.685</td></tr>
+              <tr><td>Random forest</td><td>0.776 ± 0.012</td><td>0.683</td></tr>
+              <tr><td>Logistic regression</td><td>0.764 ± 0.014</td><td>0.652</td></tr>
+              <tr><td>Decision tree</td><td>0.636 ± 0.009</td><td>0.620</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          The dummy baseline scored F1 = 0.49 and ROC AUC = 0.51 on the test set. The tree
+          ensembles agreed on the most important features: prior campaign success,
+          balance, age, and contact type.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Imbalance handling and the decision threshold</h2>
+        <p>
+          The outcome was nearly balanced (47% yes), so class weighting and SMOTE changed
+          little, as expected. The bigger lever was the <strong>decision threshold</strong>.
+          A missed responder costs more than an extra call, so we lowered the random
+          forest's threshold from 0.50 to 0.40. That raised recall from 0.62 to 0.75 and F1
+          from 0.67 to 0.70, with ROC AUC at 0.77.
+        </p>
+      </section>
+
+      <section>
+        <h2>What I'd do next</h2>
+        <ul>
+          <li>Choose the threshold on a separate validation fold, so the test set stays untouched for the final score.</li>
+          <li>Tune gradient boosting, which had the best cross-validated AUC, and compare it head-to-head at the chosen threshold.</li>
+          <li>Validate on a later time period instead of a random split, since campaign data drifts.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Skills demonstrated</h2>
+        <ul class="tags">
+          <li>Python / pandas</li>
+          <li>SQL (SQLite)</li>
+          <li>Feature engineering</li>
+          <li>K-Means &amp; PCA</li>
+          <li>scikit-learn classifiers</li>
+          <li>Cross-validation</li>
+          <li>Class imbalance (weights, SMOTE)</li>
+          <li>Threshold tuning</li>
+          <li>Data leakage control</li>
+          <li>Teamwork</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap"><a href="../index.html">← Back to portfolio</a></div>
+  </footer>
+
+  <script src="../assets/charts.js"></script>
+  <script>
+    Charts.hbar('#cluster-chart', [
+      { label: 'Warm returning', value: 66.8 },
+      { label: 'Cold prospects', value: 42.5 },
+      { label: 'Over-contacted', value: 24.2 },
+    ], { title: 'Response rate by customer segment', min: 0, max: 100, format: (v) => v + '%' });
+    Charts.hbar('#auc-chart', [
+      { label: 'Gradient boosting', value: 0.791 },
+      { label: 'Random forest', value: 0.776 },
+      { label: 'Logistic regression', value: 0.764 },
+      { label: 'Decision tree', value: 0.636 },
+    ], { title: 'Cross-validated ROC AUC by model', min: 0, max: 1, format: (v) => String(+v.toFixed(3)) });
+  </script>
+</body>
+</html>
