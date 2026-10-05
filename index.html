@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ifeoluwanimi Shobayo | Epidemiology</title>
-  <meta name="description" content="Portfolio of Ifeoluwanimi Praise Shobayo, MSPH Epidemiology candidate with training in data science and cybersecurity.">
+  <meta name="description" content="Portfolio of Ifeoluwanimi Praise Shobayo, MSPH Epidemiology candidate: data analysis in SAS and R, mixed-effects models, GIS, systematic reviews, and program design.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
@@ -27,9 +27,10 @@
       <p class="eyebrow">MSPH Epidemiology Candidate</p>
       <h1>Ifeoluwanimi Praise Shobayo</h1>
       <p class="lede">
-        I'm an epidemiology student who uses data to answer public health questions, from
-        mental health in university populations to infectious and environmental disease.
-        I also have training in data science and cybersecurity, which helps me handle
+        I'm an epidemiologist in training who turns health data into clear answers. I
+        analyze cohort, survey, and wearable data in SAS and R, map disease patterns in
+        ArcGIS, synthesize evidence through systematic reviews, and design programs
+        grounded in behavioral theory. My cybersecurity training helps me handle
         sensitive health data responsibly.
       </p>
       <div class="buttons">
@@ -43,46 +44,83 @@
       <div class="wrap">
         <h2>Projects</h2>
 
+        <h3 class="subhead">Data analysis &amp; visualization</h3>
+
+        <article class="card featured">
+          <p class="meta">Secondary data analysis · PUBH 632 &amp; HLTH 651 · 2026</p>
+          <h3>Menstrual Cycle, Stress, and Sleep in Wearable Data</h3>
+          <p>
+            Two analyses of thousands of daily Fitbit records from the public mcPHASES
+            dataset, using linear mixed-effects models for repeated measures. Fertility
+            and luteal phases showed more physical signs of stress, while daily physical
+            activity was not associated with next-night sleep quality.
+          </p>
+          <ul class="tags">
+            <li>Mixed-effects models</li>
+            <li>Repeated measures</li>
+            <li>Data merging</li>
+            <li>SAS</li>
+            <li>Digital health</li>
+          </ul>
+          <a class="btn ghost" href="projects/wearables-menstrual-cycle.html">Read the case study →</a>
+        </article>
+
+        <article class="card featured">
+          <p class="meta">Group data project · PUBH 630 Statistical Software Lab · 2026</p>
+          <h3>Food Insecurity Across U.S. States, 2019–2023</h3>
+          <p>
+            Cleaned and analyzed 255 state-year records from Feeding America in SAS
+            Studio. Food insecurity dipped during pandemic relief and then climbed to
+            14.2% by 2023, with the highest rates in the South and persistent racial
+            disparities.
+          </p>
+          <ul class="tags">
+            <li>SAS</li>
+            <li>Tableau Prep</li>
+            <li>Data cleaning</li>
+            <li>Correlation</li>
+            <li>Health equity</li>
+          </ul>
+          <a class="btn ghost" href="projects/food-insecurity.html">Read the case study →</a>
+        </article>
+
         <article class="card featured">
           <p class="meta">Data analysis · HLTH 501 Biostatistics · 2024</p>
           <h3>Cardiovascular Risk Factors in the Framingham Heart Study</h3>
           <p>
             I analyzed real, anonymized cohort data on 4,434 Framingham participants:
-            describing the sample, comparing risk factors in men and women, modeling heart
-            rate with simple and multivariable regression, and testing which factors
-            differ in people with coronary heart disease. Adjustment showed that the
-            apparent link between diabetes and heart rate was explained by confounding.
+            describing the sample, comparing men and women, modeling heart rate with
+            simple and multivariable regression, and testing which factors differ in
+            people with coronary heart disease. Adjustment showed that the apparent link
+            between diabetes and heart rate was mostly explained by glucose.
           </p>
           <ul class="tags">
             <li>Biostatistics</li>
             <li>Linear regression</li>
             <li>t-tests</li>
-            <li>Confounding</li>
+            <li>Adjustment</li>
             <li>Cardiovascular epidemiology</li>
           </ul>
           <a class="btn ghost" href="projects/framingham-heart-study.html">Read the case study →</a>
         </article>
 
-        <article class="card featured">
-          <p class="meta">Research proposal · HLTH 511 Research Methods in Public Health · 2025</p>
-          <h3>Stress, Anxiety, and Social Support Among Graduate Students: A Cross-Sectional Study Design</h3>
-          <p>
-            I designed a study to compare depression, anxiety, and stress between
-            international and domestic graduate students, and to test whether perceived
-            social support and campus services explain the differences. The design covers
-            sampling, a power calculation, validated instruments (DASS-21, MSPSS),
-            confounder adjustment, a regression and moderation analysis plan, missing-data
-            handling, and research ethics.
-          </p>
-          <ul class="tags">
-            <li>Study design</li>
-            <li>Power analysis</li>
-            <li>Regression</li>
-            <li>Mental health</li>
-            <li>Mixed methods</li>
-          </ul>
-          <a class="btn ghost" href="projects/graduate-mental-health.html">Read the case study →</a>
-        </article>
+        <div class="grid">
+          <article class="card">
+            <img class="card-img" src="assets/img/cholera-heatmap.jpg" alt="Heat map of 1854 cholera deaths in Soho clustered around a water pump" loading="lazy" width="1380" height="841">
+            <p class="meta">GIS · HLTH 652 · 2026</p>
+            <h3>Mapping the 1854 Soho Cholera Outbreak</h3>
+            <p>An ArcGIS Online heat map recreating John Snow's investigation, plus reviews of spatial clustering and dashboard design.</p>
+            <a class="btn ghost" href="projects/spatial-epidemiology.html">View →</a>
+          </article>
+          <article class="card">
+            <p class="meta">Code samples · SAS &amp; R · 2026</p>
+            <h3>Statistical Programming</h3>
+            <p>SAS code for assumption checks, t-tests, and nonparametric tests; results from correlation, linear and logistic regression; and a tidyverse data-cleaning script in R.</p>
+            <a class="btn ghost" href="projects/statistical-programming.html">View →</a>
+          </article>
+        </div>
+
+        <h3 class="subhead">Research design &amp; evidence synthesis</h3>
 
         <article class="card featured">
           <p class="meta">Mini systematic review · HLTH 625 Prevention and Control of Infectious Disease · 2025</p>
@@ -103,6 +141,29 @@
           </ul>
           <a class="btn ghost" href="projects/buruli-ulcer-review.html">Read the case study →</a>
         </article>
+
+        <article class="card featured">
+          <p class="meta">Research proposal · HLTH 511 Research Methods in Public Health · 2025</p>
+          <h3>Stress, Anxiety, and Social Support Among Graduate Students: A Cross-Sectional Study Design</h3>
+          <p>
+            I designed a study to compare depression, anxiety, and stress between
+            international and domestic graduate students, and to test whether perceived
+            social support and campus services explain the differences. The design covers
+            sampling and sample-size planning, validated instruments (DASS-21, MSPSS),
+            confounders, a regression and moderation analysis plan, missing-data handling,
+            and research ethics.
+          </p>
+          <ul class="tags">
+            <li>Study design</li>
+            <li>Sample-size planning</li>
+            <li>Regression</li>
+            <li>Mental health</li>
+            <li>Mixed methods</li>
+          </ul>
+          <a class="btn ghost" href="projects/graduate-mental-health.html">Read the case study →</a>
+        </article>
+
+        <h3 class="subhead">Program planning &amp; evaluation</h3>
 
         <article class="card featured">
           <p class="meta">Intervention proposal · HLTH 509 Social &amp; Behavioral Theory · 2025</p>
@@ -144,21 +205,12 @@
             </p>
           </article>
           <article class="card">
-            <p class="meta">Journal article review · Infectious Disease</p>
-            <h3>Chlamydia Prevention and Screening</h3>
+            <p class="meta">Article reviews · Health Equity</p>
+            <h3>Social Determinants &amp; Health Inequities</h3>
             <p>
-              A critical appraisal of a 2024 cohort study on spontaneous clearance of
-              <em>C. trachomatis</em>, compared with current evidence on screening,
-              partner treatment, and prevention.
-            </p>
-          </article>
-          <article class="card">
-            <p class="meta">Article review · Social &amp; Behavioral Theory</p>
-            <h3>Social Determinants of Health Inequalities</h3>
-            <p>
-              A review of Marmot's <em>Lancet</em> paper on how income, early-life
-              conditions, and social structures drive gaps in life expectancy within and
-              between countries, and on the policy action needed to close them.
+              Reviews of Marmot's <em>Lancet</em> paper on social determinants and of
+              Ezzati et al.'s "Reversal of Fortunes" on widening U.S. county mortality
+              gaps, plus an analysis of the documentary <em>Unnatural Causes</em>.
             </p>
           </article>
           <article class="card">
@@ -171,12 +223,30 @@
             </p>
           </article>
           <article class="card">
+            <p class="meta">Journal article review · Infectious Disease</p>
+            <h3>Chlamydia Prevention and Screening</h3>
+            <p>
+              A critical appraisal of a 2024 cohort study on spontaneous clearance of
+              <em>C. trachomatis</em>, compared with current evidence on screening,
+              partner treatment, and prevention.
+            </p>
+          </article>
+          <article class="card">
             <p class="meta">Disease fact sheets · Infectious Disease</p>
             <h3>Six Infectious Disease Fact Sheets</h3>
             <p>
               One-page summaries of Lassa fever, Marburg virus, hantavirus, yellow fever,
               influenza, and tick-borne encephalitis, covering each disease's agent,
               transmission, diagnosis, risk groups, treatment, and prevention.
+            </p>
+          </article>
+          <article class="card">
+            <p class="meta">Leadership analysis · Public Health Administration</p>
+            <h3>Local Government Leadership in Action</h3>
+            <p>
+              An analysis of a joint Lynchburg City Council and City Schools work session:
+              how leaders used data to target student support and prioritized facility
+              needs, and how the two bodies' cultures shaped collaboration.
             </p>
           </article>
         </div>
@@ -190,22 +260,23 @@
           <div class="card">
             <h3>Epidemiology</h3>
             <ul>
-              <li>Observational study design</li>
-              <li>Sample size and power</li>
-              <li>Confounding and effect modification</li>
-              <li>Infectious and environmental disease</li>
-              <li>Literature review and synthesis</li>
+              <li>Observational study design (cohort, cross-sectional)</li>
+              <li>Confounding and adjustment</li>
+              <li>Systematic reviews (PRISMA)</li>
+              <li>Infectious, chronic, and environmental disease</li>
+              <li>Spatial epidemiology</li>
               <li>Program planning and evaluation (PRECEDE, logic models)</li>
             </ul>
           </div>
           <div class="card">
-            <h3>Data Science</h3>
+            <h3>Data Analysis</h3>
             <ul>
-              <!-- TODO: list the exact tools you use (e.g. R, Python, SQL, Excel, Power BI) -->
-              <li>Descriptive and inferential statistics</li>
-              <li>Hypothesis testing (t-tests)</li>
-              <li>Simple and multivariable linear regression</li>
-              <li>Data cleaning and visualization</li>
+              <li>SAS (Studio): data steps, CORR, REG, LOGISTIC, TTEST, SGPLOT</li>
+              <li>R: tidyverse, gtsummary</li>
+              <li>Excel · Tableau Prep · ArcGIS Online</li>
+              <li>Linear, logistic, and mixed-effects regression</li>
+              <li>t-tests, nonparametric tests, correlation</li>
+              <li>Data cleaning and merging</li>
             </ul>
           </div>
           <div class="card">
@@ -227,6 +298,7 @@
           <li>
             <strong>Master of Science in Public Health, Epidemiology</strong>
             <span>Liberty University · In progress</span>
+            <span class="courses">Relevant coursework: Biostatistics · Epidemiologic Research Methods · Statistical Software Lab (SAS) · Field Epidemiology (R) · Data Visualization &amp; Spatial Analysis · Research Methods · Chronic Disease Epidemiology · Prevention &amp; Control of Infectious Disease · Environmental Health · Social &amp; Behavioral Theory · Public Health Administration</span>
           </li>
           <li>
             <strong>Data Science Course</strong>

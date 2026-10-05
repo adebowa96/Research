@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spatial Epidemiology &amp; GIS | Ifeoluwanimi Shobayo</title>
+  <meta name="description" content="An ArcGIS heat map of the 1854 London cholera outbreak, plus reviews of spatial clustering and public health dashboard design.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="../index.html">Ifeoluwanimi Shobayo</a>
+      <ul>
+        <li><a href="../index.html#projects">← All projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="case">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow">GIS · Data Visualization</p>
+        <h1>Mapping the 1854 Soho Cholera Outbreak</h1>
+        <p class="lede">
+          A heat map in ArcGIS Online that recreates John Snow's classic investigation,
+          showing how spatial analysis can point to the source of an outbreak.
+        </p>
+        <dl class="facts">
+          <div><dt>Course</dt><dd>HLTH 652 Data Visualization &amp; Spatial Analysis</dd></div>
+          <div><dt>Tool</dt><dd>ArcGIS Online</dd></div>
+          <div><dt>Layers</dt><dd>Cholera deaths, water pumps, Snow's 1854 map</dd></div>
+          <div><dt>Date</dt><dd>April 2026</dd></div>
+        </dl>
+      </header>
+
+      <figure class="shot">
+        <img src="../assets/img/cholera-heatmap.jpg" alt="Heat map of 1854 cholera deaths in Soho, London, overlaid on John Snow's original map. The densest red and yellow cluster sits around a central water pump, with the blue pump markers spread around it." width="1380" height="841">
+        <figcaption>Cholera deaths as a heat layer, with water pumps (P) and John Snow's original map underneath. <a href="https://arcg.is/Defnq">Open the interactive map →</a></figcaption>
+      </figure>
+
+      <section>
+        <h2>What the map shows</h2>
+        <p>
+          The most intense red and yellow areas sit in one central block, and density
+          fades with distance. Cases were not scattered at random: they cluster around a
+          single water pump. That points to a localized source of exposure, contaminated
+          water, the same conclusion Snow reached in 1854.
+        </p>
+      </section>
+
+      <section>
+        <h2>Why a heat map instead of points?</h2>
+        <ul>
+          <li><strong>Clarity:</strong> hundreds of overlapping points become a continuous surface that shows where cases are dense.</li>
+          <li><strong>Interpretability:</strong> hotspots stand out at a glance, which helps target interventions.</li>
+          <li><strong>Trade-off:</strong> smoothing hides individual cases, so the point layer is still useful for exact locations.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Related reviews</h2>
+        <div class="grid">
+          <article class="card">
+            <p class="meta">Journal club · Spatial clustering</p>
+            <h3>Mpox clustering, 2022–2024</h3>
+            <p>
+              Reviewed a global geospatial analysis of mpox outbreaks through the lens
+              of the First Law of Geography: near things are more related than distant
+              things. I also argued that proximity can stand in for shared social
+              networks and travel, so distance alone can't explain spread.
+            </p>
+          </article>
+          <article class="card">
+            <p class="meta">Journal club · Dashboards</p>
+            <h3>Static vs. interactive maps</h3>
+            <p>
+              Used a scoping review of public health surveillance dashboards to weigh
+              static maps (consistent, simple, good for reports) against interactive
+              ones (exploratory and real-time, but at risk of overload and
+              misinterpretation).
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Skills demonstrated</h2>
+        <ul class="tags">
+          <li>ArcGIS Online</li>
+          <li>Heat maps</li>
+          <li>Layer design</li>
+          <li>Spatial clustering</li>
+          <li>Outbreak investigation</li>
+          <li>Dashboard design principles</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap"><a href="../index.html">← Back to portfolio</a></div>
+  </footer>
+</body>
+</html>

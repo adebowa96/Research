@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wearables &amp; the Menstrual Cycle | Ifeoluwanimi Shobayo</title>
+  <meta name="description" content="Two secondary analyses of the public mcPHASES wearable dataset using linear mixed-effects models: menstrual phase and daily stress, and physical activity and sleep.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="../index.html">Ifeoluwanimi Shobayo</a>
+      <ul>
+        <li><a href="../index.html#projects">← All projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="case">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow">Secondary Data Analysis · Repeated Measures</p>
+        <h1>Menstrual Cycle, Stress, and Sleep in Wearable Data</h1>
+        <p class="lede">
+          Two analyses of thousands of daily Fitbit records from young adults who
+          menstruate. Linear mixed-effects models account for many days of data from
+          each person.
+        </p>
+        <dl class="facts">
+          <div><dt>Courses</dt><dd>PUBH 632 · HLTH 651 Epidemiologic Research Methods</dd></div>
+          <div><dt>Data</dt><dd>mcPHASES public dataset (42 participants)</dd></div>
+          <div><dt>Method</dt><dd>Linear mixed-effects regression</dd></div>
+          <div><dt>Date</dt><dd>April 2026</dd></div>
+        </dl>
+      </header>
+
+      <section>
+        <h2>The data</h2>
+        <p>
+          mcPHASES is a public, de-identified dataset of young adults in the Greater
+          Toronto Area who menstruate. It links daily Fitbit measures with hormone,
+          glucose, and self-reported menstrual-health data across study periods in 2022
+          and 2024. The unit of analysis is the <strong>person-day</strong>, and each
+          participant contributes up to several months of days.
+        </p>
+        <p>
+          Because days from the same person are correlated, ordinary regression would
+          treat them as independent and understate uncertainty. Both analyses use a
+          <strong>linear mixed-effects model with a random intercept for each
+          participant</strong>, which accounts for that clustering.
+        </p>
+      </section>
+
+      <section>
+        <h2>Building the analytic dataset</h2>
+        <ul>
+          <li>Merged separate source files (activity, sleep score, stress score, hormone and self-report phase labels, participant info) on participant ID, study interval, and study day.</li>
+          <li>Removed duplicate records, keeping one record per person-day.</li>
+          <li>Kept the time order correct: each day's activity was linked to the <em>following</em> night's sleep score.</li>
+          <li>Kept only valid stress readings (excluding failed calculations) and derived age at each study interval.</li>
+          <li>Excluded person-days missing the outcome, exposure, phase, or age.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Analysis 1: Menstrual phase and daily stress</h2>
+        <p class="note">PUBH 632 · 3,732 person-days from 36 participants</p>
+        <p>
+          <strong>Question:</strong> Is menstrual cycle phase associated with the daily
+          Fitbit Stress Management Score? The score runs from 1 to 100, and
+          <strong>higher scores mean fewer physical signs of stress</strong>. The model
+          adjusted for age, weekend versus weekday, and study period, with the follicular
+          phase as the reference.
+        </p>
+        <p class="chart-title">Difference in daily stress score vs. the follicular phase</p>
+        <p class="chart-sub">Adjusted β and 95% CI. Values below 0 mean more physical signs of stress.</p>
+        <div class="chart" id="stress-chart"></div>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Phase (vs. follicular)</th><th>β (95% CI)</th><th>p</th></tr></thead>
+            <tbody>
+              <tr><td>Menstrual</td><td>−0.34 (−0.90 to 0.22)</td><td>0.23</td></tr>
+              <tr><td>Fertility</td><td>−0.90 (−1.43 to −0.37)</td><td>&lt;0.001</td></tr>
+              <tr><td>Luteal</td><td>−0.75 (−1.24 to −0.26)</td><td>0.003</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Phase was associated with stress score overall (p = 0.002). Fertility and luteal
+          days showed more physical signs of stress than follicular days. Older age was
+          also linked to slightly lower scores. In a sensitivity analysis limited to the
+          highest-quality readings, only the fertility-phase difference stayed
+          significant, so it is the most robust finding. A second model with resting
+          heart rate as the outcome showed the same direction of effect.
+        </p>
+      </section>
+
+      <section>
+        <h2>Analysis 2: Physical activity and sleep</h2>
+        <p class="note">HLTH 651 · 4,893 person-days from 42 participants · analyzed in SAS</p>
+        <p>
+          <strong>Question:</strong> Do people sleep better after more active days? The
+          exposure was total active minutes (light + moderate + very active), and the
+          outcome was the next night's Fitbit sleep score. The model adjusted for age and
+          menstrual phase.
+        </p>
+        <p class="callout">
+          Daily activity was <strong>not</strong> associated with sleep quality: each
+          extra hour of activity changed the sleep score by only about 0.04 points
+          (p = 0.46). Menstrual phase was (p &lt; 0.001).
+        </p>
+        <p class="chart-title">Difference in sleep score vs. the menstrual phase</p>
+        <p class="chart-sub">Adjusted β with approximate 95% CI (β ± 1.96 SE).</p>
+        <div class="chart" id="sleep-chart"></div>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Term</th><th>β (SE)</th><th>p</th></tr></thead>
+            <tbody>
+              <tr><td>Total active minutes (per minute)</td><td>0.0007 (0.0009)</td><td>0.46</td></tr>
+              <tr><td>Age, years</td><td>−0.22 (0.12)</td><td>0.07</td></tr>
+              <tr><td>Fertility vs. menstrual</td><td>−1.52 (0.34)</td><td>&lt;0.001</td></tr>
+              <tr><td>Follicular vs. menstrual</td><td>−0.59 (0.34)</td><td>0.08</td></tr>
+              <tr><td>Luteal vs. menstrual</td><td>−0.84 (0.31)</td><td>0.008</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>Interpreting the results carefully</h2>
+        <ul>
+          <li><strong>Observational data:</strong> these are associations, not causes.</li>
+          <li><strong>Proprietary measures:</strong> Fitbit's stress and sleep scores come from undisclosed algorithms and are not clinical gold standards.</li>
+          <li><strong>Small, specific cohort:</strong> 36–42 young adults from one region, not a representative sample.</li>
+          <li><strong>Phase labels</strong> come from cycle and fertility tracking rather than direct confirmation of ovulation.</li>
+          <li><strong>Day-level vs. person-level effects:</strong> a next step would separate within-person changes in activity from differences between people.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Skills demonstrated</h2>
+        <ul class="tags">
+          <li>Secondary data analysis</li>
+          <li>Multi-file data merging</li>
+          <li>Repeated-measures data</li>
+          <li>Linear mixed-effects models</li>
+          <li>Sensitivity analysis</li>
+          <li>SAS</li>
+          <li>Wearable / digital health data</li>
+          <li>Manuscript writing</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap"><a href="../index.html">← Back to portfolio</a></div>
+  </footer>
+
+  <script src="../assets/charts.js"></script>
+  <script>
+    Charts.forest('#stress-chart', [
+      { label: 'Menstrual', est: -0.34, lo: -0.90, hi: 0.22, note: 'p = 0.23' },
+      { label: 'Fertility', est: -0.90, lo: -1.43, hi: -0.37, note: 'p < 0.001' },
+      { label: 'Luteal', est: -0.75, lo: -1.24, hi: -0.26, note: 'p = 0.003' },
+    ], { title: 'Adjusted difference in daily Fitbit stress score versus the follicular phase', xLabel: 'Difference in stress score (points)' });
+    Charts.forest('#sleep-chart', [
+      { label: 'Fertility', est: -1.52, lo: -2.18, hi: -0.86, note: 'p < 0.001' },
+      { label: 'Follicular', est: -0.59, lo: -1.25, hi: 0.07, note: 'p = 0.08' },
+      { label: 'Luteal', est: -0.84, lo: -1.45, hi: -0.22, note: 'p = 0.008' },
+    ], { title: 'Adjusted difference in Fitbit sleep score versus the menstrual phase', xLabel: 'Difference in sleep score (points)' });
+  </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Statistical Programming | Ifeoluwanimi Shobayo</title>
+  <meta name="description" content="SAS and R code samples covering hypothesis tests, correlation, linear and logistic regression, and data cleaning.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="../index.html">Ifeoluwanimi Shobayo</a>
+      <ul>
+        <li><a href="../index.html#projects">← All projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="case">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow">Code Samples · SAS &amp; R</p>
+        <h1>Statistical Programming</h1>
+        <p class="lede">
+          Samples from my SAS and R coursework, from cleaning raw data to choosing and
+          interpreting the right statistical test.
+        </p>
+        <dl class="facts">
+          <div><dt>SAS</dt><dd>PUBH 630 Statistical Software Lab</dd></div>
+          <div><dt>R</dt><dd>HLTH 650 Field Epidemiology</dd></div>
+          <div><dt>Environment</dt><dd>SAS Studio · RStudio</dd></div>
+          <div><dt>Date</dt><dd>2026</dd></div>
+        </dl>
+      </header>
+
+      <section>
+        <h2>SAS: checking assumptions before a t-test</h2>
+        <p>
+          Before comparing two groups, I test for normality, run the t-test, and then
+          confirm with a nonparametric Wilcoxon test in case the normality assumption
+          fails.
+        </p>
+<pre class="code"><span class="c">/* Test for normality by group */</span>
+proc univariate data=SASHELP.FISH normal mu0=0;
+  ods select TestsForNormality;
+  where Species='Roach' or Species='Parkki';
+  class Species;
+  var Weight;
+run;
+
+<span class="c">/* Two-sample t-test */</span>
+proc ttest data=SASHELP.FISH sides=2 h0=0 plots(showh0);
+  where Species='Roach' or Species='Parkki';
+  class Species;
+  var Weight;
+run;
+
+<span class="c">/* Nonparametric alternative */</span>
+proc npar1way data=SASHELP.FISH wilcoxon plots=wilcoxonplot;
+  where Species='Roach' or Species='Parkki';
+  class Species;
+  var Weight;
+run;</pre>
+      </section>
+
+      <section>
+        <h2>SAS: methods I've applied and interpreted</h2>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Method</th><th>Example finding</th></tr></thead>
+            <tbody>
+              <tr><td>Pearson vs. Spearman correlation (<code>PROC CORR</code>)</td><td>One extreme outlier pulled Pearson's r down to 0.04, while the rank-based Spearman ρ stayed at 0.42, showing why rank methods resist outliers.</td></tr>
+              <tr><td>Point-biserial correlation</td><td>Flagged a weak test item (r = 0.13, p = 0.21) that didn't separate high and low scorers.</td></tr>
+              <tr><td>Multiple regression with VIF (<code>PROC REG</code>)</td><td>Explained why a predictor lost significance: it overlapped heavily with the others (VIF 2.7).</td></tr>
+              <tr><td>Stepwise selection (SBC vs. adjusted R²)</td><td>A two-predictor model (honor status + spelling score) had a higher adjusted R² than the full model (0.146 vs. 0.143).</td></tr>
+              <tr><td>Binary logistic regression (<code>PROC LOGISTIC</code>)</td><td>Above-average study time: OR = 13.5 (95% CI 5.2–35.3) for graduating. Used a <code>UNITS</code> statement to report odds ratios per 5-point grade increase.</td></tr>
+              <tr><td>Model comparison</td><td>Adding grades cut the AIC from 259 to 98.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>R: cleaning a health dataset with the tidyverse</h2>
+        <p>
+          A reproducible cleaning script (lightly condensed): check for missing values and duplicates,
+          standardize names and codes, derive BMI categories, restrict to adults, and
+          save an analysis-ready file.
+        </p>
+<pre class="code">library(tidyverse)
+
+health_data &lt;- read_csv("Data/health_data.csv")
+
+<span class="c"># Missing values and duplicates</span>
+colSums(is.na(health_data))
+sum(duplicated(health_data))
+
+<span class="c"># Clear names and consistent coding</span>
+health_data &lt;- health_data %&gt;%
+  rename(BloodPressure = SBP, SmokingStatus = smoking) %&gt;%
+  mutate(SmokingStatus = recode(SmokingStatus, "yes" = "Yes", "no" = "No"))
+
+<span class="c"># Derived variable: BMI category (keeps missing as missing)</span>
+health_data &lt;- health_data %&gt;%
+  mutate(BMI_Category = case_when(
+    is.na(BMI)  ~ NA_character_,
+    BMI &lt; 18.5  ~ "Underweight",
+    BMI &lt; 25    ~ "Normal",
+    BMI &lt; 30    ~ "Overweight",
+    TRUE        ~ "Obese"
+  ))
+
+<span class="c"># Adults only, analysis variables only</span>
+analysis_data &lt;- health_data %&gt;%
+  filter(age &gt;= 18) %&gt;%
+  select(age, BMI, BMI_Category, SmokingStatus, diabetes, BloodPressure)
+
+write_csv(analysis_data, "Output/analysis_data.csv")</pre>
+        <p>
+          The follow-up script summarizes the cleaned data with frequency tables and a
+          publication-style descriptive table from <code>gtsummary::tbl_summary()</code>.
+        </p>
+      </section>
+
+      <section>
+        <h2>Skills demonstrated</h2>
+        <ul class="tags">
+          <li>SAS Studio</li>
+          <li>R / tidyverse</li>
+          <li>gtsummary</li>
+          <li>Assumption checking</li>
+          <li>Nonparametric tests</li>
+          <li>Correlation</li>
+          <li>Linear &amp; logistic regression</li>
+          <li>Model selection</li>
+          <li>Reproducible data cleaning</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap"><a href="../index.html">← Back to portfolio</a></div>
+  </footer>
+</body>
+</html>
