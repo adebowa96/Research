@@ -82,9 +82,10 @@
   function forest(selector, rows, opts) {
     mount(selector, (c, width) => {
       const accent = css('--accent'), surface = css('--surface'), grid = css('--border'), ink = css('--text');
-      const labelW = Math.min(170, width * 0.38);
+      const stacked = width < 520;
+      const labelW = stacked ? 0 : Math.min(170, width * 0.38);
       const m = { top: 8, right: 16, bottom: 40, left: labelW };
-      const rowH = 44;
+      const rowH = stacked ? 52 : 44;
       const h = m.top + rows.length * rowH + m.bottom;
       const lo = Math.min(0, ...rows.map((r) => r.lo)), hi = Math.max(0, ...rows.map((r) => r.hi));
       const pad = (hi - lo) * 0.08;
@@ -101,8 +102,8 @@
       text(svg, (m.left + width - m.right) / 2, h - 4, opts.xLabel, { 'text-anchor': 'middle', 'font-size': 12 });
 
       rows.forEach((r, i) => {
-        const cy = m.top + i * rowH + rowH / 2;
-        text(svg, 0, cy + 4, r.label, { fill: ink, 'font-size': width < 420 ? 12 : 13 });
+        const cy = stacked ? m.top + i * rowH + rowH - 14 : m.top + i * rowH + rowH / 2;
+        text(svg, 0, stacked ? cy - 16 : cy + 4, r.label, { fill: ink, 'font-size': 13 });
         const g = el('g', { class: 'mark' }, svg);
         el('rect', { x: m.left, y: cy - rowH / 2, width: width - m.left - m.right, height: rowH, fill: 'transparent' }, g);
         el('line', { x1: sx(r.lo), x2: sx(r.hi), y1: cy, y2: cy, stroke: accent, 'stroke-width': 2, 'stroke-linecap': 'round' }, g);
@@ -156,28 +157,32 @@
   }
 
   // rows: [{label, value}], opts: {min, max, format}
+  // On narrow screens labels sit above their bar so long names are never clipped.
   function hbar(selector, rows, opts) {
     mount(selector, (c, width) => {
       const accent = css('--accent'), grid = css('--border'), ink = css('--text');
-      const labelW = Math.min(170, width * 0.4);
+      const stacked = width < 520;
+      const labelW = stacked ? 0 : Math.min(190, width * 0.38);
       const m = { top: 4, right: 44, bottom: 28, left: labelW };
-      const band = 36, thick = 20;
+      const band = stacked ? 50 : 36, thick = 20;
       const h = m.top + rows.length * band + m.bottom;
       const sx = (v) => m.left + ((v - opts.min) / (opts.max - opts.min)) * (width - m.left - m.right);
       const svg = el('svg', { width, height: h, role: 'img', 'aria-label': opts.title }, c);
       const tip = tooltip(c);
 
-      niceTicks(opts.min, opts.max, width < 420 ? 4 : 5).forEach((t) => {
+      niceTicks(opts.min, opts.max, stacked ? 4 : 5).forEach((t) => {
         el('line', { x1: sx(t), x2: sx(t), y1: m.top, y2: h - m.bottom, stroke: grid, 'stroke-width': 1 }, svg);
         text(svg, sx(t), h - 8, opts.format(t), { 'text-anchor': 'middle', 'font-size': 12 });
       });
       el('line', { x1: sx(0), x2: sx(0), y1: m.top, y2: h - m.bottom, stroke: css('--muted'), 'stroke-width': 1 }, svg);
 
       rows.forEach((r, i) => {
-        const cy = m.top + i * band + band / 2;
-        text(svg, 0, cy + 4, r.label, { fill: ink, 'font-size': width < 420 ? 12 : 13 });
+        const top = m.top + i * band;
+        const cy = stacked ? top + band - thick / 2 - 4 : top + band / 2;
+        if (stacked) text(svg, 0, top + 14, r.label, { fill: ink, 'font-size': 13 });
+        else text(svg, 0, cy + 4, r.label, { fill: ink, 'font-size': 13 });
         const g = el('g', { class: 'mark' }, svg);
-        el('rect', { x: m.left, y: cy - band / 2, width: width - m.left - m.right, height: band, fill: 'transparent' }, g);
+        el('rect', { x: m.left, y: top, width: width - m.left - m.right, height: band, fill: 'transparent' }, g);
         const a = sx(Math.min(0, r.value)), b = sx(Math.max(0, r.value));
         const w = Math.max(b - a, 2), rad = Math.min(4, w / 2);
         // Rounded at the data end, square at the baseline.
