@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Framingham Heart Study Analysis | Ifeoluwanimi Shobayo</title>
+  <meta name="description" content="Biostatistical analysis of cardiovascular risk factors in the Framingham Heart Study teaching dataset (n = 4,434).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="../index.html">Ifeoluwanimi Shobayo</a>
+      <ul>
+        <li><a href="../index.html#projects">← All projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="case">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow">Data Analysis · Biostatistics</p>
+        <h1>Cardiovascular Risk Factors in the Framingham Heart Study</h1>
+        <p class="lede">
+          An analysis of real, anonymized cohort data from one of the most influential
+          studies in cardiovascular epidemiology: describing the sample, comparing men
+          and women, modeling heart rate, and identifying who has coronary heart disease.
+        </p>
+        <dl class="facts">
+          <div><dt>Course</dt><dd>HLTH 501 Biostatistics</dd></div>
+          <div><dt>Data</dt><dd>NHLBI Framingham teaching dataset</dd></div>
+          <div><dt>Participants</dt><dd>4,434 (baseline exam)</dd></div>
+          <div><dt>Methods</dt><dd>t-tests, linear regression</dd></div>
+        </dl>
+      </header>
+
+      <section>
+        <h2>The data</h2>
+        <p>
+          The Framingham Heart Study began in 1948 and has followed three generations of
+          participants to identify the causes of heart disease. The National Heart, Lung,
+          and Blood Institute (NHLBI) publishes an anonymized teaching dataset of 4,434
+          participants with up to three exams each, about six years apart. I analyzed the
+          baseline exam: one record per participant, covering demographics, blood
+          pressure, cholesterol, glucose, smoking, and cardiovascular outcomes.
+        </p>
+      </section>
+
+      <section>
+        <h2>1. Describing the sample</h2>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Characteristic</th><th>Total (n = 4,434)</th></tr></thead>
+            <tbody>
+              <tr><td>Age, years</td><td>49.9 (8.7)</td></tr>
+              <tr><td>Male sex</td><td>1,944 (43.8%)</td></tr>
+              <tr><td>Diastolic blood pressure, mmHg</td><td>83.1 (12.1)</td></tr>
+              <tr><td>Total serum cholesterol, mg/dL</td><td>237.0 (44.7)</td></tr>
+              <tr><td>Serum glucose, mg/dL</td><td>82.2 (24.4)</td></tr>
+              <tr><td>Using anti-hypertensive medication</td><td>144 (3.3%)</td></tr>
+              <tr><td>Hypertension during follow-up</td><td>3,252 (73.3%)</td></tr>
+              <tr><td>Cardiovascular disease during follow-up</td><td>1,157 (26.1%)</td></tr>
+              <tr><td>Stroke during follow-up</td><td>415 (9.4%)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Mean (SD) or n (%).</p>
+      </section>
+
+      <section>
+        <h2>2. Comparing men and women</h2>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Characteristic</th><th>Men (n = 1,944)</th><th>Women (n = 2,490)</th></tr></thead>
+            <tbody>
+              <tr><td>Age, years</td><td>49.8 (8.7)</td><td>50.0 (8.6)</td></tr>
+              <tr><td>Systolic blood pressure, mmHg</td><td>131.7 (19.4)</td><td>133.8 (24.5)</td></tr>
+              <tr><td>Total serum cholesterol, mg/dL</td><td>233.6 (42.4)</td><td>239.7 (46.2)</td></tr>
+              <tr><td>Serum glucose, mg/dL</td><td>82.3 (24.7)</td><td>82.1 (24.1)</td></tr>
+              <tr><td>Current smoker</td><td>1,175 (60.4%)</td><td>1,006 (40.4%)</td></tr>
+              <tr><td>Using anti-hypertensive medication</td><td>42 (2.2%)</td><td>102 (4.2%)</td></tr>
+              <tr><td>Hypertension during follow-up</td><td>1,404 (72.2%)</td><td>1,848 (74.2%)</td></tr>
+              <tr><td>Stroke during follow-up</td><td>193 (9.9%)</td><td>222 (8.9%)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Men were much more likely to smoke (60% vs. 40%). Women had slightly higher
+          average systolic blood pressure and cholesterol and were twice as likely to be
+          taking blood-pressure medication.
+        </p>
+      </section>
+
+      <section>
+        <h2>3. What is associated with heart rate?</h2>
+        <p>
+          I fit a simple (crude) linear regression for each characteristic, then one
+          multivariable model including all of them. I restricted the analysis to the
+          4,026 participants with complete data on every variable.
+        </p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th>Characteristic</th><th>Crude β</th><th>p</th><th>Adjusted β</th><th>p</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Age, years</td><td>−0.007</td><td>0.74</td><td>−0.03</td><td>0.14</td></tr>
+              <tr><td>Male sex</td><td>−2.57</td><td>&lt;0.01</td><td>−2.88</td><td>&lt;0.01</td></tr>
+              <tr><td>Glucose, mg/dL</td><td>0.04</td><td>&lt;0.01</td><td>0.04</td><td>&lt;0.01</td></tr>
+              <tr><td>Total cholesterol, mg/dL</td><td>0.03</td><td>&lt;0.01</td><td>0.03</td><td>&lt;0.01</td></tr>
+              <tr><td>Current smoker</td><td>1.46</td><td>&lt;0.01</td><td>2.19</td><td>&lt;0.01</td></tr>
+              <tr><td>Diabetes</td><td>4.30</td><td>&lt;0.01</td><td>0.91</td><td>0.52</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="callout">
+          Diabetes looked strongly linked to heart rate on its own (+4.3 beats/min), but
+          the effect shrank to +0.9 and was no longer significant after adjustment. Most
+          of the crude association was explained by the other variables, especially
+          glucose, which is closely tied to how diabetes is defined.
+        </p>
+        <p>
+          Men had heart rates about 2.9 beats/min lower than women, and smokers about
+          2.2 beats/min higher than non-smokers, after adjustment. Age was not associated
+          with heart rate.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Who has coronary heart disease?</h2>
+        <p>
+          I compared participants with and without coronary heart disease (CHD) at
+          baseline using two-sample t-tests.
+        </p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Characteristic</th><th>CHD (n = 194)</th><th>No CHD (n = 4,240)</th><th>p</th></tr></thead>
+            <tbody>
+              <tr><td>Age, years</td><td>57.5</td><td>49.6</td><td>&lt;0.01</td></tr>
+              <tr><td>Systolic blood pressure, mmHg</td><td>145.0</td><td>132.4</td><td>&lt;0.01</td></tr>
+              <tr><td>Diastolic blood pressure, mmHg</td><td>87.1</td><td>82.9</td><td>&lt;0.01</td></tr>
+              <tr><td>Body mass index</td><td>26.8</td><td>25.8</td><td>&lt;0.01</td></tr>
+              <tr><td>Total cholesterol, mg/dL</td><td>243.2</td><td>236.7</td><td>0.05</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          People with CHD were about eight years older on average and had clearly higher
+          blood pressure and BMI. Their cholesterol was also higher, but the difference
+          was borderline (p = 0.05).
+        </p>
+      </section>
+
+      <section>
+        <h2>Skills demonstrated</h2>
+        <ul class="tags">
+          <li>Descriptive statistics</li>
+          <li>Two-sample t-tests</li>
+          <li>Simple &amp; multivariable regression</li>
+          <li>Confounding</li>
+          <li>Complete-case analysis</li>
+          <li>Cohort data</li>
+          <li>Results interpretation</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap"><a href="../index.html">← Back to portfolio</a></div>
+  </footer>
+</body>
+</html>
