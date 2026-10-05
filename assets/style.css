@@ -289,3 +289,19 @@ pre.code .c { color: var(--muted); }
 .grid.posters { grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); }
 .card-img { height: auto; }
 .shot img { height: auto; }
+
+/* Hero stats */
+.stats { list-style: none; padding: 0; margin: 0 0 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 12px; max-width: 760px; }
+.stats li { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; }
+.stats strong { display: block; font-size: 26px; line-height: 1.2; color: var(--accent); }
+.stats span { font-size: 14px; color: var(--muted); }
+
+/* Experience timeline details */
+.timeline p { margin: 6px 0 0; font-size: 15px; color: var(--muted); }
+.timeline span { display: block; }
+ul.plain { padding-left: 20px; margin: 0; }
+ul.plain li { margin-bottom: 8px; }
+ol.refs { padding-left: 22px; margin: 0 0 8px; }
+ol.refs li { margin-bottom: 12px; font-size: 15.5px; }
+ol.refs a { word-break: break-all; }
+.stats span { display: block; line-height: 1.4; }
