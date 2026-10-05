@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Statistical Programming | Ifeoluwanimi Shobayo</title>
-  <meta name="description" content="SAS and R code samples covering hypothesis tests, correlation, linear and logistic regression, and data cleaning.">
+  <meta name="description" content="SAS, R, and Python code samples covering hypothesis tests, regression, data cleaning, and data-quality validation.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/style.css">
@@ -22,17 +22,17 @@
   <main class="case">
     <div class="wrap">
       <header>
-        <p class="eyebrow">Code Samples · SAS &amp; R</p>
+        <p class="eyebrow">Code Samples · SAS, R &amp; Python</p>
         <h1>Statistical Programming</h1>
         <p class="lede">
-          Samples from my SAS and R coursework, from cleaning raw data to choosing and
-          interpreting the right statistical test.
+          Samples from my SAS, R, and Python work, from diagnosing messy data to choosing
+          and interpreting the right statistical test.
         </p>
         <dl class="facts">
           <div><dt>SAS</dt><dd>PUBH 630 Statistical Software Lab</dd></div>
           <div><dt>R</dt><dd>HLTH 650 Field Epidemiology</dd></div>
-          <div><dt>Environment</dt><dd>SAS Studio · RStudio</dd></div>
-          <div><dt>Date</dt><dd>2026</dd></div>
+          <div><dt>Python</dt><dd>Data science course (pandas)</dd></div>
+          <div><dt>Environment</dt><dd>SAS Studio · RStudio · Colab</dd></div>
         </dl>
       </header>
 
@@ -126,6 +126,49 @@ write_csv(analysis_data, "Output/analysis_data.csv")</pre>
       </section>
 
       <section>
+        <h2>Python: parsed doesn't mean valid</h2>
+        <p>
+          In a pandas data-quality exercise I diagnosed a deliberately messy account
+          file before computing any metrics. Each problem got a different decision
+          instead of one blanket cleaning rule:
+        </p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Problem</th><th>Decision</th></tr></thead>
+            <tbody>
+              <tr><td>Same ID twice, differing only in how "not churned" was coded (FALSE vs. 0)</td><td>Standardize the coding, then treat as a true duplicate</td></tr>
+              <tr><td>Same ID twice with coordinated changes (seats 5 → 6, revenue 450 → 540)</td><td>Keep both: likely a real update, not a duplicate</td></tr>
+              <tr><td>"US", "us", "United States"; "pro" vs. "PRO"</td><td>Standardize categories</td></tr>
+              <tr><td>A signup date stored as a Unix timestamp</td><td>Parse separately, then merge into one date format</td></tr>
+              <tr><td>Revenue of −99</td><td>Likely a sentinel code; confirm before setting to missing</td></tr>
+              <tr><td>Last active in 2099, or before the signup date</td><td>Parses fine but fails validation; flag, don't guess</td></tr>
+              <tr><td>Missing company name vs. missing seat count</td><td>Keep the row; exclude only from analyses that need that field</td></tr>
+            </tbody>
+          </table>
+        </div>
+<pre class="code"><span class="c"># Parse mixed date formats, handling the Unix timestamp separately</span>
+df['signup_date'] = pd.to_datetime(df['signup_ts'], errors='coerce', format='mixed')
+unix = df['signup_ts'].str.fullmatch(r'\d{10}', na=False)
+df.loc[unix, 'signup_date'] = pd.to_datetime(df.loc[unix, 'signup_ts'].astype('int64'), unit='s')
+df['last_active_date'] = pd.to_datetime(df['last_active'], errors='coerce', format='mixed')
+
+<span class="c"># Validation rules: values that parse but can't be true</span>
+before_signup = df[df['last_active_date'] &lt; df['signup_date']]
+in_future     = df[df['last_active_date'] &gt; pd.Timestamp('2024-03-06')]</pre>
+        <p>
+          The same instinct applies to health records, where a "duplicate" patient row
+          may be a real follow-up visit and an impossible date is a question for the
+          data source, not something to fill in.
+        </p>
+        <p>
+          In a separate pandas assessment I filtered, grouped, and visualized student
+          test scores. I described the higher scores among students who completed test
+          preparation as an <em>association</em>, since students who chose the course may
+          differ in motivation or support.
+        </p>
+      </section>
+
+      <section>
         <h2>Skills demonstrated</h2>
         <ul class="tags">
           <li>SAS Studio</li>
@@ -137,6 +180,8 @@ write_csv(analysis_data, "Output/analysis_data.csv")</pre>
           <li>Linear &amp; logistic regression</li>
           <li>Model selection</li>
           <li>Reproducible data cleaning</li>
+          <li>Python / pandas</li>
+          <li>Data-quality validation</li>
         </ul>
       </section>
     </div>
