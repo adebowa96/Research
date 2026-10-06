@@ -136,8 +136,8 @@ write_csv(analysis_data, "Output/analysis_data.csv")</pre>
           <table>
             <thead><tr><th>Problem</th><th>Decision</th></tr></thead>
             <tbody>
-              <tr><td>Same ID twice, differing only in how "not churned" was coded (FALSE vs. 0)</td><td>Standardize the coding, then treat as a true duplicate</td></tr>
-              <tr><td>Same ID twice with coordinated changes (seats 5 → 6, revenue 450 → 540)</td><td>Keep both: likely a real update, not a duplicate</td></tr>
+              <tr><td>Same ID twice, differing only in how "not churned" was coded (FALSE vs. 0)</td><td>Confirm the codes mean the same thing, standardize, then treat as a true duplicate</td></tr>
+              <tr><td>Same ID twice with coordinated changes (seats 5 → 6, revenue 450 → 540)</td><td>Keep both for now: likely a real update, not a duplicate; confirm what one row represents before deduplicating</td></tr>
               <tr><td>"US", "us", "United States"; "pro" vs. "PRO"</td><td>Standardize categories</td></tr>
               <tr><td>A signup date stored as a Unix timestamp</td><td>Parse separately, then merge into one date format</td></tr>
               <tr><td>Revenue of −99</td><td>Likely a sentinel code; confirm before setting to missing</td></tr>

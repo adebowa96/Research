@@ -68,7 +68,7 @@ ORDER BY pct_subscribed DESC;</pre>
           Call duration was the strongest predictor: 85% of calls over 10 minutes ended in
           a "yes", versus 9% of calls under 2 minutes. But duration is only known
           <em>after</em> the call, so we kept it for exploration and excluded it from
-          every model.
+          every classifier (it was still one of the 13 inputs to the K-Means clustering in section 4, so the segments are not fully free of it).
         </p>
         <p>
           Using it would have produced impressive scores that are useless for deciding
@@ -82,7 +82,7 @@ ORDER BY pct_subscribed DESC;</pre>
           <li><strong>Age groups</strong> from continuous age.</li>
           <li><strong>Contacted before</strong> (0/1), derived from the "days since last contact" code.</li>
           <li><strong>Campaign intensity</strong>: current-campaign calls relative to previous contacts.</li>
-          <li>Binary and ordinal encoding where order exists, one-hot encoding otherwise, and "unknown" kept as its own category instead of being dropped or imputed.</li>
+          <li>Binary and ordinal encoding where order exists, one-hot encoding otherwise. "Unknown" was kept rather than dropped or imputed: as its own one-hot category for job, contact and previous outcome, and as a code of -1 (below "primary") on the ordinal education scale.</li>
         </ul>
       </section>
 
@@ -108,7 +108,7 @@ ORDER BY pct_subscribed DESC;</pre>
         </div>
         <p>
           Segments built without the outcome still separated high and low responders.
-          The over-contacted group points to call fatigue and suggests a "stop after
+          The over-contacted group responded least. That fits call fatigue, but it is an association, not proof: the call count includes the final call, and customers who say yes are presumably not called again, so persistent non-responders build up calls. Response by call number would need checking before any "stop after
           N attempts" policy.
         </p>
       </section>
@@ -117,7 +117,7 @@ ORDER BY pct_subscribed DESC;</pre>
         <h2>5. Classification</h2>
         <p>
           We compared logistic regression, a decision tree, a random forest, and gradient
-          boosting against a stratified dummy baseline, using 5-fold stratified
+          boosting, using 5-fold stratified
           cross-validation.
         </p>
         <p class="chart-title">Cross-validated ROC AUC</p>
@@ -136,8 +136,7 @@ ORDER BY pct_subscribed DESC;</pre>
         </div>
         <p>
           The dummy baseline scored F1 = 0.49 and ROC AUC = 0.51 on the test set. The tree
-          ensembles agreed on the most important features: prior campaign success,
-          balance, age, and contact type.
+          ensembles both ranked prior campaign success, balance, age, day of month, and an unknown contact type highly. These are impurity-based importances, which tend to favor continuous variables such as balance, age and day, and they show what predicts a response, not what causes it.
         </p>
       </section>
 
@@ -148,7 +147,7 @@ ORDER BY pct_subscribed DESC;</pre>
           little, as expected. The bigger lever was the <strong>decision threshold</strong>.
           A missed responder costs more than an extra call, so we lowered the random
           forest's threshold from 0.50 to 0.40. That raised recall from 0.62 to 0.75 and F1
-          from 0.67 to 0.70, with ROC AUC at 0.77.
+          from 0.67 to 0.70 on the 20% test split, while precision fell from 0.74 to 0.66. ROC AUC does not depend on the threshold and stayed at 0.77. Because 0.40 was picked as the best-F1 threshold on that same test split, these gains are somewhat optimistic (see next steps).
         </p>
       </section>
 
