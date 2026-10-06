@@ -40,7 +40,7 @@
         <h2>SAS: checking assumptions before a t-test</h2>
         <p>
           Before comparing two groups, I test for normality, run the t-test, and then
-          confirm with a nonparametric Wilcoxon test in case the normality assumption
+          run a nonparametric Wilcoxon rank-sum test as a sensitivity check in case the normality assumption
           fails.
         </p>
 <pre class="code"><span class="c">/* Test for normality by group */</span>
@@ -72,12 +72,12 @@ run;</pre>
           <table>
             <thead><tr><th>Method</th><th>Example finding</th></tr></thead>
             <tbody>
-              <tr><td>Pearson vs. Spearman correlation (<code>PROC CORR</code>)</td><td>One extreme outlier pulled Pearson's r down to 0.04, while the rank-based Spearman ρ stayed at 0.42, showing why rank methods resist outliers.</td></tr>
+              <tr><td>Pearson vs. Spearman correlation (<code>PROC CORR</code>)</td><td>With one extreme outlier in a 10-point dataset, Pearson's r was 0.04 while the rank-based Spearman ρ was 0.42, showing that rank methods are less sensitive to outliers (neither was significant at n = 10).</td></tr>
               <tr><td>Point-biserial correlation</td><td>Flagged a weak test item (r = 0.13, p = 0.21) that didn't separate high and low scorers.</td></tr>
-              <tr><td>Multiple regression with VIF (<code>PROC REG</code>)</td><td>Explained why a predictor lost significance: it overlapped heavily with the others (VIF 2.7).</td></tr>
+              <tr><td>Multiple regression with VIF (<code>PROC REG</code>)</td><td>Interpreted a predictor (vehicle weight) that was correlated with price on its own (r = 0.45) but not significant once horsepower and length were added (p = 0.89), with only moderate collinearity (VIF 2.7).</td></tr>
               <tr><td>Stepwise selection (SBC vs. adjusted R²)</td><td>A two-predictor model (honor status + spelling score) had a higher adjusted R² than the full model (0.146 vs. 0.143).</td></tr>
-              <tr><td>Binary logistic regression (<code>PROC LOGISTIC</code>)</td><td>Above-average study time: OR = 13.5 (95% CI 5.2–35.3) for graduating. Used a <code>UNITS</code> statement to report odds ratios per 5-point grade increase.</td></tr>
-              <tr><td>Model comparison</td><td>Adding grades cut the AIC from 259 to 98.</td></tr>
+              <tr><td>Binary logistic regression (<code>PROC LOGISTIC</code>)</td><td>Above-average study time: unadjusted OR = 13.5 (95% CI 5.2–35.3) for graduating, attenuating to 7.5 (2.1–26.9) after adjusting for English and math grades. Used a <code>UNITS</code> statement to report odds ratios per 5-point grade increase.</td></tr>
+              <tr><td>Model comparison</td><td>Adding English and math grades to the study-time model cut the AIC from 216 to 98.</td></tr>
             </tbody>
           </table>
         </div>
@@ -98,7 +98,7 @@ health_data &lt;- read_csv("Data/health_data.csv")
 colSums(is.na(health_data))
 sum(duplicated(health_data))
 
-<span class="c"># Clear names and consistent coding</span>
+<span class="c"># Rename variables and standardize coding</span>
 health_data &lt;- health_data %&gt;%
   rename(BloodPressure = SBP, SmokingStatus = smoking) %&gt;%
   mutate(SmokingStatus = recode(SmokingStatus, "yes" = "Yes", "no" = "No"))
@@ -121,7 +121,7 @@ analysis_data &lt;- health_data %&gt;%
 write_csv(analysis_data, "Output/analysis_data.csv")</pre>
         <p>
           The follow-up script summarizes the cleaned data with frequency tables and a
-          publication-style descriptive table from <code>gtsummary::tbl_summary()</code>.
+          descriptive summary table from <code>gtsummary::tbl_summary()</code>.
         </p>
       </section>
 
@@ -163,7 +163,8 @@ in_future     = df[df['last_active_date'] &gt; pd.Timestamp('2024-03-06')]</pre>
         <p>
           In a separate pandas assessment I filtered, grouped, and visualized student
           test scores. I described the higher scores among students who completed test
-          preparation as an <em>association</em>, since students who chose the course may
+          preparation (5.6 to 9.9 points higher on average) as an <em>association</em>
+          rather than an effect, since students who chose the course may
           differ in motivation or support.
         </p>
       </section>

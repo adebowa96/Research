@@ -55,7 +55,7 @@
           concerns, and unfamiliarity with U.S. care systems.
         </p>
         <p>
-          The literature shows that social support protects against distress and that
+          The literature consistently links higher perceived social support to lower distress and that
           campus context shapes help-seeking. Few studies, however, compare international
           and domestic graduate students in <strong>faith-based universities</strong>
           while also measuring social support and use of campus services. This study is
@@ -67,13 +67,14 @@
         <h2>Study design</h2>
         <p>
           I chose a <strong>quantitative cross-sectional survey</strong> with three
-          open-ended questions. This design compares groups and identifies predictors
-          efficiently, without the cost of long-term follow-up.
+          open-ended questions. This design compares groups and identifies correlates of
+          distress efficiently, without the cost of long-term follow-up, though it cannot
+          show which came first.
         </p>
         <ul>
           <li><strong>Population:</strong> enrolled graduate students aged 18 or older, recruited through the Graduate Student Office and International Student Center.</li>
-          <li><strong>Sample size:</strong> 120–150 participants, including at least 50 international students. At n = 120, a two-group comparison has about 80% power for moderate effects (d ≈ 0.5); detecting a smaller effect (d ≈ 0.35) would need about 130 students per group.</li>
-          <li><strong>Unequal groups:</strong> planned use of Welch's t-tests, bootstrapped confidence intervals, and covariate-adjusted regression.</li>
+          <li><strong>Sample size:</strong> 120–150 participants, including at least 50 international students. At n = 120, a two-group comparison has about 77% power for moderate effects (d ≈ 0.5), reaching 80% at about 128 students (64 per group); detecting a smaller effect (d ≈ 0.35) would need about 130 students per group.</li>
+          <li><strong>Robustness:</strong> Welch's t-tests (no equal-variance assumption, which matters most when group sizes are unequal) and bootstrapped confidence intervals for skewed DASS-21 scores.</li>
           <li><strong>Pilot test:</strong> 5–8 participants, including at least one international student, to check that the questions are clear and easy to understand. Items are written in culturally neutral language.</li>
         </ul>
       </section>
@@ -88,9 +89,9 @@
             <tbody>
               <tr><td>Depression, anxiety, stress</td><td>DASS-21 (α = 0.87–0.94)</td><td>Outcomes</td></tr>
               <tr><td>Perceived social support</td><td>MSPSS (family, friends, significant other)</td><td>Predictor (also tested in interaction with student status)</td></tr>
-              <tr><td>Campus-service engagement</td><td>Custom items: awareness, use, cultural relevance, accessibility</td><td>Predictor</td></tr>
+              <tr><td>Campus-service engagement</td><td>Custom items: awareness, use, cultural relevance, accessibility</td><td>Correlate (direction not testable cross-sectionally; distress may drive use)</td></tr>
               <tr><td>Student status</td><td>International vs. domestic</td><td>Main exposure</td></tr>
-              <tr><td>Confounders</td><td>Age, gender, ethnicity, financial stress, work hours, program intensity, prior mental-health history; time in the U.S. (international students only)</td><td>Adjustment variables</td></tr>
+              <tr><td>Covariates</td><td>Age, gender, ethnicity, program intensity, prior mental-health history; financial stress and work hours (possible mediators, so models would be shown with and without them); time in the U.S. (analyzed within international students only)</td><td>Adjustment variables</td></tr>
             </tbody>
           </table>
         </div>
@@ -100,8 +101,8 @@
         <h2>Analysis plan</h2>
         <ol>
           <li><strong>Descriptive statistics</strong> to summarize the sample and outcome scores.</li>
-          <li><strong>Independent-samples t-tests</strong> (Welch's when group sizes differ) to compare international and domestic students.</li>
-          <li><strong>Multiple regression</strong> to estimate the effect of student status while adjusting for confounders.</li>
+          <li><strong>Independent-samples t-tests</strong> (Welch's version, which does not assume equal variances and is robust when group sizes also differ) to compare international and domestic students.</li>
+          <li><strong>Multiple regression</strong> to estimate the adjusted difference in DASS-21 scores between international and domestic students, controlling for the covariates listed above.</li>
           <li><strong>Moderation analysis</strong> (student status × perceived support) to test whether the link between social support and distress differs between international and domestic students.</li>
           <li><strong>Thematic analysis</strong> of open-ended answers to add context to the numbers.</li>
           <li><strong>Missing data:</strong> listwise deletion if under 5%; multiple imputation or the EM algorithm if 5% or more.</li>

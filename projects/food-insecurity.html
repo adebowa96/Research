@@ -63,9 +63,7 @@
               <tr><td>Strip %, $, and commas so fields are numeric</td><td><code>DATA</code> step</td></tr>
               <tr><td>Check structure and year coverage</td><td><code>PROC CONTENTS</code>, <code>PROC FREQ</code></td></tr>
               <tr><td>Summarize by year and region</td><td><code>PROC MEANS</code></td></tr>
-              <tr><td>Trend, bar, and scatter plots</td><td><code>PROC SGPLOT</code></td></tr>
               <tr><td>Correlations</td><td><code>PROC CORR</code></td></tr>
-              <tr><td>Exploratory multivariable model</td><td><code>PROC REG</code></td></tr>
             </tbody>
           </table>
         </div>
@@ -77,7 +75,7 @@
         <div class="chart" id="trend-chart"></div>
         <div class="table-scroll">
           <table>
-            <thead><tr><th>Year</th><th>Avg. rate</th><th>Avg. cost per meal</th><th>Avg. annual budget shortfall</th></tr></thead>
+            <thead><tr><th>Year</th><th>Avg. state rate</th><th>Avg. cost per meal</th><th>Food budget shortfall (U.S. total)*</th></tr></thead>
             <tbody>
               <tr><td>2019</td><td>11.65%</td><td>$3.13</td><td>$20.01B</td></tr>
               <tr><td>2020</td><td>10.07%</td><td>$3.25</td><td>$17.16B</td></tr>
@@ -89,15 +87,19 @@
         </div>
         <p>
           The 2020–2021 low coincided with pandemic relief such as expanded SNAP
-          benefits and stimulus payments. By 2023, after that aid ended and food prices
-          rose, the average was higher than before the pandemic.
+          benefits and stimulus payments. By 2023, after most of that aid had ended, the
+          average was higher than before the pandemic. The dataset has no benefit or price
+          variables, so these explanations remain hypotheses.
+        </p>
+        <p class="note">
+          *Labeled as an average in the original report; the values match national totals.
         </p>
       </section>
 
       <section>
         <h2>Where and for whom</h2>
         <ul>
-          <li><strong>Region:</strong> Southern states such as Mississippi, Alabama, Louisiana, and Arkansas had the highest rates. Northeastern states such as Connecticut, Massachusetts, and Vermont had the lowest, and the West and Midwest fell in between.</li>
+          <li><strong>Region:</strong> By Census region, the South (e.g., Mississippi, Alabama, Louisiana, Arkansas) had the highest median rate across 2019–2023 (about 13.5%) and the Northeast the lowest (about 10.5%), with the West and Midwest in between. Ranges overlapped considerably across regions.</li>
           <li><strong>Race and ethnicity:</strong> food insecurity among Black residents was consistently about 2–3 times the rate among White non-Hispanic residents, and rates among Hispanic residents were also elevated.</li>
         </ul>
       </section>
@@ -108,11 +110,12 @@
         <p class="chart-sub">255 state-year observations, <code>PROC CORR</code></p>
         <div class="chart" id="corr-chart"></div>
         <p>
-          Child food insecurity tracked the overall rate almost perfectly (r = 0.92),
-          which makes it a sensitive marker of household hardship. Subgroup rates are
-          partly components of the overall rate, so strong correlations are expected
-          there. Cost per meal showed essentially no relationship (r ≈ 0), so food prices
-          alone do not explain why states differ.
+          Child food insecurity was very strongly correlated with the overall rate
+          (r = 0.92), though this largely reflects how the measures are built: subgroup
+          rates are partly components of the overall rate. Cost per meal showed essentially
+          no linear correlation with the overall rate (r = −0.05 across state-years).
+          Because the 255 observations are 51 states measured five times, these
+          correlations are descriptive rather than formal tests.
         </p>
       </section>
 
@@ -122,7 +125,7 @@
           <li>State-level associations only: no conclusions about individuals and no causal claims.</li>
           <li>Key drivers are missing, including poverty, unemployment, income, rent burden, and SNAP participation.</li>
           <li>Five years is too short to separate temporary shocks from long-term trends.</li>
-          <li><strong>Next step:</strong> merge in Census, BLS, and USDA state-year data to model the conditions behind food insecurity.</li>
+          <li><strong>Next step:</strong> link state-year policy data (e.g., SNAP participation, emergency allotments) and USDA's survey-based state estimates. Map the Meal Gap rates are themselves modeled from poverty, unemployment, and income, so regressing them on those same variables would mostly recover the model's inputs.</li>
         </ul>
       </section>
 
@@ -153,9 +156,9 @@
     Charts.hbar('#corr-chart', [
       { label: 'Child rate', value: 0.923 },
       { label: 'Senior rate', value: 0.645 },
-      { label: 'Black residents', value: 0.610 },
-      { label: 'Hispanic residents', value: 0.373 },
-      { label: '% above SNAP threshold', value: 0.222 },
+      { label: 'Rate, Black residents', value: 0.610 },
+      { label: 'Rate, Hispanic residents', value: 0.373 },
+      { label: '% of food-insecure above SNAP limit', value: 0.222 },
       { label: 'Cost per meal', value: -0.049 },
     ], { title: 'Pearson correlation of each measure with the overall food insecurity rate', min: -0.2, max: 1, format: (v) => String(+v.toFixed(2)) });
   </script>

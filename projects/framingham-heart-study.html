@@ -30,10 +30,10 @@
           and women, modeling heart rate, and identifying who has coronary heart disease.
         </p>
         <dl class="facts">
-          <div><dt>Courses</dt><dd>HLTH 501 Biostatistics · HLTH 651</dd></div>
+          <div><dt>Courses</dt><dd>HLTH 501 Biostatistics · HLTH 651 Epidemiologic Research Methods</dd></div>
           <div><dt>Data</dt><dd>NHLBI Framingham teaching dataset</dd></div>
           <div><dt>Participants</dt><dd>4,434 (baseline exam)</dd></div>
-          <div><dt>Methods &amp; tool</dt><dd>t-tests, linear regression · Excel</dd></div>
+          <div><dt>Methods &amp; tool</dt><dd>t-tests, linear regression, cross-tabulation · Excel (HLTH 501)</dd></div>
         </dl>
       </header>
 
@@ -46,8 +46,9 @@
           participants with up to three exams each, about six years apart. I analyzed the
           baseline exam: one record per participant, covering demographics, blood
           pressure, cholesterol, glucose, smoking, and cardiovascular outcomes. Outcome
-          variables record whether an event, such as hypertension, cardiovascular disease, or
-          stroke, occurred at any point during roughly 24 years of follow-up.
+          variables record whether a condition, such as hypertension, cardiovascular disease,
+          or stroke, was already present at baseline or occurred during up to 24 years of
+          follow-up.
         </p>
       </section>
 
@@ -63,13 +64,13 @@
               <tr><td>Total serum cholesterol, mg/dL</td><td>237.0 (44.7)</td></tr>
               <tr><td>Serum glucose, mg/dL</td><td>82.2 (24.4)</td></tr>
               <tr><td>Using anti-hypertensive medication</td><td>144 (3.3%)</td></tr>
-              <tr><td>Hypertension during follow-up</td><td>3,252 (73.3%)</td></tr>
-              <tr><td>Cardiovascular disease during follow-up</td><td>1,157 (26.1%)</td></tr>
-              <tr><td>Stroke during follow-up</td><td>415 (9.4%)</td></tr>
+              <tr><td>Hypertension (baseline or follow-up)</td><td>3,252 (73.3%)</td></tr>
+              <tr><td>Cardiovascular disease (baseline or follow-up)</td><td>1,157 (26.1%)</td></tr>
+              <tr><td>Stroke (baseline or follow-up)</td><td>415 (9.4%)</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="note">Mean (SD) or n (%). Percentages use participants with non-missing data. At the baseline exam itself, 32.3% had hypertension and 0.7% had a prior stroke.</p>
+        <p class="note">Mean (SD) or n (%). Percentages use participants with non-missing data. At the baseline exam itself, 32.3% had hypertension and 0.7% had a prior stroke; those baseline cases are included in the cumulative rows above, so they are not incidence.</p>
       </section>
 
       <section>
@@ -84,8 +85,8 @@
               <tr><td>Serum glucose, mg/dL</td><td>82.3 (24.7)</td><td>82.1 (24.1)</td></tr>
               <tr><td>Current smoker</td><td>1,175 (60.4%)</td><td>1,006 (40.4%)</td></tr>
               <tr><td>Using anti-hypertensive medication</td><td>42 (2.2%)</td><td>102 (4.2%)</td></tr>
-              <tr><td>Hypertension during follow-up</td><td>1,404 (72.2%)</td><td>1,848 (74.2%)</td></tr>
-              <tr><td>Stroke during follow-up</td><td>193 (9.9%)</td><td>222 (8.9%)</td></tr>
+              <tr><td>Hypertension (baseline or follow-up)</td><td>1,404 (72.2%)</td><td>1,848 (74.2%)</td></tr>
+              <tr><td>Stroke (baseline or follow-up)</td><td>193 (9.9%)</td><td>222 (8.9%)</td></tr>
             </tbody>
           </table>
         </div>
@@ -121,13 +122,14 @@
         </div>
         <p class="callout">
           Diabetes looked strongly linked to heart rate on its own (+4.3 beats/min), but
-          the effect shrank to +0.9 and was no longer significant after adjustment. Most
-          of that crude association was absorbed by glucose, which overlaps heavily with
+          the association shrank to +0.9 and was no longer statistically significant after
+          adjustment (p = 0.52). Most of that crude association was most likely absorbed by
+          glucose, which overlaps heavily with
           diabetes because diabetes is partly defined by high glucose.
         </p>
         <p>
           Men had heart rates about 2.9 beats/min lower than women, and smokers about
-          2.2 beats/min higher than non-smokers, after adjustment. Age was not associated
+          2.2 beats/min higher than non-smokers, after adjustment. Age showed no statistically significant association
           with heart rate.
         </p>
       </section>
@@ -170,14 +172,15 @@
             <thead><tr><th>Risk factor</th><th>CHD (n = 194)</th><th>No CHD (n = 4,240)</th></tr></thead>
             <tbody>
               <tr><td>Male sex</td><td>124 (63.9%)</td><td>1,820 (42.9%)</td></tr>
-              <tr><td>Hypertension (during follow-up)</td><td>164 (84.5%)</td><td>3,088 (72.8%)</td></tr>
+              <tr><td>Hypertension (at baseline or during follow-up)*</td><td>164 (84.5%)</td><td>3,088 (72.8%)</td></tr>
               <tr><td>Obesity (BMI ≥ 30)</td><td>38 (19.6%)</td><td>539 (12.8%)</td></tr>
               <tr><td>Diabetes</td><td>12 (6.2%)</td><td>109 (2.6%)</td></tr>
-              <tr><td>Hyperlipidemia (cholesterol &gt; 220)</td><td>127 (65.5%)</td><td>2,581 (60.9%)</td></tr>
+              <tr><td>Hyperlipidemia (cholesterol &gt; 220)</td><td>127 (66.1%)</td><td>2,581 (61.6%)</td></tr>
               <tr><td>Current smoker</td><td>86 (44.3%)</td><td>2,095 (49.4%)</td></tr>
             </tbody>
           </table>
         </div>
+        <p class="note">*Hypertension uses the follow-up outcome variable, so it includes cases that developed after the baseline exam; the other rows describe the baseline exam. Hyperlipidemia percentages use participants with non-missing cholesterol (corrected from the original coursework, which counted missing values as ≤ 220).</p>
         <p>
           CHD clustered with male sex, hypertension, obesity, and diabetes. Differences
           in smoking and hyperlipidemia were small.
@@ -190,7 +193,7 @@
           I also evaluated how the study's design affects what the data can show. A
           long-term cohort records risk factors before outcomes happen, so it can measure
           incidence and many outcomes at once. The trade-offs are cost, participant
-          dropout over time, and confounding. A case-control study would be faster and
+          dropout over time, and, as in any observational design, confounding. A case-control study would be faster and
           cheaper, but it is more vulnerable to recall bias and selection bias. For
           Framingham's goals, the cohort design is the better fit.
         </p>

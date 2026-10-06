@@ -25,8 +25,9 @@
         <p class="eyebrow">GIS · Data Visualization</p>
         <h1>Mapping the 1854 Soho Cholera Outbreak</h1>
         <p class="lede">
-          A heat map in ArcGIS Online that recreates John Snow's classic investigation,
-          showing how spatial analysis can point to the source of an outbreak.
+          A heat map in ArcGIS Online of deaths in the 1854 Soho cholera outbreak, layered
+          over John Snow's original map, showing how spatial analysis can point to the
+          source of an outbreak.
         </p>
         <dl class="facts">
           <div><dt>Course</dt><dd>HLTH 652 Data Visualization &amp; Spatial Analysis</dd></div>
@@ -45,9 +46,10 @@
         <h2>What the map shows</h2>
         <p>
           The most intense red and yellow areas sit in one central block, and density
-          fades with distance. Cases were not scattered at random: they cluster around a
-          single water pump. That points to a localized source of exposure, contaminated
-          water, the same conclusion Snow reached in 1854.
+          fades with distance. Deaths are concentrated around a single water pump rather
+          than spread evenly, a pattern consistent with a localized source of exposure such
+          as contaminated pump water, the conclusion Snow reached in 1854. The map shows
+          this visually; it is not a formal cluster test.
         </p>
       </section>
 
@@ -56,7 +58,7 @@
         <ul>
           <li><strong>Clarity:</strong> hundreds of overlapping points become a continuous surface that shows where cases are dense.</li>
           <li><strong>Interpretability:</strong> hotspots stand out at a glance, which helps target interventions.</li>
-          <li><strong>Trade-off:</strong> smoothing hides individual cases, so the point layer is still useful for exact locations.</li>
+          <li><strong>Trade-offs:</strong> smoothing hides individual deaths, the surface changes with the search radius chosen, and it shows counts rather than rates, so a hotspot can partly reflect where more people lived.</li>
         </ul>
       </section>
 
@@ -70,7 +72,8 @@
               Reviewed a global geospatial analysis of mpox outbreaks through the lens
               of the First Law of Geography: near things are more related than distant
               things. I also argued that proximity can stand in for shared social
-              networks and travel, so distance alone can't explain spread.
+              networks, while travel and mobility carry infections far beyond nearby
+              areas, so distance alone can't explain spread.
             </p>
           </article>
           <article class="card">
@@ -92,8 +95,8 @@
           <li>ArcGIS Online</li>
           <li>Heat maps</li>
           <li>Layer design</li>
-          <li>Spatial clustering</li>
-          <li>Outbreak investigation</li>
+          <li>Spatial clustering concepts</li>
+          <li>Historical outbreak mapping</li>
           <li>Dashboard design principles</li>
         </ul>
       </section>

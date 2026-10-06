@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Wearables &amp; the Menstrual Cycle | Ifeoluwanimi Shobayo</title>
-  <meta name="description" content="Two secondary analyses of the public mcPHASES wearable dataset using linear mixed-effects models: menstrual phase and daily stress, and physical activity and sleep.">
+  <meta name="description" content="Two secondary analyses of the mcPHASES wearable dataset (PhysioNet) using linear mixed-effects models: menstrual phase and daily stress, and physical activity and sleep.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/style.css">
@@ -30,8 +30,8 @@
           each person.
         </p>
         <dl class="facts">
-          <div><dt>Courses</dt><dd>PUBH 632 · HLTH 651 Epidemiologic Research Methods</dd></div>
-          <div><dt>Data</dt><dd>mcPHASES public dataset (42 participants)</dd></div>
+          <div><dt>Courses</dt><dd>PUBH 632 (stress) · HLTH 651 Epidemiologic Research Methods (sleep)</dd></div>
+          <div><dt>Data</dt><dd>mcPHASES, PhysioNet (42 participants)</dd></div>
           <div><dt>Method</dt><dd>Linear mixed-effects regression</dd></div>
           <div><dt>Date</dt><dd>April 2026</dd></div>
         </dl>
@@ -40,8 +40,9 @@
       <section>
         <h2>The data</h2>
         <p>
-          mcPHASES is a public, de-identified dataset of young adults in the Greater
-          Toronto Area who menstruate. It links daily Fitbit measures with hormone,
+          mcPHASES is a de-identified research dataset, released on PhysioNet under a
+          credentialed data use agreement, of young adults in the Greater Toronto Area who
+          menstruate. It links daily Fitbit measures with hormone,
           glucose, and self-reported menstrual-health data across study periods in 2022
           and 2024. The unit of analysis is the <strong>person-day</strong>, and each
           participant contributes up to several months of days.
@@ -92,9 +93,11 @@
           Phase was associated with stress score overall (p = 0.002). Fertility and luteal
           days showed more physical signs of stress than follicular days. Older age was
           also linked to slightly lower scores. In a sensitivity analysis limited to the
-          highest-quality readings, only the fertility-phase difference stayed
-          significant, so it is the most robust finding. A second model with resting
-          heart rate as the outcome showed the same direction of effect.
+          readings with Fitbit status READY (dropping READY_NOT_PREMIUM rows), only the
+          fertility-phase difference stayed significant, so it was the most stable finding
+          across the two model specifications. A secondary model with resting heart rate as
+          the outcome also differed by phase, in a pattern consistent with greater
+          physiologic strain in the fertility and luteal phases.
         </p>
       </section>
 
@@ -102,15 +105,16 @@
         <h2>Analysis 2: Physical activity and sleep</h2>
         <p class="note">HLTH 651 · 4,893 person-days from 42 participants · analyzed in SAS</p>
         <p>
-          <strong>Question:</strong> Do people sleep better after more active days? The
+          <strong>Question:</strong> Is daily physical activity associated with the next night's Fitbit sleep score? The
           exposure was total active minutes (light + moderate + very active), and the
           outcome was the next night's Fitbit sleep score. The model adjusted for age and
           menstrual phase.
         </p>
         <p class="callout">
-          Daily activity was <strong>not</strong> associated with sleep quality: each
-          extra hour of activity changed the sleep score by only about 0.04 points
-          (p = 0.46). Menstrual phase was (p &lt; 0.001).
+          Daily activity showed <strong>no meaningful</strong> association with the next
+          night's Fitbit sleep score: each extra hour of activity was associated with a
+          score only about 0.04 points higher (approx. 95% CI −0.07 to 0.15; p = 0.46).
+          Menstrual phase was associated with sleep score (p &lt; 0.001).
         </p>
         <p class="chart-title">Difference in sleep score vs. the menstrual phase</p>
         <p class="chart-sub">Adjusted β with approximate 95% CI (β ± 1.96 SE).</p>
