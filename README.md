@@ -9,6 +9,7 @@ Personal portfolio website for an MSPH Epidemiology candidate. It's plain HTML, 
 - `assets/style.css`: shared styles, with light and dark mode
 - `assets/charts.js`: small inline-SVG chart helpers (estimate + CI, line, and bar charts with hover tooltips)
 - `assets/img/`: poster images and map screenshots
+- `assets/Ifeoluwanimi-Shobayo-CV.pdf`: the public CV (no phone number) linked from the "Download CV" buttons
 
 ## Publish with GitHub Pages
 
@@ -18,6 +19,6 @@ Personal portfolio website for an MSPH Epidemiology candidate. It's plain HTML, 
 
 ## Updating the site
 
-- **Add a downloadable CV:** save it as `resume.pdf` in the root folder, then add `<a class="btn ghost" href="resume.pdf">Download CV</a>` to the hero buttons in `index.html`. Consider removing your phone number from the public copy.
+- **Update the CV:** replace `assets/Ifeoluwanimi-Shobayo-CV.pdf` with the new PDF, keeping the same file name so the "Download CV" buttons keep working. Keep your phone number off this public copy.
 - **Add a project:** copy any page in `projects/`, edit the text, and add a card for it in `index.html`.
 - **Charts:** each chart is a `Charts.forest`, `Charts.line`, or `Charts.hbar` call at the bottom of its page. The numbers in those calls should match the table shown beside the chart.
