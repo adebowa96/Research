@@ -10,7 +10,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #12161d;
     --surface: #1a2029;
     --text: #e8eaee;
@@ -18,7 +18,20 @@
     --accent: #5cc2b6;
     --accent-soft: #1d3331;
     --border: #2b323d;
+    color-scheme: dark;
   }
+}
+
+/* An explicit theme choice on the root element wins over the system setting. */
+:root[data-theme="dark"] {
+  --bg: #12161d;
+  --surface: #1a2029;
+  --text: #e8eaee;
+  --muted: #a3abb8;
+  --accent: #5cc2b6;
+  --accent-soft: #1d3331;
+  --border: #2b323d;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -45,7 +58,7 @@ a { color: var(--accent); }
 /* Navigation */
 nav {
   position: sticky;
-  top: 0;
+  top: env(safe-area-inset-top, 0px);
   z-index: 10;
   background: color-mix(in srgb, var(--bg) 92%, transparent);
   backdrop-filter: blur(6px);
