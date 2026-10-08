@@ -2,8 +2,8 @@
 
 **Course:** HLTH 507, Policy Analysis & Recommendations
 **Compiled:** September 30, 2026
-**Status:** Comparison in progress. The Into the Light Act is the **working choice** for the Discussion draft (https://claude.ai/code/artifact/ea8f2c03-9bd1-4fe5-a66d-de6407f9a142), not a settled pick for all three parts. §14 says what could change it. Other policies that also fit are in §15.
-**Revised:** September 30, 2026, after review. Corrected California's legal wording, resolved New York's chapter number, separated real reasoning flaws from evidence gaps, and made the ranking provisional.
+**Status:** Working choice is **Candidate B, California (AB 2193 and AB 1936).** California Discussion draft: https://claude.ai/code/artifact/c2abcf52-0b03-488f-bd58-d0beb7152fec. The earlier Into the Light draft is kept as a fallback: https://claude.ai/code/artifact/ea8f2c03-9bd1-4fe5-a66d-de6407f9a142. Other policies that also fit are in §15.
+**Revised:** October 8, 2026: switched the working choice to California and added the California implementation studies and 2026 state data (§4). September 30, 2026, after review: Corrected California's legal wording, resolved New York's chapter number, separated real reasoning flaws from evidence gaps, and made the ranking provisional.
 
 Items marked **†** still need a final check (a DOI, page range or author list) before they go into a submitted reference list.
 
@@ -120,7 +120,16 @@ The Evaluation and Policy Design rubrics haven't been seen. Don't assume they us
 
 ### Angles for the assignment
 - **Process:** Advocates (2020 Mom) called AB 2193 a "unique approach" because it paired screening with plan-run case management. AB 1936 later made the timing of screening specific. That shows the policy being amended. **The amendment alone does not show that AB 2193 failed.** Any claim about why it was amended needs the legislative analyses or implementation studies behind it.
-- **Implementation, patient experience and equity studies: not yet in this pack.** The 2025 interview study and the two 2026 studies from your review belong here. Add their citations and findings before comparing California with the other candidates.
+- **Legislative history (AB 2193):** Introduced Feb 12, 2018. As introduced, it required OB-GYNs to screen at least once during pregnancy and once postpartum, and required plans to provide case management; CHBRP found no enrollees then had fully compliant case management coverage. Assembly Health passed it amended 12–1 (Apr 24, 2018). 2020 Mom reports it was amended to remove case management and focus on screening. Senate 39–0 (Aug 27, 2018); Assembly concurrence 80–0 (Aug 29, 2018); signed Sept 26, 2018 as Chapter 755, Statutes of 2018. The record found so far does not say why case management was removed.
+- **Implementation, patient-experience and equity studies.** These appear to be the three studies from your review. Please confirm.
+    - **Woofter R, Floyd James K, Rao R, Richards MC, Choi KR, Sudhinaraset M (2026).** "Mandated perinatal mental health screening in California: a mixed-methods exploration." *Health Aff Sch.* 4(2):qxag021. doi:10.1093/haschl/qxag021. In one health system (11,763 deliveries, 2019–2023), screening rose each year, but by 2023 only 80% were screened prenatally, 69% postpartum and 57% at both times. Ten OBGYNs said screening became more consistent, but patients still faced major barriers to care.
+    - **"Who is screened for perinatal mental health? Findings from an academic health system in California" (2026).** *Archives of Women's Mental Health*, https://link.springer.com/article/10.1007/s00737-026-01719-w. More than 6,000 deliveries, 2021–2023: 67% screened in pregnancy, 56% postpartum. † Authors to confirm.
+    - **"Levers of care in the health system: A qualitative study of experiences with perinatal mental health screening, referrals, and treatment among birthing people of color in California" (2025).** https://www.sciencedirect.com/science/article/pii/S2667321525000885. 31 in-depth interviews with postpartum patients of color at one academic institution; finds gaps from screening to referral to treatment. † Authors and journal to confirm.
+- **Statewide data (2026):**
+    - CDPH and UCSF *Maternal Mental Health Report* (released April 2026; births in 2020–2021, more than 12,000 respondents): 22% depression symptoms, 28% anxiety symptoms, more than 1 in 3 with at least one. https://www.cdph.ca.gov/Programs/CFH/DMCAH/MIHA/Pages/Maternal-Mental-Health-Report.aspx
+    - UCSF screening brief (2026): 66% screened both during and after pregnancy in 2024, up from 51% in 2020. Screened people with symptoms were about 3 times as likely to receive care. Postpartum screening is substantially lower for Black and Hispanic women, lower-income people, Medi-Cal members and people with limited English proficiency. Fewer than half of those with symptoms receive care. https://healthequity.ucsf.edu/document/mmh-screening-brief
+- **Who the plan requirements reach:** A CHBRP briefing estimated that about 23.9 million Californians (about 61%) had state-regulated insurance subject to state mandates in 2019. People in self-insured employer plans (governed by ERISA) are outside the plan requirements. The practitioner duty under AB 2193 applies to licensed practitioners regardless of payer.
+- **Next step in the policy line:** SB 626 (Sen. Smallwood-Cuevas, 2025) would require screening, diagnosis and treatment, plus a plan perinatal mental health program. The Medical Board of California's analysis lists its sponsors as the California Coalition for Perinatal Mental Health & Justice, the Policy Center for Maternal Mental Health, Sage Therapeutics, PSI-California and Black Women for Wellness Action Project, with no opposition received. One news report says it was signed Sept 30, 2026; trackers still show it pending. † Confirm on leginfo before citing its status.
 - **Evidence debate:** NPR (2018) on the pros and cons of mandatory screening; KFF Health News on doctors with "nowhere to send" mothers who screen positive.
 - **Equity:** State mandates don't reach self-funded employer plans (ERISA), so some Californians aren't covered. Medi-Cal and commercial plans can also differ.
 - **Lived experience:** CalMatters (2019) covered Wendy Root Askew, who had postpartum depression and backed AB 2193, and a family affected by postpartum psychosis.
@@ -328,7 +337,8 @@ Web sources use the access date September 30, 2026; update it to the day you che
 
 ## 13. Still to collect
 
-- [ ] Citations and findings for the 2025 California interview study and the two 2026 California studies from your review (§4)
+- [x] California implementation studies located (§4); confirm they're the ones from your review, and confirm authors marked †
+- [ ] Final status of SB 626 (signed or not)
 - [ ] The Evaluation and Policy Design rubrics (§1)
 - [ ] Primary-source quotes for the claims in §7a (FDA roundtable video or transcript; MOTHERS Act opposition statements)
 - [ ] Status of New York's 2025 follow-up bill (A1025/S802)
