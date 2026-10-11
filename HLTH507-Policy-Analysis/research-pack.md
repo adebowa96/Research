@@ -209,6 +209,7 @@ Before labeling any of these in the paper, quote the claim from a primary source
 |---|---|---|---|
 | Panelists at the FDA's July 21, 2025 roundtable on SSRIs in pregnancy | ACOG's president called the panel "alarmingly unbalanced" and said panelists made "outlandish and unfounded claims"; SMFM and APA raised similar concerns | Selective use of evidence, if a specific claim weighed medication risks while leaving out the risks of untreated depression | One panelist's claim, quoted from the FDA video or transcript, and the evidence it left out |
 | Opponents of the federal MOTHERS Act (2007–2010) | Opposition centered on fears that the law would promote psychotropic medication for new mothers | Appeal to fear or slippery slope, *only* if an opponent argued that screening would inevitably lead to overmedication | An opponent's actual statement (hearing testimony or a published letter) |
+| Gov. Newsom's office, June 1, 2026: California "ranks #1 in U.S. for supporting maternal mental health," citing top Medi-Cal depression-screening performance, among other things | The release is real; the Policy Center's 2026 report cards use 27 mostly policy and process measures; the U.S. grade was C and no state earned an A; 47.1% of Californians with symptoms received treatment in 2024 | Incomplete evidence, if read as proof that mothers are well served: it highlights an output (screening) and a relative rank, and leaves out the treatment gap | **Used in the California Discussion draft.** Read the full release if you can, to confirm its wording |
 | Officials describing the hotline's success | No such claim found yet | Treating outputs (contacts, answer rates) as proof of outcomes (recovery) would be a real reasoning flaw | A documented statement that makes that leap. Without one, this is a caution, not a finding |
 
 ### 7b. Valid criticisms that are not fallacies
@@ -339,7 +340,7 @@ Web sources use the access date September 30, 2026; update it to the day you che
 ## 13. Still to collect
 
 - [x] California implementation studies located (§4); confirm they're the ones from your review, and confirm authors marked †
-- [ ] Final status of SB 626 (signed or not)
+- [ ] Final status of SB 626: some news reports say it was signed Sept 30, 2026 (effective Jan 1, 2027), but legislative trackers I could reach still show it pending. Confirm on leginfo before adding it to any paper
 - [ ] The Evaluation and Policy Design rubrics (§1)
 - [ ] Primary-source quotes for the claims in §7a (FDA roundtable video or transcript; MOTHERS Act opposition statements)
 - [ ] Status of New York's 2025 follow-up bill (A1025/S802)
