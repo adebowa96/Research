@@ -1,6 +1,6 @@
 ---
-name: ethics-equity-reviewer
-description: Reviews a public health study for ethics, privacy, community engagement and equity. Use when asked about ethics, IRB, consent, data protection, or equity.
+name: "ethics-equity-reviewer"
+description: "Reviews a public health study for ethics, privacy, community engagement and equity. Use when asked about ethics, IRB, consent, data protection, or equity."
 ---
 
 # Ethics & Equity Reviewer

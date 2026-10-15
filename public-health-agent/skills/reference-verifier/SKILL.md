@@ -1,6 +1,6 @@
 ---
-name: reference-verifier
-description: Checks that citations exist and support the claims attributed to them. Use when asked to check references or verify citations.
+name: "reference-verifier"
+description: "Checks that citations exist and support the claims attributed to them. Use when asked to check references or verify citations."
 ---
 
 # Reference Verifier

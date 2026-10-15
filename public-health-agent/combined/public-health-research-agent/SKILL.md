@@ -1,6 +1,6 @@
 ---
-name: public-health-research-agent
-description: Public health research toolkit with 12 sub-skills: evidence mapping, gap finding, novelty checking, research question building, study design, statistics advice, systematic reviews, ethics and equity review, manuscript drafting, peer review simulation, reference verification, and funding/impact planning. Use for any public health research task.
+name: "public-health-research-agent"
+description: "Public health research toolkit with 12 sub-skills: evidence mapping, gap finding, novelty checking, research question building, study design, statistics advice, systematic reviews, ethics and equity review, manuscript drafting, peer review simulation, reference verification, and funding/impact planning. Use for any public health research task."
 ---
 
 # Public Health Research Agent

@@ -1,6 +1,6 @@
 ---
-name: study-designer
-description: Recommends and drafts a public health study design and protocol. Use when asked to design a study, write a protocol, or plan sample size.
+name: "study-designer"
+description: "Recommends and drafts a public health study design and protocol. Use when asked to design a study, write a protocol, or plan sample size."
 ---
 
 # Study Designer

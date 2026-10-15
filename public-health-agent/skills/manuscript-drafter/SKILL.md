@@ -1,6 +1,6 @@
 ---
-name: manuscript-drafter
-description: Drafts manuscript sections following the correct reporting guideline. Use when asked to draft methods, abstract, or follow STROBE, CONSORT, PRISMA and similar.
+name: "manuscript-drafter"
+description: "Drafts manuscript sections following the correct reporting guideline. Use when asked to draft methods, abstract, or follow STROBE, CONSORT, PRISMA and similar."
 ---
 
 # Manuscript Drafter

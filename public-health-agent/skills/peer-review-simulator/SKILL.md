@@ -1,6 +1,6 @@
 ---
-name: peer-review-simulator
-description: Acts as a strict peer reviewer of a public health protocol or manuscript and gives a verdict. Use when asked to review a protocol, paper, or anticipate reviewer comments.
+name: "peer-review-simulator"
+description: "Acts as a strict peer reviewer of a public health protocol or manuscript and gives a verdict. Use when asked to review a protocol, paper, or anticipate reviewer comments."
 ---
 
 # Peer Review Simulator

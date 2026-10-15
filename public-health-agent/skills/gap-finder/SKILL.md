@@ -1,6 +1,6 @@
 ---
-name: gap-finder
-description: Finds and ranks public health research gaps (evidence, population, geographic, methodological, measurement, implementation, equity, outdated, contradictory). Use when asked to find gaps, what is missing, or research opportunities.
+name: "gap-finder"
+description: "Finds and ranks public health research gaps (evidence, population, geographic, methodological, measurement, implementation, equity, outdated, contradictory). Use when asked to find gaps, what is missing, or research opportunities."
 ---
 
 # Gap Finder

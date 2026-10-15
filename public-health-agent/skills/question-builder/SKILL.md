@@ -1,6 +1,6 @@
 ---
-name: question-builder
-description: Turns a research gap into a PICO/PECO/PICOTS question with a falsifiable hypothesis and outcomes. Use when asked to write a research question, PICO, or hypothesis.
+name: "question-builder"
+description: "Turns a research gap into a PICO/PECO/PICOTS question with a falsifiable hypothesis and outcomes. Use when asked to write a research question, PICO, or hypothesis."
 ---
 
 # Question Builder

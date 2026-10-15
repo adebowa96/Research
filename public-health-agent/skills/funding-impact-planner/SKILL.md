@@ -1,6 +1,6 @@
 ---
-name: funding-impact-planner
-description: Drafts grant aims and policy briefs for public health research. Use when asked about grants, specific aims, policy briefs, or impact.
+name: "funding-impact-planner"
+description: "Drafts grant aims and policy briefs for public health research. Use when asked about grants, specific aims, policy briefs, or impact."
 ---
 
 # Funding & Impact Planner

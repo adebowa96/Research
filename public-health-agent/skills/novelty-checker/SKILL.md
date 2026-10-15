@@ -1,6 +1,6 @@
 ---
-name: novelty-checker
-description: Tests whether a public health research idea is genuinely new by searching existing work. Use when asked if something is novel, has been studied, or is already done.
+name: "novelty-checker"
+description: "Tests whether a public health research idea is genuinely new by searching existing work. Use when asked if something is novel, has been studied, or is already done."
 ---
 
 # Novelty Checker

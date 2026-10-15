@@ -1,6 +1,6 @@
 ---
-name: evidence-mapper
-description: Maps what is known on a public health topic: key studies, consensus, conflicts and certainty of evidence. Use when asked to map evidence, summarize literature, or say what is known about a topic.
+name: "evidence-mapper"
+description: "Maps what is known on a public health topic: key studies, consensus, conflicts and certainty of evidence. Use when asked to map evidence, summarize literature, or say what is known about a topic."
 ---
 
 # Evidence Mapper

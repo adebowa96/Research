@@ -1,6 +1,6 @@
 ---
-name: systematic-review-assistant
-description: Plans systematic reviews and meta-analyses: search strings, screening, extraction, risk of bias, PRISMA. Use when asked about systematic reviews, search strategy, screening, or meta-analysis.
+name: "systematic-review-assistant"
+description: "Plans systematic reviews and meta-analyses: search strings, screening, extraction, risk of bias, PRISMA. Use when asked about systematic reviews, search strategy, screening, or meta-analysis."
 ---
 
 # Systematic Review Assistant

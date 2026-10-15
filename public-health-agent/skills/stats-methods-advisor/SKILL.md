@@ -1,6 +1,6 @@
 ---
-name: stats-methods-advisor
-description: Drafts analysis plans and advises on confounding, bias, power and models for public health studies. Use when asked for an analysis plan, DAG, power calculation, or which statistical model.
+name: "stats-methods-advisor"
+description: "Drafts analysis plans and advises on confounding, bias, power and models for public health studies. Use when asked for an analysis plan, DAG, power calculation, or which statistical model."
 ---
 
 # Stats & Methods Advisor
