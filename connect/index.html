@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Connect | Ifeoluwanimi P. Shobayo</title>
+  <meta name="description" content="Contact page for Ifeoluwanimi P. Shobayo, MSPH Epidemiology candidate at Liberty University: save contact, LinkedIn, CV, and APHA 2026 posters.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Digital contact page opened from the business-card QR code; navy, white, and gold to match the card. */
+    :root {
+      --navy: #13294b;
+      --navy-soft: #e8edf5;
+      --gold: #b8913b;
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --text: #1b2433;
+      --muted: #5b6577;
+      --border: #dfe3ea;
+      --btn-text: #ffffff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --navy: #9fb7e0; --navy-soft: #1c2840; --gold: #d8b766;
+        --bg: #0e1524; --surface: #16203a; --text: #e8ecf4; --muted: #a7b1c4; --border: #283454; --btn-text: #0e1524;
+        color-scheme: dark;
+      }
+    }
+    :root[data-theme="dark"] {
+      --navy: #9fb7e0; --navy-soft: #1c2840; --gold: #d8b766;
+      --bg: #0e1524; --surface: #16203a; --text: #e8ecf4; --muted: #a7b1c4; --border: #283454; --btn-text: #0e1524;
+      color-scheme: dark;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 17px; line-height: 1.55;
+    }
+    .wrap { max-width: 560px; margin: 0 auto; padding: 32px 16px 48px; }
+    header { text-align: center; padding-bottom: 8px; }
+    h1 {
+      font-family: "Source Serif 4", Georgia, serif; font-weight: 700;
+      font-size: clamp(28px, 7vw, 34px); line-height: 1.15; margin: 0; color: var(--navy);
+    }
+    .rule { width: 56px; height: 2px; background: var(--gold); margin: 14px auto; border: 0; }
+    .creds { margin: 0; font-weight: 600; }
+    .school { margin: 2px 0 0; color: var(--muted); }
+    .seeking {
+      margin: 22px 0 0; padding: 14px 16px; border-left: 3px solid var(--gold);
+      background: var(--navy-soft); border-radius: 6px; font-size: 16px;
+    }
+    .actions { display: grid; gap: 12px; margin-top: 26px; }
+    .btn {
+      display: block; text-align: center; text-decoration: none; font-weight: 600;
+      padding: 15px 16px; border-radius: 10px; border: 1.5px solid var(--navy); color: var(--navy);
+      background: var(--surface);
+    }
+    .btn.primary { background: var(--navy); color: var(--btn-text); }
+    .btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+    .btn small { display: block; font-weight: 400; font-size: 13px; color: inherit; opacity: .85; }
+    h2 { font-family: "Source Serif 4", Georgia, serif; font-size: 21px; color: var(--navy); margin: 36px 0 10px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin: 0 0 10px; }
+    li a { color: var(--navy); }
+    .meta { color: var(--muted); font-size: 14px; }
+    footer { margin-top: 36px; text-align: center; color: var(--muted); font-size: 14px; }
+    footer .email { user-select: all; color: var(--text); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Ifeoluwanimi P. Shobayo</h1>
+      <hr class="rule">
+      <p class="creds">BSc | MSPH Candidate, Epidemiology</p>
+      <p class="school">Liberty University · Graduating May 2027</p>
+    </header>
+
+    <p class="seeking">Open to 2027 epidemiology internships and entry-level roles in public health research and health data analytics.</p>
+
+    <div class="actions">
+      <a class="btn primary" href="Ifeoluwanimi-Shobayo.vcf" download>Save my contact<small>Adds my details to your phone</small></a>
+      <a class="btn" href="https://www.linkedin.com/in/ifeoluwanimi-shobayo">Connect on LinkedIn</a>
+      <a class="btn" href="mailto:ipshobayo@gmail.com">Email me<small>ipshobayo@gmail.com</small></a>
+      <a class="btn" href="../assets/Ifeoluwanimi-Shobayo-CV.pdf">Download my CV (PDF)</a>
+      <a class="btn" href="../index.html">View my portfolio<small>Research posters, data projects, and code samples</small></a>
+    </div>
+
+    <h2>At APHA 2026</h2>
+    <ul>
+      <li><a href="../projects/mrkh-scoping-review.html">Mental Health and Psychosocial Outcomes Among Individuals With MRKH Syndrome: A Scoping Review</a> <span class="meta">· First author, poster</span></li>
+      <li><a href="../projects/pmdd-scoping-review.html">Psychosocial Outcomes and Coping Mechanisms Among Women With PMDD: A Global Scoping Review</a> <span class="meta">· First author, poster</span></li>
+    </ul>
+
+    <h2>Recent work</h2>
+    <ul>
+      <li><a href="../projects/perinatal-depression.html">Perinatal depression among Virginia women, 2016–2022</a> <span class="meta">· CDC PRAMS · Virginia Public Health Association 2026</span></li>
+      <li><a href="../projects/virginia-mental-health.html">Geographic disparities in mental health across Virginia counties</a> <span class="meta">· Tableau · Virginia Public Health Association 2026</span></li>
+      <li><a href="../index.html#publications">Four peer-reviewed publications and more presentations</a></li>
+    </ul>
+
+    <footer>
+      <p>Prefer to type it in? <span class="email">ipshobayo@gmail.com</span></p>
+    </footer>
+  </main>
+</body>
+</html>

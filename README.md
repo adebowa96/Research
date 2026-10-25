@@ -10,6 +10,7 @@ Personal portfolio website for an MSPH Epidemiology candidate. It's plain HTML, 
 - `assets/charts.js`: small inline-SVG chart helpers (estimate + CI, line, and bar charts with hover tooltips)
 - `assets/img/`: poster images and map screenshots
 - `assets/Ifeoluwanimi-Shobayo-CV.pdf`: the public CV (no phone number) linked from the "Download CV" buttons
+- `connect/`: the digital contact page the business-card QR code opens (`https://adebowa96.github.io/Research/connect/`), with a downloadable contact card (`Ifeoluwanimi-Shobayo.vcf`, no phone number)
 
 ## Publish with GitHub Pages
 
