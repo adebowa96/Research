@@ -74,6 +74,8 @@ run;</pre>
             <tbody>
               <tr><td>Pearson vs. Spearman correlation (<code>PROC CORR</code>)</td><td>With one extreme outlier in a 10-point dataset, Pearson's r was 0.04 while the rank-based Spearman ρ was 0.42, showing that rank methods are less sensitive to outliers (neither was significant at n = 10).</td></tr>
               <tr><td>Point-biserial correlation</td><td>Flagged a weak test item (r = 0.13, p = 0.21) that didn't separate high and low scorers.</td></tr>
+              <tr><td>Chi-square test and relative risk (<code>PROC FREQ</code>)</td><td>Students who did not study were far more likely not to graduate: 30% (41/137) vs. 3% (5/163), χ²(1) = 41.4, p &lt; 0.0001, a relative risk of non-graduation of 9.8 (95% CI 4.0–24.0). Reading SAS's "Column 1" relative risk correctly depends on which row and column are listed first.</td></tr>
+              <tr><td>Power and sample size (<code>PROC POWER</code>)</td><td>Detecting means of 200 vs. 210 (SD 10) with a two-sample t-test needs 17 per group for 80% power and 23 for 90%. Testing a cure rate of 0.85 against a benchmark of 0.80 needs 471 participants for 80% power, but only 108 if the true rate is 0.90.</td></tr>
               <tr><td>Multiple regression with VIF (<code>PROC REG</code>)</td><td>Interpreted a predictor (vehicle weight) that was correlated with price on its own (r = 0.45) but not significant once horsepower and length were added (p = 0.89), with only moderate collinearity (VIF 2.7).</td></tr>
               <tr><td>Stepwise selection (SBC vs. adjusted R²)</td><td>A two-predictor model (honor status + spelling score) had a higher adjusted R² than the full model (0.146 vs. 0.143).</td></tr>
               <tr><td>Binary logistic regression (<code>PROC LOGISTIC</code>)</td><td>Above-average study time: unadjusted OR = 13.5 (95% CI 5.2–35.3) for graduating, attenuating to 7.5 (2.1–26.9) after adjusting for English and math grades. Used a <code>UNITS</code> statement to report odds ratios per 5-point grade increase.</td></tr>
@@ -178,6 +180,8 @@ in_future     = df[df['last_active_date'] &gt; pd.Timestamp('2024-03-06')]</pre>
           <li>Assumption checking</li>
           <li>Nonparametric tests</li>
           <li>Correlation</li>
+          <li>Chi-square &amp; relative risk</li>
+          <li>Power &amp; sample size</li>
           <li>Linear &amp; logistic regression</li>
           <li>Model selection</li>
           <li>Reproducible data cleaning</li>
