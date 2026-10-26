@@ -10,6 +10,7 @@ Personal portfolio website for an MSPH Epidemiology candidate. It's plain HTML, 
 - `assets/charts.js`: small inline-SVG chart helpers (estimate + CI, line, and bar charts with hover tooltips)
 - `assets/img/`: poster images and map screenshots
 - `assets/Ifeoluwanimi-Shobayo-CV.pdf`: the public CV (no phone number) linked from the "Download CV" buttons
+- `assets/Ifeoluwanimi-Shobayo-Research-Portfolio.pdf`: the 16-page PDF portfolio linked from the "Portfolio (PDF)" buttons
 - `connect/`: the digital contact page the business-card QR code opens (`https://adebowa96.github.io/Research/connect/`), with a downloadable contact card (`Ifeoluwanimi-Shobayo.vcf`, no phone number)
 
 ## Publish with GitHub Pages
@@ -21,5 +22,6 @@ Personal portfolio website for an MSPH Epidemiology candidate. It's plain HTML, 
 ## Updating the site
 
 - **Update the CV:** replace `assets/Ifeoluwanimi-Shobayo-CV.pdf` with the new PDF, keeping the same file name so the "Download CV" buttons keep working. Keep your phone number off this public copy.
+- **Update the PDF portfolio:** replace `assets/Ifeoluwanimi-Shobayo-Research-Portfolio.pdf`, keeping the same file name.
 - **Add a project:** copy any page in `projects/`, edit the text, and add a card for it in `index.html`.
 - **Charts:** each chart is a `Charts.forest`, `Charts.line`, or `Charts.hbar` call at the bottom of its page. The numbers in those calls should match the table shown beside the chart.

@@ -93,7 +93,7 @@ nav ul a {
 nav ul a:hover { color: var(--accent); }
 
 /* Hero */
-.hero { padding: 72px 0 48px; }
+.hero { padding-top: 72px; padding-bottom: 48px; }
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.08em;
