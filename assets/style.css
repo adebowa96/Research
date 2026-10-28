@@ -834,3 +834,21 @@ pre.code .c { color: var(--muted); }
 .lb-next { right: 14px; }
 .cv-note { margin: 28px 0 0; }
 .deck-link { margin: 20px 0 0; }
+.doc-feature { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 28px; align-items: start; margin-top: 18px; }
+.doc-feature p:first-child { margin-top: 0; }
+.doc-thumb {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+.doc-thumb:hover { transform: translateY(-3px); }
+.doc-thumb:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.doc-thumb img { display: block; width: 100%; height: auto; }
+@media (max-width: 560px) {
+  .doc-feature { grid-template-columns: minmax(0, 1fr); }
+  .doc-thumb { max-width: 220px; }
+}
