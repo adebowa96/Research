@@ -394,7 +394,7 @@ section { padding-block: 72px; }
 /* APHA 2026 poster cards */
 .apha-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
 .poster-card {
@@ -434,6 +434,8 @@ section { padding-block: 72px; }
   color: var(--gold-lt);
 }
 .role.co { background: var(--accent-soft); color: var(--accent); }
+.tagrow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.venue { font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em; color: var(--muted); }
 @media (max-width: 1000px) { .apha-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .apha-grid { grid-template-columns: minmax(0, 1fr); } }
 
