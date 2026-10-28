@@ -10,14 +10,14 @@ Personal portfolio website for an MSPH Epidemiology candidate. It's plain HTML, 
 - `assets/charts.js`: small inline-SVG chart helpers (estimate + CI, line, and bar charts with hover tooltips)
 - `assets/img/`: poster images and map screenshots
 - `assets/Ifeoluwanimi-Shobayo-CV.pdf`: the public CV (no phone number) linked from the "Download CV" buttons
-- `assets/Ifeoluwanimi-Shobayo-Research-Portfolio.pdf`: the 16-page PDF portfolio linked from the "Portfolio (PDF)" buttons
-- `connect/`: the digital contact page the business-card QR code opens (`https://adebowa96.github.io/Research/connect/`), with a downloadable contact card (`Ifeoluwanimi-Shobayo.vcf`, no phone number)
+- `assets/Ifeoluwanimi-Shobayo-Research-Portfolio.pdf`: the 17-page PDF portfolio linked from the "Portfolio (PDF)" buttons
+- `connect/`: the digital contact page the business-card QR code opens (`https://ipshobayo.github.io/Research/connect/`), with a downloadable contact card (`Ifeoluwanimi-Shobayo.vcf`, no phone number)
 
 ## Publish with GitHub Pages
 
 1. Merge this branch into `main`.
 2. In the repository, go to **Settings → Pages**, set **Source** to "Deploy from a branch", then choose `main` and `/ (root)`.
-3. The site will be live at `https://adebowa96.github.io/Research/` within a few minutes.
+3. The site will be live at `https://ipshobayo.github.io/Research/` within a few minutes.
 
 ## Updating the site
 
