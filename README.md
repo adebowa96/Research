@@ -6,9 +6,10 @@ Personal portfolio website for an MSPH Epidemiology candidate. It's plain HTML, 
 
 - `index.html`: home page with an intro, research posters, projects, experience, publications, honors, skills, education, and contact
 - `projects/`: one page per case study
+- `work-samples.html`: gallery of fact sheets, presentation slides, and maps, with a full-size image viewer
 - `assets/style.css`: shared styles, with light and dark mode
 - `assets/charts.js`: small inline-SVG chart helpers (estimate + CI, line, and bar charts with hover tooltips)
-- `assets/img/`: poster images and map screenshots
+- `assets/img/`: poster images and map screenshots; `assets/img/samples/` holds the work-sample images (each with a `-thumb.jpg` version)
 - `assets/Ifeoluwanimi-Shobayo-CV.pdf`: the public CV (no phone number) linked from the "Download CV" buttons
 - `assets/Ifeoluwanimi-Shobayo-Research-Portfolio.pdf`: the 17-page PDF portfolio linked from the "Portfolio (PDF)" buttons
 - `connect/`: the digital contact page the business-card QR code opens (`https://ipshobayo.github.io/Research/connect/`), with a downloadable contact card (`Ifeoluwanimi-Shobayo.vcf`, no phone number)
