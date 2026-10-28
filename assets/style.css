@@ -833,3 +833,4 @@ pre.code .c { color: var(--muted); }
 .lb-prev { left: 14px; }
 .lb-next { right: 14px; }
 .cv-note { margin: 28px 0 0; }
+.deck-link { margin: 20px 0 0; }
